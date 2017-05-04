@@ -5,6 +5,10 @@ HTML documents on this repository’s master branch can also be displayed in a b
 
 ---
 
+## Meetings
+
+[Thursday, May 4](https://lists.w3.org/Archives/Public/public-epub3/2017May/0000.html)
+
 ## Possible work groups
 
 ### Spec Maintenance
