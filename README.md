@@ -1,27 +1,22 @@
-# pub-cg
-Repository for general documents of the [EPUB 3 Community Group](https://www.w3.org/community/epub3/)
+# EPUB 3 Community Group General Repository
 
-HTML documents on this repository’s master branch can also be displayed in a browser via the `https://w3c.github.io/pub-cg/...` URL-s. 
+This repository is for general documents and resource related to the [EPUB 3 Community Group](https://www.w3.org/community/epub3/). The EPUB 3.1 specification is in a separate repository. Please file issues on the spec [there](link TK).
+
+## General Information
+
+Please see our [wiki](https://github.com/w3c/pub-cg/wiki) for information on participation, meetings, task forces, etcetera.
+
+## Useful links
+
+ - [EPUB 3 Community Group Home Page](https://www.w3.org/community/epub3/)
+ - [EPUB 3 Community Group Charter](https://www.w3.org/2017/02/EPUB3CGcharter)
+ - [EPUB 3 Community Group Wiki](https://github.com/w3c/pub-cg/wiki)
+ - [EPUB 3 Community Group Mailing List Archive](https://lists.w3.org/Archives/Public/public-epub3/)
+ 
 
 ---
 
-## Meetings
-
-[Thursday, May 4](https://lists.w3.org/Archives/Public/public-epub3/2017May/0000.html)
-
-## Possible work groups
-
-### Spec Maintenance
-
-### Accessibility
-
-### Education
-
-### Rendering
-
-### Testing and Validation
-
-### ISO Certification
+HTML documents on this repository’s master branch can also be displayed in a browser via the `https://w3c.github.io/pub-cg/...` URL-s. 
 
 ---
 
