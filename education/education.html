@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+   <head>
+      <meta charset="utf-8" />
+      <title>EPUB for Education</title>
+     <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+      <script src="common/biblio.js" class="remove"></script>
+      <script src="common/dfn-crossref.js" class="remove"></script>
+      <script src="common/confreq-permalinks.js" class="remove"></script>
+      <link href="common/css/common.css" rel="stylesheet" type="text/css" />
+      <script class="remove">
+          var respecConfig = {
+              wg: "EPUB 3 Community Group",
+              specStatus: "CG-DRAFT",
+              noRecTrack: true,
+              shortName: "epub-education",
+              edDraftURI: "http://w3c.github.io/publ-cg-epub3/education/education.html",
+              editors: [
+              {
+                      name: "David Stroup",
+                      company: "Pearson"
+                  },
+                  {
+                      name: "Markus Gylling",
+                      company: "IMS Global"
+                  },
+                   {
+                      name: "Matt Garrish",
+                      company: "Invited Expert"
+                  },
+                  {
+                      name: "Yonah Levenson Hirschman",
+                      company: "Pearson"
+                  },
+                  {
+                      name: "Tzviya Siegman",
+                      company: "Wiley"
+                      
+                  },
+                  {
+                      name: "John Tibbetts",
+                      company: "IMS Global"
+                  },
+                  {
+                      name: "Rick Johnson",
+                      company: "VitalSource"
+                  },
+                  {
+                      name: "Nick Brown",
+                      company: "VitalSource"
+                  }
+                 
+              ],
+              processVersion: 2017,
+              includePermalinks: true,
+              permalinkEdge:     true,
+              permalinkHide:     false,
+              diffTool:          "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+              localBiblio: biblio,
+              preProcess: [fixDefinitionCrossrefs, addConformanceLinks]
+          };
+      </script>
+   </head>
+   <body>
+      <section id="abstract">
+         <p>The EPUB for Education profile represents the effort to adapt the functionality of the EPUB® 3 format to the unique structural, semantic and behavioral requirements of educational publishing.</p>
+      </section>
+      <section id="sotd"></section>
+      <section id="sec-overview">
+         <h1>Overview</h1>
+
+         <section id="sec-overview-purpose-and-scope" class="informative">
+            <h2>Purpose and Scope</h2>
+            <p>Digital content in education has the potential to significantly improve learning outcomes, as it can better support accessibility, adapt to individual learning modes, increase engagement and experiential learning through interactivity, provide immediate assessments and analytics, and increase social connectivity.</p>
+            <p>To this end, the EPUB for Education profile defined in this specification represents the effort to adapt the functionality of the EPUB&reg; 3 format to the unique structural, semantic and behavioral requirements of educational publishing.</p>
+            <p>The profile builds on the EPUB 3 specification in the following ways:</p>
+            <ul>
+            <li>It adds semantics for common educational publishing components and structures.</li>
+            <li>It defines how to include content that may be created external to the narrative text workflow, such as interactives and assessment (e.g., QTI).</li>
+            
+            <li>It includes accessibility features to enable compliance with educational standards.</li>
+            
+            <li>It enables the identification of discrete content entities.</li>
+            <li>It allows the embedding of shared educational scriptable components.</li>
+            <li>It adds support for annotations.</li>
+            <li>It defines guidelines for the production and inclusion of images.</li>
+            </ul>
+            
+            
+            
+         </section>
+
+         <section id="sec-overview-relations" class="informative">
+            <h2>Relationship to Other Specifications</h2>
+
+      
+               <p>As a profile of EPUB 3, these guidelines build on the functionality defined in the following core specifications:</p>
+               
+               
+               <ul>
+               <li>EPUB Publications 3.0.1 [[!Publications301]]</li>
+               
+               <li>EPUB Content Documents 3.0.1 [[!ContentDocs301]]</li>
+               
+               <li>EPUB Open Container Format (OCF) 3.0.1 [[!OCF301]]</li>
+               
+               <li>EPUB Media Overlays 3.0.1  [[!MediaOverlays301]]</li>
+               </ul>
+<p>Unless explicitly overridden, this profile inherits all requirements defined in these specifications.</p>
+<p>Education-compliant Publications are always valid EPUB 3 Publications, but, due to the additional production requirements detailed in this document, the reverse is not necessarily true.</p>
+    
+         </section>
+
+         <section id="sec-terminology">
+            <h2>Terminology</h2>
+            <p>Terms with meanings specific to EPUB 3.1 are capitalized in this document (e.g., "Author", "Reading System").
+               A complete list of these <a href="epub-spec.html#sec-terminology">terms and definitions</a> is provided in
+               [[!EPUB31]].</p>
+            <p>Only the first instance of a term in a section is linked to its definition.</p>
+         </section>
+         
+         </section>
+
+         <section id="conformance">
+         
+         
+         <h1>Conformance</h1>
+         
+         <section>
+
+<h2>Content Conformance</h2>
+<p>In addition to meeting the requirements specified in EPUB Publications [[Publications301]], an EPUB Publication conformant with this profile must meet all of the following criteria:</p>
+<ul>
+<li>If multiple Renditions of the content are included, it MUST meet the requirements in <a class="c2" href="#h.1j2ux9jtz3qi">3.3 Multiple-Rendition Publications</a>.</li>
+<li>All EPUB Content Documents <span class="c38 c7 c46">must</span> conform to the additional structure requirements in <a class="c2" href="#h.selsibtnscc8">4. Content Structure</a>.</li>
+<li>If content structures are represented using the semantics defined in <a class="c2" href="#h.n08zwgom1kdv">4.4. Structural Semantics</a>, the structures MUST adhere to the usage and production requirements defined in [EDUStructure].</li>
+<li>It MUST follow the requirements for navigation aids, as defined in <a class="c2" href="#h.kh6la5a1ipyu">7. Navigation</a>.</li>
+<li>It MUST include the required metadata defined in <a class="c2" href="#h.nsjfhxwfp3rp">8. Publication Metadata</a>.</li>
+</ul>
+</section>
+
+<section>
+
+<h2>Reading System Conformance</h2>
+<p>In addition to meeting the requirements specified in EPUB Publications <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a>, an <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#gloss-epub-reading-system">EPUB Reading System</a>&nbsp;conformant with this profile MUST&nbsp;meet all of the following criteria:</p>
+<ul><li>It MUST meet all requirements for Scriptable Components defined in <a class="c2" href="#kix.fdoafme2pkn7">[ESC]</a> and <a class="c2" href="#kix.fdoafme2pkn7">[ESC-PKG]</a>.</li>
+<li>It <span class="rfc2119">should</span> support multiple-Rendition Publications, as defined in <a class="c2" href="#id.6llbr2blaop5">[MultipleRenditions]</a>.</li>
+<li>It <span class="rfc2119">should</span> support the import and rendering of annotations, as defined in <a class="c2" href="#h.r3t8ugjxwx46">9. Annotations</a>.</li>
+<li>If it is integrated in <a class="c2" href="#h.t23iwaf5ct93">learning environments that use IMS LTI</a>, it MUST conform to the requirements in <a class="c2" href="#h.d8x2hsrw0h0f">6.2 IMS Learning Tools Interoperability (LTI) and Outcomes</a>. </li>
+</ul>
+
+
+<p class="note">It is anticipated that support for multiple renditions and annotations will be elevated to a requirement once those specifications become Recommendations.</p>
+</section>
+
+         
+         
+         </section>
+         
+         
+
+
+ 
+<section id="education-document-models">
+
+<h1>Education Document Models</h1>
+
+<section id="reflowable-publications">
+
+<h2>Reflowable Publications</h2>
+<p>The primary focus of this version of the EPUB for Education profile is on the creation of reflowable XHTML-based EPUB Publications.</p>
+<p>Reflowable Renditions of the content are typically more accessible than pre-paginated (fixed layout) Renditions, making the content more widely accessible to a broader range of students.</p>
+<p>The semantics defined in this profile are also better suited to annotating markup structures that have not been artificially broken by page boundaries, and the requisite chunking of content into separate files that practice causes. Navigation is similarly simplified for users of assistive technologies when content structures are not broken apart by pagination.</p>
+<p>The use of reflowable Renditions is therefore strongly <span class="rfc2119">recommended</span>.</p>
+
+</section>
+
+<section>
+
+<h2>Fixed-Layout Publications</h2>
+<p>Although the creation of <a class="c2" href="#h.jie2prboe7ow">reflowable EPUB Publications</a> is the preferred content model for the EPUB for Education profile, Authors MAY create Fixed-Layout Publications provided they are produced to be accessible to a wide audience.</p>
+<p>This specification does not attempt to define accessibility for all users, but conformant Fixed-Layout Publications MUST meet all of the following criteria:</p>
+<ul>
+
+<li>be constructed from text-based XHTML or SVG Content Documents (i.e., text content is not represented as images);</li>
+<li>use appropriate [[HTML5]] markup for the structures being represented (i.e., avoid the generic <code>span</code> and <code>div</code> elements unless no more appropriate markup is available).</li>
+<li>retain the logical reading order of the text content (i.e., text appears in the markup in the order in which it is expected to be read);</li>
+<li>not position text over background images in such a way that it will present difficulty reading (e.g., poor contrast).</li>
+</ul>
+<p>These requirements represent the minimum threshold to be conformant with this profile. They do not replace any local or national accessibility requirements an Author has to meet in order to sell and distribute their content for educational use.</p>
+<p>Note that due to the paginated nature of fixed layouts, Fixed-Layout Publications are exempt from the requirements in <a class="c2" href="#h.selsibtnscc8">4. Content Structure</a>.</p>
+
+</section>
+<section>
+
+<h2>Multiple-Rendition Publications</h2>
+<p>EPUB Publications that conform to this profile MAY contain more than one Rendition of the content, but each Rendition MUST conform to the requirements for reflowable or fixed-layout content defined in this specification.</p>
+<p>When an EPUB Container includes more than one Rendition, it MUST conform to the requirements for multiple-Rendition EPUB Publications defined in [[MultipleRenditions]]. In addition to the Release Identifier, the <code>metadata.xml</code> file MUST include the <code>dc:type</code> identifier &quot;<code>education</code>&quot;.</p>
+
+<p class="note">Authors are encouraged to include a Rendition Mapping Document to allow Users to switch from one Rendition to another without losing their place (e.g., to simplify moving between fixed-layout and reflowable Renditions, or from a structured audio to text Rendition).</p>
+
+</section>
+
+<section>
+
+<h2>Teacher&#39;s Editions and Guides</h2>
+
+<section>
+
+<h3>Introduction</h3>
+<p>Teacher&#39;s editions and guides are important tools in educational instruction. Both provide guidance to the teacher, but a teacher&#39;s edition represents a superset of the work the students are using, while a teacher&#39;s guide typically provides general instruction and guidance on the curriculum (i.e., there is no student edition).</p>
+<p>This section does not introduce special processing requirements for either. In particular, it is assumed that teacher and student editions are packaged separately, as EPUB &#8210; and the Open Web Platform generally &#8210; does not provide a means of reliably hiding content from different classes of Users.</p>
+
+</section>
+<section>
+<h3>Identification</h3>
+
+
+<section>
+
+<h4>Publication</h4>
+<p>A teacher&#39;s edition <span class="c24">must</span> be identified as such in the package metadata by including a <span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dctype">dc:type</a></span><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dctype">&nbsp;element</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a> with the value &quot;<code>teacher-edition</code>&quot;.</p>
+
+<p><span class="c16 c20">The following example shows an EPUB Publication identified as a teacher&#39;s edition.</span></p>
+
+
+<pre class="example">
+&lt;metadata xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
+&lt;dc:type&gt;teacher-edition&lt;/dc:type&gt;
+&nbsp; &nbsp;&hellip;
+&lt;/metadata&gt;
+</pre>
+
+
+<p>A teacher&#39;s guide <span class="c24">must</span> be identified with the value &quot;<code>teacher-guide</code>&quot;.</p>
+
+<p><span class="c16 c20">The following example shows an EPUB Publication identified as a teacher&#39;s guide.</span></p>
+
+<pre class="example">
+&lt;metadata xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
+&nbsp; &nbsp;&lt;dc:type&gt;teacher-guide&lt;/dc:type&gt;
+&nbsp; &nbsp;&hellip;
+&lt;/metadata&gt;
+</pre>
+
+<p>Teacher&#39;s guides and editions are also identified as compliant with the EPUB for Education profile as defined in <a class="c2" href="#h.rasm7lzcxncv">8.1 Profile Identification</a>, so <span class="c24">must</span> conform to all requirements in this specification.</p>
+
+<p><span class="c16 c20">The following example shows both the edpub and a teacher&#39;s guide identifiers.</span></p>
+
+<pre class="example">
+&lt;metadata xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
+&nbsp; &nbsp;&lt;dc:type&gt;teacher-guide&lt;/dc:type&gt;
+&nbsp; &nbsp;&lt;dc:type&gt;education&lt;/dc:type&gt;
+&nbsp; &nbsp;&hellip;
+&lt;/metadata&gt;
+</pre>
+
+</section>
+
+<section>
+<h4 class="c14">Student Edition</h4>
+<p>As a teacher&#39;s edition represents an annotated version of a student edition, it <span class="c24">should</span> identify the corresponding student edition in a <code>dc:source</code> element:</p>
+
+<p><span class="c16 c20">The following example shows a teacher edition that includes the source student edition identifier. </span></p>
+
+<pre class="example">
+&lt;metadata xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
+&nbsp; &lt;dc:type&gt;teacher-edition&lt;/dc:type&gt;
+&nbsp; &lt;dc:source&gt;urn:isbn:9780000000001&lt;/dc:source&gt;
+&nbsp; &hellip;
+&lt;/metadata&gt;
+</pre>
+
+<p class="note">As teacher&#39;s guides do not have student editions, this guideline does not apply to their production.</p>
+
+</section>
+</section>
+
+<section>
+
+<h3>Content</h3>
+
+
+<section>
+
+<h4 class="c14">Structural Semantics</h4>
+<p>The EPUB for Education content model does not include structural semantics specifically for the construction of teacher editions and guides, but the inclusion of such semantics is under consideration for a future version of the profile.</p>
+<p>At this time, the use of semantics defined in <a class="c2" href="#h.n08zwgom1kdv">4.4 Structural Semantics</a> is <span class="c24">recommended</span>, where applicable.</p>
+</section>
+
+<section>
+
+<h4>Styling</h4>
+<p>The standardization of CSS class names for controlling the appearance of teacher-specific content is under consideration for a future version of this profile.</p>
+</section>
+
+<section>
+
+<h4>Audience</h4>
+<p>As a teacher&#39;s edition contains both the text of the student edition together with annotations, answers and other instructional aids for the teacher, there is a need to accessibly differentiate the teacher content from the content that all students have access to. Reliance on visual CSS styling alone, for example, impacts on the overall usability by instructors.</p>
+<p>While the use of structural semantics enhances the meaning of the content, it does not, in itself, indicate who the content was intended for. Instead, to address discoverability for users of assistive technologies, all teacher content <span class="c24">must</span> be labeled using the <a class="c2" href="#id.5tpdu658uluu">[ARIA]</a> <code>aria-label</code> attribute.</p>
+
+<p><span class="c16 c20">The following example shows an answer section labeled as belonging to the teacher edition</span></p>
+<pre class="example">
+&lt;section epub:type=&quot;answers&quot; aria-label=&quot;teacher edition content&quot;&gt;
+&nbsp; &nbsp;&hellip;
+&lt;/section&gt;
+</pre>
+
+<p>This specification does not require specific language for this attribute to allow for localization, but the text used should clearly identify the audience is teachers.</p>
+
+
+
+<p class="note">As teacher&#39;s guides are exclusively for teachers, content does not have to labelled.</p>
+
+
+<p>The audience <span class="c24">may</span> also be specified using the <a class="c2" href="#id.u8pfppgkhclt">[schema.org]</a> <code>audience</code> property for reliable machine processing (e.g., to selectively hide teacher-only content in a Reading System, or to enable filtering of content prior to distribution). Processing of this metadata is <span class="c24">optional</span>.</p>
+
+<p><span class="c16 c20">The following example shows the inclusion of the schema.org </span><span class="c4 c16 c20">audience</span><span class="c16 c20">&nbsp;property to identify that an answers section is intended only for teachers.</span></p>
+
+
+<pre class="example">
+&lt;section id=&quot;answers01&quot;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;aria-label=&quot;teacher edition content&quot;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;epub:type=&quot;answers&quot;&gt;
+&nbsp; &nbsp; &lt;meta resource=&quot;#answers01&quot;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; typeof=&quot;schema:WebPageElement&quot;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; property=&quot;schema:audience&quot;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; content=&quot;teacher&quot;/&gt;
+&nbsp; &nbsp; &hellip;
+&lt;/section&gt;
+</pre>
+
+</section>
+
+<section>
+
+<h4>Student Content</h4>
+<p>For accessibility purposes, it is strongly <span class="rfc2119">recommended</span> that student content not be represented as annotated images in teacher&#39;s editions.</p>
+
+</section>
+</section>
+</section>
+</section>
+
+<section id="content-structure">
+
+<h1>Content Structure</h1>
+
+
+<section>
+
+<h2>Introduction</h2>
+<p><span class="c20 c61 c7">This section is informative</span></p>
+<p>This section outlines key content structuring guidelines for the production of EPUB Publications that conform to this profile. Only differences from the core suite of EPUB specifications are noted.</p>
+
+</section>
+<section>
+
+<h2>Sectioning</h2>
+<p>The <code>section</code> element MUST be used only to group sections of content that contribute to the structural hierarchy (e.g., that could appear in the table of contents). Such content is contained in <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-itemref-elem">linear spine items</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a>; secondary non-linear content is not subject to the requirements in this section.</p>
+<p>If the root of an XHTML Content Document consists of a single section of content, a <code>section</code> wrapper MAY be omitted (i.e., the <code>body</code> represents the implied section). Any subsections of the root section MUST be wrapped in <code>section</code> tags.</p>
+<p>Each section <span class="rfc2119">m</span><span class="rfc2119">ust</span> have a heading expressed either in an <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.j7d96djjppm1">ranked heading element</a> or an <a class="c2" href="#id.5tpdu658uluu">[ARIA]</a> <span class="c4 c18 c57"><a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.il4hfay4o68k">aria-label</a></span><a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.il4hfay4o68k">&nbsp;attribute</a>. <span class="c36">Sections </span><span class="rfc2119">must not</span><span class="c36">&nbsp;have more than one heading element, but </span>MAY<span class="c36">&nbsp;include both a heading element and an </span><code>aria-label</code><span class="c36">. If a section includes both a label and a heading, the value of the </span><span class="c4 c18 c57"><a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.il4hfay4o68k">aria-label</a></span><span class="c36">&nbsp;attribute </span><span class="rfc2119">must not</span><span class="c36">&nbsp;be the same as the heading (use the </span><a class="c2" href="#id.5tpdu658uluu">[ARIA]</a> <span class="c4 c18 c57"><a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.il4hfay4o68k">aria-label</a></span><span class="c4 c18 c57"><a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.il4hfay4o68k">ledby</a></span><span class="c36">&nbsp;attribute to explicitly link a heading to its section).</span></p>
+<p>A <code>section</code> can be divided into subsections by nesting the <code>section</code> element, but once the first subsection is introduced only additional subsections are allowed to follow it (i.e., only another <code>section</code> element can follow the end of a subsection). This requirement also applies to the use of the <code>section</code> elements for subsectioning in any other <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <a class="c2" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">sectioning content</a>.</p>
+<p><span class="c5 c20">The following example shows how subsections must be contiguous.</span></p>
+
+<pre class="example">
+&lt;section&gt;
+&nbsp; &lt;h1&gt;Section 1&lt;/h1&gt;
+&nbsp; &lt;p&gt;&hellip;&lt;/p&gt;
+&nbsp; &lt;section&gt;
+&nbsp; &nbsp; &nbsp;&lt;h2&gt;Subsection 1&lt;/h2&gt;
+&nbsp; &nbsp; &nbsp;&hellip;
+&nbsp; &lt;/section&gt;
+&nbsp; &lt;section&gt;
+&nbsp; &nbsp; &nbsp;&lt;h2&gt;Subsection 2&lt;/h2&gt;
+&nbsp; &nbsp; &nbsp;&hellip;
+&nbsp; &lt;/section&gt;
+&lt;/section&gt;
+</pre>
+
+<p class="note">The restriction against content between section elements exists to reduce the confusion that can arise when content is read by assistive technologies, as it is not always clear what section the continuation of content belongs to.</p>
+
+
+
+<p class="c35 c14">For article-based EPUB Publications, the <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <span class="c6 c4"><a class="c2" href="http://www.w3.org/TR/html5/sections.html#the-article-element">article</a></span><a class="c2" href="http://www.w3.org/TR/html5/sections.html#the-article-element">&nbsp;element</a> MAY be used in place of the <code>section</code> element to group each article. The use of the element MUST follow the requirements defined in this section, including the use of <code>section</code> elements to represent the internal hierarchy.</p>
+</section>
+
+<section>
+
+<h2 class="c14">Titles and Headings</h2>
+
+<h3>4.3.1 Titled Sections</h3>
+<p><a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <a class="c2" href="http://www.w3.org/TR/html5/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">heading elements</a> <span class="c7 c24">must</span> be used to provide headings only for <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <a class="c2" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">sectioning content</a> (including the <code>body</code> element).</p>
+<p>When using a heading element for a section, the rank MUST reflect the nesting of that section within the document hierarchy (as noted in <a class="c2" href="http://www.w3.org/html/wg/drafts/html/master/sections.html#headings-and-sections">4.3.10 Headings and sections</a> <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a>). For example, a top-level section will have an <code>h1</code> heading, child sections of it will have <code>h2</code> headings, and so on. Note that untitled sections are included when determining the current heading rank (see <a class="c2" href="#h.ewrcwqo5it7l">4.3.2 Untitled Sections</a> for more information).</p>
+<p>The heading does not have to be the first element of the section, and MAY be included inside a <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <code>header</code> element. If the section also includes a subtitle in a separate element, both the heading and subtitle MUST be enclosed in a <code>header</code>.</p>
+<pre class="example">
+&lt;header&gt;
+&nbsp; &lt;h1&gt;Chapter 1. The Battle&lt;/h1&gt;
+&nbsp; &lt;p epub:type=&quot;subtitle&quot;&gt;Once More Unto the Breach&lt;/p&gt;
+&lt;/header&gt;
+</pre>
+
+
+<p class="note">See <a class="c2" href="http://www.w3.org/TR/html5/common-idioms.html#sub-head">4.12.1 Subheadings, subtitles, alternative titles and taglines</a> <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> for additional markup patterns for subtitles.</p>
+<p>The application of headings MUST reflect the hierarchy regardless of how the content has been chunked for distribution (i.e., it is not necessary that the first section in each file begin with an <code>h1</code>).</p>
+<p>The <a class="c2" href="#id.5tpdu658uluu">[ARIA]</a> <code>aria-label</code> attribute <span class="rfc2119">must not</span> be included on a <code>section</code> if it provides the same text already available in a ranked heading, as it can lead to duplicate announcement of the heading to users of assistive technologies.</p>
+
+
+<h3 class="c14">4.3.2 Untitled Sections</h3>
+<p>If a section of content in the document hierarchy does not have an explicit heading (e.g., an untitled introduction) &#8210; or sectioning is used to group significant content, such as learning objectives, that a User using an AT would need access to &#8210; the <a class="c2" href="#id.5tpdu658uluu">[ARIA]</a> <code>aria-label</code> attribute MUST be used to provide an accessible name.</p>
+<p>Adding this attribute allows users of assistive technologies to navigate to the section despite the lack of a heading, in addition to giving meaningful context.</p>
+<p>Despite the lack of an explicit ranked heading, untitled sections are still part of the document&#39;s structural hierarchy and affect the heading rank of any child sections they contain. For example, the untitled <code>section</code> in the following example counts as the second level in the document outline, so the next ranked heading is an <code>h3</code> even though no <code>h2</code> appears in the markup:</p>
+
+<pre class="example">
+&lt;section epub:type=&quot;chapter&quot;&gt;
+&nbsp; &lt;h1&gt;Chapter 1: Lists&lt;/h1&gt;
+&nbsp;
+&nbsp; &nbsp; &nbsp;&lt;section aria-label=&quot;Chapter body&quot;&gt;
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;section epub:type=&quot;learning-objectives&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;1.2 Learning Objectives List&lt;/h3&gt;
+</pre>
+
+
+<h3 class="c14">4.3.3 Deep Nesting</h3>
+<p>When the document hierarchy exceeds six levels of nesting, re-use the <code>h6</code> element for the seventh nesting level and deeper. Avoid deep nesting of content, if possible, as the flattened structure below the sixth heading level impacts on the ability of users of assistive technologies (AT) to move through the document without repeatedly returning to the table of contents.</p>
+<p>Do not use heading elements where the heading does not reflect the document hierarchy, as this use will impact on movement by AT users (e.g., inside figure captions).</p>
+
+
+<h3 class="c14">4.3.4 Structured Components</h3>
+<p>When <code>aside</code>, <code>article</code> and <code>nav</code> elements with headings are included in a section, the heading rank MUST start one level lower than the containing section (e.g., if a <code>section</code> has an <code>h3</code> heading, an <code>aside</code> within it will start with an <code>h4</code> heading).</p>
+
+</section>
+
+<section>
+<h2>Structural Semantics</h2>
+
+
+<p class="note">These terms will remain under active development for the duration of the EPUB for Education initiative. It is anticipated that more terms will be added in subsequent iterations. Similarly, some terms may be deprecated or removed.</p>
+
+
+
+
+<p>The EPUB for Education profile includes a set of structural semantic terms and content production rules designed to standardize the markup of educational materials.</p>
+
+<p>The formal definitions of these terms, and requirements for their use, are defined in the normative EPUB Education Structural Semantics Vocabulary <a class="c2" href="#id.lv8talqwbs2b">[EDUStructure</a><a class="c2" href="#id.lv8talqwbs2b">]</a>.</p>
+
+
+
+<p class="c43 c14 c63">Publishers are strongly <span class="rfc2119">recommended</span> to represent all publication structures using the markup and terms defined in <a class="c2" href="#id.lv8talqwbs2b">[EDUStructure]</a>. The use of other terms from <a class="c2" href="#id.vamrleack432">[StructureVocab]</a> is <span class="rfc2119">optional</span>, as is the use of custom terms.</p>
+<p>Following is a categorized list of the terms available, with links to their definitions. Note that categorization does not imply usage restrictions, particularly in the case of sectioning terms.</p>
+<ul><li><span class="c0">Sectioning</span>:</li></ul>
+<ul><li><span class="c5 c20">Front Matter</span><span class="c5">: </span><a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.g7489d7eoobp">frontmatter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.11hc3p4vtjqt">abstract</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.rcj0r39o5fsk">acknowledgments</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.rxeqewn0ykof">copyright-page</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.635pm8lyamq7">dedication</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ly3qymm0so49">foreword</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.dear7l19ertm">halftitlepage</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.1d37ueg8h1c6">introduction</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.puiknct3uwkf">preface</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.7dkwhofp4zkd">seriespage</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.gozf8zpd04mh">titlepage</a></li><li><span class="c5 c20">Body Matter</span><span class="c5">: </span><a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.g8vpodrahrun">bodymatter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.2e5rsv0jrwp">chapter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.2upv7zvahvv4">part</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.rk5l4i5pwnhm">qna</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.4jf9zco7lce0">volume</a></li><li><span class="c5 c20">Back Matter</span><span class="c5">: </span><a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.lerv6n86bkg3">backmatter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ingmn7jwc1du">afterword</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.4aq3uuxvlh3j">appendix</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.bkhs6aq7a0n8">colophon</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.bkb90b8siryk">conclusion</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.z5n37kwgxf2">epigraph</a></li></ul>
+<ul class="c34 lst-kix_c842j1yegzlx-0"><li><span class="c0">Bibliographies</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.xby86h9jhbjo">bibliography</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.nlfsqrs9b0qe">biblioentry</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.5jydqce92ovq">biblioref</a></li><li><span class="c0">Glossaries</span>: glossary, glossdef, glossterm, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.4iorj6rnvyiy">glossref</a><br /><span class="c5 c20">Refer to the EPUB Dictionaries and Glossaries specification </span><span class="c6 c5 c20"><a class="c2" href="#id.5kl08nxuknz3">[DICT]</a></span><span class="c5 c20">&nbsp;for definitions of the glossary structural terms and their content requirements, including Package Document identification requirements when including dictionaries and glossaries.</span></li><li><span class="c0">Indexes</span>: index, index-editor-note, index-entry, index-entry-list, index-group, index-headnotes, index-legend, index-locator, index-locator-list, index-locator-range, index-term, index-term-categories, index-term-category, index-xref-preferred, index-xref-related.<br /><span class="c5 c20">Refer to the EPUB Indexes specification </span><span class="c6 c5 c20"><a class="c2" href="#id.y2shkcvmk4l9">[IDX]</a></span><span class="c5 c20">&nbsp;for definitions of these terms and content structuring requirements, including Package Document identification requirements required when including indexes.</span></li><li><span class="c0">Asides</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.cb822qhsn347">case-study</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ektzi08ie386">help</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ny84mn27kjri">notice</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ctpd52jilc96">pullquote</a></li><li><span class="c0">Learning Objectives</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.3lmuq5bb7d45">learning-objective</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ql507qs79e41">learning-objectives</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.wit8qvobwdr8">learning-outcome</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.pscaakg6etnf">learning-outcomes</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.1k3ksl33negw">learning-resource</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.hary0x4vabsc">learning-resources</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.j01hcaur4yg1">learning-standard</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ftt1vq5u78fz">learning-standards</a></li><li><span class="c0">Testing</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.vq57zeuizcwt">answer</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.r946ln25gqz">answers</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.1jtkib1j0v1q">assessment</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.fihilgcwmsew">assessments</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.1u64ug9atyht">feedback</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.mc4c8ukomso4">fill-in-the-blank-problem</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.f3w8r4r0c4kl">general-problem</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.u7t4086fzabd">match-problem</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.vw4oh72kzjs0">multiple-choice-problem</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.3ovimmwjmwfe">practice</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.e6h5sre4xnij">practices</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ophly0f7o7up">question</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ift765xajpcl">true-false-problem</a></li><li><span class="c0">Notes</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.iq2ljzbmraqd">footnote</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.1k9y4kpv65ri">footnotes</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.oecy01lm2gqh">noteref</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.p8v4g8irpuav">rearnote</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.76qamzgcmxtg">rearnotes</a></li><li><span class="c0">Linking</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.j69uxef7aitb">referrer</a></li><li><span class="c0">Titles and Headings</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.45sim219k2nl">label</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.gx5eau3fl5fg">ordinal</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.pb9s3xa1135o">subtitle</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.cpyd1mx3drix">title</a></li><li><span class="c0">Pagination</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.8hygsjhkpul0">pagebreak</a></li><li><span class="c0">Keywords</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.xlerpg8o4hkz">keyword</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.b5jieo38rns4">keywords</a></li><li><span class="c0">Credits</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.6386gyn6hnwd">credit</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.m8pkixaa9b29">credits</a></li><li><span class="c0">Navigation</span>: <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.mrpxxagk614g">landmarks</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.40nrxcqx1a34">loa</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.pjv2pnf3frca">loi</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.rf9vd0yqwy03">lot</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.if6wb5voca43">lov</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.so8i2ddkpmwr">page-list</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.pzsa6tm9m8oj">toc</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.sbwmm8oloisi">toc-brief</a></li></ul>
+
+</section>
+
+<section>
+<h2>Semantic Enrichment</h2>
+<p>The use of RDFa Lite <a class="c2" href="#id.qkmm9vck7s3i">[RDFaLite]</a> is <span class="rfc2119">recommended</span> for enriching content.</p>
+<p>Examples of content enrichment in this specification use RDFa Lite syntax.</p>
+</section>
+
+<section>
+
+<h2>Pagination</h2>
+<p>If a reflowable Rendition has a statically-paginated alternative representation (e.g., print), it is strongly<span class="rfc2119">&nbsp;recommended</span> that <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.8hygsjhkpul0">page break markers</a> be included. Including this information enables students to synchronize their reading with the paginated representation, as many classrooms are mixed print/digital environments.</p>
+<p>The pagination source MUST be identified using the <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dcsource">dc:source and source-of properties</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a> when including markers. The source MAY be a reference to the EPUB Publication if pagination is derived from another Rendition in the Container.</p>
+<p>A <code>page-list nav</code> <a class="c2" href="#kix.i7mkocc0itmb">[ContentDocs301]</a> MUST be included in the EPUB Navigation Document when page breaks are included. See <a class="c2" href="#h.3zalt8ku3l0r">7.4 Page List</a> for more information.</p>
+
+</section>
+
+<section>
+
+
+<h2>Images</h2>
+<p>The following guidelines are suggested for the inclusion of image content:</p>
+<ul>
+<li>Use the sRGB [sRGB] color space.</li>
+<li>Use [PNG] or [SVG] format for:
+
+<ul><li>line art/vector images;</li>
+<li>image fallbacks for math equations and tables;</li>
+<li>bitmap images containing text.</li></ul></li>
+
+<li>Use [JPEG] format with 80% quality for photography and all other bitmap images.</li>
+<li>Do not exceed 2000 pixels on the longest dimension for block-level art.</li>
+</ul>
+
+
+
+</section>
+</section>
+
+<section id="scriptable-components">
+
+<h1>Scriptable Components</h1>
+<p>EPUB Scriptable Components [ESC] MAY be included in EPUB Publications that conform to this profile, and MUST be integrated and identified as defined in [ESC-PKG].</p>
+
+</section>
+<section id="ims-learning-tools">
+
+<h1>IMS Learning Tools Interoperability&reg; (LTI&reg;) and Outcomes</h1>
+
+<section>
+
+<h2>Integration with IMS LTI</h2>
+<p class="c35 c56"><span class="c20 c61 c7">This section is informative</span></p>
+<p class="c35 c14">A document that presents the best practice recommendations for using IMS Learning Tools Interoperability&reg; (LTI&reg;) is available at <span class="c6 c7"><a class="c2" href="https://www.imsglobal.org/sites/default/files/edupub/EPUB3QTILTICaliper_BestPracticesvd8.pdf">[IMSGuide]</a></span>.</p>
+<p class="c35 c14">The interactions involved in working with IMS LTI services, are illustrated in the following context diagram:</p>
+<p class="c35 c23 c58 c14"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 490.00px; height: 410.93px;"><img alt="EDUPUB overview.jpg" src="images/image03.jpg" style="width: 490.00px; height: 410.93px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="" /></span></p>
+<p class="c35 c14">Legend of the the context diagram above (from content out):</p>
+<ol class="c34 lst-kix_pbabxijlthrq-0 start" start="1"><li>EPUB 3 Content<br />An EPUB Publication conformant with the definition in <a class="c2" href="#h.j302lmctska2">2.1 Content Conformance</a>.<br /></li><li>Reading System<br />An application conformant with the definition in <a class="c2" href="#h.upul6gzh4fhd">2.2 Reading System Conformance</a>. It is important to note that any EPUB Reading System that conforms to this profile <span class="c5 c38 c7">MUST</span> broker communications between the content and the Reading eco-system, or handle those tasks directly.</li><li>Reading eco-system<br />This is a stable, persistent provider of services to support the Reading System and provide a point of contact to learning systems. In this profile, the reading eco-system is a tool that is hosted with an LTI Tool Provider. [<a class="c2" href="https://www.imsglobal.org/specs/ltiv1p2/implementation-guide">IMS LTI 1.2 Implementation Guide</a> or <a class="c2" href="https://www.imsglobal.org/specs/ltiv2p0/implementation-guide">IMS LTI 2.0 Implementation Guide</a>]</li><li>LTI Compliant LMS<br />This is the learning system used by learners, instructors and other roles to support the learning environment. In LTI the term for a learning management system or learning platform is the LTI Tool Consumer. [<a class="c2" href="https://www.imsglobal.org/specs/ltiv1p2/implementation-guide">IMS LTI 1.2 Implementation Guide</a> or <a class="c2" href="https://www.imsglobal.org/specs/ltiv2p0/implementation-guide">IMS LTI 2.0 Implementation Guide</a>]</li><li>Caliper Analytics&trade;<br />Caliper is an IMS standard that is used for capturing learning data, storing and analyzing it. It also defines a vocabulary for learning analytics. [<a class="c2" href="http://www.imsglobal.org/caliper/caliperv1p0/ims-caliper-analytics-implementation-guide">IMS Caliper Analytics Implementation Guide</a> ]</li><li>Other LTI compliant Tool Provider<br />This box represents other learning tools in the larger learning eco-system that can be linked to from an EPUB Publication. Embedded LTI links can securely link to these other tools. [<a class="c2" href="https://www.imsglobal.org/specs/ltiv1p2/implementation-guide">IMS LTI 1.2 Implementation Guide</a> or <a class="c2" href="https://www.imsglobal.org/specs/ltiv2p0/implementation-guide">IMS LTI 2.0 Implementation Guide</a>]</li></ol>
+
+<p class="note">Caliper capabilities within EPUB 3 can be supported through an appropriate LTI capability.</p>
+</section>
+
+<section>
+
+<h2>Conformance</h2>
+
+<h3 class="c35 c14"><span class="c20 c0 c7">6.2.1 Content Conformance</span></h3>
+<p class="c35 c14">If an EPUB Publication is designed for use in environments that support LTI launches and LTI&rsquo;s Outcomes Management Service version 2, it <span class="c5 c38 c7">MUST</span>&nbsp;meet the following requirements:</p>
+<ul><li>If&nbsp;content is required to report its Outcomes, then it <span class="c5 c38 c7">MUST</span>&nbsp;conform to the&nbsp;requirements for Outcomes Reporting defined in <span class="c6 c7"><a class="c2" href="https://docs.google.com/document/d/1b38M2Uhto6wOoLDI0Aesa1XYoDuwjKLl1MOwuhVgEpU/edit#heading=h.8uocezqe6y1x">6.3.2.2 Content Structuring</a></span>.</li></ul>
+
+<h3 class="c35 c14"><span class="c20 c0 c7">6.2.2 Reading System </span><span class="c20 c0 c7">Conformance</span></h3>
+<p class="c35 c14">An <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#gloss-epub-reading-system">EPUB Reading System</a> <span class="c24">must</span> meet all of the following criteria:</p>
+<ul><li>If it supports offline persistence to enable the local storage and delayed reporting of the Rich Outcomes data, support <span class="c5 c38 c7">MUST</span>&nbsp;be transparent to the operation of the content.</li><li>To support Outcomes Reporting, it <span class="c5 c38 c7">MUST</span>&nbsp;support one of two mechanisms: 1) act as Tool Provider, or&nbsp;2) delegate the Outcomes to the Reading Eco-system.&nbsp;</li><li>If the Reading System follows method (1), i.e., an internal Tool Consumer, then it <span class="c5 c38 c7">MUST</span>&nbsp;be certified as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a> or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a> Tool Consumer. </li><li>If the Reading System follows method (2), delegation to the TP, then it <span class="c5 c38 c7">MUST</span>&nbsp;support educational Outcomes APIs specified in <span class="c6 c7"><a class="c2" href="#h.dxf1o3gw16x0">section</a></span><span class="c6 c7"><a class="c2" href="#h.dxf1o3gw16x0">&nbsp;6.3.3</a></span>.<br /><span class="c5 c20 c37">NOTE<br /></span><a class="c2" href="#h.3y3oarej27ih">LTI Link Conformance</a>, discussed below, describes a method to do launches of other LTI tools (i.e., to &ldquo;Other LTI compliant Tool Provider&rdquo; as shown in the context diagram in <a class="c2" href="#h.hizgufe0qvyi">section 6.1</a>). These launches are nested within the original launch which opened the book. We call the original launch the &lsquo;outer launch&rsquo; in descriptions below. We call in the embedded launch in an EPUB Publication the &lsquo;inner launch&rsquo;.</li><li>To support Embedded LTI Launch&nbsp;it <span class="c5 c38 c7">MUST</span>&nbsp;support one of two mechanisms: 1) the Reading System hosting its own Tool Consumer, or 2) a message protocol to delegate the Embedded Launch to the Reading Eco-system.&nbsp;Method 1 only applies to the case where the Reading System is a web app.</li><li>If the Reading System follows method (1), i.e., an internal Tool Consumer, then it <span class="c5 c38 c7">MUST</span>&nbsp;be certified as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a> or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a> Tool Consumer. </li><li>If the Reading System follows method (2), delegation to the TP, then it <span class="c5 c38 c7">MUST</span>&nbsp;support LTI Link Content markup defined in <span class="c6 c7"><a class="c2" href="#h.3y3oarej27ih">6.4 LTI Links</a></span>.</li><li>If the Reading System acts as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a>&nbsp;or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a>&nbsp;Tool Consumer, for any of the purposes stated above, it <span class="c5 c38 c7">MUST </span>support appropriate parameter mapping from the outer launch. That is, parameters relating to user, course, and other supporting values <span class="c5 c38 c7">MUST</span> inherit from the original book launch.</li><li>If the Reading System acts as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a>&nbsp;or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a>&nbsp;Tool Consumer, it <span class="c5 c38 c7">MUST</span>&nbsp;enable the administration and protection of the &lsquo;Secrets&rsquo; and &lsquo;Keys&rsquo; required by the Tools that can be launched from the Reading System. </li></ul>
+
+<p class="note">These conformance constraints above boil down to a basic message: A Tool Consumer might have many more demands on it than a Reading System. It needs to host and protect many sensitive credentials. It needs to keep interface contracts on possibly many Tool Provider interface contracts. And it must be available if, for example, an Outcome Result message comes into it in the middle of the night for entry into a gradebook. In general, if an implementer&rsquo;s Reading System is an offline- or remote- device, it is safer and more practical to delegate the embedded launch back to the Tool Provider. If, on the other hand, the reader is a server-based, online reader and is in the same security domain as the Tool Provider, then a Reader-based Tool Consumer is fine.</p>
+
+<h3 class="c35 c14"><span class="c20 c0 c7">6.2.3 Reading Eco-system Conformance</span></h3>
+<p class="c35 c14">If an EPUB Reading System is designed for use in environments that support LTI and Outcomes, it <span class="c5 c38 c7">MUST</span>&nbsp;meet all of the following criteria:</p>
+<ul class="c34 lst-kix_8bpyybpve82j-0"><li>It <span class="c5 c38 c7">MUST</span>&nbsp;be certified as an <span class="c6 c7"><a class="c2" href="http://www.idpf.org/epub/profiles/edu/spec/edupub-20150723.html#kix.3oweeminz6ra">[LTI12]</a></span>&nbsp;or <span class="c6 c7"><a class="c2" href="http://www.idpf.org/epub/profiles/edu/spec/edupub-20150723.html#id.wwab2rsresyo">[LTI2]</a></span>&nbsp;Tool Provider.</li><li>It <span class="c5 c38 c7">MUST</span>&nbsp;be certified as a client for the Outcomes Management 2.0 services (Line Item and LISResult) <span class="c6 c7"><a class="c2" href="http://www.idpf.org/epub/profiles/edu/spec/edupub-20150723.html#id.rt51gldvxrrs">[LTIO2]</a></span>.</li><li>It <span class="c5 c38 c7">SHOULD</span>&nbsp;be certified as a service provider for the Outcomes Management 2.0 services (Line Item and LIS Result) <span class="c6 c7"><a class="c2" href="http://www.idpf.org/epub/profiles/edu/spec/edupub-20150723.html#id.rt51gldvxrrs">[LTIO2]</a></span>.</li><li>If the Reading System is certified as an <span class="c6 c7"><a class="c2" href="http://www.idpf.org/epub/profiles/edu/spec/edupub-20150723.html#kix.3oweeminz6ra">[LTI12]</a></span>&nbsp;or <span class="c6 c7"><a class="c2" href="http://www.idpf.org/epub/profiles/edu/spec/edupub-20150723.html#id.wwab2rsresyo">[LTI2]</a></span>&nbsp;Tool Consumer, it <span class="c5 c38 c7">SHOULD</span>&nbsp;enable LTI Outcomes data received from any launched Tool to be reported back to the entity that launched the Reading System (i.e., enable the outcomes to be reported back along the chained set of tools). </li></ul>
+
+</section>
+
+<section>
+
+<h2>Outcomes</h2>
+
+<h3 class="c27 c14"><span class="c20">6.3.1 Introduction</span></h3>
+<p class="c35 c14">Following LTI definitions, an Outcome is composed of data that comes from an interactive resource and is used to gather information about the user&rsquo;s response to the resource. Typically this comes from an interactive assessment that the user elects to perform. This data is often routed to gradebooks in learning systems. The Outcome itself encapsulates two distinct objects: </p>
+<ol class="c34 lst-kix_bjycmpwvoflm-0 start" start="1"><li>a lineitem identifies the type of the particular activity. For example, there may be exercises at the end of a chapter in an EPUB Publication. A particular lineitem might refer to question 3 of Chapter 17 of the text. The lineitem describes the particular question; e.g., &lsquo;determine the surface area of regular polygons&rsquo;.</li><li>an LISResult identifies a score that a particular student generates for the associated lineitem. Continuing the example above, a result for the lineitem above might identify user &lsquo;jsmith&rsquo; and assign a score of &lsquo;0.76&rsquo;.</li></ol>
+
+<h3 class="c27 c14"><span class="c20">6.3.2 Outcomes Reporting</span></h3>
+<p class="c35 c14"><span class="c8">To enable an EPUB Publication to report outcomes via LTI, all learning activities </span><span class="c5 c38 c7">MUST</span><span class="c8">&nbsp;be enclosed by </span><a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a><span class="c8">&nbsp;</span><a class="c2" href="https://www.w3.org/TR/html5/rendering.html#flow-content-0">flow content</a><span class="c8">&nbsp;</span><span class="c8">that carries an </span><span class="c4 c5 c18">epub:type</span> attribute with the value &quot;<span class="c4 c5 c18">assessment</span>&quot;<span class="c8">. In addition, each assessment </span><span class="c5 c38 c7">MUST </span><span class="c8">have an </span><code>id </code><span class="c8">attribute with a value that is unique with </span>the scope of the entire EPUB Publication. The value of this attribute will be used to identify the assessment when submitting outcome data.</p>
+<pre class="example">
+&lt;div epub:type=&quot;assessment&quot; id=&quot;unique_id&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p class="c35 c14">Each assessment marked up in this fashion will be able to report scores using the JavaScript APIs documented in <a class="c2" href="#h.dxf1o3gw16x0">section 6.3.3</a>. When adding outcome support to an assessment, there are no additional JavaScript files that must be included in the EPUB Publication.</p>
+<p class="c35 c14">For outcomes to function and be identified inside of the Reading System and Tool Provider, an <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a><span class="c8">&nbsp;</span><code>nav</code> element with with the <code>epub:type</code> attribute value &quot;<code>assessment</code><code>s</code>&quot; <span class="c5 c38 c7">MUST</span> be included in the EPUB Navigation Document.</p>
+<p class="c35 c14">The link nodes within the assessment list <span class="c5 c38 c7">MUST</span> contain the following information:</p>
+<ul><li><code>href:</code> a deep link to an assessment within the EPUB Publication. The link <span class="c5 c38 c7">MUST</span> point directly to an element that carries an <code>epub:type</code> attribute with the value &quot;<code>assessment</code>&quot; by using the value of its unique <code>id</code>. </li></ul>
+<ul class="c34 lst-kix_s2puvsrh29n7-0"><li><code>data-maxscore</code>: Max possible score for the activity.</li><li><code>data-graded</code>: &quot;<code>1</code>&quot; if graded. &quot;<code>0</code>&quot; if not graded.</li><li>Each activity <span class="c5 c38 c7">MUST</span> have its own list item in the <code>nav</code> element:</li></ul>
+<p class="c13"><span class="c0">Example:</span></p>
+
+<pre class="example">
+&lt;nav epub:type=&quot;assessments&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;h2&gt;List of Assessments&lt;/h2&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;ol&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&quot;c01.html#multiple_choice_01&quot; data-maxscore=&quot;1&quot; data-graded=&quot;1&quot;&gt;Assessment 1 - The Brain&lt;/a&gt;&lt;/li&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href=&quot;c01.html#multiple_choice_02&quot; data-maxscore=&quot;1&quot; data-graded=&quot;1&quot;&gt;Assessment 2 - The Heart&lt;/a&gt;&lt;/li&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &hellip;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ol&gt;
+&lt;/nav&gt;
+</pre>
+
+
+<h3 class="c27 c14"><span class="c20">6.3.3 </span><span class="c20">JavaScript APIs</span></h3>
+<p class="c35 c14">Reading Systems <span class="c38 c7">MUST</span>&nbsp;make&nbsp;the <span class="c8">JavaScript APIs defined in this section available within each content page being rendered. </span><span class="c8">These APIs all exist under the namespace</span><span class="c8">&nbsp;of the host document.</span></p>
+
+
+
+
+<section data-dfn-for="ExampleInterface" data-link-for="ExampleInterface">
+  <h2><dfn>ExampleInterface</dfn> interface</h2>
+  <pre class="idl">
+  interface ExampleInterface {
+    void exampleMethod();
+    readonly attribute USVString url;
+  };
+  </pre>
+  <dl>
+    <dt><dfn>exampleMethod()</dfn></dt>
+    <dd>Define <a>exampleMethod()</a> here...</dd>
+    <dt><dfn>url</dfn></dt>
+    <dd>Define <a>url</a> here...</dd>
+  </dl>
+</section>
+
+
+
+
+
+
+<h4 class="c27 c9 c14"><span class="c11">6.3.3.1 </span><span class="c11 c4 c18">EPUB.Education.reportScores([scores], callback);</span></h4>
+<ul><li>Description:<span class="c8">&nbsp;Report outcomes to the Reading System for transfer to Reading </span><span class="c8">Eco-system</span><span class="c8">, or directly to the originating Tool Consumer.</span></li><li>Parameters:</li></ul>
+<ul><li><code>scores</code>: Array of score objects containing score, location and optional metadata for the outcome.</li><li><code>callback</code> (optional): Function to be called when outcome has been received by the Reading System but not necessarily processed by Reading Eco-System.<br /></li></ul>
+<p class="c35 c14">All score objects submitted via <code>reportScores</code> <span class="c5 c38 c7">MUST</span> be in the following format:</p>
+<p class="c21"><span class="c3">{</span><span class="c4 c16">&nbsp;<br />&nbsp; score</span><span class="c3">:</span><span class="c4 c16">&nbsp;number</span><span class="c3">,</span></p>
+<p class="c21"><span class="c4 c16">&nbsp; &nbsp;location</span><span class="c3">:</span><span class="c4 c16">&nbsp;</span><span class="c4 c16 c75">string</span><span class="c3">,</span></p>
+<p class="c21"><span class="c4 c16">&nbsp; &nbsp;metadata</span><span class="c3">:</span><span class="c4 c16">&nbsp;</span><span class="c3">{...}</span><span class="c4 c16"><br /></span><span class="c3">}</span></p>
+<p class="c35 c14">Where:</p>
+<ul><li><code>score</code> is a value between 0 and <a class="c2" href="#kix.i7m349vnq1pn">data-maxscore</a> representing the User&rsquo;s score for the activity.</li><li><code>location</code> is the unique identifier for the assessment. This <span class="c5 c38 c7">MUST</span> be equal to the value of the containing <span class="c4 c5 c18">epub:type=&quot;assessment&quot;</span> element&rsquo;s <code>id</code> attribute.</li><li><code>metadata</code> (optional) is a JSON object containing vendor-specific activity result data. </li></ul>
+<p class="c9 c14"><span class="c5 c20 c37">NOTE</span></p>
+<p class="c23 c14">A specific vendor&#39;s implementation can store metadata and also return it via getScores. For example, if they want to let a student know they already did the activity, repopulate their answers, etc. It is up to the vendor how they want to handle this, and each one could have specific implementation details.</p>
+<p class="c35 c14">The callback function parameter is <span class="c5 c38 c7">OPTIONAL</span>. The function call returned will pass one parameter signaling if the score was a success: <code>callback(err)</code>. The message text of the error can be accessed via the property <code>err.message</code>. </p>
+
+<h4 class="c27 c9 c14"><span class="c11">6.3.1.2 </span><span class="c11 c4 c18">EPUB.Education.getScores([location IDs], callback);</span></h4>
+<ul><li>Description: <span class="c8">Retrieve one or more outcome results from Reading Eco-system via the Reading System client.</span></li><li>Parameters:</li></ul>
+<ul><li><code>[locations]</code>: <span class="c8">Array of </span><span class="c8">location</span><span class="c8">&nbsp;values as submitted in score objects via reportScores. Example: </span><span class="c4">[&lsquo;</span><span class="c4 c5">multiple_choice_01</span><span class="c4">&rsquo;,&rsquo;</span><span class="c4 c5">multiple_choice_02</span><span class="c4">&rsquo;]</span>.</li><li><code>callback</code>: Function to be called with results of outcome request.</li></ul>
+<p class="c35 c14"><span class="c8">The callback function parameter is required. The function call returned will pass two parameters: an error code and an array containing the last saved scored object for each location ID.</span></p>
+<p class="c35 c14"><span class="c8">These score objects will include the same parameters as passed in via </span><code>reportScores</code><span class="c8">, with the addition of a timestamp (added by the Reading System or Reading Eco-system at submission time) denoting the original submission time of the score</span><span class="c8">.</span></p>
+<p class="c35 c23 c14">Sample return:</p>
+<p class="c35 c23 c14"><span class="c3">[</span></p>
+<p class="c21"><span class="c3">&nbsp; {</span><span class="c4 c16"><br />&nbsp; &nbsp; score</span><span class="c3">:</span><span class="c4 c16">&nbsp;number</span><span class="c3">,</span><span class="c4 c16"><br />&nbsp; &nbsp; location</span><span class="c3">:</span><span class="c4 c16">&nbsp;</span><span class="c4 c16 c75">string</span><span class="c3">,</span><span class="c4 c16"><br />&nbsp; &nbsp; timestamp</span><span class="c3">:</span><span class="c4 c16">&nbsp;</span><span class="c4 c16 c88">UTCTimeStamp</span><span class="c3">,</span><span class="c4 c16"><br />&nbsp; &nbsp; metadata</span><span class="c3">:</span><span class="c4 c16">&nbsp;</span><span class="c3">{...}</span><span class="c4 c16"><br />&nbsp;</span><span class="c3">}</span></p>
+<p class="c21"><span class="c3">&nbsp; &hellip;</span></p>
+<p class="c21"><span class="c3">]</span></p>
+
+
+</section>
+
+<section>
+
+<h2>LTI Links</h2>
+<p class="c35 c14">An EPUB Content Document, which was not itself launched via an LTI link, will not be able to launch any embedded LTI links. In this case, the reading system needs to gracefully fail. </p>
+<p class="c9 c14"><span class="c5 c20 c37">NOTE</span></p>
+<p class="c23 c14">Performing an embedded LTI launch, assuming it is supported by the particular Reading Eco-system, involves performing a similar operation as <a class="c2" href="#h.nomfym85mx4l">reportScores</a> with a single exception: while some implementations of outcomes might allow the results to be enqueued there is no equivalent meaning to delaying an LTI launch. Therefore, an attempt to LTI launch to a tool on an offline device ought to fail.</p>
+<p class="c35 c14 c52"></p>
+
+<h3 class="c27 c14"><span class="c20">6.4.1 </span><span class="c4 c20 c18">EPUB.Education</span><span class="c4 c20 c18">.ltiLaunch(tool_proxy_id, resource_type, resource_link_id, callback);</span></h3>
+<p class="c35 c14"><span class="c8">Description: Requests that Reading System perform an inner LTI Launch on its behalf.</span></p>
+<p class="c35 c14">Parameters:</p>
+<p class="c35 c23 c14"><code>tool_proxy_id</code></p>
+<p class="c13">This is an identifier to the ToolProxy of inner partnership (i.e., inner Tool Consumer (TC) to inner Tool Provider (TP)). This value <span class="c5 c7 c38">MUST</span> be provisioned into the EPUB Publication and correspond to an entry in a persistent data structure on the outer Tool Provider</p>
+<p class="c35 c23 c14"><code>resource_name</code></p>
+<p class="c13">This is a string that identifies the particular resource from the tool proxy. Note that, unlike LTI1, LTI 2+ supports multiple resources per tool proxy.</p>
+<p class="c35 c23 c14"><code>resource_link_id</code></p>
+<p class="c13">This string asserts the identifier for this link in the EPUB Publication.</p>
+<p class="c35 c23 c14"><code>callback</code> (optional)</p>
+<p class="c13">Function to be called when outcome has been received by the Reading System but not necessarily processed by the Reading Eco-System. The callback function parameter is <span class="c5 c38 c7">OPTIONAL</span>. The function call returned will pass one parameter signaling if the score was a success: <code>callback(err)</code>, where <code>err</code> is of type <code>EPUB.Education.Error</code>. The message text of the error can be accessed via the property <code>err.message</code>. </p>
+<p class="c35 c14 c52"></p>
+
+</section>
+<section>
+
+<h2>Authorization</h2>
+<p class="c35 c14">This section defines the means of authorizing access from the Reading System to the Reading Eco-System. The APIs below <span class="c5 c38 c7">SHOULD</span> use an HTTP Authorization header that contains the TP-provided access-token (TP-Access-Token) that was provided to it at the initialization of the EPUB Publication. The TP-Access-Token enables two capabilities: 1) it ensures the message is allowed into the Tool Provider and 2) it provides a means of correlating the computed response to the invocation from the TP.</p>
+
+
+
+<h3>6.5.1 Reading System responsibilities</h3>
+<p>The Reading System has to fulfill several responsibilities, as outlined in the following subsections.</p>
+
+<h4 class="c27 c9 c14"><span class="c11">6.5.1.1 At Reading System launch time</span></h4>
+<p class="c35 c14">As described below in <a class="c2" href="#h.6yji37uaabty">Launching EPUB Publications</a>, when the Reading Eco-System launches an EPUB Publication it sends it a TP-Access-Token, and endpoints for services that it will require:</p>
+<ul><li><code>launch_presentation_return_url</code>: redirect point when the book closes</li><li><code>result_handler_url</code>: path to the Tool Provider&rsquo;s result_handler to submit a result from the book</li><li><code>lti_launch_handler_url</code>: path to the Tool Provider&rsquo;s lti_launch_handler to start an embedded launch</li></ul>
+
+<h4 class="c27 c9 c14"><span class="c11">6.5.1.2 At reportScores invocation</span></h4>
+<p class="c35 c14">This event is activated when the content invokes <a class="c2" href="#h.nomfym85mx4l">EPUB.Education.reportScores</a>. It marshals the parameters described into the following:</p>
+<p class="c35 c23 c14">POST to <code>result_handler_url</code> with Authorization Header containing a TP-Access-Token and a body containing the JSON media type with following &lsquo;flat&rsquo; fields</p>
+<p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c4">access_token:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ &nbsp; (i.e., array)</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isbn:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;activity_id:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score_detail:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;json</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_at:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iso8601 timestamp</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</span></p>
+<p class="c21"><span class="c4">returns: result_id</span></p>
+<p class="c35 c23 c14 c52"></p>
+
+<h4 class="c27 c9 c14"><span class="c11">6.5.1.3 At getScores invocation</span></h4>
+<p class="c35 c14">This event brokers a request from the Reading System to create a GET request to the Reading Eco-System to retrieve scores it has already submitted.</p>
+<p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GET to <code>result_handler_url</code> with path</p>
+<p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:</p>
+<p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSON media type </p>
+<p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c4">access_token:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ &nbsp; (i.e., array)</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isbn:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;activity_id:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score_detail:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;json</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_at:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iso8601 timestamp</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns: </span></p>
+<p class="c21"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;media type matching array elements in &lsquo;r</span><span class="c4">eportScores</span><span class="c4">&rsquo; above</span></p>
+
+<h4 class="c27 c9 c14"><span class="c11">6.5.1.4 At ltiLaunch event </span></h4>
+<p class="c35 c14">This event brokers a request from the Reading System to create an embedded LTI launch. See <a class="c2" href="#h.7li9dmingc26">Embedded Launch</a> below.</p>
+<p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POST to <code>embedded_launch_handler</code></p>
+<p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:</p>
+<p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSON media type with flat body:</p>
+<p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c4">tool_proxy_id:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string</span></p>
+<p class="c35 c23 c14"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resource_name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string</span></p>
+<p class="c35 c23 c14"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resource_link_id:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string</span></p>
+<p class="c35 c23 c14"><span class="c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns false if Reading Eco-system is unavailable.</span></p>
+<p class="c35 c14">The <code>tool_proxy_id</code> is an identifier to a Tool Proxy stored on the inner Tool Provider.</p>
+<p class="c35 c14">The <code>resource_name</code> identifies which resource, among possibly many defined in the Tool Proxy.</p>
+<p class="c35 c14">The <code>resource_link_id</code> is the LTI <code>resource_link_id</code> and <span class="c5 c38 c7">SHOULD</span> be set to the unique <code>activity_id</code> defined in <a class="c2" href="https://docs.google.com/document/d/1b38M2Uhto6wOoLDI0Aesa1XYoDuwjKLl1MOwuhVgEpU/edit#heading=h.8uocezqe6y1x">6.3.2.2 Content Structuring</a>.</p>
+
+</section>
+
+<section>
+
+<h2>Cross-system flows</h2>
+<p>This section is informative</p>
+
+<h3 class="c27 c14"><span class="c20">Flow 1: Provisioning Learning Activities</span></h3>
+<p class="c35 c14">Before grades can be created in a LMS gradebook, a gradebook column for the particular assignment needs to be created. LTI calls this column the LineItem. For example, a calculus exercise might create the lineitem MinMax.question-3.</p>
+<p class="c35 c23 c14"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 546.50px; height: 367.98px;"><img alt="" src="images/image04.png" style="width: 546.50px; height: 367.98px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="" /></span></p>
+
+<h4 class="c27 c9 c14"><span class="c11">Steps</span></h4>
+<ol class="c34 lst-kix_n1bl32jt8mqj-0 start" start="1"><li>[TC] Instructor clicks on an LTI link (v1.2 / 2.0+) in a Tool Consumer (TC). The particular LTI launch will initiate a user experience to create or manage lineitems. The user&rsquo;s launch is run within a context of a particular course and has to launch with a &lsquo;LineItems.url&rsquo; capability. This will pass to the Tool Provider (TP) an endpoint that will allow it access the lineitem container capability for the current course.</li><li>[TP] Accesses TOC metadata for the book.</li><li>[TP] Accesses the list of assessments available for an EPUB Publication as specified within the <span class="c4 c5 c89">assessments</span> nav element. A UX selector dialog allows the instructor to associate an assessment that is configured as &lsquo;gradeable&rsquo;, with a new lineitem. </li><li>[TP] Creates the new lineitem in the TC by POSTing to the lineitems url and providing it with the activity name and maxscore. (e.g., MinMax.question-3)</li></ol>
+<p class="c9 c14"><span class="c5 c20 c37">NOTE</span></p>
+<p class="c23 c14">It might seem odd that the gradebook lineitem which lives on the TC is provisioned by a UX that is running on the TP. The reason for this is an access control constraint. &nbsp;In LTI Outcomes V2 the lineitem is owned by the TP not the TC. Only the TP that creates the lineitem can operate on it; e.g., set a grade into it. The course gradebook might have many different lineitems for a course and each of these lineitems is protected from being accessed or modified by, say, another vendor&rsquo;s tool. It can only be maintained by the tool that creates it.</p>
+
+<h3 class="c27 c14"><span class="c20">Flow 2: Launching EPUB Publications</span></h3>
+
+<h4 class="c27 c9 c14"><span class="c11">Description</span></h4>
+<p class="c35 c14">When the learner wants to use the EPUB Publication, the learner clicks on an LTI link to launch the book. This launch opens the book and passes some crucial information to the TP.</p>
+<p class="c35 c14 c52"></p>
+<p class="c35 c23 c14"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 494.50px; height: 374.06px;"><img alt="" src="images/image00.png" style="width: 494.50px; height: 374.06px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="" /></span></p>
+
+<h4 class="c27 c9 c14"><span class="c11">Steps</span></h4>
+<ol class="c34 lst-kix_itbclbuw3cpa-0 start" start="1"><li>[TC] User clicks on an LTI link (v1.2 / 2.0+) in a Tool Consumer (TC). </li><li>[TP] Launch the Reading System with a reference to the EPUB Publication and also pass a TP access token (see comment below) and needed endpoints for various services.</li><li>[Reader] persists the access token given to it for future uses (e.g., subsequently transmitting a result from an exercise.</li></ol>
+<p class="c9 c14"><span class="c5 c20 c37">NOTE</span></p>
+<p class="c23 c14">Particular implementations might have several implementation-defined fields. But the minimum values mentioned above are sufficient to recover launch-time state for most uses.</p>
+<p class="c14 c52"></p>
+
+<h3 class="c27 c14"><span class="c20">Flow 3: Outcome Flow</span></h3>
+<p class="c35 c14">The following Outcome Flow is relevant to Method 2 outcomes as described above in section 6.2.2; that is, delegating outcomes to a server-based Tool Provider.</p>
+
+<h4 class="c27 c9 c14"><span class="c11">Description</span></h4>
+<p class="c35 c14">This flow shows the sequence of events for an assessment result submission and its forwarding through the Reading System, Tool Provider (TP), Tool Consumer (TC), and finally to gradebook</p>
+
+<h4 class="c27 c9 c14"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 502.87px; height: 338.91px;"><img alt="" src="images/image05.png" style="width: 502.87px; height: 338.91px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="" /></span></h4>
+
+<h4 class="c27 c9 c14"><span class="c11">Steps</span></h4>
+<ol class="c34 lst-kix_742wm76c44yh-0 start" start="1"><li>[EPUB 3] Document activity link signals a result is available. A JavaScript <span class="c6 c4"><a class="c2" href="#h.nomfym85mx4l">reportScores</a></span> sends the result to the Reading System.</li><li>[Reading System] Reading System composes a POST with the access code provided to the reader on launch plus <code>activity_id</code>, <code>result value</code>, <code>maxscore</code>, and an arbitrary JSON-encoded data structure with whatever contents is desired.</li><li>[TP] Looks up the Lineitem, matched by <code>activity_id</code>.</li><li>[TP] PUTS a new result object to the result container for the specific lineitem.</li><li>[TC] stores the result into the gradebook at the lineitem column specified.</li></ol>
+
+<h3 class="c27 c14"><span class="c20">Flow 4: Embedded LTI </span><span class="c20">Launch</span></h3>
+
+<h4 class="c27 c9 c14"><span class="c11">Description</span></h4>
+<p class="c35 c14">An EPUB Publication can support embedded LTI launches. For example, a student at a learning institution can open an EPUB Publication and be reading it. The student comes upon a link to connect to publisher-supplied content, The student can directly &lsquo;Single-Sign-On&rsquo; (SSO) to the publisher site and review that content.</p>
+<p class="c35 c14">There are many ways for an implementer to create an embedded launch. In the section on <a class="c2" href="#h.1mwdl97kcl51">Reading System conformance</a> there is great detail on the norms required. The following diagrams the two alternatives:</p>
+
+<h5 class="c27 c9 c14"><span class="c76 c17">Alternative 1: Reading System hosts a Tool Consumer:</span></h5>
+<p class="c35 c14"><span class="c5 c20 c85">CAUTION</span></p>
+<p class="c23 c14">The constraints dictated in the Reading System Conformance section work fine for online Reading Systems in the same security domain as the Tool Provider, but avoid using it on lightweight, remote, or offline devices.</p>
+<p class="c35 c14"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 515.50px; height: 277.80px;"><img alt="" src="images/image02.png" style="width: 515.50px; height: 277.80px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="" /></span></p>
+
+<h4 class="c27 c9 c14"><span class="c11">Steps</span></h4>
+<p class="c35 c14">Creating a Tool Consumer (TC) in any environment, whether within an LMS or within an EPUB Publication, is fully described in the [IMS Impl Guide 1.2] or [IMS Impl Guide 2.0+].</p>
+
+<h4 class="c27 c9 c14"><span class="c11">Alternative 2: Reader delegates back to the Tool Provider:</span></h4>
+<p class="c35 c14"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 504.50px; height: 319.78px;"><img alt="" src="images/image01.png" style="width: 504.50px; height: 319.78px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="" /></span></p>
+
+<h4 class="c9 c14 c27"><span class="c11">Definition</span></h4>
+<p class="c35 c26">An embedded launch that is delegated back through a Tool Provider requires that LTI metadata be stored that defines essential configuration data for an LTI launch. Most fundamentally, the metadata includes a consumer key, secret, and endpoint to direct the launch. Other launch metadata is optional.</p>
+<p class="c35 c14">In LTI 2+ this kind of metadata is stored in a discrete resource called the LTI ToolProxy <a class="c2" href="#id.n5zvctjx12ei">[IMSToolProxy]</a>.</p>
+<p class="c35 c14">But In LTI 1 there is no such resource. Rather this metadata is stored in vendor-specific locations at the discretion of the LTI 1 implementor. </p>
+<p class="c35 c14">In the discussion below we will use the term ToolProxy informally. For LTI 2 systems it will indeed be the LTI ToolProxy. But for LTI 1 systems it will be some vendor-defined storage region that is capable of storing all essential LTI launch metadata.</p>
+
+<h4 class="c27 c9 c14"><span class="c11">Preconditions</span></h4>
+<p class="c35 c14">Certain provisioning is necessary on the Tool Provider to prepare for the Embedded LTI Launches.</p>
+<ol class="c34 lst-kix_rifrsl816su5-0 start" start="1"><li>[TP] In advance of any embedded launch it is necessary to create a ToolProxy that will be needed to support the interactions between the Inner Tool Consumer and Inner Tool Provider (InnerTC and InnerTP). A ToolProxy is a formal interface contract that provides all the information needed to performs launches, services, or support other messages between LTI-compliant partners. The ToolProxy includes endpoints, credentials, and capabilities of the interactions. It is extensively described in the LTI media type documentation for <a class="c2" href="http://www.imsglobal.org/lti/model/mediatype/application/vnd/ims/lti/v2/toolproxy+json/index.html">application/vnd.ims.lti.v2.toolproxy+json</a>.</li><li>The ToolProxy can be created manually, by a vendor-provided tool, or automatically by using an LTI 2+ Registration flow.</li><li>The created ToolProxy should be stored in the ToolProvider in a location that is accessible to the embedded launch broker.</li></ol>
+
+<h4 class="c27 c9 c14"><span class="c11">Flow</span></h4>
+<ol class="c34 lst-kix_nvx7o6qch3x-0 start" start="1"><li>[EPUB 3] Document activity link signals a launch is requested. A JavaScript <code>launchActivity</code> method invokes the Reading System with information that identifies the launch metadata.</li><li>[Reading System] Reading System composes a POST with the original TP-access-token provided to access sources. It needs to pass three values to the Tool Provider (TP):</li></ol>
+<ol class="c34 lst-kix_nvx7o6qch3x-1 start" start="1"><li>identifier of a TP-stored ToolProxy that defines the interface contract to the new &lsquo;inner&rsquo; tool being launched <a class="c2" href="#id.n5zvctjx12ei">[IMSToolProxy]</a></li><li>name of the ToolProxy resource (specific tool) to launch into </li><li>name assigned to the resource_link in the EPUB Publication. This value will be used for the resource_link_id of the &lsquo;inner&rsquo; launch <a class="c2" href="#id.rce0iiihhele">[IMSLTIImplGuide]</a> for the appropriate version.</li></ol>
+<ol class="c34 lst-kix_nvx7o6qch3x-0" start="3"><li>[TP] TP uses the access token to recover the context of the &lsquo;outer&rsquo; launch. It then starts assuming the behavior of an &lsquo;inner&rsquo; Tool Consumer. </li><li>[InnerTC] First it looks up the ToolProxy for the inner launch that was referenced by the ReadingSystem. This interface contract gives details of the inner launch requirements including new endpoints, required parameters, signing details, etc. The innerTC derives launch parameters inherited from the outer launch and creates a new parameters for the inner launch. It transforms parameters based on the LTI Mapping Parameter table (below). Finally it signs the new launch parameters and redirects to the innerTP with the LTI POST-autosubmit idiom <a class="c2" href="#id.rce0iiihhele">[IMSLTIImplGuide]</a>.</li><li>[InnerTP] Behaves as any LTI launch. It renders its tool, lets the user interact. If it performs outcomes handling (either V1 or V2 outcomes) it performs them in the usual fashion and returns them via the endpoints provided in the inner launch (from the ToolProxy).</li><li>[InnerTP] It finally redirects, using the normal launch_presentation_return_url to the ancestor TP.</li><li>[InnerTC] Any returned results from the InnerTP need to be brokered back to the TP. This involves forwarding the message to the outer consumer after re-signing it.</li><li>[TP] continues in the outer launch activity (e.g., in the EPUB Publication). </li></ol>
+
+<h4 class="c27 c9 c14"><span class="c11">LTI Mapping Parameters</span></h4>
+<p class="c35 c69 c14">The following table shows the different LTI parameter categories and how they are handled in a brokered launch situation. Note that the Mapping column indicates the forward mappings (outer-to-inner launch). The final row shows the mappings required for reverse mappings. This is typically for inner results being passed back.</p><table class="c84"><tbody><tr class="c15"><td class="c28" colspan="1" rowspan="1">
+<p class="c19 c23"><span class="c10 c17">Outer Launch</span></p></td><td class="c67" colspan="1" rowspan="1">
+<p class="c26 c43 c58 c47"><span class="c10 c17">Mapping</span></p></td><td class="c29" colspan="1" rowspan="1">
+<p class="c19 c23"><span class="c10 c17">Inner Launch</span></p></td></tr><tr class="c15"><td class="c28" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c17">User: user, role, name, email</span></p></td><td class="c67" colspan="1" rowspan="1">
+<p class="c26 c43 c58 c47">&rarr;</p></td><td class="c29" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c17">Avail parms broker depending on privacy settings</span></p></td></tr><tr class="c15"><td class="c28" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c17">Course: context_id, label, title</span></p></td><td class="c67" colspan="1" rowspan="1">
+<p class="c26 c43 c58 c47">&rarr;</p></td><td class="c29" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c17">Avail parms broker depending on privacy settings</span></p></td></tr><tr class="c15"><td class="c28" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c17">URLs to signed services</span></p></td><td class="c67" colspan="1" rowspan="1">
+<p class="c26 c43 c58 c47">&rarr;</p></td><td class="c29" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c17">Cross-domain: outer routes prepended to path</span></p></td></tr><tr class="c15"><td class="c28" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c17">tool_consumer_instance_guid</span></p>
+<p class="c19"><span class="c10 c17">(outermost launch only)</span></p></td><td class="c67" colspan="1" rowspan="1">
+<p class="c26 c43 c47 c58">&rarr;</p></td><td class="c29" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c17">sourced_tool_consumer_instance_guid</span></p></td></tr><tr class="c15"><td class="c28" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c17">invoke signed callback</span></p></td><td class="c67" colspan="1" rowspan="1">
+<p class="c26 c43 c58 c47"><span class="c10 c17">&larr;</span></p></td><td class="c29" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c17">Cross-domain: callback handler verifies and re-signs</span></p></td></tr></tbody></table>
+<p class="c35 c52 c65"></p>
+<p>The sourced_tool_consumer_instance_guid requires special comment. It is used in to disambiguate user identity when LTI launches (either direct or embedded) come into a tool from possible different sources; i.e. through different embedded launches or a parallel communication from the origin Tool Consumer to the final Tool Provider.</p>
+
+</section>
+</section>
+
+<section id="navigation">
+
+<h1>Navigation</h1>
+
+<section>
+
+<h2>Table of Contents</h2>
+<p>It is important to include a complete table of contents that fully reflects the heading hierarchy of the work, as it ensures that students are able to efficiently access any section necessary.</p>
+<p>To address this need, the REQUIRED <code>toc</code> <code>nav</code> [[ContentDocs301]] recommends the inclusion of a complete table of contents. This specification strongly encourages Authors to follow this practice and ensure that references to all sections of the EPUB Publication are included.</p>
+
+</section>
+
+<section>
+
+<h2>Brief Table of Contents</h2>
+<p>A brief table of contents represents a shortened and/or specialized version of the table of contents. For example, sublevels of the document hierarchy might be removed for clarity and/or explanatory text added to each section heading.</p>
+<p>A brief table of contents is identified by the <code>epub:type</code> attribute value &quot;<code>toc-brief</code>&quot;.</p>
+
+
+<p><span class="c16 c20">The following example shows a </span><span class="c4 c16 c20">toc-brief nav</span><span class="c16 c20">&nbsp;that provides chapter summaries.</span></p>
+
+
+
+
+<pre class="example">
+&lt;nav epub:type=&quot;toc-brief&quot; id=&quot;toc-brief&quot;&gt;
+&nbsp;&lt;h1&gt;Brief Table of contents&lt;/h1&gt;
+&nbsp;&lt;ol&gt;
+&nbsp; &nbsp;&lt;li&gt;
+&nbsp; &nbsp; &nbsp;&lt;p&gt;&lt;a href=&quot;chap1.xhtml&quot;&gt;Chapter 1 &#8210; Introduction&lt;/a&gt;&lt;/p&gt;
+&nbsp; &nbsp; &nbsp; &lt;p&gt;A brief history of the evolution of scientific thinking.&lt;/p&gt;
+&nbsp; &nbsp; &lt;/li&gt;
+&nbsp; &nbsp;&lt;li&gt;
+&nbsp; &nbsp; &nbsp;&lt;p&gt;&lt;a href=&quot;chap2.xhtml&quot;&gt;Chapter 2 &#8210; The Greeks&lt;/a&gt;&lt;/p&gt;
+&nbsp; &nbsp; &nbsp; &lt;p&gt;Archimedes, Aristotle, Euclid and Pythagoras&lt;/p&gt;
+&nbsp; &nbsp;&lt;/li&gt;
+&nbsp;&lt;/ol&gt;
+&lt;/nav&gt;</pre>
+
+
+
+
+<p>As the nature of the brief table of contents is more structurally fluid than simple lists of links, it is typically not included in the EPUB Navigation Document, as <code>nav</code> elements in that document are subject to the restrictions defined in <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#sec-xhtml-nav-def-model">2.2.4.1 The </a><span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#sec-xhtml-nav-def-model">nav</a></span><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#sec-xhtml-nav-def-model">&nbsp;element: Restrictions</a> <span class="c6 c7"><a class="c2" href="#kix.i7mkocc0itmb">[ContentDocs301]</a></span>. If the brief table of contents is included in the EPUB Navigation Document, it MUST adhere to those requirements.</p>
+
+<p class="note">If Authors only seek to include a reduced version of the <span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#sec-xhtml-nav-def-types-toc">toc nav</a></span> <span class="c6 c7"><a class="c2" href="#kix.i7mkocc0itmb">[ContentDocs301]</a></span> in the <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-spine-elem">spine</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a> (i.e., requiring no specialized content, and where only some sub-tree branches are pruned), the use of the <span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#sec-xhtml-nav-def-hidden">hidden</a></span><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#sec-xhtml-nav-def-hidden">&nbsp;attribute</a> <span class="c6 c7"><a class="c2" href="#kix.i7mkocc0itmb">[ContentDocs301]</a></span> with the <code>toc nav</code> is encouraged to avoid duplicating structures.</p>
+
+</section>
+
+<section>
+<h2>Content Lists</h2>
+<p>If an EPUB Publication includes figures, tables, and/or audio and video content, it is strongly encouraged that navigation lists for these be included in the EPUB Navigation Document, as inclusion simplifies access to the content for all Users.</p>
+<p>A figure list is identified by adding the &quot;<span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/vocab/structure/#loi&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNH-Q0mTsU-gUWKJNW90c8fcJGMtKg">loi</a></span>&quot; term to a nav element, a table list by the &quot;<span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/vocab/structure/#lot&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEhgLZn7g9HGFCddU6sKKuRu-XbaA">lot</a></span>&quot; term, and audio and video lists by the &quot;<span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/vocab/structure/#loa&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGqk2HyvUxwXHWp7FwvlpRsq4XRNA">loa</a></span>&quot; and &quot;<span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/vocab/structure/#lov&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHPX45UkxlBgPy7bxihvzklPPCRDw">lov</a></span>&quot; terms, respectively <a class="c2" href="#id.vamrleack432">[StructureVocab]</a>.</p>
+</section>
+
+<section>
+
+<h2>Page List</h2>
+<p>If <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.8hygsjhkpul0">page break markers</a> are included in the EPUB Publication, a <code>page-list nav</code> [ContentDocs301] <span class="rfc2119">&nbsp;must</span> be included in the EPUB Navigation Document.</p>
+
+<p>Likewise, if the EPUB Publication is statically paginated through the use of fixed layout pages, a <code>page-list nav</code> MUST be included, even if no print equivalent exists.</p>
+
+</section>
+</section>
+
+<section id="publication-metadata">
+
+<h1>Publication Metadata</h1>
+
+<section>
+
+<h2>Profile Identification</h2>
+<p>An EPUB Publication conforming to this specification MUST be identified as such in the package metadata of each of its Renditions by including a <span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dctype">dc:type</a></span><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dctype">&nbsp;element</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a> with the value &quot;<code>education</code>&quot;.</p>
+
+<p><span class="c16 c20">The following example shows an EPUB Publication identified as conforming to this profile.</span></p>
+
+<pre class="example">
+&lt;metadata xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
+&nbsp; &lt;dc:type&gt;education&lt;/dc:type&gt;
+&nbsp; &hellip;
+&lt;/metadata&gt;
+</pre>
+
+</section>
+
+<section>
+
+<h2>Educational Metadata</h2>
+
+<section>
+
+<h3 class="c14">Educational Properties</h3>
+<p>Educational metadata is needed to describe the suitability of content for educational settings, and to facilitate search and retrieval.</p>
+<p>The [[schema.org]] <a href="http://schema.org/CreativeWork">CreativeWork</a> type includes <a href="http://www.lrmi.net/the-specification">educational metadata properties</a> that Authors can set in the EPUB Package Document to identify the nature and suitability of the content. In addition, the [[schema.org]] <a href="http://www.schema.org/EducationalAudience">EducationalAudience</a> type can be used to express the intended audience of the work. This specification does not require the use of any of these properties.</p>
+
+<p>The usage recommendations in the following subsections are suggested based on the intended audience: schools, higher education, and professional/technical/corporate.</p>
+
+
+<p class="note">See the <span class="c6 c4"><a class="c2" href="#h.eufqqw4y93wy">audience/audienceType</a></span><a class="c2" href="#h.eufqqw4y93wy">&nbsp;property</a> for how to declare this audience.</p>
+
+
+
+<p>In some cases, a default value is assumed for educational properties when they are not specified in the metadata. Default values are indicated in the allowed values sections.</p>
+
+
+<p class="note">A mapping between schema.org and IMS metadata properties is provided in <a class="c2" href="#h.9qmzaj2iy9jn">Appendix E.1</a>.</p>
+
+
+<p>This specification does not enforce case-sensitivity on the values of these properties. If Reading Systems or other processing agents seek to utilize these properties for specialized behaviors, they <span class="c24">must</span> normalize the case of their values prior to evaluation.</p>
+</section>
+
+
+
+
+
+<section>
+  <h3>audienceType</h3>
+  <dl>
+  <dt>Recommended Values</dt>
+  <dd>( corporate | higher-ed | professional | schools )*</dd>
+  
+  <dt>Default Value</dt>
+  <dd>none</dd>
+    <dt>Usage</dt>
+    <dd>When expressing the [[schema.org]] educational metadata properties defined in this section, it is strongly RECOMMENDED that this property be set.</dd>
+    <dt>Examples</dt>
+    <dd><pre>&lt;meta property=&quot;schema:audience&quot; id=&quot;aud01&quot;&gt;schema:audience&lt;/meta&gt;
+&lt;meta property=&quot;schema:audienceType&quot; refines=&quot;#aud01&quot;&gt;schools&lt;/meta&gt;
+&lt;meta property=&quot;schema:educationalRole&quot; refines=&quot;#aud01&quot;&gt;student&lt;/meta&gt;</pre>
+    </dd>
+  </dl>
+</section>
+
+
+<section>
+  <h3>educationalRole</h3>
+  <dl>
+  <dt>Recommended Values</dt>
+  <dd>( Administrator | Mentor | Parent | Peer Tutor | Specialist | Student | Teacher | Team | Principal |  teacher/uploader | curriculum admin | school admin)?</dd>
+  <dt>Default Value</dt>
+  <dd>Student</dd>
+    <dt>Usage</dt>
+    <dd>
+Professional/Technical/Corporate: Strongly RECOMMENDED<br />
+
+Schools: Strongly RECOMMENDED<br />
+
+Higher Education: Strongly RECOMMENDED<br />
+
+</dd>
+    <dt>Examples</dt>
+    <dd><pre>&lt;meta property=&quot;schema:audience&quot; id=&quot;aud01&quot;&gt;schema:audience&lt;/meta&gt;
+&lt;meta property=&quot;schema:educationalRole&quot; refines=&quot;#aud01&quot;&gt;teacher&lt;/meta&gt;
+&lt;meta property=&quot;schema:audienceType&quot; refines=&quot;#aud01&quot;&gt;higher-ed&lt;/meta&gt;</pre>
+    </dd>
+  </dl>
+</section>
+
+
+
+<section>
+  <h3>educationalAlignment</h3>
+  <dl>
+  <dt>Recommended Values</dt>
+  <dd>
+  see [[Schema Integration Guide]] https://idpf.github.io/epub-guides/schema-org-integration/</dd>
+  <dt>Default Value</dt>
+  <dd>none</dd>
+    <dt>Usage</dt>
+    <dd>
+    
+    
+    Professional/Technical/Corporate: OPTIONAL<br />
+
+Schools: RECOMMENDED<br />
+
+Higher Education: RECOMMENDED<br />
+
+</dd>
+    <dt>Example</dt>
+    <dd><pre>&lt;meta id=&quot;ea02&quot; property=&quot;schema:educationalAlignment&quot;&gt;schema:educationalAlignment&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta refines=&quot;#ea02&quot; property=&quot;schema:alignmentType&quot;&gt;teaches&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta refines=&quot;#ea02&quot; property=&quot;schema:targetName&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp;Calculate probabilities using the Addition Rules and 
+&nbsp; &nbsp; &nbsp; &nbsp;Multiplication Rules.
+&nbsp; &nbsp;&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta refines=&quot;#ea02&quot; property=&quot;schema:targetUrl&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp;http://example.com/competency502041
+&nbsp; &nbsp;&lt;/meta&gt;</pre>
+    </dd>
+  </dl>
+</section>
+
+
+
+
+
+
+<section>
+  <h3>educationalUse</h3>
+  <dl>
+  <dt>Recommended Values</dt>
+  <dd>( Activity | Analogies | Assessment | Auditory | Brainstorming | Classifying | Comparing | Cooperative Learning | Creative Response | Demonstration | Differentiation | Discovery Learning | Discussion/Debate | Drill &amp; Practice | Experiential | Field Trip | Game | Generating hypotheses | Guided questions | Hands-on | Homework | Identify similarities &amp; differences | Inquiry | Interactive | Interview/Survey | Interviews | Introduction | Journaling | Kinesthetic | Laboratory | Lecture | Metaphors | Model &amp; Simulation | Musical | Nonlinguistic | Note taking | Peer Coaching | Peer Response | Play | Presentation | Problem Solving | Problem-based | Project | Questioning | Reading | Reciprocal teaching | Reflection | Reinforcement | Research | Review | Role Playing | Service learning | Simulations | Summarizing | Technology | Testing hypotheses | Thematic instruction | Visual/Spatial | Word association | Writing )</dd>
+  <dt>Default Value</dt>
+  <dd>none</dd>
+    <dt>Usage</dt>
+    <dd>
+Professional/Technical/Corporate: OPTIONAL<br />
+
+Schools: RECOMMENDED<br />
+
+Higher Education: RECOMMENDED
+</dd>
+    <dt>Example</dt>
+    <dd><pre>&lt;meta property="schema:educationalUse"&gt;demonstration&lt;/meta&gt;</pre>
+    </dd>
+  </dl>
+</section>
+
+<section>
+  <h3>interactivityType</h3>
+  <dl>
+  <dt>Recommended Values</dt>
+  <dd>( Active | Expositive | Mixed )?</dd>
+  <dt>Default Value</dt>
+  <dd>Active</dd>
+    <dt>Usage</dt>
+    <dd>
+Professional/Technical/Corporate: RECOMMENDED<br />
+
+Schools: RECOMMENDED<br />
+
+Higher Education: RECOMMENDED
+</dd>
+    <dt>Example</dt>
+    <dd><pre>&lt;meta property="schema:interactivityType"&gt;mixed&lt;/meta&gt;</pre>
+    </dd>
+  </dl>
+</section>
+
+
+
+
+
+
+<section>
+  <h3>isBasedOnUrl</h3>
+  <dl>
+  <dt>Recommended Values</dt>
+  <dd>( URL )*</dd>
+  <dt>Default Value</dt>
+  <dd>none</dd>
+    <dt>Usage</dt>
+    <dd>
+Professional/Technical/Corporate: RECOMMENDED<br />
+
+Schools: RECOMMENDED<br />
+
+Higher Education: RECOMMENDED
+</dd>
+    <dt>Example</dt>
+    <dd><pre>&lt;meta property="schema:isBasedOnUrl"&gt;http://www.example.com/book&lt;/meta&gt;</pre>
+    </dd>
+  </dl>
+</section>
+
+
+<section>
+  <h3>learningResourceType</h3>
+  <dl>
+  <dt>Recommended Values</dt>
+  <dd>( Activity | Assessment | Audio | Broadcast | Calculator | Discussion | E-Mail | Field Trip | Hands-on | In-Person/Speaker | Kinesthetic | Lab Material (Printed Activities, Instruments, Samples...) | Lesson Plan | Manipulative | MBL (Microcomputer Based) | Model | On-Line | Podcast | Presentation | Printed | Quiz | Robotics | Still Image | Test | Video | Wiki | Worksheet )</dd>
+  <dt>Default Value</dt>
+  <dd>none</dd>
+    <dt>Usage</dt>
+    <dd>
+Professional/Technical/Corporate: OPTIONAL<br />
+
+Schools: RECOMMENDED<br />
+
+Higher Education: RECOMMENDED
+</dd>
+    <dt>Example</dt>
+    <dd><pre>&lt;meta property="schema:learningResourceType"&gt;activity&lt;/meta&gt;</pre>
+    </dd>
+  </dl>
+</section>
+
+
+
+<section>
+  <h3>timeRequired</h3>
+  <dl>
+  <dt>Recommended Values</dt>
+  <dd>A string representing an [[ISO8601]] duration.</dd>
+  <dt>Default Value</dt>
+  <dd>none</dd>
+    <dt>Usage</dt>
+    <dd>
+Professional/Technical/Corporate: OPTIONAL<br />
+
+Schools: OPTIONAL<br />
+
+Higher Education: OPTIONAL
+</dd>
+    <dt>Example</dt>
+    <dd><pre>&lt;meta property="schema:timeRequired"&gt;P90M&lt;/meta&gt;</pre>
+    </dd>
+  </dl>
+</section>
+
+
+<section>
+  <h3>typicalAgeRange</h3>
+  <dl>
+  <dt>Recommended Values</dt>
+  <dd>( 0-2 | 2-5 | 5-8 | 8-10 | 10-12 | 12-14 | 14-16 | 16-18 | 18+ )</dd>
+  <dt>Default Value</dt>
+  <dd>none</dd>
+    <dt>Usage</dt>
+    <dd>
+Professional/Technical/Corporate: OPTIONAL<br />
+
+Schools: RECOMMENDED<br />
+
+Higher Education: RECOMMENDED
+</dd>
+    <dt>Example</dt>
+    <dd><pre>&lt;meta property="schema:typicalAgeRange"&gt;16-18&lt;/meta&gt;</pre>
+    </dd>
+  </dl>
+</section>
+
+</section>
+
+<section>
+
+<h2>Accessibility Metadata</h2>
+<p>Identifying the accessible qualities of an EPUB Publication is of vital importance in educational contexts, as the needs and preferences of students will dictate whether any given Rendition of the content will be sufficiently usable by them in their studies.</p>
+<p>The <a class="c2" href="#id.u8pfppgkhclt">[schema.org]</a> <a class="c2" href="http://schema.org/CreativeWork">CreativeWork</a> type includes <a class="c2" href="https://www.w3.org/wiki/WebSchemas/Accessibility#Accessibility_terms_.28Version_1.0.29">accessibility metadata properties</a> <a class="c2" href="#id.xz4g70opa1sd">[A11YProperties]</a> that Authors can set in the EPUB Package Document to identify the accessible qualities of a given Rendition of the EPUB Publication.</p>
+<p>Authors MUST use the <code>accessibilityFeature</code> property to identify any applicable accessibility features, repeating the property for each feature. A recommended list of values to use with this property is maintained at the <a class="c2" href="http://www.w3.org/wiki/WebSchemas/Accessibility">W3C Web Schemas wiki</a> <a class="c2" href="#id.xz4g70opa1sd">[A11YProperties]</a>.</p>
+<p>At a minimum, all EPUB Publications that conform to this profile MUST specify the value &quot;<code>tableOfContents</code>&quot;, as a complete table of contents is required as described in <a class="c2" href="#h.lmfoatmvs6h7">7.1 Table of Contents</a>. It is strongly <span class="rfc2119">recommended</span> that the other properties be specified whenever applicable. Note, however, that It is not valid to include the value &quot;<code>none</code>&quot;, as there is always at least one value that can be specified.</p>
+<p>Refer to the schema.org metadata integration guide <a class="c2" href="#kix.flpag8ity5n9">[</a><a class="c2" href="#kix.flpag8ity5n9">SchemaGuide</a><a class="c2" href="#kix.flpag8ity5n9">]</a> more information on how to include these properties in the Package Document.</p>
+<p>In distribution contexts that require the use of an ONIX record, the accessibility properties defined in <a class="c2" href="http://www.editeur.org/ONIX/book/codelists/current.html#codelist196">Code List 196</a> <a class="c2" href="#id.vgmyhvfp609r">[ONIXCodes]</a> <span class="rfc2119">should</span> be specified, as appropriate.</p>
+<p class="note">A <a class="c2" href="http://www.a11ymetadata.org/the-specification/metadata-crosswalk/">mapping table from the ONIX to schema.org frameworks</a> is available on the <a class="c2" href="http://www.a11ymetadata.org/">a11ymetadata.org</a> site.</p>
+
+</section>
+
+</section>
+
+<section id="annotations">
+
+<h1>Annotations</h1>
+<p>Reading Systems <span class="rfc2119">should</span> provide a mechanism to ingest &#8210; and support the rendering of &#8210; annotations that conform to the Open Annotation in EPUB specification <a class="c2" href="#id.n1gzfwab11vl">[OpenAnnotation]</a>.</p>
+<p>Support for exporting and synchronizing annotations is <span class="rfc2119">optional</span>.</p>
+</section>
+
+<section id="distributable-educational-objects">
+
+<h1>Distributable Educational Objects</h1>
+
+<section>
+
+<h2 class="c14 c87">Introduction</h2>
+<p><span class="c20 c61 c7">This section is informative</span></p>
+<p>In educational contexts, there is a need to distribute and consume not only complete publications, but components of publications and other objects not necessarily originating within a publication. Such &quot;distributable objects&quot; could be complete EPUB Content Documents (for example, a chapter of a book), sections of such a document (for example, an exercise or a set of learning objectives), media resources (such as a video or an interactive feature), or a combination of such resources that are not necessarily contiguous within the parent EPUB Publication.</p>
+<p>This section provides the specifications that pertain to creating Distributable Objects <a class="c2" href="#id.nw43utigbbdw">[DistributableObjects]</a> that are intended for education and which conform to this specification.</p>
+
+</section>
+
+<section>
+
+<h2>Identification</h2>
+
+<h3>10.2.1 Distributable Object Type</h3>
+<p>This specification does not define a specific type of Distributable Object to identify educational content.</p>
+<p>For general educational content distribution needs, the <code>distributable-object</code> type defined in the <a class="c2" href="#id.nw43utigbbdw">[DistributableObjects]</a> is <span class="rfc2119">recommended</span>.</p>
+<p>Other, more specific types, such as EPUB Scriptable Components <a class="c2" href="#id.7atrcwg4xy4k">[ESC]</a>, MAY be used, as appropriate (provided the Distributable Object conforms to all requirements in the respective specification).</p>
+
+
+<h3>10.2.2 Education Conformance</h3>
+<p>To simplify (re)use and integration in workflows, distribution channels and EPUB Publications, any Distributable Object whose content conforms to this profile MAY be identified as conformant. The following metadata MUST be expressed to indicate conformance:</p>
+<ol class="c34 lst-kix_fcd4b8lkflm5-0 start" start="1"><li>all requirements defined in <a class="c2" href="#h.nsjfhxwfp3rp">8. Publication Metadata</a>; and</li><li>the addition of an additional <span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dctype">dc:type</a></span><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dctype">&nbsp;element</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a> with the identifier &quot;<code>education</code>&quot;.</li></ol>
+<p>In the case of <a class="c2" href="http://www.idpf.org/epub/do/#h.fkrugm9n2us3">Packaged Objects</a> <a class="c2" href="#id.nw43utigbbdw">[DistributableObjects]</a>, this metadata is expressed in the <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-metadata-elem">package metadata</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a>. For Embedded Objects <a class="c2" href="#id.nw43utigbbdw">[DistributableObjects]</a>, the metadata is expressed in the <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#elemdef-collection-metadata">collection metadata</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a>.</p>
+
+</section>
+
+<section>
+
+<h2>Embedded Objects</h2>
+<p>As Distributable Objects are created and consumed for many purposes, it is not a requirement that all the Distributable Objects used in a Rendition be identified as conforming to this profile.</p>
+<p>If the Author is responsible for the creation of a Distributable Object in a compliant EPUB Publication, however, it is <span class="rfc2119">recommended</span> that the Distributable Object be <a class="c2" href="#h.rasm7lzcxncv">identified</a> as conforming to the profile.</p>
+<p>EPUB Publications conformant with this profile MAY embed any type of Distributable Object provided the resulting Rendition(s) remain conformant to the requirements of this specification.</p>
+</section>
+</section>
+
+<section id="sample-css" class="appendix">
+
+<h1>Sample CSS</h1>
+<p><span class="c20 c61 c7">This appendix is informative</span></p>
+<p>A <a class="c2" href="http://www.idpf.org/epub/profiles/edu/res/sample.css">sample CSS</a> file is available at <a class="c2" href="http://www.idpf.org/epub/profiles/edu/res/sample.css">http://www.idpf.org/epub/profiles/edu/res/sample.css</a></p>
+<p>The sample CSS file is provided for informational purposes only. Authors are free to use any CSS class names and styles with their documents.</p>
+
+<p class="note">The CSS profile is subject to ongoing change as part of the evolution of the profile.</p>
+
+</section>
+
+<section id="validation" class="appendix">
+
+<h1>Validation</h1>
+<p><span class="c20 c61 c7">This appendix is informative</span></p>
+
+<p class="note">Content validation services will be referenced from here in a forthcoming iteration.</p>
+</section>
+
+<section>
+
+<h1>Example Documents</h1>
+<p><span class="c20 c61 c7">This appendix is informative</span></p>
+<p class="c14 c69">For informational review of the markup patterns defined in this specification, EPUB Publications conformant to this profile are provided at the <a class="c2" href="https://github.com/IDPF/edupub/tree/master/samples/">EPUB for Education samples repository</a>.</p>
+<p class="c14 c47">These documents are subject to change, and can be added to, and removed, over time.</p>
+
+
+
+</section>
+
+<section class="appendix">
+<h1>Educational Metadata Properties</h1>
+
+<section>
+
+<h2>Recommended Vocabularies</h2>
+
+
+<p class="caution">The following sections provide draft vocabularies for use with the schema.org educational metadata properties, but this appendix is expected to be removed once formal vocabularies are published by Dublin Core. Use caution when implementing these values as they are subject to change in the final published version.</p>
+
+
+<section>
+
+<h3>educationalRole</h3>
+
+<ul><li>Administrator</li><li>Mentor</li><li>Parent</li><li>Peer Tutor</li><li>Specialist</li><li>Student</li><li>Teacher</li><li>Team</li><li>Principal</li></ul>
+
+<p>Additional values from IMS</p>
+
+<ul><li>teacher/uploader</li><li>curriculum admin</li><li>school admin</li></ul>
+
+</section>
+
+<section>
+
+<h3>alignmentType</h3>
+
+
+<ul><li>assesses</li><li>teaches</li><li>requires</li><li>textComplexity</li><li>readingLevel</li><li>educationalSubject</li><li>educationLevel</li></ul>
+
+</section>
+
+<section>
+<h3>educationalUse</h3>
+
+
+<ul><li>Activity</li><li>Analogies</li><li>Assessment</li><li>Auditory</li><li>Brainstorming</li><li>Classifying</li><li>Comparing</li><li>Cooperative Learning</li><li>Creative Response</li><li>Demonstration</li><li>Differentiation</li><li>Discovery Learning</li><li>Discussion/Debate</li><li>Drill &amp; Practice</li><li>Experiential</li><li>Field Trip</li><li>Game</li><li>Generating hypotheses</li><li>Guided questions</li><li>Hands-on</li><li>Homework</li><li>Identify similarities &amp; differences</li><li>Inquiry</li><li>Interactive</li><li>Interview/Survey</li><li>Interviews</li><li>Introduction</li><li>Journaling</li><li>Kinesthetic</li><li>Laboratory</li><li>Lecture</li><li>Metaphors</li><li>Model &amp; Simulation</li><li>Musical</li><li>Nonlinguistic</li><li>Note taking</li><li>Peer Coaching</li><li>Peer Response</li><li>Play</li><li>Presentation</li><li>Problem Solving</li><li>Problem-based</li><li>Project</li><li>Questioning</li><li>Reading</li><li>Reciprocal teaching</li><li>Reflection</li><li>Reinforcement</li><li>Research</li><li>Review</li><li>Role Playing</li><li>Service learning</li><li>Simulations</li><li>Summarizing</li><li>Technology</li><li>Testing hypotheses</li><li>Thematic instruction</li><li>Visual/Spatial</li><li>Word association</li><li>Writing</li></ul>
+</section>
+
+<section>
+
+<h3>typicalAgeRange</h3>
+
+
+<ul><li>0-2</li><li>2-5</li><li>5-8</li><li>8-10</li><li>10-12</li><li>12-14</li><li>14-16</li><li>16-18</li><li>18+</li></ul>
+
+</section>
+
+<section>
+
+<h3>interactivityType</h3>
+
+<ul><li>Active</li><li>Expositive</li><li>Mixed</li></ul>
+
+</section>
+
+<section>
+<h3>learningResourceType</h3>
+
+<ul><li>Activity</li><li>Assessment</li><li>Audio</li><li>Broadcast</li><li>Calculator</li><li>Discussion</li><li>E-Mail</li><li>Field Trip</li><li>Hands-on</li><li>In-Person/Speaker</li><li>Kinesthetic</li><li>Lab Material (Printed Activities, Instruments, Samples...)</li><li>Lesson Plan</li><li>Manipulative</li><li>MBL (Microcomputer Based)</li><li>Model</li><li>On-Line</li><li>Podcast</li><li>Presentation</li><li>Printed</li><li>Quiz</li><li>Robotics</li><li>Still Image</li><li>Test</li><li>Video</li><li>Wiki</li><li>Worksheet</li></ul>
+
+</section>
+</section>
+
+
+</section>
+
+<section class="appendix">
+
+<h1>Educational Metadata Mappings</h1>
+<p><span class="c20 c61 c7">This appendix is informative</span></p>
+
+
+<h2>E.1 IMS/Schema.org mapping</h2>
+<p><span class="c46 c37"></span></p>
+<p>The below table contains a correspondence mapping between the educational metadata terms of schema.org [[schema.org]] and IMS as described in Appendix E of [[IMSGuide]].</p>
+
+<table class="c30"><tbody><tr class="c15"><td class="c39 c60" colspan="1" rowspan="1">
+<p class="c19"><span class="c79 c5 c0">schema.org term</span></p></td><td class="c50 c60" colspan="1" rowspan="1">
+<p class="c19"><span class="c5 c0 c79">IMS term</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19 c52"><span class="c10 c5"></span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">GUID [identifier]</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">targetURL</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">Resource URL</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">name</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">Title [title]</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">description</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">Description &nbsp;[description]</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">keywords</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">Keywords [subject]</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">typicalAgeRange</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">From Grade</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">typicalAgeRange</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">To Grade</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">productID</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">ISBN [identifier]</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">learningResourceType</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">Type [type]</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">educationalAudience</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">UseType</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">educationalUse</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">UseType (repeat)</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">Thumbnail</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">Thumbnail</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">educationalAlignment</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">Mapping to Curriculum Standards</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">AlignmentObject</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">Mapping to Curriculum Standards (repeat)</span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">AlignmentType</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19 c52"><span class="c10 c5"></span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">educationalRole</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19 c52"><span class="c10 c5"></span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">timeRequired</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19 c52"><span class="c10 c5"></span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">interactivityType</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19 c52"><span class="c10 c5"></span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">useRightsURL</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19 c52"><span class="c10 c5"></span></p></td></tr><tr class="c15"><td class="c39" colspan="1" rowspan="1">
+<p class="c19"><span class="c10 c5">isBasedOnURL</span></p></td><td class="c50" colspan="1" rowspan="1">
+<p class="c19 c52"><span class="c10 c5"></span></p></td></tr></tbody></table>
+
+
+</section>
+
+<section class="appendix">
+
+<h1>Acknowledgements and Contributors</h1>
+
+
+<p>EPUB has been developed by the International Digital Publishing Forum in a cooperative effort, bringing together publishers, vendors, software developers, and experts in the relevant standards.</p>
+<p>The EPUB for Education 1.0 specification was prepared by the International Digital Publishing Forum&#39;s EPUB Working Group, operating under under the leadership of:</p>
+
+
+<ul><li>Gylling, Markus <span class="c7 c86">(International Digital Publishing Forum (IDPF))</span>&nbsp;<span class="c7 c20">Co-chair</span></li>
+<li>Stroup, David <span class="c86 c7">(Pearson)</span>&nbsp;<span class="c20 c7">Co-chair</span></li>
+
+</ul>
+<p>Active members of the working group at the time of publication were:</p>
+
+<p>IDPF Members</p>
+
+<ul>
+<li>Bailey, Brent (Elsevier) </li>
+<li>Belfanti, Paul (Pearson) </li>
+<li>Bonelli, Peppo (LIA)</li>
+<li>Brown, Nick (VitalSource)</li>
+<li>Cho, Yong-Sang (KERIS) </li>
+<li>Chow, King-Wai (ASTRI) </li>
+<li>Conboy, Garth (Google) </li>
+<li>Creasy, Keith (APH)</li>
+<li>Duga, Brady (Google)</li>
+<li>Gylling, Markus (IDPF &amp; DAISY) </li>
+<li>Harris, Zonker (VitalSource) </li>
+<li>Ikeuchi, Yasuki (ACCESS) </li>
+<li>Johnson, Rick (VitalSource) </li>
+<li>Johnson, Tam (MTM) </li>
+<li>Kaplansky, Jean (Aptara) </li>
+<li>Kasdorf, Bill (Apex) </li>
+<li>Keohane, Susann (IBM) </li>
+<li>Kerscher, George (DAISY &amp; IDPF) </li>
+<li>Kleinfeld, Sanders (O&rsquo;Reilly) </li>
+<li>Lehmann, Darryl (Imagineeringart.com) </li>
+<li>Levenson Hirschman, Yonah (Pearson) </li>
+<li>Mathis, Rock (Pearson) </li>
+<li>MURATA, Makoto (JEPA) </li>
+<li>Prabhu, John (SPi Global) </li>
+<li>Pritchett, James (Learning Ally) </li>
+<li>Schroeter, Ben (CourseSmart) </li>
+<li>Siegman, Tzviya (Wiley) </li>
+<li>Stroup, David (Pearson) </li>
+<li>Tamura, Yasu (Sophia Univ.)</li>
+<li>Tibbetts, John (IMS Global)</li>
+<li>Watanabe, Ryuichi (Sony)</li>
+<li>Weck, Daniel (Readium)</li>
+<li>Wright, Ric (Readium)</li></ul>
+
+<p>Invited Experts/Observers</p>
+
+<ul>
+<li>Garrish, Matt</li>
+<li>Hector, Chris</li>
+<li>Ko, Ben</li>
+<li>Metcalfe, David</li></ul>
+
+
+</section>
+
+
+   </body>
+</html>
