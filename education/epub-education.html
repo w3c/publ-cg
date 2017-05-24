@@ -136,20 +136,20 @@
 
 <li>All EPUB Content Documents MUST conform to the additional structure requirements in <a href="#content-structure">Content Structure</a>.</li>
 
-<li>If content structures are represented using the semantics defined in <a class="c2" href="#structural-semantics">Structural Semantics</a>, the structures MUST adhere to the usage and production requirements defined in [[!EDUStructure]].</li>
-<li>It MUST follow the requirements for navigation aids, as defined in <a class="c2" href="#h.kh6la5a1ipyu">7. Navigation</a>.</li>
-<li>It MUST include the required metadata defined in <a class="c2" href="#h.nsjfhxwfp3rp">8. Publication Metadata</a>.</li>
+<li>If content structures are represented using the semantics defined in <a href="#structural-semantics">Structural Semantics</a>, the structures MUST adhere to the usage and production requirements defined in [[!EDUStructure]].</li>
+<li>It MUST follow the requirements for navigation aids, as defined in <a href="#navigation">Navigation</a>.</li>
+<li>It MUST include the required metadata defined in <a href="#publication-metadata">Publication Metadata</a>.</li>
 </ul>
 </section>
 
 <section>
 
 <h2>Reading System Conformance</h2>
-<p>In addition to meeting the requirements specified in EPUB Publications <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a>, an <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#gloss-epub-reading-system">EPUB Reading System</a>&nbsp;conformant with this profile MUST&nbsp;meet all of the following criteria:</p>
-<ul><li>It MUST meet all requirements for Scriptable Components defined in <a class="c2" href="#kix.fdoafme2pkn7">[ESC]</a> and <a class="c2" href="#kix.fdoafme2pkn7">[ESC-PKG]</a>.</li>
-<li>It <span class="rfc2119">should</span> support multiple-Rendition Publications, as defined in <a class="c2" href="#id.6llbr2blaop5">[MultipleRenditions]</a>.</li>
-<li>It <span class="rfc2119">should</span> support the import and rendering of annotations, as defined in <a class="c2" href="#h.r3t8ugjxwx46">9. Annotations</a>.</li>
-<li>If it is integrated in <a class="c2" href="#h.t23iwaf5ct93">learning environments that use IMS LTI</a>, it MUST conform to the requirements in <a class="c2" href="#h.d8x2hsrw0h0f">6.2 IMS Learning Tools Interoperability (LTI) and Outcomes</a>. </li>
+<p>In addition to meeting the requirements specified in EPUB Publications [[Publications301]], an <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#gloss-epub-reading-system">EPUB Reading System</a>&nbsp;conformant with this profile MUST meet all of the following criteria:</p>
+<ul><li>It MUST meet all requirements for Scriptable Components defined in [[ESC]] and [[ESC-PKG]].</li>
+<li>It SHOULD support multiple-Rendition Publications, as defined in [[MultipleRenditions]].</li>
+<li>It SHOULD support the import and rendering of annotations, as defined in <a href="#annotations">Annotations</a>.</li>
+<li>If it is integrated in learning environments that use IMS LTI, it MUST conform to the requirements in <a href="#ims-learning-tools">IMS Learning Tools Interoperability (LTI) and Outcomes</a>. </li>
 </ul>
 
 
@@ -174,7 +174,7 @@
 <p>The primary focus of this version of the EPUB for Education profile is on the creation of reflowable XHTML-based EPUB Publications.</p>
 <p>Reflowable Renditions of the content are typically more accessible than pre-paginated (fixed layout) Renditions, making the content more widely accessible to a broader range of students.</p>
 <p>The semantics defined in this profile are also better suited to annotating markup structures that have not been artificially broken by page boundaries, and the requisite chunking of content into separate files that practice causes. Navigation is similarly simplified for users of assistive technologies when content structures are not broken apart by pagination.</p>
-<p>The use of reflowable Renditions is therefore strongly <span class="rfc2119">recommended</span>.</p>
+<p>The use of reflowable Renditions is therefore strongly RECOMMENDED.</p>
 
 </section>
 
@@ -186,12 +186,13 @@
 <ul>
 
 <li>be constructed from text-based XHTML or SVG Content Documents (i.e., text content is not represented as images);</li>
+
 <li>use appropriate [[HTML5]] markup for the structures being represented (i.e., avoid the generic <code>span</code> and <code>div</code> elements unless no more appropriate markup is available).</li>
 <li>retain the logical reading order of the text content (i.e., text appears in the markup in the order in which it is expected to be read);</li>
 <li>not position text over background images in such a way that it will present difficulty reading (e.g., poor contrast).</li>
 </ul>
 <p>These requirements represent the minimum threshold to be conformant with this profile. They do not replace any local or national accessibility requirements an Author has to meet in order to sell and distribute their content for educational use.</p>
-<p>Note that due to the paginated nature of fixed layouts, Fixed-Layout Publications are exempt from the requirements in <a class="c2" href="#h.selsibtnscc8">4. Content Structure</a>.</p>
+<p>Note that due to the paginated nature of fixed layouts, Fixed-Layout Publications are exempt from the requirements in <a href="#content-structure">Content Structure</a>.</p>
 
 </section>
 <section id="multiple-rendition-publications">
@@ -222,9 +223,9 @@
 <section>
 
 <h4>Publication</h4>
-<p>A teacher&#39;s edition <span class="c24">must</span> be identified as such in the package metadata by including a <span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dctype">dc:type</a></span><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dctype">&nbsp;element</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a> with the value &quot;<code>teacher-edition</code>&quot;.</p>
+<p>A teacher&#39;s edition MUST be identified as such in the package metadata by including a <code>dc:type</code> element [[!Publications301]] with the value &quot;<code>teacher-edition</code>&quot;.</p>
 
-<p><span class="c16 c20">The following example shows an EPUB Publication identified as a teacher&#39;s edition.</span></p>
+<p>The following example shows an EPUB Publication identified as a teacher&#39;s edition.</p>
 
 
 <pre class="example">
@@ -235,9 +236,9 @@
 </pre>
 
 
-<p>A teacher&#39;s guide <span class="c24">must</span> be identified with the value &quot;<code>teacher-guide</code>&quot;.</p>
+<p>A teacher&#39;s guide MUST be identified with the value &quot;<code>teacher-guide</code>&quot;.</p>
 
-<p><span class="c16 c20">The following example shows an EPUB Publication identified as a teacher&#39;s guide.</span></p>
+<p>The following example shows an EPUB Publication identified as a teacher&#39;s guide.</p>
 
 <pre class="example">
 &lt;metadata xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
@@ -246,9 +247,9 @@
 &lt;/metadata&gt;
 </pre>
 
-<p>Teacher&#39;s guides and editions are also identified as compliant with the EPUB for Education profile as defined in <a class="c2" href="#h.rasm7lzcxncv">8.1 Profile Identification</a>, so <span class="c24">must</span> conform to all requirements in this specification.</p>
+<p>Teacher&#39;s guides and editions are also identified as compliant with the EPUB for Education profile as defined in <a href="#profile-identification">Profile Identification</a>, so MUST conform to all requirements in this specification.</p>
 
-<p><span class="c16 c20">The following example shows both the edpub and a teacher&#39;s guide identifiers.</span></p>
+<p>The following example shows both the edpub and a teacher&#39;s guide identifiers.</p>
 
 <pre class="example">
 &lt;metadata xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
@@ -261,10 +262,10 @@
 </section>
 
 <section>
-<h4 class="c14">Student Edition</h4>
-<p>As a teacher&#39;s edition represents an annotated version of a student edition, it <span class="c24">should</span> identify the corresponding student edition in a <code>dc:source</code> element:</p>
+<h4>Student Edition</h4>
+<p>As a teacher&#39;s edition represents an annotated version of a student edition, it SHOULD identify the corresponding student edition in a <code>dc:source</code> element:</p>
 
-<p><span class="c16 c20">The following example shows a teacher edition that includes the source student edition identifier. </span></p>
+<p>The following example shows a teacher edition that includes the source student edition identifier.</p>
 
 <pre class="example">
 &lt;metadata xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
@@ -361,11 +362,13 @@
 <section>
 
 <h2>Sectioning</h2>
-<p>The <code>section</code> element MUST be used only to group sections of content that contribute to the structural hierarchy (e.g., that could appear in the table of contents). Such content is contained in <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-itemref-elem">linear spine items</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a>; secondary non-linear content is not subject to the requirements in this section.</p>
+<p>The <code>section</code> element MUST be used only to group sections of content that contribute to the structural hierarchy (e.g., that could appear in the table of contents). Such content is contained in <code>linear spine items</code> [[Publications301]]; secondary non-linear content is not subject to the requirements in this section.</p>
 <p>If the root of an XHTML Content Document consists of a single section of content, a <code>section</code> wrapper MAY be omitted (i.e., the <code>body</code> represents the implied section). Any subsections of the root section MUST be wrapped in <code>section</code> tags.</p>
-<p>Each section <span class="rfc2119">m</span><span class="rfc2119">ust</span> have a heading expressed either in an <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.j7d96djjppm1">ranked heading element</a> or an <a class="c2" href="#id.5tpdu658uluu">[ARIA]</a> <span class="c4 c18 c57"><a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.il4hfay4o68k">aria-label</a></span><a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.il4hfay4o68k">&nbsp;attribute</a>. <span class="c36">Sections </span><span class="rfc2119">must not</span><span class="c36">&nbsp;have more than one heading element, but </span>MAY<span class="c36">&nbsp;include both a heading element and an </span><code>aria-label</code><span class="c36">. If a section includes both a label and a heading, the value of the </span><span class="c4 c18 c57"><a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.il4hfay4o68k">aria-label</a></span><span class="c36">&nbsp;attribute </span><span class="rfc2119">must not</span><span class="c36">&nbsp;be the same as the heading (use the </span><a class="c2" href="#id.5tpdu658uluu">[ARIA]</a> <span class="c4 c18 c57"><a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.il4hfay4o68k">aria-label</a></span><span class="c4 c18 c57"><a class="c2" href="https://docs.google.com/document/d/14r4pzc6D4XPHoiyPXa5KWn1zOsplG8ZliC4jRS7b9Yo/edit#bookmark=kix.il4hfay4o68k">ledby</a></span><span class="c36">&nbsp;attribute to explicitly link a heading to its section).</span></p>
-<p>A <code>section</code> can be divided into subsections by nesting the <code>section</code> element, but once the first subsection is introduced only additional subsections are allowed to follow it (i.e., only another <code>section</code> element can follow the end of a subsection). This requirement also applies to the use of the <code>section</code> elements for subsectioning in any other <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <a class="c2" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">sectioning content</a>.</p>
-<p><span class="c5 c20">The following example shows how subsections must be contiguous.</span></p>
+<p>Each section MUST have a heading expressed either in an [[HTML5]] <code>ranked heading element</code> or an [[ARIA]] <code>aria-label</code> attribute. Sections MUST NOT have more than one heading element, but MAY include both a heading element and an <code>aria-label</code>. If a section includes both a label and a heading, the value of the <code>aria-label</code> attribute MUST NOT be the same as the heading (use the [[ARIA]] <code>aria-labelledby</code> attribute to explicitly link a heading to its section).</p>
+
+<p>A <code>section</code> can be divided into subsections by nesting the <code>section</code> element, but once the first subsection is introduced only additional subsections are allowed to follow it (i.e., only another <code>section</code> element can follow the end of a subsection). This requirement also applies to the use of the <code>section</code> elements for subsectioning in any other [[HTML5]] <code>sectioning content</code>.</p>
+
+<p>The following example shows how subsections must be contiguous.</p>
 
 <pre class="example">
 &lt;section&gt;
@@ -386,17 +389,21 @@
 
 
 
-<p class="c35 c14">For article-based EPUB Publications, the <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <span class="c6 c4"><a class="c2" href="http://www.w3.org/TR/html5/sections.html#the-article-element">article</a></span><a class="c2" href="http://www.w3.org/TR/html5/sections.html#the-article-element">&nbsp;element</a> MAY be used in place of the <code>section</code> element to group each article. The use of the element MUST follow the requirements defined in this section, including the use of <code>section</code> elements to represent the internal hierarchy.</p>
+<p>For article-based EPUB Publications, the [[HTML5]] <code>article</code> element MAY be used in place of the <code>section</code> element to group each article. The use of the element MUST follow the requirements defined in this section, including the use of <code>section</code> elements to represent the internal hierarchy.</p>
 </section>
 
 <section>
 
 <h2 class="c14">Titles and Headings</h2>
 
-<h3>4.3.1 Titled Sections</h3>
-<p><a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <a class="c2" href="http://www.w3.org/TR/html5/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">heading elements</a> <span class="c7 c24">must</span> be used to provide headings only for <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <a class="c2" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">sectioning content</a> (including the <code>body</code> element).</p>
-<p>When using a heading element for a section, the rank MUST reflect the nesting of that section within the document hierarchy (as noted in <a class="c2" href="http://www.w3.org/html/wg/drafts/html/master/sections.html#headings-and-sections">4.3.10 Headings and sections</a> <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a>). For example, a top-level section will have an <code>h1</code> heading, child sections of it will have <code>h2</code> headings, and so on. Note that untitled sections are included when determining the current heading rank (see <a class="c2" href="#h.ewrcwqo5it7l">4.3.2 Untitled Sections</a> for more information).</p>
-<p>The heading does not have to be the first element of the section, and MAY be included inside a <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> <code>header</code> element. If the section also includes a subtitle in a separate element, both the heading and subtitle MUST be enclosed in a <code>header</code>.</p>
+
+<section>
+
+<h3>Titled Sections</h3>
+<p>[[HTML5]] <code>heading elements</code> MUST be used to provide headings only for [[HTML5]] <code>sectioning content</code> (including the <code>body</code> element).</p>
+
+<p>When using a heading element for a section, the rank MUST reflect the nesting of that section within the document hierarchy (as noted in <a class="c2" href="http://www.w3.org/html/wg/drafts/html/master/sections.html#headings-and-sections">4.3.10 Headings and sections</a> [[HTML5]]). For example, a top-level section will have an <code>h1</code> heading, child sections of it will have <code>h2</code> headings, and so on. Note that untitled sections are included when determining the current heading rank (see <a href="#untitled-sections">Untitled Sections</a> for more information).</p>
+<p>The heading does not have to be the first element of the section, and MAY be included inside a [[HTML5]] <code>header</code> element. If the section also includes a subtitle in a separate element, both the heading and subtitle MUST be enclosed in a <code>header</code>.</p>
 <pre class="example">
 &lt;header&gt;
 &nbsp; &lt;h1&gt;Chapter 1. The Battle&lt;/h1&gt;
@@ -405,13 +412,15 @@
 </pre>
 
 
-<p class="note">See <a class="c2" href="http://www.w3.org/TR/html5/common-idioms.html#sub-head">4.12.1 Subheadings, subtitles, alternative titles and taglines</a> <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a> for additional markup patterns for subtitles.</p>
+<p class="note">See <a class="c2" href="http://www.w3.org/TR/html5/common-idioms.html#sub-head">4.12.1 Subheadings, subtitles, alternative titles and taglines</a> [[HTML5]] for additional markup patterns for subtitles.</p>
 <p>The application of headings MUST reflect the hierarchy regardless of how the content has been chunked for distribution (i.e., it is not necessary that the first section in each file begin with an <code>h1</code>).</p>
-<p>The <a class="c2" href="#id.5tpdu658uluu">[ARIA]</a> <code>aria-label</code> attribute <span class="rfc2119">must not</span> be included on a <code>section</code> if it provides the same text already available in a ranked heading, as it can lead to duplicate announcement of the heading to users of assistive technologies.</p>
+<p>The [[ARIA]] <code>aria-label</code> attribute MUST NOT be included on a <code>section</code> if it provides the same text already available in a ranked heading, as it can lead to duplicate announcement of the heading to users of assistive technologies.</p>
 
+</section>
+<section id="untitled-sections">
 
-<h3 class="c14">4.3.2 Untitled Sections</h3>
-<p>If a section of content in the document hierarchy does not have an explicit heading (e.g., an untitled introduction) &#8210; or sectioning is used to group significant content, such as learning objectives, that a User using an AT would need access to &#8210; the <a class="c2" href="#id.5tpdu658uluu">[ARIA]</a> <code>aria-label</code> attribute MUST be used to provide an accessible name.</p>
+<h3 class="c14">Untitled Sections</h3>
+<p>If a section of content in the document hierarchy does not have an explicit heading (e.g., an untitled introduction) &#8210; or sectioning is used to group significant content, such as learning objectives, that a User using an AT would need access to &#8210; the [[ARIA]] <code>aria-label</code> attribute MUST be used to provide an accessible name.</p>
 <p>Adding this attribute allows users of assistive technologies to navigate to the section despite the lack of a heading, in addition to giving meaningful context.</p>
 <p>Despite the lack of an explicit ranked heading, untitled sections are still part of the document&#39;s structural hierarchy and affect the heading rank of any child sections they contain. For example, the untitled <code>section</code> in the following example counts as the second level in the document outline, so the next ranked heading is an <code>h3</code> even though no <code>h2</code> appears in the markup:</p>
 
@@ -425,15 +434,22 @@
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;1.2 Learning Objectives List&lt;/h3&gt;
 </pre>
 
+</section>
 
-<h3 class="c14">4.3.3 Deep Nesting</h3>
+<section>
+
+
+<h3>Deep Nesting</h3>
 <p>When the document hierarchy exceeds six levels of nesting, re-use the <code>h6</code> element for the seventh nesting level and deeper. Avoid deep nesting of content, if possible, as the flattened structure below the sixth heading level impacts on the ability of users of assistive technologies (AT) to move through the document without repeatedly returning to the table of contents.</p>
 <p>Do not use heading elements where the heading does not reflect the document hierarchy, as this use will impact on movement by AT users (e.g., inside figure captions).</p>
 
+</section>
+<section>
 
-<h3 class="c14">4.3.4 Structured Components</h3>
+
+<h3>Structured Components</h3>
 <p>When <code>aside</code>, <code>article</code> and <code>nav</code> elements with headings are included in a section, the heading rank MUST start one level lower than the containing section (e.g., if a <code>section</code> has an <code>h3</code> heading, an <code>aside</code> within it will start with an <code>h4</code> heading).</p>
-
+</section>
 </section>
 
 <section id="structural-semantics">
@@ -451,7 +467,7 @@
 
 
 
-<p class="c43 c14 c63">Publishers are strongly <span class="rfc2119">recommended</span> to represent all publication structures using the markup and terms defined in <a class="c2" href="#id.lv8talqwbs2b">[EDUStructure]</a>. The use of other terms from <a class="c2" href="#id.vamrleack432">[StructureVocab]</a> is <span class="rfc2119">optional</span>, as is the use of custom terms.</p>
+<p class="c43 c14 c63">Publishers are strongly RECOMMENDED to represent all publication structures using the markup and terms defined in <a class="c2" href="#id.lv8talqwbs2b">[EDUStructure]</a>. The use of other terms from <a class="c2" href="#id.vamrleack432">[StructureVocab]</a> is <span class="rfc2119">optional</span>, as is the use of custom terms.</p>
 <p>Following is a categorized list of the terms available, with links to their definitions. Note that categorization does not imply usage restrictions, particularly in the case of sectioning terms.</p>
 <ul><li><span class="c0">Sectioning</span>:</li></ul>
 <ul><li><span class="c5 c20">Front Matter</span><span class="c5">: </span><a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.g7489d7eoobp">frontmatter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.11hc3p4vtjqt">abstract</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.rcj0r39o5fsk">acknowledgments</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.rxeqewn0ykof">copyright-page</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.635pm8lyamq7">dedication</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ly3qymm0so49">foreword</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.dear7l19ertm">halftitlepage</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.1d37ueg8h1c6">introduction</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.puiknct3uwkf">preface</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.7dkwhofp4zkd">seriespage</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.gozf8zpd04mh">titlepage</a></li><li><span class="c5 c20">Body Matter</span><span class="c5">: </span><a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.g8vpodrahrun">bodymatter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.2e5rsv0jrwp">chapter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.2upv7zvahvv4">part</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.rk5l4i5pwnhm">qna</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.4jf9zco7lce0">volume</a></li><li><span class="c5 c20">Back Matter</span><span class="c5">: </span><a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.lerv6n86bkg3">backmatter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ingmn7jwc1du">afterword</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.4aq3uuxvlh3j">appendix</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.bkhs6aq7a0n8">colophon</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.bkb90b8siryk">conclusion</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.z5n37kwgxf2">epigraph</a></li></ul>
@@ -461,7 +477,7 @@
 
 <section>
 <h2>Semantic Enrichment</h2>
-<p>The use of RDFa Lite <a class="c2" href="#id.qkmm9vck7s3i">[RDFaLite]</a> is <span class="rfc2119">recommended</span> for enriching content.</p>
+<p>The use of RDFa Lite <a class="c2" href="#id.qkmm9vck7s3i">[RDFaLite]</a> is RECOMMENDED for enriching content.</p>
 <p>Examples of content enrichment in this specification use RDFa Lite syntax.</p>
 </section>
 
@@ -528,7 +544,7 @@
 <ul><li>If&nbsp;content is required to report its Outcomes, then it <span class="c5 c38 c7">MUST</span>&nbsp;conform to the&nbsp;requirements for Outcomes Reporting defined in <span class="c6 c7"><a class="c2" href="https://docs.google.com/document/d/1b38M2Uhto6wOoLDI0Aesa1XYoDuwjKLl1MOwuhVgEpU/edit#heading=h.8uocezqe6y1x">6.3.2.2 Content Structuring</a></span>.</li></ul>
 
 <h3 class="c35 c14"><span class="c20 c0 c7">6.2.2 Reading System </span><span class="c20 c0 c7">Conformance</span></h3>
-<p class="c35 c14">An <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#gloss-epub-reading-system">EPUB Reading System</a> <span class="c24">must</span> meet all of the following criteria:</p>
+<p class="c35 c14">An <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#gloss-epub-reading-system">EPUB Reading System</a> MUST meet all of the following criteria:</p>
 <ul><li>If it supports offline persistence to enable the local storage and delayed reporting of the Rich Outcomes data, support <span class="c5 c38 c7">MUST</span>&nbsp;be transparent to the operation of the content.</li><li>To support Outcomes Reporting, it <span class="c5 c38 c7">MUST</span>&nbsp;support one of two mechanisms: 1) act as Tool Provider, or&nbsp;2) delegate the Outcomes to the Reading Eco-system.&nbsp;</li><li>If the Reading System follows method (1), i.e., an internal Tool Consumer, then it <span class="c5 c38 c7">MUST</span>&nbsp;be certified as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a> or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a> Tool Consumer. </li><li>If the Reading System follows method (2), delegation to the TP, then it <span class="c5 c38 c7">MUST</span>&nbsp;support educational Outcomes APIs specified in <span class="c6 c7"><a class="c2" href="#h.dxf1o3gw16x0">section</a></span><span class="c6 c7"><a class="c2" href="#h.dxf1o3gw16x0">&nbsp;6.3.3</a></span>.<br /><span class="c5 c20 c37">NOTE<br /></span><a class="c2" href="#h.3y3oarej27ih">LTI Link Conformance</a>, discussed below, describes a method to do launches of other LTI tools (i.e., to &ldquo;Other LTI compliant Tool Provider&rdquo; as shown in the context diagram in <a class="c2" href="#h.hizgufe0qvyi">section 6.1</a>). These launches are nested within the original launch which opened the book. We call the original launch the &lsquo;outer launch&rsquo; in descriptions below. We call in the embedded launch in an EPUB Publication the &lsquo;inner launch&rsquo;.</li><li>To support Embedded LTI Launch&nbsp;it <span class="c5 c38 c7">MUST</span>&nbsp;support one of two mechanisms: 1) the Reading System hosting its own Tool Consumer, or 2) a message protocol to delegate the Embedded Launch to the Reading Eco-system.&nbsp;Method 1 only applies to the case where the Reading System is a web app.</li><li>If the Reading System follows method (1), i.e., an internal Tool Consumer, then it <span class="c5 c38 c7">MUST</span>&nbsp;be certified as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a> or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a> Tool Consumer. </li><li>If the Reading System follows method (2), delegation to the TP, then it <span class="c5 c38 c7">MUST</span>&nbsp;support LTI Link Content markup defined in <span class="c6 c7"><a class="c2" href="#h.3y3oarej27ih">6.4 LTI Links</a></span>.</li><li>If the Reading System acts as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a>&nbsp;or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a>&nbsp;Tool Consumer, for any of the purposes stated above, it <span class="c5 c38 c7">MUST </span>support appropriate parameter mapping from the outer launch. That is, parameters relating to user, course, and other supporting values <span class="c5 c38 c7">MUST</span> inherit from the original book launch.</li><li>If the Reading System acts as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a>&nbsp;or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a>&nbsp;Tool Consumer, it <span class="c5 c38 c7">MUST</span>&nbsp;enable the administration and protection of the &lsquo;Secrets&rsquo; and &lsquo;Keys&rsquo; required by the Tools that can be launched from the Reading System. </li></ul>
 
 <p class="note">These conformance constraints above boil down to a basic message: A Tool Consumer might have many more demands on it than a Reading System. It needs to host and protect many sensitive credentials. It needs to keep interface contracts on possibly many Tool Provider interface contracts. And it must be available if, for example, an Outcome Result message comes into it in the middle of the night for entry into a gradebook. In general, if an implementer&rsquo;s Reading System is an offline- or remote- device, it is safer and more practical to delegate the embedded launch back to the Tool Provider. If, on the other hand, the reader is a server-based, online reader and is in the same security domain as the Tool Provider, then a Reader-based Tool Consumer is fine.</p>
@@ -548,7 +564,7 @@
 <ol class="c34 lst-kix_bjycmpwvoflm-0 start" start="1"><li>a lineitem identifies the type of the particular activity. For example, there may be exercises at the end of a chapter in an EPUB Publication. A particular lineitem might refer to question 3 of Chapter 17 of the text. The lineitem describes the particular question; e.g., &lsquo;determine the surface area of regular polygons&rsquo;.</li><li>an LISResult identifies a score that a particular student generates for the associated lineitem. Continuing the example above, a result for the lineitem above might identify user &lsquo;jsmith&rsquo; and assign a score of &lsquo;0.76&rsquo;.</li></ol>
 
 <h3 class="c27 c14"><span class="c20">6.3.2 Outcomes Reporting</span></h3>
-<p class="c35 c14"><span class="c8">To enable an EPUB Publication to report outcomes via LTI, all learning activities </span><span class="c5 c38 c7">MUST</span><span class="c8">&nbsp;be enclosed by </span><a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a><span class="c8">&nbsp;</span><a class="c2" href="https://www.w3.org/TR/html5/rendering.html#flow-content-0">flow content</a><span class="c8">&nbsp;</span><span class="c8">that carries an </span><span class="c4 c5 c18">epub:type</span> attribute with the value &quot;<span class="c4 c5 c18">assessment</span>&quot;<span class="c8">. In addition, each assessment </span><span class="c5 c38 c7">MUST </span><span class="c8">have an </span><code>id </code><span class="c8">attribute with a value that is unique with </span>the scope of the entire EPUB Publication. The value of this attribute will be used to identify the assessment when submitting outcome data.</p>
+<p class="c35 c14"><span class="c8">To enable an EPUB Publication to report outcomes via LTI, all learning activities </span><span class="c5 c38 c7">MUST</span><span class="c8">&nbsp;be enclosed by </span>[[HTML5]]<span class="c8">&nbsp;</span><a class="c2" href="https://www.w3.org/TR/html5/rendering.html#flow-content-0">flow content</a><span class="c8">&nbsp;</span><span class="c8">that carries an </span><span class="c4 c5 c18">epub:type</span> attribute with the value &quot;<span class="c4 c5 c18">assessment</span>&quot;<span class="c8">. In addition, each assessment </span><span class="c5 c38 c7">MUST </span><span class="c8">have an </span><code>id </code><span class="c8">attribute with a value that is unique with </span>the scope of the entire EPUB Publication. The value of this attribute will be used to identify the assessment when submitting outcome data.</p>
 <pre class="example">
 &lt;div epub:type=&quot;assessment&quot; id=&quot;unique_id&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;...&lt;/div&gt;
@@ -556,7 +572,7 @@
 </pre>
 
 <p class="c35 c14">Each assessment marked up in this fashion will be able to report scores using the JavaScript APIs documented in <a class="c2" href="#h.dxf1o3gw16x0">section 6.3.3</a>. When adding outcome support to an assessment, there are no additional JavaScript files that must be included in the EPUB Publication.</p>
-<p class="c35 c14">For outcomes to function and be identified inside of the Reading System and Tool Provider, an <a class="c2" href="#kix.h4sam7x3urox">[HTML5]</a><span class="c8">&nbsp;</span><code>nav</code> element with with the <code>epub:type</code> attribute value &quot;<code>assessment</code><code>s</code>&quot; <span class="c5 c38 c7">MUST</span> be included in the EPUB Navigation Document.</p>
+<p class="c35 c14">For outcomes to function and be identified inside of the Reading System and Tool Provider, an [[HTML5]]<span class="c8">&nbsp;</span><code>nav</code> element with with the <code>epub:type</code> attribute value &quot;<code>assessment</code><code>s</code>&quot; <span class="c5 c38 c7">MUST</span> be included in the EPUB Navigation Document.</p>
 <p class="c35 c14">The link nodes within the assessment list <span class="c5 c38 c7">MUST</span> contain the following information:</p>
 <ul><li><code>href:</code> a deep link to an assessment within the EPUB Publication. The link <span class="c5 c38 c7">MUST</span> point directly to an element that carries an <code>epub:type</code> attribute with the value &quot;<code>assessment</code>&quot; by using the value of its unique <code>id</code>. </li></ul>
 <ul class="c34 lst-kix_s2puvsrh29n7-0"><li><code>data-maxscore</code>: Max possible score for the activity.</li><li><code>data-graded</code>: &quot;<code>1</code>&quot; if graded. &quot;<code>0</code>&quot; if not graded.</li><li>Each activity <span class="c5 c38 c7">MUST</span> have its own list item in the <code>nav</code> element:</li></ul>
@@ -874,7 +890,7 @@
 
 <h1>Publication Metadata</h1>
 
-<section>
+<section id="profile-identification">
 
 <h2>Profile Identification</h2>
 <p>An EPUB Publication conforming to this specification MUST be identified as such in the package metadata of each of its Renditions by including a <span class="c6 c4"><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dctype">dc:type</a></span><a class="c2" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-dctype">&nbsp;element</a> <a class="c2" href="#kix.gcfl4rhpnwhm">[Publications301]</a> with the value &quot;<code>education</code>&quot;.</p>
@@ -913,7 +929,7 @@
 <p class="note">A mapping between schema.org and IMS metadata properties is provided in <a class="c2" href="#h.9qmzaj2iy9jn">Appendix E.1</a>.</p>
 
 
-<p>This specification does not enforce case-sensitivity on the values of these properties. If Reading Systems or other processing agents seek to utilize these properties for specialized behaviors, they <span class="c24">must</span> normalize the case of their values prior to evaluation.</p>
+<p>This specification does not enforce case-sensitivity on the values of these properties. If Reading Systems or other processing agents seek to utilize these properties for specialized behaviors, they MUST normalize the case of their values prior to evaluation.</p>
 </section>
 
 
@@ -1146,9 +1162,9 @@ Higher Education: RECOMMENDED
 <p>Identifying the accessible qualities of an EPUB Publication is of vital importance in educational contexts, as the needs and preferences of students will dictate whether any given Rendition of the content will be sufficiently usable by them in their studies.</p>
 <p>The <a class="c2" href="#id.u8pfppgkhclt">[schema.org]</a> <a class="c2" href="http://schema.org/CreativeWork">CreativeWork</a> type includes <a class="c2" href="https://www.w3.org/wiki/WebSchemas/Accessibility#Accessibility_terms_.28Version_1.0.29">accessibility metadata properties</a> <a class="c2" href="#id.xz4g70opa1sd">[A11YProperties]</a> that Authors can set in the EPUB Package Document to identify the accessible qualities of a given Rendition of the EPUB Publication.</p>
 <p>Authors MUST use the <code>accessibilityFeature</code> property to identify any applicable accessibility features, repeating the property for each feature. A recommended list of values to use with this property is maintained at the <a class="c2" href="http://www.w3.org/wiki/WebSchemas/Accessibility">W3C Web Schemas wiki</a> <a class="c2" href="#id.xz4g70opa1sd">[A11YProperties]</a>.</p>
-<p>At a minimum, all EPUB Publications that conform to this profile MUST specify the value &quot;<code>tableOfContents</code>&quot;, as a complete table of contents is required as described in <a class="c2" href="#h.lmfoatmvs6h7">7.1 Table of Contents</a>. It is strongly <span class="rfc2119">recommended</span> that the other properties be specified whenever applicable. Note, however, that It is not valid to include the value &quot;<code>none</code>&quot;, as there is always at least one value that can be specified.</p>
+<p>At a minimum, all EPUB Publications that conform to this profile MUST specify the value &quot;<code>tableOfContents</code>&quot;, as a complete table of contents is required as described in <a class="c2" href="#h.lmfoatmvs6h7">7.1 Table of Contents</a>. It is strongly RECOMMENDED that the other properties be specified whenever applicable. Note, however, that It is not valid to include the value &quot;<code>none</code>&quot;, as there is always at least one value that can be specified.</p>
 <p>Refer to the schema.org metadata integration guide <a class="c2" href="#kix.flpag8ity5n9">[</a><a class="c2" href="#kix.flpag8ity5n9">SchemaGuide</a><a class="c2" href="#kix.flpag8ity5n9">]</a> more information on how to include these properties in the Package Document.</p>
-<p>In distribution contexts that require the use of an ONIX record, the accessibility properties defined in <a class="c2" href="http://www.editeur.org/ONIX/book/codelists/current.html#codelist196">Code List 196</a> <a class="c2" href="#id.vgmyhvfp609r">[ONIXCodes]</a> <span class="rfc2119">should</span> be specified, as appropriate.</p>
+<p>In distribution contexts that require the use of an ONIX record, the accessibility properties defined in <a class="c2" href="http://www.editeur.org/ONIX/book/codelists/current.html#codelist196">Code List 196</a> <a class="c2" href="#id.vgmyhvfp609r">[ONIXCodes]</a> SHOULD be specified, as appropriate.</p>
 <p class="note">A <a class="c2" href="http://www.a11ymetadata.org/the-specification/metadata-crosswalk/">mapping table from the ONIX to schema.org frameworks</a> is available on the <a class="c2" href="http://www.a11ymetadata.org/">a11ymetadata.org</a> site.</p>
 
 </section>
@@ -1158,7 +1174,7 @@ Higher Education: RECOMMENDED
 <section id="annotations">
 
 <h1>Annotations</h1>
-<p>Reading Systems <span class="rfc2119">should</span> provide a mechanism to ingest &#8210; and support the rendering of &#8210; annotations that conform to the Open Annotation in EPUB specification <a class="c2" href="#id.n1gzfwab11vl">[OpenAnnotation]</a>.</p>
+<p>Reading Systems SHOULD provide a mechanism to ingest &#8210; and support the rendering of &#8210; annotations that conform to the Open Annotation in EPUB specification <a class="c2" href="#id.n1gzfwab11vl">[OpenAnnotation]</a>.</p>
 <p>Support for exporting and synchronizing annotations is <span class="rfc2119">optional</span>.</p>
 </section>
 
@@ -1181,7 +1197,7 @@ Higher Education: RECOMMENDED
 
 <h3>10.2.1 Distributable Object Type</h3>
 <p>This specification does not define a specific type of Distributable Object to identify educational content.</p>
-<p>For general educational content distribution needs, the <code>distributable-object</code> type defined in the <a class="c2" href="#id.nw43utigbbdw">[DistributableObjects]</a> is <span class="rfc2119">recommended</span>.</p>
+<p>For general educational content distribution needs, the <code>distributable-object</code> type defined in the <a class="c2" href="#id.nw43utigbbdw">[DistributableObjects]</a> is RECOMMENDED.</p>
 <p>Other, more specific types, such as EPUB Scriptable Components <a class="c2" href="#id.7atrcwg4xy4k">[ESC]</a>, MAY be used, as appropriate (provided the Distributable Object conforms to all requirements in the respective specification).</p>
 
 
@@ -1196,7 +1212,7 @@ Higher Education: RECOMMENDED
 
 <h2>Embedded Objects</h2>
 <p>As Distributable Objects are created and consumed for many purposes, it is not a requirement that all the Distributable Objects used in a Rendition be identified as conforming to this profile.</p>
-<p>If the Author is responsible for the creation of a Distributable Object in a compliant EPUB Publication, however, it is <span class="rfc2119">recommended</span> that the Distributable Object be <a class="c2" href="#h.rasm7lzcxncv">identified</a> as conforming to the profile.</p>
+<p>If the Author is responsible for the creation of a Distributable Object in a compliant EPUB Publication, however, it is RECOMMENDED that the Distributable Object be <a class="c2" href="#h.rasm7lzcxncv">identified</a> as conforming to the profile.</p>
 <p>EPUB Publications conformant with this profile MAY embed any type of Distributable Object provided the resulting Rendition(s) remain conformant to the requirements of this specification.</p>
 </section>
 </section>
