@@ -8,6 +8,7 @@ Please see our [wiki](https://github.com/w3c/pub-cg/wiki) for information on par
 
 ## Useful links
 
+ - [EPUB for Education Draft](https://w3c.github.io/publ-cg/education/epub-education.html)
  - [EPUB 3 Community Group Home Page](https://www.w3.org/community/epub3/)
  - [EPUB 3 Community Group Charter](https://www.w3.org/2017/02/EPUB3CGcharter)
  - [EPUB 3 Community Group Wiki](https://github.com/w3c/pub-cg/wiki)
@@ -16,7 +17,7 @@ Please see our [wiki](https://github.com/w3c/pub-cg/wiki) for information on par
 
 ---
 
-HTML documents on this repository’s master branch can also be displayed in a browser via the `https://w3c.github.io/pub-cg/...` URL-s. 
+HTML documents on this repository’s master branch can also be displayed in a browser via the `https://w3c.github.io/publ-cg/...` URL-s. 
 
 ---
 
