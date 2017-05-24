@@ -131,9 +131,12 @@
 <h2>Content Conformance</h2>
 <p>In addition to meeting the requirements specified in EPUB Publications [[Publications301]], an EPUB Publication conformant with this profile must meet all of the following criteria:</p>
 <ul>
-<li>If multiple Renditions of the content are included, it MUST meet the requirements in <a class="c2" href="#h.1j2ux9jtz3qi">3.3 Multiple-Rendition Publications</a>.</li>
-<li>All EPUB Content Documents <span class="c38 c7 c46">must</span> conform to the additional structure requirements in <a class="c2" href="#h.selsibtnscc8">4. Content Structure</a>.</li>
-<li>If content structures are represented using the semantics defined in <a class="c2" href="#h.n08zwgom1kdv">4.4. Structural Semantics</a>, the structures MUST adhere to the usage and production requirements defined in [EDUStructure].</li>
+<li>If multiple Renditions of the content are included, it MUST meet the requirements in <a href="#multiple-rendition-publications">Multiple-Rendition Publications</a>.</li>
+
+
+<li>All EPUB Content Documents MUST conform to the additional structure requirements in <a href="#content-structure">Content Structure</a>.</li>
+
+<li>If content structures are represented using the semantics defined in <a class="c2" href="#structural-semantics">Structural Semantics</a>, the structures MUST adhere to the usage and production requirements defined in [[!EDUStructure]].</li>
 <li>It MUST follow the requirements for navigation aids, as defined in <a class="c2" href="#h.kh6la5a1ipyu">7. Navigation</a>.</li>
 <li>It MUST include the required metadata defined in <a class="c2" href="#h.nsjfhxwfp3rp">8. Publication Metadata</a>.</li>
 </ul>
@@ -175,10 +178,10 @@
 
 </section>
 
-<section>
+<section id="fixed-layout-publications">
 
 <h2>Fixed-Layout Publications</h2>
-<p>Although the creation of <a class="c2" href="#h.jie2prboe7ow">reflowable EPUB Publications</a> is the preferred content model for the EPUB for Education profile, Authors MAY create Fixed-Layout Publications provided they are produced to be accessible to a wide audience.</p>
+<p>Although the creation of <a href="#reflowable-publications">reflowable EPUB Publications</a> is the preferred content model for the EPUB for Education profile, Authors MAY create Fixed-Layout Publications provided they are produced to be accessible to a wide audience.</p>
 <p>This specification does not attempt to define accessibility for all users, but conformant Fixed-Layout Publications MUST meet all of the following criteria:</p>
 <ul>
 
@@ -191,7 +194,7 @@
 <p>Note that due to the paginated nature of fixed layouts, Fixed-Layout Publications are exempt from the requirements in <a class="c2" href="#h.selsibtnscc8">4. Content Structure</a>.</p>
 
 </section>
-<section>
+<section id="multiple-rendition-publications">
 
 <h2>Multiple-Rendition Publications</h2>
 <p>EPUB Publications that conform to this profile MAY contain more than one Rendition of the content, but each Rendition MUST conform to the requirements for reflowable or fixed-layout content defined in this specification.</p>
@@ -283,9 +286,9 @@
 
 <section>
 
-<h4 class="c14">Structural Semantics</h4>
+<h4>Structural Semantics</h4>
 <p>The EPUB for Education content model does not include structural semantics specifically for the construction of teacher editions and guides, but the inclusion of such semantics is under consideration for a future version of the profile.</p>
-<p>At this time, the use of semantics defined in <a class="c2" href="#h.n08zwgom1kdv">4.4 Structural Semantics</a> is <span class="c24">recommended</span>, where applicable.</p>
+<p>At this time, the use of semantics defined in <a href="#structural-semantics">Structural Semantics</a> is RECOMMENDED, where applicable.</p>
 </section>
 
 <section>
@@ -298,9 +301,9 @@
 
 <h4>Audience</h4>
 <p>As a teacher&#39;s edition contains both the text of the student edition together with annotations, answers and other instructional aids for the teacher, there is a need to accessibly differentiate the teacher content from the content that all students have access to. Reliance on visual CSS styling alone, for example, impacts on the overall usability by instructors.</p>
-<p>While the use of structural semantics enhances the meaning of the content, it does not, in itself, indicate who the content was intended for. Instead, to address discoverability for users of assistive technologies, all teacher content <span class="c24">must</span> be labeled using the <a class="c2" href="#id.5tpdu658uluu">[ARIA]</a> <code>aria-label</code> attribute.</p>
+<p>While the use of structural semantics enhances the meaning of the content, it does not, in itself, indicate who the content was intended for. Instead, to address discoverability for users of assistive technologies, all teacher content MUST be labeled using the [[!ARIA]] <code>aria-label</code> attribute.</p>
 
-<p><span class="c16 c20">The following example shows an answer section labeled as belonging to the teacher edition</span></p>
+<p>The following example shows an answer section labeled as belonging to the teacher edition</p>
 <pre class="example">
 &lt;section epub:type=&quot;answers&quot; aria-label=&quot;teacher edition content&quot;&gt;
 &nbsp; &nbsp;&hellip;
@@ -314,9 +317,9 @@
 <p class="note">As teacher&#39;s guides are exclusively for teachers, content does not have to labelled.</p>
 
 
-<p>The audience <span class="c24">may</span> also be specified using the <a class="c2" href="#id.u8pfppgkhclt">[schema.org]</a> <code>audience</code> property for reliable machine processing (e.g., to selectively hide teacher-only content in a Reading System, or to enable filtering of content prior to distribution). Processing of this metadata is <span class="c24">optional</span>.</p>
+<p>The audience MAY also be specified using the [[schema.org]] <code>audience</code> property for reliable machine processing (e.g., to selectively hide teacher-only content in a Reading System, or to enable filtering of content prior to distribution). Processing of this metadata is OPTIONAL.</p>
 
-<p><span class="c16 c20">The following example shows the inclusion of the schema.org </span><span class="c4 c16 c20">audience</span><span class="c16 c20">&nbsp;property to identify that an answers section is intended only for teachers.</span></p>
+<p>The following example shows the inclusion of the schema.org <code>audience</code> property to identify that an answers section is intended only for teachers.</p>
 
 
 <pre class="example">
@@ -336,7 +339,7 @@
 <section>
 
 <h4>Student Content</h4>
-<p>For accessibility purposes, it is strongly <span class="rfc2119">recommended</span> that student content not be represented as annotated images in teacher&#39;s editions.</p>
+<p>For accessibility purposes, it is strongly RECOMMENDED that student content not be represented as annotated images in teacher&#39;s editions.</p>
 
 </section>
 </section>
@@ -351,7 +354,7 @@
 <section>
 
 <h2>Introduction</h2>
-<p><span class="c20 c61 c7">This section is informative</span></p>
+<p>This section is informative</p>
 <p>This section outlines key content structuring guidelines for the production of EPUB Publications that conform to this profile. Only differences from the core suite of EPUB specifications are noted.</p>
 
 </section>
@@ -433,7 +436,7 @@
 
 </section>
 
-<section>
+<section id="structural-semantics">
 <h2>Structural Semantics</h2>
 
 
@@ -1302,7 +1305,7 @@ Higher Education: RECOMMENDED
 
 
 <h2>E.1 IMS/Schema.org mapping</h2>
-<p><span class="c46 c37"></span></p>
+
 <p>The below table contains a correspondence mapping between the educational metadata terms of schema.org [[schema.org]] and IMS as described in Appendix E of [[IMSGuide]].</p>
 
 <table class="c30"><tbody><tr class="c15"><td class="c39 c60" colspan="1" rowspan="1">
