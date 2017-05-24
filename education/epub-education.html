@@ -419,7 +419,7 @@
 </section>
 <section id="untitled-sections">
 
-<h3 class="c14">Untitled Sections</h3>
+<h3>Untitled Sections</h3>
 <p>If a section of content in the document hierarchy does not have an explicit heading (e.g., an untitled introduction) &#8210; or sectioning is used to group significant content, such as learning objectives, that a User using an AT would need access to &#8210; the [[ARIA]] <code>aria-label</code> attribute MUST be used to provide an accessible name.</p>
 <p>Adding this attribute allows users of assistive technologies to navigate to the section despite the lack of a heading, in addition to giving meaningful context.</p>
 <p>Despite the lack of an explicit ranked heading, untitled sections are still part of the document&#39;s structural hierarchy and affect the heading rank of any child sections they contain. For example, the untitled <code>section</code> in the following example counts as the second level in the document outline, so the next ranked heading is an <code>h3</code> even though no <code>h2</code> appears in the markup:</p>
@@ -436,7 +436,7 @@
 
 </section>
 
-<section>
+<section id="deep-nesting">
 
 
 <h3>Deep Nesting</h3>
@@ -444,7 +444,7 @@
 <p>Do not use heading elements where the heading does not reflect the document hierarchy, as this use will impact on movement by AT users (e.g., inside figure captions).</p>
 
 </section>
-<section>
+<section id="structured-components">
 
 
 <h3>Structured Components</h3>
@@ -463,11 +463,11 @@
 
 <p>The EPUB for Education profile includes a set of structural semantic terms and content production rules designed to standardize the markup of educational materials.</p>
 
-<p>The formal definitions of these terms, and requirements for their use, are defined in the normative EPUB Education Structural Semantics Vocabulary <a class="c2" href="#id.lv8talqwbs2b">[EDUStructure</a><a class="c2" href="#id.lv8talqwbs2b">]</a>.</p>
+<p>The formal definitions of these terms, and requirements for their use, are defined in the normative EPUB Education Structural Semantics Vocabulary [[EDUStructure]]</a>.</p>
 
 
 
-<p class="c43 c14 c63">Publishers are strongly RECOMMENDED to represent all publication structures using the markup and terms defined in <a class="c2" href="#id.lv8talqwbs2b">[EDUStructure]</a>. The use of other terms from <a class="c2" href="#id.vamrleack432">[StructureVocab]</a> is <span class="rfc2119">optional</span>, as is the use of custom terms.</p>
+<p>Publishers are strongly RECOMMENDED to represent all publication structures using the markup and terms defined in [[EDUStructure]]. The use of other terms from [[StructureVocab]] is OPTIONAL, as is the use of custom terms.</p>
 <p>Following is a categorized list of the terms available, with links to their definitions. Note that categorization does not imply usage restrictions, particularly in the case of sectioning terms.</p>
 <ul><li><span class="c0">Sectioning</span>:</li></ul>
 <ul><li><span class="c5 c20">Front Matter</span><span class="c5">: </span><a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.g7489d7eoobp">frontmatter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.11hc3p4vtjqt">abstract</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.rcj0r39o5fsk">acknowledgments</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.rxeqewn0ykof">copyright-page</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.635pm8lyamq7">dedication</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ly3qymm0so49">foreword</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.dear7l19ertm">halftitlepage</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.1d37ueg8h1c6">introduction</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.puiknct3uwkf">preface</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.7dkwhofp4zkd">seriespage</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.gozf8zpd04mh">titlepage</a></li><li><span class="c5 c20">Body Matter</span><span class="c5">: </span><a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.g8vpodrahrun">bodymatter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.2e5rsv0jrwp">chapter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.2upv7zvahvv4">part</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.rk5l4i5pwnhm">qna</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.4jf9zco7lce0">volume</a></li><li><span class="c5 c20">Back Matter</span><span class="c5">: </span><a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.lerv6n86bkg3">backmatter</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.ingmn7jwc1du">afterword</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.4aq3uuxvlh3j">appendix</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.bkhs6aq7a0n8">colophon</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.bkb90b8siryk">conclusion</a>, <a class="c2" href="https://docs.google.com/document/d/1_Tzeq5xwdwLhSdaHStvAthhOFu9UuT8yFmK787yw420/edit#heading=h.z5n37kwgxf2">epigraph</a></li></ul>
@@ -1175,7 +1175,7 @@ Higher Education: RECOMMENDED
 
 <h1>Annotations</h1>
 <p>Reading Systems SHOULD provide a mechanism to ingest &#8210; and support the rendering of &#8210; annotations that conform to the Open Annotation in EPUB specification <a class="c2" href="#id.n1gzfwab11vl">[OpenAnnotation]</a>.</p>
-<p>Support for exporting and synchronizing annotations is <span class="rfc2119">optional</span>.</p>
+<p>Support for exporting and synchronizing annotations is OPTIONAL.</p>
 </section>
 
 <section id="distributable-educational-objects">
