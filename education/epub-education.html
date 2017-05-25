@@ -14,7 +14,7 @@
               specStatus: "CG-DRAFT",
               noRecTrack: true,
               shortName: "epub-education",
-              edDraftURI: "http://w3c.github.io/publ-cg-epub3/education/education.html",
+              edDraftURI: "https://w3c.github.io/publ-cg/education/epub-education.html",
               editors: [
               {
                       name: "David Stroup",
@@ -126,7 +126,7 @@
          
          <h1>Conformance</h1>
          
-         <section>
+         <section id="content-conformance">
 
 <h2>Content Conformance</h2>
 <p>In addition to meeting the requirements specified in EPUB Publications [[Publications301]], an EPUB Publication conformant with this profile must meet all of the following criteria:</p>
@@ -142,10 +142,10 @@
 </ul>
 </section>
 
-<section>
+<section id="reading-system-conformance">
 
 <h2>Reading System Conformance</h2>
-<p>In addition to meeting the requirements specified in EPUB Publications [[Publications301]], an <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#gloss-epub-reading-system">EPUB Reading System</a>&nbsp;conformant with this profile MUST meet all of the following criteria:</p>
+<p>In addition to meeting the requirements specified in EPUB Publications [[Publications301]], an <a class="c2" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#gloss-epub-reading-system">EPUB Reading System</a> conformant with this profile MUST meet all of the following criteria:</p>
 <ul><li>It MUST meet all requirements for Scriptable Components defined in [[ESC]] and [[ESC-PKG]].</li>
 <li>It SHOULD support multiple-Rendition Publications, as defined in [[MultipleRenditions]].</li>
 <li>It SHOULD support the import and rendering of annotations, as defined in <a href="#annotations">Annotations</a>.</li>
@@ -402,7 +402,7 @@
 <h3>Titled Sections</h3>
 <p>[[HTML5]] <code>heading elements</code> MUST be used to provide headings only for [[HTML5]] <code>sectioning content</code> (including the <code>body</code> element).</p>
 
-<p>When using a heading element for a section, the rank MUST reflect the nesting of that section within the document hierarchy (as noted in <a class="c2" href="http://www.w3.org/html/wg/drafts/html/master/sections.html#headings-and-sections">4.3.10 Headings and sections</a> [[HTML5]]). For example, a top-level section will have an <code>h1</code> heading, child sections of it will have <code>h2</code> headings, and so on. Note that untitled sections are included when determining the current heading rank (see <a href="#untitled-sections">Untitled Sections</a> for more information).</p>
+<p>When using a heading element for a section, the rank MUST reflect the nesting of that section within the document hierarchy (as noted in <a href="http://www.w3.org/html/wg/drafts/html/master/sections.html#headings-and-sections">4.3.10 Headings and sections</a> [[HTML5]]). For example, a top-level section will have an <code>h1</code> heading, child sections of it will have <code>h2</code> headings, and so on. Note that untitled sections are included when determining the current heading rank (see <a href="#untitled-sections">Untitled Sections</a> for more information).</p>
 <p>The heading does not have to be the first element of the section, and MAY be included inside a [[HTML5]] <code>header</code> element. If the section also includes a subtitle in a separate element, both the heading and subtitle MUST be enclosed in a <code>header</code>.</p>
 <pre class="example">
 &lt;header&gt;
@@ -638,7 +638,7 @@
 
 <p>The interactions involved in working with IMS LTI services, are illustrated in the following context diagram:</p>
 
-<figure>
+<figure id="lti-context-diagram">
 
 
 <img alt="EDUPUB overview.jpg" src="images/image03.jpg"/>
@@ -648,12 +648,12 @@
 
 
 <p>Legend of the the context diagram above (from content out):</p>
-<ol class="c34 lst-kix_pbabxijlthrq-0 start" start="1"><li>EPUB 3 Content<br />An EPUB Publication conformant with the definition in <a class="c2" href="#h.j302lmctska2">2.1 Content Conformance</a>.</li>
-<li>Reading System<br />An application conformant with the definition in <a class="c2" href="#h.upul6gzh4fhd">2.2 Reading System Conformance</a>. It is important to note that any EPUB Reading System that conforms to this profile MUST broker communications between the content and the Reading eco-system, or handle those tasks directly.</li>
-<li>Reading eco-system<br />This is a stable, persistent provider of services to support the Reading System and provide a point of contact to learning systems. In this profile, the reading eco-system is a tool that is hosted with an LTI Tool Provider. [<a class="c2" href="https://www.imsglobal.org/specs/ltiv1p2/implementation-guide">IMS LTI 1.2 Implementation Guide</a> or <a class="c2" href="https://www.imsglobal.org/specs/ltiv2p0/implementation-guide">IMS LTI 2.0 Implementation Guide</a>]</li>
-<li>LTI Compliant LMS<br />This is the learning system used by learners, instructors and other roles to support the learning environment. In LTI the term for a learning management system or learning platform is the LTI Tool Consumer. [<a class="c2" href="https://www.imsglobal.org/specs/ltiv1p2/implementation-guide">IMS LTI 1.2 Implementation Guide</a> or <a class="c2" href="https://www.imsglobal.org/specs/ltiv2p0/implementation-guide">IMS LTI 2.0 Implementation Guide</a>]</li>
-<li>Caliper Analytics&trade;<br />Caliper is an IMS standard that is used for capturing learning data, storing and analyzing it. It also defines a vocabulary for learning analytics. [<a class="c2" href="http://www.imsglobal.org/caliper/caliperv1p0/ims-caliper-analytics-implementation-guide">IMS Caliper Analytics Implementation Guide</a> ]</li>
-<li>Other LTI compliant Tool Provider<br />This box represents other learning tools in the larger learning eco-system that can be linked to from an EPUB Publication. Embedded LTI links can securely link to these other tools. [<a class="c2" href="https://www.imsglobal.org/specs/ltiv1p2/implementation-guide">IMS LTI 1.2 Implementation Guide</a> or <a class="c2" href="https://www.imsglobal.org/specs/ltiv2p0/implementation-guide">IMS LTI 2.0 Implementation Guide</a>]</li></ol>
+<ol><li>EPUB 3 Content<br />An EPUB Publication conformant with the definition in <a href="#content-conformance">Content Conformance</a>.</li>
+<li>Reading System<br />An application conformant with the definition in <a href="#reading-system-conformance">Reading System Conformance</a>. It is important to note that any EPUB Reading System that conforms to this profile MUST broker communications between the content and the Reading eco-system, or handle those tasks directly.</li>
+<li>Reading eco-system<br />This is a stable, persistent provider of services to support the Reading System and provide a point of contact to learning systems. In this profile, the reading eco-system is a tool that is hosted with an LTI Tool Provider. [<a  href="https://www.imsglobal.org/specs/ltiv1p2/implementation-guide">IMS LTI 1.2 Implementation Guide</a> or <a href="https://www.imsglobal.org/specs/ltiv2p0/implementation-guide">IMS LTI 2.0 Implementation Guide</a>]</li>
+<li>LTI Compliant LMS<br />This is the learning system used by learners, instructors and other roles to support the learning environment. In LTI the term for a learning management system or learning platform is the LTI Tool Consumer. [<a href="https://www.imsglobal.org/specs/ltiv1p2/implementation-guide">IMS LTI 1.2 Implementation Guide</a> or <a href="https://www.imsglobal.org/specs/ltiv2p0/implementation-guide">IMS LTI 2.0 Implementation Guide</a>]</li>
+<li>Caliper Analytics&trade;<br />Caliper is an IMS standard that is used for capturing learning data, storing and analyzing it. It also defines a vocabulary for learning analytics. [<a href="http://www.imsglobal.org/caliper/caliperv1p0/ims-caliper-analytics-implementation-guide">IMS Caliper Analytics Implementation Guide</a> ]</li>
+<li>Other LTI compliant Tool Provider<br />This box represents other learning tools in the larger learning eco-system that can be linked to from an EPUB Publication. Embedded LTI links can securely link to these other tools. [<a href="https://www.imsglobal.org/specs/ltiv1p2/implementation-guide">IMS LTI 1.2 Implementation Guide</a> or <a href="https://www.imsglobal.org/specs/ltiv2p0/implementation-guide">IMS LTI 2.0 Implementation Guide</a>]</li></ol>
 
 <p class="note">Caliper capabilities within EPUB 3 can be supported through an appropriate LTI capability.</p>
 </section>
@@ -679,25 +679,25 @@
 
 <li>To support Outcomes Reporting, it MUST support one of two mechanisms: 1) act as Tool Provider, or&nbsp;2) delegate the Outcomes to the Reading Eco-system.&nbsp;</li>
 
-<li>If the Reading System follows method (1), i.e., an internal Tool Consumer, then it MUST be certified as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a> or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a> Tool Consumer. </li>
+<li>If the Reading System follows method (1), i.e., an internal Tool Consumer, then it MUST be certified as an [[LTI12]] or [[LTI2]] Tool Consumer. </li>
 
 <li>If the Reading System follows method (2), delegation to the TP, then it MUST support educational Outcomes APIs specified in <a class="c2" href="#javascript-apis">section 6.3.3</a>
 
 
-<p class="note"><a class="c2" href="#h.3y3oarej27ih">LTI Link Conformance</a>, discussed below, describes a method to do launches of other LTI tools (i.e., to &ldquo;Other LTI compliant Tool Provider&rdquo; as shown in the context diagram in <a class="c2" href="#h.hizgufe0qvyi">section 6.1</a>). These launches are nested within the original launch which opened the book. We call the original launch the &lsquo;outer launch&rsquo; in descriptions below. We call in the embedded launch in an EPUB Publication the &lsquo;inner launch&rsquo;.
+<p class="note"><a href="#lti-links">LTI Link Conformance</a>, discussed below, describes a method to do launches of other LTI tools (i.e., to &ldquo;Other LTI compliant Tool Provider&rdquo; as shown in the <a href="#lti-context-diagram">context diagram</a>). These launches are nested within the original launch which opened the book. We call the original launch the &lsquo;outer launch&rsquo; in descriptions below. We call in the embedded launch in an EPUB Publication the &lsquo;inner launch&rsquo;.
 </p>
 </li>
 
 
 <li>To support Embedded LTI Launch&nbsp;it MUST support one of two mechanisms: 1) the Reading System hosting its own Tool Consumer, or 2) a message protocol to delegate the Embedded Launch to the Reading Eco-system.&nbsp;Method 1 only applies to the case where the Reading System is a web app.</li>
 
-<li>If the Reading System follows method (1), i.e., an internal Tool Consumer, then it MUST be certified as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a> or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a> Tool Consumer. </li>
+<li>If the Reading System follows method (1), i.e., an internal Tool Consumer, then it MUST be certified as an [[LTI12]] or [[LTI2]] Tool Consumer. </li>
 
-<li>If the Reading System follows method (2), delegation to the TP, then it MUST support LTI Link Content markup defined in <span class="c6 c7"><a class="c2" href="#h.3y3oarej27ih">6.4 LTI Links</a></span>.</li>
+<li>If the Reading System follows method (2), delegation to the TP, then it MUST support LTI Link Content markup defined in <a href="#lti-links">LTI Links</a></span>.</li>
 
-<li>If the Reading System acts as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a>&nbsp;or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a>&nbsp;Tool Consumer, for any of the purposes stated above, it MUST support appropriate parameter mapping from the outer launch. That is, parameters relating to user, course, and other supporting values MUST inherit from the original book launch.</li>
+<li>If the Reading System acts as an [[LTI12]]&nbsp;or [[LTI2]]&nbsp;Tool Consumer, for any of the purposes stated above, it MUST support appropriate parameter mapping from the outer launch. That is, parameters relating to user, course, and other supporting values MUST inherit from the original book launch.</li>
 
-<li>If the Reading System acts as an <a class="c2" href="#kix.3oweeminz6ra">[LTI12]</a>&nbsp;or <a class="c2" href="#id.wwab2rsresyo">[LTI2]</a>&nbsp;Tool Consumer, it MUST enable the administration and protection of the &lsquo;Secrets&rsquo; and &lsquo;Keys&rsquo; required by the Tools that can be launched from the Reading System. </li>
+<li>If the Reading System acts as an [[LTI12]]&nbsp;or [[LTI2]]&nbsp;Tool Consumer, it MUST enable the administration and protection of the &lsquo;Secrets&rsquo; and &lsquo;Keys&rsquo; required by the Tools that can be launched from the Reading System. </li>
 </ul>
 
 <p class="note">These conformance constraints above boil down to a basic message: A Tool Consumer might have many more demands on it than a Reading System. It needs to host and protect many sensitive credentials. It needs to keep interface contracts on possibly many Tool Provider interface contracts. And it must be available if, for example, an Outcome Result message comes into it in the middle of the night for entry into a gradebook. In general, if an implementer&rsquo;s Reading System is an offline- or remote- device, it is safer and more practical to delegate the embedded launch back to the Tool Provider. If, on the other hand, the reader is a server-based, online reader and is in the same security domain as the Tool Provider, then a Reader-based Tool Consumer is fine.</p>
@@ -801,7 +801,7 @@
 
 
 
-<section>
+<section id="lti-report-scores">
 
 
 <h4><code>EPUB.Education.reportScores([scores], callback);</code></h4>
@@ -873,7 +873,7 @@ metadata: {…}
 <h2>LTI Links</h2>
 <p>An EPUB Content Document, which was not itself launched via an LTI link, will not be able to launch any embedded LTI links. In this case, the reading system needs to gracefully fail. </p>
 
-<p class="note">Performing an embedded LTI launch, assuming it is supported by the particular Reading Eco-system, involves performing a similar operation as <a class="c2" href="#h.nomfym85mx4l">reportScores</a> with a single exception: while some implementations of outcomes might allow the results to be enqueued there is no equivalent meaning to delaying an LTI launch. Therefore, an attempt to LTI launch to a tool on an offline device ought to fail.</p>
+<p class="note">Performing an embedded LTI launch, assuming it is supported by the particular Reading Eco-system, involves performing a similar operation as <a href="#lti-report-scores">reportScores</a> with a single exception: while some implementations of outcomes might allow the results to be enqueued there is no equivalent meaning to delaying an LTI launch. Therefore, an attempt to LTI launch to a tool on an offline device ought to fail.</p>
 
 
 <section>
@@ -908,7 +908,7 @@ metadata: {…}
 <section>
 
 <h4>At Reading System launch time</h4>
-<p>As described below in <a class="c2" href="#h.6yji37uaabty">Launching EPUB Publications</a>, when the Reading Eco-System launches an EPUB Publication it sends it a TP-Access-Token, and endpoints for services that it will require:</p>
+<p>As described below in <a href="#lti-flow-2">Launching EPUB Publications</a>, when the Reading Eco-System launches an EPUB Publication it sends it a TP-Access-Token, and endpoints for services that it will require:</p>
 
 <ul><li><code>launch_presentation_return_url</code>: redirect point when the book closes</li>
 <li><code>result_handler_url</code>: path to the Tool Provider&rsquo;s result_handler to submit a result from the book</li>
@@ -919,7 +919,7 @@ metadata: {…}
 <section>
 
 <h4>At reportScores invocation</h4>
-<p>This event is activated when the content invokes <a class="c2" href="#h.nomfym85mx4l">EPUB.Education.reportScores</a>. It marshals the parameters described into the following:</p>
+<p>This event is activated when the content invokes <a href="#lti-report-scores">EPUB.Education.reportScores</a>. It marshals the parameters described into the following:</p>
 
 
 <p class="c35 c23 c14">POST to <code>result_handler_url</code> with Authorization Header containing a TP-Access-Token and a body containing the JSON media type with following &lsquo;flat&rsquo; fields</p>
@@ -969,7 +969,7 @@ returns: result_id
 <section>
 
 <h4>At ltiLaunch event</h4>
-<p>This event brokers a request from the Reading System to create an embedded LTI launch. See <a class="c2" href="#h.7li9dmingc26">Embedded Launch</a> below.</p>
+<p>This event brokers a request from the Reading System to create an embedded LTI launch. See <a href="#lti-flow-4">Embedded Launch</a> below.</p>
 <p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POST to <code>embedded_launch_handler</code></p>
 <p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body:</p>
 <p class="c35 c23 c14"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSON media type with flat body:</p>
