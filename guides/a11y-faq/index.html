@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>EPUB Accessibility Frequently Asked Questions</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="https://www.idpf.org/epub/css/epub-spec-2016.css" />
+		<style type="text/css">
+			body{
+			    max-width: 45em;
+			}
+			ul{
+			    padding-left: 1em;
+			}
+			div.history{
+			    margin-top: 2em;
+			    margin-bottom: 2em
+			}
+			.subtitle{
+			    display: block;
+			    font-size: 120%;
+			}</style>
+	</head>
+	<body>
+		<header>
+			<p><a href="http://www.idpf.org"><img src="https://www.idpf.org/epub/images/idpflogo_web_125.jpg" alt="IDPF"
+						class="logo" /></a></p>
+			<h1 class="title">EPUB Accessibility <span class="subtitle">Frequently Asked Questions</span></h1>
+			<p class="identity">
+				<span class="pubdate">6 September 2016</span>
+			</p>
+			<div class="history">
+				<span class="history-title">Document history</span>
+				<ul>
+					<li><a href="https://github.com/IDPF/epub-guides/commits/master/guides/a11y-faq/index.html">Changes to
+							this document</a></li>
+				</ul>
+			</div>
+		</header>
+		<nav id="toc" class="toc">
+			<h2 class="toc-title">Table of Contents</h2>
+			<ol class="toc">
+				<li><span class="section"><a href="#sec-overview">1. Overview</a></span></li>
+				<li><span class="section"><a href="#sec-general">2. General</a></span>
+					<ol>
+						<li><span class="section"><a href="#sec-general-epub-version">2.1 What version of EPUB does this
+									specification apply to?</a></span></li>
+					</ol>
+				</li>
+				<li><span class="section"><a href="#sec-disc">3. Discovery Metadata</a></span>
+					<ol>
+						<li><span class="section"><a href="#sec-disc-schema">3.1 Why was schema.org metadata
+								chosen?</a></span></li>
+						<li><span class="section"><a href="#sec-disc-onix">3.2 Why is ONIX not required for discovery
+									metadata?</a></span></li>
+						<li><span class="section"><a href="#sec-disc-publicize">3.3 Can I call my discoverable publication
+									accessible?</a></span></li>
+					</ol>
+				</li>
+				<li><span class="section"><a href="#sec-a11y">4. Accessibility Conformance</a></span>
+					<ol>
+						<li><span class="section"><a href="#sec-a11y-meeting">4.1 What if I cannot meet all these
+									requirements?</a></span></li>
+						<li><span class="section"><a href="#sec-a11y-wcag-ext">4.2 Is this specification an extension of
+									WCAG?</a></span></li>
+						<li><span class="section"><a href="#sec-a11y-wcag-coop">4.3 Why not include the EPUB requirements in
+									WCAG?</a></span></li>
+						<li><span class="section"><a href="#sec-a11y-partial">4.3 Why are there guidelines for only some HTML
+									elements in the techniques?</a></span></li>
+						<li><span class="section"><a href="#sec-a11y-alternatives">4.4 What if there is another way to make
+									content accessible that is not listed?</a></span></li>
+						<li><span class="section"><a href="#sec-a11y-checklist">4.5 Is there a checklist of
+								requirements?</a></span></li>
+						<li><span class="section"><a href="#sec-a11y-url">4.6 Why is the conformance metadata a
+								URL?</a></span></li>
+					</ol>
+				</li>
+				<li><span class="section"><a href="#sec-opt">5. Optimized Publications</a></span>
+					<ol>
+						<li><span class="section"><a href="#sec-opt-identify-why">5.1 Why identify
+							optimizations?</a></span></li>
+						<li><span class="section"><a href="#sec-opt-identify-how">5.2 How do I identify an optimization
+									standard?</a></span></li>
+						<li><span class="section"><a href="#sec-opt-publicize">5.3 Can I call my optimized publication
+									accessible?</a></span></li>
+						<li><span class="section"><a href="#sec-opt-registry">5.4 What is the optimized standards
+									registry?</a></span></li>
+						<li><span class="section"><a href="#sec-opt-register-req">5.5 Do I have to register my
+								standard?</a></span></li>
+						<li><span class="section"><a href="#sec-opt-register-how">5.6 How do I register my
+								standard?</a></span></li>
+					</ol>
+				</li>
+			</ol>
+		</nav>
+		<section id="sec-overview" class="chapter">
+			<h1 class="title">1. Overview</h1>
+
+			<p>This document provides answers to commonly asked questions about the <a
+					href="http://www.idpf.org/epub/latest/accessibility">EPUB Accessibility</a> specification and its <a
+					href="http://www.idpf.org/epub/latest/accessibility/techniques">associated techniques</a>. It provides
+				guidance and insight into how the document was created and the reasons for various choices in
+				implementation.</p>
+
+			<p>The document is not intended as a how-to guide to creating accessible content. Please use the <a
+					href="http://www.idpf.org/forums/accessibility">IDPF Accessibility forum</a> to ask questions about how
+				to implement the requirements.</p>
+		</section>
+		<section id="sec-general" class="chapter">
+			<h1 class="title">2. General</h1>
+
+			<section id="sec-general-epub-version">
+				<h2 class="title">2.1 What version of EPUB does this specification apply to?</h2>
+
+				<p>Although the EPUB Accessibility specification was developed during the EPUB 3.1 revision, it is designed
+					to be applicable to earlier versions of the format. The requirements and techniques do not depend on EPUB
+					3.1; they can be applied to make EPUB 3.0-conformant publications accessible, and also EPUB 2.0
+					publications.</p>
+
+				<p>Authors can begin applying the specification to their content immediately, in other words; there is no
+					need to wait until support for EPUB 3.1 becomes commonplace.</p>
+			</section>
+		</section>
+		<section id="sec-disc" class="chapter">
+			<h1 class="title">3. Discovery Metadata</h1>
+
+			<section id="sec-disc-schema" class="section">
+				<h2 class="title">3.1 Why was schema.org metadata chosen?</h2>
+				<p>Schema.org metadata is required in the package document because it provides a comprehensive set of
+					descriptive metadata that fits the EPUB metadata model.</p>
+				<p>As EPUB continues to integrate with the Open Web Platform — where schema.org metadata is used by the major
+					search engines when cataloguing information — it also represents a stable fit for future versions of the
+					standard.</p>
+			</section>
+
+			<section id="sec-disc-onix" class="section">
+				<h2 class="title">3.2 Why is ONIX not required for discovery metadata?</h2>
+				<p>Although ONIX is critical metadata in ebook distribution channels, EPUB publications are not necessarily
+					books nor are they all distributed through the major ebook channels. Requiring all authors of EPUB
+					content to include an ONIX record would complicate production, potentially turning authors off from
+					including accessibility metadata. It would also require authoring tools to be able to create and modify
+					ONIX records, and Reading Systems to parse the records to retrieve the information. To minimize this
+					impact on the existing ecosystem, and ensure that the metadata is always available in an easily
+					retrievable fashion, schema.org metadata was chosen.</p>
+				<p>The choice of schema.org metadata in the package document does not diminish the need for rich
+					accessibility metadata in ONIX records, and there is a requirement to include accessibility metadata in
+					any distribution records that accompany an EPUB publication.</p>
+				<p>The accessibility group is looking to work with the various metadata authorities to harmonize their
+					accessibility vocabularies as a future objective so that the same information can be encoded across
+					formats.</p>
+			</section>
+
+			<section id="sec-disc-publicize" class="section">
+				<h2 class="title">3.3 Can I call my discoverable publication accessible?</h2>
+				<p>If your publication only includes discoverability metadata (i.e., it does not meet the accessibility
+					requirements and is not an optimization), it must not be promoted as accessible per this
+					specification.</p>
+				<p>Meeting the discovery requirements allows Users to determine whether the content will be usable by them,
+					but is not in itself an achievement that they need to be made aware of.</p>
+			</section>
+		</section>
+		<section id="sec-a11y" class="chapter">
+			<h1 class="title">4. Accessibility Conformance</h1>
+
+			<section id="sec-a11y-meeting" class="section">
+				<h2 class="title">4.1 What if I cannot meet all these requirements?</h2>
+				<p>Changing production practices is never easy, but there also needs to be a clear benchmark to meet to begin
+					making progress. The EPUB working group understands that the ability to meet these requirements is going
+					to vary depending on the nature of the content produced and how it is produced.</p>
+				<p>The working group has also structured the specification to soften the move as much as possible, without
+					compromising the usability of the content. The specification only requires WCAG 2.0 Level A conformance,
+					for example, even though many regulatory frameworks require Level AA conformance for web content
+					(publishers already have to meet the higher level in such jurisdictions). Conformance is also not
+					mandatory for an EPUB publication to be valid, so that accessibility does not become a barrier to
+					distribution while publishers are improving their processes.</p>
+				<p>The working group could not lower the threshold below WCAG conformance, as trying to pick and choose rules
+					to follow would lead to content that is only accessible to certain audiences, and certifying who those
+					audiences would be a complex undertaking.</p>
+				<p>The issue with raising production quality is why the discovery metadata is so important to include. A
+					publisher may not be able to state their content fully conforms to the specification, but if the work
+					that has been done can be surfaced then users can make the decision for themselves about whether it will
+					still meet their needs.</p>
+			</section>
+
+			<section id="sec-a11y-wcag-ext" class="section">
+				<h2 class="title">4.2 Is this specification an extension of WCAG?</h2>
+
+				<p>No, it leverages WCAG and includes additional requirements, but is not an official extension and should
+					not be referred to as one.</p>
+			</section>
+
+			<section id="sec-a11y-wcag-coop" class="section">
+				<h2 class="title">4.3 Why not include the EPUB requirements in WCAG?</h2>
+
+				<p>The IDPF intends to work with the W3C and Web Accessibility Initiative in the future to harmonize
+					accessibility for digital publications.</p>
+
+				<p>Due to different revision timelines and the need to establish conformance requirements for EPUB
+					Publications, the EPUB working group decided to pursue a separate accessibility specification.</p>
+			</section>
+
+			<section id="sec-a11y-partial" class="section">
+				<h2 class="title">4.4 Why are there guidelines for only some HTML elements in the techniques?</h2>
+				<p>The techniques document does not duplicate the requirements of WCAG 2.0. It only addresses situations
+					where the guidance differs for publications, or where no guidance exists.</p>
+			</section>
+
+			<section id="sec-a11y-alternatives" class="section">
+				<h2 class="title">4.5 What if there is another way to make content accessible that is not listed?</h2>
+				<p>The techniques documents for both the EPUB Accessibility specification and WCAG 2.0 are advisory in
+					nature. New techniques are always being developed to handle new situations. If a new technique provides
+					the same level of accessibility, it is acceptable to use it.</p>
+			</section>
+
+			<section id="sec-a11y-checklist" class="section">
+				<h2 class="title">4.6 Is there a checklist of requirements?</h2>
+				<p>The techniques do not include a checklist, as the requirement for conformance will vary from publication
+					to publication (e.g., depending on the type of content included).</p>
+				<p>A validation process document is currently under development that will guide in checking the requirements
+					for conformance. In addition, software is being developed to assist in the process. It is expected that
+					the validation process and the software when used together will still require human intelligence for
+					certain tests.</p>
+			</section>
+
+			<section id="sec-a11y-url" class="section">
+				<h2 class="title">4.7 Why is the conformance metadata a URL?</h2>
+				<p>The <a href="http://www.idpf.org/epub/a11y/#sec-conf-reporting">a11y:conformsTo property</a> takes a URL
+					so that the conformance statement is always the same and can be easily checked by machine (e.g., for
+					validation, ingestion into a distribution system, etc.).</p>
+				<p>A human-readable statement about conformance should be included in the <a
+						href="http://www.idpf.org/epub/a11y/techniques/#sec-meta-005">schema:accessibilitySummary
+						property</a>. The EPUB Accessibility specification does not require wording for such statements.</p>
+			</section>
+		</section>
+		<section id="sec-opt" class="chapter">
+			<h1 class="title">5. Optimized Publications</h1>
+
+			<section id="sec-opt-identify-why" class="section">
+				<h2 class="title">5.1 Why identify optimizations?</h2>
+				<p>The identification of optimizations ties into the importance of discovery metadata. Content that meets
+					accessibility requirements for specific user groups needs to be discoverable by those groups, even if the
+					content is not considered broadly accessible (e.g., braille- and audio-optimized publications).</p>
+				<p>Identifying the third-party standard the content conforms to gives users this missing context.</p>
+			</section>
+
+			<section id="sec-opt-identify-how" class="section">
+				<h2 class="title">5.2 How do I identify an optimization standard?</h2>
+				<p>Conformance to a third-party standard is indicated by including a link tag in the metadata with a URL that
+					points to where the standard is defined.</p>
+				<pre>&lt;link
+   rel="a11y:conformsTo"
+   href="http://www.daisy.org/guidelines/epub/navigable-audio-only-epub3-guidelines"/></pre>
+				<p>The preceding example indicates that the publication conforms to DAISY guidelines for navigable audio-only
+					publications.</p>
+				<p>It is recommended to include a human-readable description of conformance in the <a
+						href="http://www.idpf.org/epub/a11y/techniques/#sec-meta-005">schema:accessibilitySummary
+						property</a>, as well.</p>
+			</section>
+
+			<section id="sec-opt-publicize" class="section">
+				<h2 class="title">5.3 Can I call my optimized publication accessible?</h2>
+				<p>The EPUB Accessibility specification does not endorse optimizations; it only address how to identify them
+					in the metadata.</p>
+				<p>Any claims about the accessibility of an optimization must not make reference to the EPUB Accessibility
+					specification or the IDPF. Such a claim should identify the standard the publication conforms to and the
+					organization that created that standard.</p>
+			</section>
+
+			<section id="sec-opt-registry" class="section">
+				<h2 class="title">5.4 What is the optimized standards registry?</h2>
+				<p>The IDPF maintains a <a href="http://idpf.github.io/epub-registries/optimizations/">registry of known
+						optimization standards</a> to help facilitate lookup of their identifiers.</p>
+				<p>This list is provided solely for informational purposes. The IDPF does not develop optimization standards
+					and neither endorses nor discourages their use.</p>
+			</section>
+
+			<section id="sec-opt-register-req" class="section">
+				<h2 class="title">5.5 Do I have to register my standard?</h2>
+				<p>No, the registry is informative. The only requirement is that the standard the content conforms to be
+					identified.</p>
+			</section>
+
+			<section id="sec-opt-register-how" class="section">
+				<h2 class="title">5.6 How do I register my standard?</h2>
+				<p>Inclusion of new standards can be requested by opening an issue in the <a
+						href="https://github.com/IDPF/epub-registries">GitHub repository</a> (requires a GitHub account).
+					Advanced GitHub users can also update the <a
+						href="https://github.com/IDPF/epub-registries/blob/master/registries/optimizations/index.html"
+						>registry page</a> directly and make a pull request.</p>
+				<p>Requests should provide as much information as possible about the standard.</p>
+			</section>
+		</section>
+	</body>
+</html>

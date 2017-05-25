@@ -1,0 +1,900 @@
+<html>
+   <head>
+      <title>Using collection Elements as Embedded Package Documents</title>
+      <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+      <style type="text/css">
+         body{
+             max-width: 468pt;
+             padding: 72pt 72pt 72pt 72pt
+         }
+         ul.lst-kix_ttkcmw6jepdj-4{
+             list-style-type: none
+         }
+         ul.lst-kix_ttkcmw6jepdj-5{
+             list-style-type: none
+         }
+         ul.lst-kix_ttkcmw6jepdj-2{
+             list-style-type: none
+         }
+         ul.lst-kix_ttkcmw6jepdj-3{
+             list-style-type: none
+         }
+         .lst-kix_goz0fntflj08-7 > li:before{
+             content: "\0025cb  "
+         }
+         ul.lst-kix_ttkcmw6jepdj-8{
+             list-style-type: none
+         }
+         .lst-kix_goz0fntflj08-3 > li:before{
+             content: "\0025cf  "
+         }
+         ul.lst-kix_ttkcmw6jepdj-6{
+             list-style-type: none
+         }
+         ul.lst-kix_ttkcmw6jepdj-7{
+             list-style-type: none
+         }
+         ul.lst-kix_k9sn4lpefmhj-0{
+             list-style-type: none
+         }
+         ul.lst-kix_k9sn4lpefmhj-1{
+             list-style-type: none
+         }
+         .lst-kix_goz0fntflj08-4 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_k9sn4lpefmhj-0 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_ttkcmw6jepdj-7 > li:before{
+             content: "\0025cb  "
+         }
+         ul.lst-kix_ttkcmw6jepdj-0{
+             list-style-type: none
+         }
+         .lst-kix_k9sn4lpefmhj-6 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_goz0fntflj08-6 > li:before{
+             content: "\0025cf  "
+         }
+         ul.lst-kix_ttkcmw6jepdj-1{
+             list-style-type: none
+         }
+         .lst-kix_ymi0w2s8oac1-1 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_k9sn4lpefmhj-1 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_g9h3ugpzp3ad-6 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_k9sn4lpefmhj-5 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_g9h3ugpzp3ad-2 > li:before{
+             content: "\0025a0  "
+         }
+         ul.lst-kix_goz0fntflj08-0{
+             list-style-type: none
+         }
+         .lst-kix_ttkcmw6jepdj-3 > li:before{
+             content: "\0025cf  "
+         }
+         ul.lst-kix_goz0fntflj08-1{
+             list-style-type: none
+         }
+         ul.lst-kix_goz0fntflj08-2{
+             list-style-type: none
+         }
+         ul.lst-kix_g9h3ugpzp3ad-1{
+             list-style-type: none
+         }
+         ul.lst-kix_g9h3ugpzp3ad-0{
+             list-style-type: none
+         }
+         ul.lst-kix_g9h3ugpzp3ad-2{
+             list-style-type: none
+         }
+         .lst-kix_goz0fntflj08-2 > li:before{
+             content: "\0025a0  "
+         }
+         ul.lst-kix_g9h3ugpzp3ad-3{
+             list-style-type: none
+         }
+         ul.lst-kix_g9h3ugpzp3ad-4{
+             list-style-type: none
+         }
+         ul.lst-kix_g9h3ugpzp3ad-5{
+             list-style-type: none
+         }
+         ul.lst-kix_g9h3ugpzp3ad-6{
+             list-style-type: none
+         }
+         ul.lst-kix_g9h3ugpzp3ad-7{
+             list-style-type: none
+         }
+         ul.lst-kix_g9h3ugpzp3ad-8{
+             list-style-type: none
+         }
+         .lst-kix_g9h3ugpzp3ad-0 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_goz0fntflj08-8 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_k9sn4lpefmhj-7 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_g9h3ugpzp3ad-3 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_ymi0w2s8oac1-5 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_ymi0w2s8oac1-6 > li:before{
+             content: "\0025cf  "
+         }
+         ul.lst-kix_k9sn4lpefmhj-7{
+             list-style-type: none
+         }
+         .lst-kix_goz0fntflj08-5 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_ttkcmw6jepdj-0 > li:before{
+             content: "\0025cf  "
+         }
+         ul.lst-kix_k9sn4lpefmhj-6{
+             list-style-type: none
+         }
+         ul.lst-kix_k9sn4lpefmhj-8{
+             list-style-type: none
+         }
+         ul.lst-kix_k9sn4lpefmhj-3{
+             list-style-type: none
+         }
+         ul.lst-kix_k9sn4lpefmhj-2{
+             list-style-type: none
+         }
+         .lst-kix_ttkcmw6jepdj-5 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_goz0fntflj08-0 > li:before{
+             content: "\0025cf  "
+         }
+         ul.lst-kix_k9sn4lpefmhj-5{
+             list-style-type: none
+         }
+         ul.lst-kix_k9sn4lpefmhj-4{
+             list-style-type: none
+         }
+         .lst-kix_g9h3ugpzp3ad-1 > li:before{
+             content: "\0025cb  "
+         }
+         ul.lst-kix_ymi0w2s8oac1-0{
+             list-style-type: none
+         }
+         ul.lst-kix_ymi0w2s8oac1-1{
+             list-style-type: none
+         }
+         ul.lst-kix_ymi0w2s8oac1-4{
+             list-style-type: none
+         }
+         ul.lst-kix_ymi0w2s8oac1-5{
+             list-style-type: none
+         }
+         ul.lst-kix_ymi0w2s8oac1-2{
+             list-style-type: none
+         }
+         ul.lst-kix_ymi0w2s8oac1-3{
+             list-style-type: none
+         }
+         .lst-kix_ymi0w2s8oac1-4 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_ttkcmw6jepdj-6 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_g9h3ugpzp3ad-8 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_k9sn4lpefmhj-2 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_g9h3ugpzp3ad-7 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_ymi0w2s8oac1-7 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_ttkcmw6jepdj-4 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_ymi0w2s8oac1-8 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_g9h3ugpzp3ad-4 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_goz0fntflj08-1 > li:before{
+             content: "\0025cb  "
+         }
+         ul.lst-kix_goz0fntflj08-5{
+             list-style-type: none
+         }
+         .lst-kix_k9sn4lpefmhj-3 > li:before{
+             content: "\0025cf  "
+         }
+         ul.lst-kix_goz0fntflj08-6{
+             list-style-type: none
+         }
+         .lst-kix_k9sn4lpefmhj-8 > li:before{
+             content: "\0025a0  "
+         }
+         ul.lst-kix_goz0fntflj08-3{
+             list-style-type: none
+         }
+         .lst-kix_k9sn4lpefmhj-4 > li:before{
+             content: "\0025cb  "
+         }
+         ul.lst-kix_goz0fntflj08-4{
+             list-style-type: none
+         }
+         .lst-kix_ttkcmw6jepdj-8 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_ymi0w2s8oac1-3 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_ymi0w2s8oac1-0 > li:before{
+             content: "\0025cf  "
+         }
+         ul.lst-kix_goz0fntflj08-7{
+             list-style-type: none
+         }
+         .lst-kix_ymi0w2s8oac1-2 > li:before{
+             content: "\0025a0  "
+         }
+         ul.lst-kix_goz0fntflj08-8{
+             list-style-type: none
+         }
+         ul.lst-kix_ymi0w2s8oac1-7{
+             list-style-type: none
+         }
+         ul.lst-kix_ymi0w2s8oac1-6{
+             list-style-type: none
+         }
+         .lst-kix_ttkcmw6jepdj-2 > li:before{
+             content: "\0025a0  "
+         }
+         ul.lst-kix_ymi0w2s8oac1-8{
+             list-style-type: none
+         }
+         .lst-kix_g9h3ugpzp3ad-5 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_ttkcmw6jepdj-1 > li:before{
+             content: "\0025cb  "
+         }
+         ol{
+             margin: 0;
+             padding: 0
+         }
+         .c7{
+             border-bottom-width: 0pt;
+             border-top-style: solid;
+             width: 222.8pt;
+             border-right-style: solid;
+             padding: 2.9pt 2.9pt 2.9pt 2.9pt;
+             border-bottom-color: #ffffff;
+             border-top-width: 0pt;
+             border-bottom-style: solid;
+             vertical-align: top;
+             border-top-color: #ffffff;
+             border-left-color: #ffffff;
+             border-right-color: #ffffff;
+             border-left-style: solid;
+             border-right-width: 0pt;
+             border-left-width: 0pt
+         }
+         .c14{
+             border-bottom-width: 0pt;
+             border-top-style: solid;
+             width: 23.2pt;
+             border-right-style: solid;
+             padding: 2.9pt 2.9pt 2.9pt 2.9pt;
+             border-bottom-color: #ffffff;
+             border-top-width: 0pt;
+             border-bottom-style: solid;
+             vertical-align: top;
+             border-top-color: #ffffff;
+             border-left-color: #ffffff;
+             border-right-color: #ffffff;
+             border-left-style: solid;
+             border-right-width: 0pt;
+             border-left-width: 0pt
+         }
+         .c19{
+             border-bottom-width: 0pt;
+             border-top-style: solid;
+             width: 222pt;
+             border-right-style: solid;
+             padding: 2.9pt 2.9pt 2.9pt 2.9pt;
+             border-bottom-color: #ffffff;
+             border-top-width: 0pt;
+             border-bottom-style: solid;
+             vertical-align: top;
+             border-top-color: #ffffff;
+             border-left-color: #ffffff;
+             border-right-color: #ffffff;
+             border-left-style: solid;
+             border-right-width: 0pt;
+             border-left-width: 0pt
+         }
+         .c0{
+             vertical-align: baseline;
+             color: #000000;
+             font-size: 10pt;
+             font-style: normal;
+             font-family: "Courier New";
+             text-decoration: none;
+             font-weight: normal
+         }
+         .c4{
+             vertical-align: baseline;
+             color: #0000ff;
+             font-style: normal;
+             text-decoration: none;
+             font-weight: bold
+         }
+         .c18{
+             line-height: 1.0;
+             padding-top: 0pt;
+             text-align: left;
+             direction: ltr;
+             padding-bottom: 0pt
+         }
+         .c12{
+             line-height: 1.0;
+             padding-top: 0pt;
+             text-align: center;
+             direction: ltr;
+             padding-bottom: 0pt
+         }
+         .c2{
+             padding-top: 0pt;
+             widows: 2;
+             orphans: 2;
+             direction: ltr;
+             margin-left: 36pt
+         }
+         .c5{
+             padding-top: 10pt;
+             widows: 2;
+             orphans: 2;
+             direction: ltr
+         }
+         .c11{
+             color: #005a9c;
+             font-size: 13pt;
+             background-color: #ffffff;
+             font-weight: bold
+         }
+         .c34{
+             line-height: 1.15;
+             padding-top: 0pt;
+             height: 11pt;
+             text-align: left
+         }
+         .c6{
+             widows: 2;
+             orphans: 2;
+             direction: ltr;
+             margin-left: 36pt
+         }
+         .c35{
+             line-height: 1.15;
+             padding-top: 0pt;
+             text-align: left
+         }
+         .c27{
+             widows: 2;
+             orphans: 2;
+             direction: ltr
+         }
+         .c36{
+             margin-right: auto;
+             border-collapse: collapse
+         }
+         .c31{
+             color: #0b5394;
+             font-size: 10pt;
+             font-style: italic
+         }
+         .c43{
+             padding-top: 0pt;
+             padding-bottom: 20pt
+         }
+         .c10{
+             color: #1155cc;
+             text-decoration: underline
+         }
+         .c13{
+             color: #005a9c;
+             background-color: #ffffff
+         }
+         .c25{
+             padding-top: 10pt;
+             direction: ltr
+         }
+         .c26{
+             color: #0b5394;
+             font-weight: bold
+         }
+         .c42{
+             font-size: 10pt;
+             font-style: italic
+         }
+         .c37{
+             color: #005a9c;
+             font-size: 14pt
+         }
+         .c1{
+             font-size: 10pt;
+             font-family: "Courier New"
+         }
+         .c41{
+             max-width: 468pt;
+             padding: 72pt 72pt 72pt 72pt
+         }
+         .c45{
+             color: #000000;
+             font-size: 11pt
+         }
+         .c15{
+             color: inherit;
+             text-decoration: inherit
+         }
+         .c22{
+             margin: 0;
+             padding: 0
+         }
+         .c33{
+             margin-left: 18pt
+         }
+         .c44{
+             text-indent: 36pt
+         }
+         .c28{
+             direction: ltr
+         }
+         .c23{
+             padding-bottom: 0pt
+         }
+         .c29{
+             padding-top: 20pt
+         }
+         .c17{
+             height: 20pt
+         }
+         .c38{
+             height: 11pt
+         }
+         .c46{
+             padding-bottom: 10pt
+         }
+         .c24{
+             padding-bottom: 15pt
+         }
+         .c39{
+             height: 18pt
+         }
+         .c32{
+             font-weight: bold
+         }
+         .c30{
+             height: 10pt
+         }
+         .c21{
+             padding-left: 0pt
+         }
+         .c47{
+             padding-top: 30pt
+         }
+         .c20{
+             background-color: #ffffff
+         }
+         .c3{
+             font-family: "Courier New"
+         }
+         .c16{
+             height: 0pt
+         }
+         .c8{
+             margin-left: 36pt
+         }
+         .c40{
+             font-size: 9pt
+         }
+         .c9{
+             color: #0000ff
+         }
+         .title{
+             padding-top: 24pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #0b5394;
+             font-size: 18pt;
+             font-family: "Arial";
+             padding-bottom: 0pt
+         }
+         .subtitle{
+             widows: 2;
+             padding-top: 0pt;
+             line-height: 1.15;
+             orphans: 2;
+             text-align: left;
+             color: #666666;
+             font-style: italic;
+             font-size: 13pt;
+             font-family: "Trebuchet MS";
+             padding-bottom: 10pt;
+             page-break-after: avoid
+         }
+         li{
+             color: #000000;
+             font-size: 11pt;
+             font-family: "Arial"
+         }
+         p{
+             color: #000000;
+             font-size: 11pt;
+             margin: 0;
+             font-family: "Arial"
+         }
+         h1{
+             padding-top: 24pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #005a9c;
+             font-size: 18pt;
+             font-family: "Arial";
+             padding-bottom: 6pt
+         }
+         h2{
+             padding-top: 0pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #005a9c;
+             font-size: 14pt;
+             font-family: "Arial";
+             padding-bottom: 4pt
+         }
+         h3{
+             widows: 2;
+             padding-top: 14pt;
+             line-height: 1.15;
+             orphans: 2;
+             text-align: left;
+             color: #005a9c;
+             font-size: 12pt;
+             font-family: "Arial";
+             padding-bottom: 4pt;
+             page-break-after: avoid
+         }
+         h4{
+             widows: 2;
+             padding-top: 8pt;
+             line-height: 1.15;
+             orphans: 2;
+             text-align: left;
+             color: #666666;
+             font-size: 11pt;
+             text-decoration: underline;
+             font-family: "Trebuchet MS";
+             padding-bottom: 0pt;
+             page-break-after: avoid
+         }
+         h5{
+             widows: 2;
+             padding-top: 8pt;
+             line-height: 1.15;
+             orphans: 2;
+             text-align: left;
+             color: #666666;
+             font-size: 11pt;
+             font-family: "Trebuchet MS";
+             padding-bottom: 0pt;
+             page-break-after: avoid
+         }
+         h6{
+             widows: 2;
+             padding-top: 8pt;
+             line-height: 1.15;
+             orphans: 2;
+             text-align: left;
+             color: #666666;
+             font-style: italic;
+             font-size: 11pt;
+             font-family: "Trebuchet MS";
+             padding-bottom: 0pt;
+             page-break-after: avoid
+         }</style>
+   </head>
+   <body class="c20 c41">
+      <p><a href="http://www.idpf.org"><img src="https://www.idpf.org/epub/images/idpflogo_web_125.jpg" alt="IDPF"
+               class="logo" /></a></p>
+      <p class="c28 title"><a name="h.a39j7klhkr87"></a><span>Using collection Elements as Embedded Package
+         Documents</span></p>
+      <p class="c28 c43"><span class="c26">Informational Document</span><span class="c26">&#160;27 </span><span class="c26"
+            >November 2014</span></p>
+      <p class="c27 c29"><span>Copyright &copy; 2014 International Digital Publishing Forum&trade; </span></p><p class="c5"
+            ><span>All rights reserved. This work is protected under Title 17 of the United States Code. Reproduction and
+            dissemination of this work with changes is prohibited except with the written permission of the </span><span
+            class="c10"><a class="c15" href="http://www.idpf.org/">International Digital Publishing Forum
+            (IDPF)</a></span><span>.</span></p><p class="c5"><span>EPUB is a registered trademark of the International
+            Digital Publishing Forum.</span></p><p class="c28 c47"><span class="c37">Table of Contents</span></p><p
+         class="c27 c33"><span class="c10"><a class="c15" href="#h.hr8zmn9jm2eh">What is a Collection</a></span></p><p
+         class="c27 c33"><span class="c10"><a class="c15" href="#h.ytyr2lja2dhx">Why Mimic Package Documents</a></span></p><p
+         class="c27 c33"><span class="c10"><a class="c15" href="#h.u2ayg6tjafnt">Collection as Package
+         Document</a></span></p><p class="c6"><span class="c10"><a class="c15" href="#h.ces8u5j6xj9q"
+         >Metadata</a></span></p><p class="c6"><span class="c10"><a class="c15" href="#h.ctdbybcko3k7"
+         >Manifest</a></span></p><p class="c6"><span class="c10"><a class="c15" href="#h.y42hetge3tjl">Spine</a></span></p><p
+         class="c27 c33"><span class="c10"><a class="c15" href="#h.ndgduh3fx125">Defining Collections</a></span></p><p
+         class="c27 c38"><span></span></p><p class="c5"><span class="c31">NOTE</span></p><p class="c27"><span>When discussing
+            the general concept/purpose/function of collections in this document, standard font face is applied
+            (&quot;collection&quot;). References to the collection element &#8210; its attributes, child elements, etc.
+            &#8210; appear in monospace font (&quot;</span><span class="c3">collection</span><span>&quot;).</span></p><h1
+         class="c28 c39"><a name="h.t9knar3d7dq9"></a></h1><h1 class="c28"><a name="h.hr8zmn9jm2eh"></a><span>What is a
+            Collection</span></h1><p class="c5"><span>The </span><span class="c10 c3"><a class="c15"
+               href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-collection-elem">collection</a></span><span
+            class="c10"><a class="c15" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-collection-elem"
+               >&#160;element</a></span><span>&#160;was introduced during the EPUB&reg; 3.0.1 revision to provide an
+            extensible means of defining</span><span>&#160;groups of related resources in the package document</span><span>.
+            It enables new abstract components to.be defined, whether aggregated from resources of the current publication or
+            drawn from outside the container.</span></p><p class="c5"><span>Rather than have IDPF working groups &#8210; or
+            any party looking to extend the capabilities of the format &#8210; wait for a revision to request new elements,
+            effectively stalling their work, collections were created </span><span>to easily enhance renditions with
+            </span><span>new functionality and information as needed.</span></p><p class="c5"><span>The </span><span
+            class="c3">collection</span><span>&#160;element itself is a very a simple concept: it provides a way to group
+            </span><span>together sets of </span><span>resources, and allows rich metadata to be attached to define those
+            resources and/or their purpose.</span></p><p class="c5"><span>To identify the general nature of the
+            </span><span>collection, a </span><span class="c3">role</span><span>&#160;attribute is required on the
+            element:</span></p><p class="c5 c8"><span class="c1">&lt;collection</span><span class="c1 c9">&#160;</span><span
+            class="c1 c9 c32">role=&quot;scriptable-component&quot;</span><span class="c1">&gt;</span></p><p class="c2"><span
+            class="c1">&#160; &#160;&hellip;</span></p><p class="c2"><span class="c1">&lt;/collection&gt;</span></p><p
+         class="c5"><span>These roles are how machines (and humans) distinguish one collection from another, and indicate how
+            the content of the element is to be processed. The roles are typically defined in EPUB specifications, but it is
+            possible for anyone to create a custom collection. The IDPF maintains a </span><span class="c10"><a class="c15"
+               href="http://www.idpf.org/epub/vocab/package/roles/">registry of recognized
+            roles</a></span><span>&#160;</span><span>for reference, which includes:</span></p><ul
+         class="c22 lst-kix_goz0fntflj08-0 start">
+         <li class="c5 c21 c8"><span class="c3">distributable-object</span></li>
+         <li class="c5 c21 c8"><span class="c3">preview</span></li>
+         <li class="c5 c21 c8"><span class="c3">scriptable-component</span></li>
+      </ul><p class="c5"><span>There is no limit on the number of collections you can include in the package document; each
+            is defined as a separate element after the </span><span class="c10 c3"><a class="c15"
+               href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-spine-elem"
+         >spine</a></span><span>:</span></p><p class="c5 c8"><span class="c3">&lt;package </span><span class="c1"
+            >&hellip;</span><span class="c3">&gt;</span></p><p class="c2"><span class="c3">&#160;
+            &#160;&lt;metadata&gt;</span><span class="c1">&hellip;</span><span class="c3">&lt;/metadata&gt;</span></p><p
+         class="c2"><span class="c3">&#160; &#160;&lt;manifest&gt;</span><span class="c1">&hellip;</span><span class="c3"
+            >&lt;/manifest&gt;</span></p><p class="c2"><span class="c3">&#160; &#160;&lt;spine&gt;</span><span class="c1"
+            >&hellip;</span><span class="c3">&lt;/spine&gt;</span></p><p class="c2"><span class="c3 c9">&#160;
+            &#160;&lt;collection role=&quot;distributable-object&quot;&gt;</span><span class="c1 c9">&hellip;</span><span
+            class="c3 c9">&lt;/collection&gt;</span></p><p class="c6"><span class="c3 c9">&#160; &#160;&lt;collection
+            role=&quot;preview&quot;&gt;</span><span class="c1 c9">&hellip;</span><span class="c3 c9"
+            >&lt;/collection&gt;</span></p><p class="c2"><span class="c3 c9">&#160; &#160;&lt;collection
+            role=&quot;</span><span class="c1 c9">scriptable-component</span><span class="c3 c9">&quot;&gt;</span><span
+            class="c1 c9">&hellip;</span><span class="c3 c9">&lt;/collection&gt;</span></p><p class="c2"><span class="c3"
+            >&#160; &#160;</span><span class="c1">&hellip;</span></p><p class="c2"><span class="c3"
+         >&lt;/package&gt;</span></p><p class="c5"><span>Multiple collections can share the same role, as well &#8210; a
+            publication might use multiple scripted components, or define several chapters as available for resale. The
+            contents of each collection is typically unique, but multiple collections may reference many of the same
+            resources.</span></p><p class="c5"><span>The </span><span class="c3">collection</span><span>&#160;element has a
+            very basic structure: metadata and links.</span></p><p class="c5 c8"><span class="c1">&lt;collection
+            role=&quot;&hellip;&quot;&gt;</span></p><p class="c2"><span class="c1">&#160; &#160;&lt;metadata&gt;</span></p><p
+         class="c2"><span class="c1">&#160; &#160; &#160; &hellip;</span></p><p class="c2"><span class="c1">&#160;
+            &#160;&lt;/metadata&gt;</span></p><p class="c2"><span class="c1">&#160; &#160;&lt;link
+            href=&quot;&hellip;&quot;/&gt;</span></p><p class="c2"><span class="c1">&lt;/collection&gt;</span></p><p
+         class="c5"><span>The metadata section allows you to provide metadata as rich as is possible in the package document,
+            as the collection borrows the same element. The </span><span class="c3">link</span><span>&#160;elements enable
+            you to specify what resources belong to the collection, whether resources for rendering (inside or outside the
+            container) or simply sets of information (e.g., related web pages).</span></p><p class="c5"><span>Additional
+            flexibility is built into collections by allowing the elements to be nested inside each other:</span></p><p
+         class="c5 c8"><span class="c1">&lt;collection role=&quot;&hellip;&quot;&gt;</span></p><p class="c6"><span class="c1"
+            >&#160; &#160;&lt;metadata&gt;&hellip;&lt;/metadata&gt;</span></p><p class="c2"><span class="c1">&#160;
+            &#160;&lt;collection role=&quot;&hellip;&quot;&gt;</span></p><p class="c6"><span class="c1">&#160; &#160; &#160;
+            &hellip;</span></p><p class="c6"><span class="c1">&#160; &#160;&lt;/collection&gt;</span></p><p class="c6"><span
+            class="c1">&#160; &#160;&lt;link href=&quot;&hellip;&quot;/&gt;</span></p><p class="c6"><span class="c1">&#160;
+            &#160;&hellip;</span></p><p class="c6"><span class="c1">&lt;/collection&gt;</span></p><p class="c5"><span>These
+            three basic structures provide great flexibility, and allow you to represent many types of features, including
+            package documents.</span></p><h1 class="c28"><a name="h.ytyr2lja2dhx"></a><span>Why Mimic Package
+            Documents</span></h1><p class="c5"><span>A key design goal when creating collections was to allow the
+            identification of extractable components of a larger publication. Chapters and articles, for examples, are often
+            sold separately from the publication they belong to. There is also an increasing need to create and share
+            scripted components now that EPUB 3 supports JavaScript.</span></p><p class="c5"><span>While it is possible to
+            create these kinds of components as their own EPUB publications and distribute them separately from their parent,
+            it is not a very efficient model. Distributing a single file that the vendor can parcel up to create the
+            components requires much less effort and coordination, for example. Likewise, a reading system might provide
+            access to a preview without unlocking all the content, saving repeated downloads.</span></p><p class="c5"
+            ><span>This idea that content within a publication may itself need to be presented as a publication &#8210;
+            whether virtually within the reading system or physically as a new container file &#8210; was a key influence on
+            the development of the </span><span class="c3">collection</span><span>&#160;element. The working group recognized
+            that although the nature of collections might change from one to the next (e.g., an article v. a chapter), the
+            </span><span>principal</span><span>&#160;structure needed was going to be the same if both are designed to be
+            extracted and presented to users.</span></p><p class="c5"><span>Whether the collection is content for a user or
+            simply a way of sharing components, the best way to represent such smaller components of a publication is as
+            publications, since all that is needed is to leverage the existing EPUB framework.</span></p><h1 class="c28"><a
+            name="h.u2ayg6tjafnt"></a><span>Collection as Package Document</span></h1><p class="c5 c24"><span>A collection
+            that acts as a package document consists of the following three core sections:</span></p><ul
+         class="c22 lst-kix_ttkcmw6jepdj-0 start">
+         <li class="c6 c21 c24"><span class="c10"><a class="c15" href="#h.ces8u5j6xj9q"
+               >metadata</a></span><span>&#160;&#8210; using the same element from the package document, allows all the same
+               metadata to be expressed.</span></li>
+         <li class="c5 c24 c21 c8"><span class="c10"><a class="c15" href="#h.ctdbybcko3k7"
+               >manifest</a></span><span>&#160;&#8210; identifies all the resources necessary for rendering the collection.
+               It is expressed as a nested collection.</span></li>
+         <li class="c5 c21 c8 c23"><span class="c10"><a class="c15" href="#h.y42hetge3tjl"
+               >spine</a></span><span>&#160;&#8210; the child </span><span class="c10 c3"><a class="c15"
+                  href="http://www.idpf.org/epub/301/spec/epub-publications.html#elemdef-collection-link"
+               >link</a></span><span class="c10"><a class="c15"
+                  href="http://www.idpf.org/epub/301/spec/epub-publications.html#elemdef-collection-link"
+               >&#160;elements</a></span><span>&#160;of the </span><span class="c3">collection</span><span>&#160;represent
+               the logical reading order.</span></li>
+      </ul><p class="c5 c46"><span>These sections represent the minimum information necessary to generate a standalone
+            publication. The following </span><span>side-by-side comparison</span><span>&#160;shows how they are expressed in
+            the </span><span class="c3">package</span><span>&#160;and </span><span class="c3"
+            >collection</span><span>&#160;elements:</span></p><a href="#" name="995292eb5c8739f5c8284f8b4fcf64a6cfb87ec4"
+         ></a><a href="#" name="0"></a><table cellpadding="0" cellspacing="0" class="c36">
+         <tbody>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">1</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;package
+                  &hellip;&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c35 c27 c23"><span class="c0">&lt;collection
+                        role=&quot;&hellip;&quot;&gt;</span></p></td>
+            </tr>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">2</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18"><span class="c3 c40">&lt;metadata&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c18"><span class="c3 c40">&lt;metadata&gt;</span></p></td>
+            </tr>
+            <tr class="c17">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c1 c4">3</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c35 c27 c23"><span class="c0">&#160; &#160; &#160;&lt;!--
+                        standard EPUB metadata --&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c35 c27 c23"><span class="c0">&#160; &#160;</span></p></td>
+            </tr>
+            <tr class="c30">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">4</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;/metadata&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;/metadata&gt;</span></p></td>
+            </tr>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">5</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18 c38"><span class="c0"></span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c27 c23 c34"><span class="c0"></span></p></td>
+            </tr>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">6</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;manifest&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c27 c23 c35"><span class="c0">&lt;collection
+                        role=&quot;manifest&quot;&gt;</span></p></td>
+            </tr>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">7</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18"><span class="c0">&#160; &#160;&lt;item &hellip;
+                        /&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c18"><span class="c0">&#160; &#160;&lt;link &hellip;
+                        /&gt;</span></p></td>
+            </tr>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">8</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;/manifest&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;/collection&gt;</span></p></td>
+            </tr>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">9</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18 c38"><span class="c0"></span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c18 c38"><span class="c0"></span></p></td>
+            </tr>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">10</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;spine&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;!-- spine element is implied
+                        --&gt;</span></p></td>
+            </tr>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">11</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18"><span class="c0">&#160; &#160;&lt;itemref &hellip;
+                        /&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c35 c27 c23"><span class="c0">&lt;link &hellip;
+                     /&gt;</span></p></td>
+            </tr>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">12</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;spine&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c18 c38"><span class="c0"></span></p></td>
+            </tr>
+            <tr class="c16">
+               <td class="c14" colspan="1" rowspan="1"><p class="c12"><span class="c4 c1">13</span></p></td>
+               <td class="c19" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;/package&gt;</span></p></td>
+               <td class="c7" colspan="1" rowspan="1"><p class="c18"><span class="c0">&lt;/collection&gt;</span></p></td>
+            </tr>
+         </tbody>
+      </table><p class="c5"><span>T</span><span>here is no single </span><span class="c3">role</span><span>&#160;attribute
+            identifier that denotes that a collection can be processed as a package document, and no single set of production
+            rules for creating these collections. In some cases, the above sections could be omitted entirely.</span></p><p
+         class="c5"><span>Why this is the case gets into the needs of the various specifications that use collections to
+            identify embedded components. Requiring every type to follow a strict set of rules wasn&#39;t seen as practical.
+            Implementations are instead free to make alterations specific to their needs (e.g., handling fragments of
+            documents, auto-generating repetitive metadata, generating navigation documents, etc.).</span></p><p class="c5"
+            ><span>These production issues will be looked at in more detail in the following sections.</span></p><h2
+         class="c25"><a name="h.ces8u5j6xj9q"></a><span>Metadata</span></h2><p class="c5"><span>Metadata specific to the
+            collection is contained in a child </span><span class="c10 c3"><a class="c15"
+               href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-metadata-elem">metadata</a></span><span
+            class="c10"><a class="c15" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-metadata-elem"
+               >&#160;element</a></span><span>.</span></p><p class="c5"><span>By default, no metadata is required for a
+            collection, as even a collection that functions as a package document doesn&#39;t technically require any
+            metadata depending on its use &#8210; title(s), identifier(s), language(s) and last modified date can all be
+            auto-generated, particularly if the object is not destined immediately for end user consumption.</span></p><p
+         class="c5"><span>More realistically, however, a collection&#39;s metadata will require the core EPUB 3 metadata for
+            all publications.</span></p><h2 class="c25"><a name="h.ctdbybcko3k7"></a><span>Manifest</span></h2><p class="c27"
+            ><span>The manifest is created using a nested collection. The IDPF has defined the role and requirements for
+            manifests in the </span><span class="c10"><a class="c15"
+               href="http://www.idpf.org/epub/vocab/package/roles/manifest/">EPUB Manifest Role
+            specification</a></span><span>.</span></p><p class="c5 c8"><span class="c1">&lt;collection
+            role=&quot;manifest&quot;&gt;</span></p><p class="c6"><span class="c1">&#160; &#160;&lt;link
+            href=&quot;xhtml/chapter01.xhtml&quot;/&gt;</span></p><p class="c6"><span class="c1">&#160; &#160;&lt;link
+            href=&quot;css/epub.css&quot;/&gt;</span></p><p class="c6"><span class="c1">&#160; &#160;&lt;link
+            href=&quot;img/c01img01.jpg&quot;/&gt;</span></p><p class="c6"><span class="c1">&lt;/collection&gt;</span></p><p
+         class="c5 c23"><span>The </span><span class="c3">link</span><span>&#160;elements in the manifest accept only a
+            limited set of attributes, but that does not limit the information available to a person or program looking to
+            turn the collection into a standalone publication (or a virtual in-memory publication).</span></p><p
+         class="c5 c23"><span>For example, the manifest links omit necessary attributes that are specified on the real
+            manifest item elements (</span><span class="c3">properties</span><span>, </span><span class="c3"
+            >fallback</span><span>), but this information can be easily looked up using the </span><span class="c3"
+            >link</span><span>&#160;</span><span class="c3">href</span><span>&#160;attribute value, which can either point to
+            the ID of a manifest item or be used to do a lookup on the item&#39;s href.</span></p><p class="c5 c23"><span
+            class="c42">The following diagram shows how a lookup can be done by ID reference or resource name to find
+            additional meta attributes.</span><span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 92.00px;"
+               ><img alt="" src="images/image00.png"
+               style="width: 624.00px; height: 92.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" /></span></p><p class="c5"><span>The manifest is just as necessary for collections as it is for the
+            package document, as it allows a reading system, or any processing agent, to quickly and easily identify all the
+            other resources needed for rendering. The alternative, searching through all items in the spine, is both complex
+            to implement, time-consuming to do on the fly, and prone to error.</span></p><h2 class="c25"><a
+            name="h.y42hetge3tjl"></a><span>Spine</span></h2><p class="c5"><span>When you reviewed the side-by-side
+            comparison of the package and collection elements above, you might have wondered why the manifest is defined in a
+            nested collection but the spine is implied as the set of child </span><span class="c3"
+            >link</span><span>&#160;elements</span><span>.</span></p><p class="c5"><span>Although it is possible for a
+            collection to contain only nested collections (i.e., a &quot;</span><span class="c3">spine</span><span>&quot;
+            collection could be defined like the manifest), having an implied spine was chosen for simplicity. One of the
+            original design goals for the </span><span class="c3">collection</span><span>&#160;element was to be able to
+            provide a lightweight means of collecting resources together and proving reading order for the linked resources,
+            regardless of whether they represented a publication in miniature or not.</span></p><p class="c5"><span>The spine
+            is the one feature that cannot be omitted from a collection acting as a package document: every publication must
+            have at least one document in its logical reading order.</span></p><p class="c5"><span>The processing of a
+            collection&#39;s spine may be more complex than a package document&#39;s in some cases. The </span><span
+            class="c10"><a class="c15" href="http://www.idpf.org/epub/do/">EPUB Distributable
+            Objects</a></span><span>&#160;specification, for example, uses the spine to identify fragments of content
+            documents. To create an actual EPUB publication, a processing agent has to both filter the spine list to remove
+            duplicate content documents, and also filter the content documents to remove all content except what is listed in
+            the spine.</span></p><h1 class="c25"><a name="h.ndgduh3fx125"></a><span>Defining Collections</span></h1><p
+         class="c5"><span>Every specification that uses the collection element to represent a package document has to follow
+            the general outline detailed in the last section:</span></p><ul class="c22 lst-kix_g9h3ugpzp3ad-0 start">
+         <li class="c5 c21 c8"><span>it has to define how the required metadata is to be auto-generated if it does not
+               require the minimal set</span></li>
+         <li class="c5 c21 c8"><span>it has to explain why a manifest is not required, and how to determine the needed
+               resources, if it is optional</span></li>
+         <li class="c5 c8 c21"><span>it has to detail how its spine links are used to create the logical reading order if it
+               deviates from a traditional list of content documents</span></li>
+      </ul><p class="c5"><span>Authors and developers need only be aware that these requirements may change from
+            specification to specification, and not assume that one model will exactly match another they&#39;ve seen
+            before.</span></p><p class="c5"><span>In practice, the variations will typically be minor, and both production
+            and processing will entail much the same work, as the aim of having this model for mimicking package documents is
+            to reduce duplication.</span></p></body>
+</html>

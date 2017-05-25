@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>EPUB Package Metadata Guide</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="https://www.idpf.org/epub/css/epub-spec-2016.css" />
+		<style type="text/css">
+			body{
+			    max-width: 100%;
+			}
+			pre{
+			    border: none;
+			    background-color: inherit;
+			    margin: 0;
+			    padding: 0;
+			}
+			th{
+			    width: 10%
+			}
+			th.ex{
+			    width: 40%
+			}
+			th.desc{
+			    width: 45%
+			}
+			dl#roles dt,
+			dl#types dt{
+			    margin-bottom: 1em;
+			    font-weight: bold;
+			}
+			div.history{
+			    margin-top: 2em;
+			    margin-bottom: 2em
+			}</style>
+	</head>
+	<body>
+		<header>
+			<p><a href="http://www.idpf.org"><img src="https://www.idpf.org/epub/images/idpflogo_web_125.jpg" alt="IDPF"
+						class="logo" /></a></p>
+			<h1 class="title">EPUB Package Metadata Guide</h1>
+			<p class="identity">
+				<span class="pubdate">4 July 2016</span>
+			</p>
+			<div class="history">
+				<span class="history-title">Document history</span>
+				<ul>
+					<li><a href="https://github.com/IDPF/epub-guides/commits/master/guides/package-metadata/index.html"
+							>Changes to this document</a></li>
+				</ul>
+			</div>
+		</header>
+		
+		<nav id="toc" class="toc">
+			<h2 class="toc-title">Table of Contents</h2>
+			<ol class="toc">
+				<li><span class="section"><a href="#sec-overview">1. Overview</a></span></li>
+				<li><span class="section"><a href="#sec-meta">2. Metadata Properties</a></span></li>
+			</ol>
+		</nav>
+		
+		
+		<section class="chapter" id="sec-overview">
+			<h2 class="title">1. Overview</h2>
+			<p>The EPUB format only defines a minimal set of metadata properties for use in the Package Document, and these
+				properties are defined solely to control layout and rendering of the content. Authors are expected to use
+				properties from existing vocabularies for any needed metadata that cannot be expressed using the Dublin Core
+				Metadata Element Set.</p>
+			<p>A consequence of this approach is that it is not always clear if there are preferred metadata properties that
+				Authors should be using for common expressions. The intent of this document is to provide a list of common
+				solutions to these metadata questions.</p>
+			<p>The table of properties below represents suggestions from the EPUB working group and community. Authors are
+					<strong>not</strong> required to use these properties.</p>
+			<p>If a common use is not covered, suggestions for additions can be made through the <a
+					href="https://github.com/IDPF/epub-guides/issues">issue tracker</a>. Creating a pull request that
+				includes the suggested property, definition and example is strongly preferred.</p>
+		</section>
+		
+		<section class="chapter" id="sec-meta">
+			<h2 class="title">2. Metadata Properties</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Property</th>
+						<th class="desc">Description</th>
+						<th class="ex">Example</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="center" id="schema-numberOfPages"><a href="https://schema.org/numberOfPages"><code
+									class="markup">schema:numberOfPages</code></a></td>
+						<td>
+							<p>The <a href="https://schema.org">schema.org</a>
+								<code class="markup">numberOfPages</code> property provides the total number of pages. This
+								number represents a static page count that does not change based on the device or reading
+								system used.</p>
+							<p>The value typically reflects one of: 1) the total number of pages in a fixed-layout
+								publication; 2) the static page count from a print equivalent; or 3) the total number of
+								static <a href="http://www.idpf.org/epub/vocab/structure/#pagebreak">page break markers</a>
+								in a reflowable publication.</p>
+						</td>
+						<td><pre>&lt;meta property="schema:numberOfPages">227&lt;/meta></pre></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</body>
+</html>

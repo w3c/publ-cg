@@ -1,0 +1,2547 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>EPUB Region-Based Navigation Markup Guide</title>
+      <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+      <style type="text/css">
+         body{
+             max-width: 468pt;
+             padding: 72pt 72pt 72pt 72pt
+         }
+         .lst-kix_2svetwzcfkfz-4 > li:before{
+             content: "" counter(lst-ctn-kix_2svetwzcfkfz-4, lower-latin) ". "
+         }
+         ol.lst-kix_2svetwzcfkfz-5.start{
+             counter-reset: lst-ctn-kix_2svetwzcfkfz-5 0
+         }
+         .lst-kix_2svetwzcfkfz-2 > li:before{
+             content: "" counter(lst-ctn-kix_2svetwzcfkfz-2, lower-roman) ". "
+         }
+         ul.lst-kix_blnu49e2d6w7-1{
+             list-style-type: none
+         }
+         ul.lst-kix_blnu49e2d6w7-0{
+             list-style-type: none
+         }
+         ul.lst-kix_blnu49e2d6w7-3{
+             list-style-type: none
+         }
+         ul.lst-kix_blnu49e2d6w7-2{
+             list-style-type: none
+         }
+         ul.lst-kix_blnu49e2d6w7-5{
+             list-style-type: none
+         }
+         ul.lst-kix_blnu49e2d6w7-4{
+             list-style-type: none
+         }
+         .lst-kix_blnu49e2d6w7-4 > li:before{
+             content: "\0025cb  "
+         }
+         ul.lst-kix_blnu49e2d6w7-7{
+             list-style-type: none
+         }
+         ul.lst-kix_blnu49e2d6w7-6{
+             list-style-type: none
+         }
+         ul.lst-kix_blnu49e2d6w7-8{
+             list-style-type: none
+         }
+         .lst-kix_blnu49e2d6w7-5 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_2svetwzcfkfz-6 > li:before{
+             content: "" counter(lst-ctn-kix_2svetwzcfkfz-6, decimal) ". "
+         }
+         .lst-kix_iacmlzn96mu3-7 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_vu1lm5wl1mjp-4 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_blnu49e2d6w7-1 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_l4ajl08zmtd9-5 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_vu1lm5wl1mjp-8 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_blnu49e2d6w7-2 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_l4ajl08zmtd9-3 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_l4ajl08zmtd9-4 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_2svetwzcfkfz-3 > li:before{
+             content: "" counter(lst-ctn-kix_2svetwzcfkfz-3, decimal) ". "
+         }
+         .lst-kix_2svetwzcfkfz-6 > li{
+             counter-increment: lst-ctn-kix_2svetwzcfkfz-6
+         }
+         .lst-kix_2svetwzcfkfz-4 > li{
+             counter-increment: lst-ctn-kix_2svetwzcfkfz-4
+         }
+         ul.lst-kix_vu1lm5wl1mjp-5{
+             list-style-type: none
+         }
+         .lst-kix_l4ajl08zmtd9-6 > li:before{
+             content: "\0025cf  "
+         }
+         ul.lst-kix_vu1lm5wl1mjp-4{
+             list-style-type: none
+         }
+         .lst-kix_blnu49e2d6w7-0 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_iacmlzn96mu3-5 > li:before{
+             content: "\0025a0  "
+         }
+         ul.lst-kix_vu1lm5wl1mjp-7{
+             list-style-type: none
+         }
+         ul.lst-kix_vu1lm5wl1mjp-6{
+             list-style-type: none
+         }
+         ul.lst-kix_vu1lm5wl1mjp-1{
+             list-style-type: none
+         }
+         ul.lst-kix_vu1lm5wl1mjp-0{
+             list-style-type: none
+         }
+         ul.lst-kix_vu1lm5wl1mjp-3{
+             list-style-type: none
+         }
+         ul.lst-kix_vu1lm5wl1mjp-2{
+             list-style-type: none
+         }
+         .lst-kix_2svetwzcfkfz-7 > li{
+             counter-increment: lst-ctn-kix_2svetwzcfkfz-7
+         }
+         .lst-kix_vu1lm5wl1mjp-7 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_blnu49e2d6w7-8 > li:before{
+             content: "\0025a0  "
+         }
+         ol.lst-kix_2svetwzcfkfz-7.start{
+             counter-reset: lst-ctn-kix_2svetwzcfkfz-7 0
+         }
+         .lst-kix_l4ajl08zmtd9-1 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_l4ajl08zmtd9-0 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_iacmlzn96mu3-0 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_2svetwzcfkfz-3 > li{
+             counter-increment: lst-ctn-kix_2svetwzcfkfz-3
+         }
+         .lst-kix_iacmlzn96mu3-3 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_2svetwzcfkfz-8 > li{
+             counter-increment: lst-ctn-kix_2svetwzcfkfz-8
+         }
+         ol.lst-kix_2svetwzcfkfz-8{
+             list-style-type: none
+         }
+         ol.lst-kix_2svetwzcfkfz-7{
+             list-style-type: none
+         }
+         ol.lst-kix_2svetwzcfkfz-6{
+             list-style-type: none
+         }
+         ol.lst-kix_2svetwzcfkfz-5{
+             list-style-type: none
+         }
+         ol.lst-kix_2svetwzcfkfz-4{
+             list-style-type: none
+         }
+         ol.lst-kix_2svetwzcfkfz-1.start{
+             counter-reset: lst-ctn-kix_2svetwzcfkfz-1 0
+         }
+         ol.lst-kix_2svetwzcfkfz-3{
+             list-style-type: none
+         }
+         ol.lst-kix_2svetwzcfkfz-2{
+             list-style-type: none
+         }
+         ol.lst-kix_2svetwzcfkfz-0{
+             list-style-type: none
+         }
+         ol.lst-kix_2svetwzcfkfz-1{
+             list-style-type: none
+         }
+         .lst-kix_blnu49e2d6w7-7 > li:before{
+             content: "\0025cb  "
+         }
+         ul.lst-kix_vu1lm5wl1mjp-8{
+             list-style-type: none
+         }
+         .lst-kix_vu1lm5wl1mjp-1 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_vu1lm5wl1mjp-3 > li:before{
+             content: "\0025cf  "
+         }
+         ol.lst-kix_2svetwzcfkfz-8.start{
+             counter-reset: lst-ctn-kix_2svetwzcfkfz-8 0
+         }
+         .lst-kix_2svetwzcfkfz-1 > li:before{
+             content: "" counter(lst-ctn-kix_2svetwzcfkfz-1, lower-latin) ". "
+         }
+         .lst-kix_2svetwzcfkfz-5 > li:before{
+             content: "" counter(lst-ctn-kix_2svetwzcfkfz-5, lower-roman) ". "
+         }
+         .lst-kix_vu1lm5wl1mjp-6 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_iacmlzn96mu3-2 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_vu1lm5wl1mjp-5 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_iacmlzn96mu3-4 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_2svetwzcfkfz-0 > li:before{
+             content: "" counter(lst-ctn-kix_2svetwzcfkfz-0, decimal) ". "
+         }
+         ol.lst-kix_2svetwzcfkfz-4.start{
+             counter-reset: lst-ctn-kix_2svetwzcfkfz-4 0
+         }
+         .lst-kix_2svetwzcfkfz-1 > li{
+             counter-increment: lst-ctn-kix_2svetwzcfkfz-1
+         }
+         .lst-kix_2svetwzcfkfz-8 > li:before{
+             content: "" counter(lst-ctn-kix_2svetwzcfkfz-8, lower-roman) ". "
+         }
+         .lst-kix_l4ajl08zmtd9-8 > li:before{
+             content: "\0025a0  "
+         }
+         ol.lst-kix_2svetwzcfkfz-0.start{
+             counter-reset: lst-ctn-kix_2svetwzcfkfz-0 0
+         }
+         .lst-kix_l4ajl08zmtd9-7 > li:before{
+             content: "\0025cb  "
+         }
+         .lst-kix_vu1lm5wl1mjp-0 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_blnu49e2d6w7-6 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_2svetwzcfkfz-7 > li:before{
+             content: "" counter(lst-ctn-kix_2svetwzcfkfz-7, lower-latin) ". "
+         }
+         .lst-kix_2svetwzcfkfz-0 > li{
+             counter-increment: lst-ctn-kix_2svetwzcfkfz-0
+         }
+         ul.lst-kix_iacmlzn96mu3-0{
+             list-style-type: none
+         }
+         .lst-kix_iacmlzn96mu3-8 > li:before{
+             content: "\0025a0  "
+         }
+         .lst-kix_2svetwzcfkfz-2 > li{
+             counter-increment: lst-ctn-kix_2svetwzcfkfz-2
+         }
+         ol.lst-kix_2svetwzcfkfz-2.start{
+             counter-reset: lst-ctn-kix_2svetwzcfkfz-2 0
+         }
+         .lst-kix_iacmlzn96mu3-1 > li:before{
+             content: "\0025cb  "
+         }
+         ol.lst-kix_2svetwzcfkfz-3.start{
+             counter-reset: lst-ctn-kix_2svetwzcfkfz-3 0
+         }
+         ol.lst-kix_2svetwzcfkfz-6.start{
+             counter-reset: lst-ctn-kix_2svetwzcfkfz-6 0
+         }
+         .lst-kix_iacmlzn96mu3-6 > li:before{
+             content: "\0025cf  "
+         }
+         .lst-kix_vu1lm5wl1mjp-2 > li:before{
+             content: "\0025a0  "
+         }
+         ul.lst-kix_l4ajl08zmtd9-7{
+             list-style-type: none
+         }
+         .lst-kix_blnu49e2d6w7-3 > li:before{
+             content: "\0025cf  "
+         }
+         ul.lst-kix_l4ajl08zmtd9-6{
+             list-style-type: none
+         }
+         .lst-kix_2svetwzcfkfz-5 > li{
+             counter-increment: lst-ctn-kix_2svetwzcfkfz-5
+         }
+         ul.lst-kix_l4ajl08zmtd9-8{
+             list-style-type: none
+         }
+         ul.lst-kix_iacmlzn96mu3-7{
+             list-style-type: none
+         }
+         ul.lst-kix_l4ajl08zmtd9-3{
+             list-style-type: none
+         }
+         ul.lst-kix_iacmlzn96mu3-8{
+             list-style-type: none
+         }
+         ul.lst-kix_l4ajl08zmtd9-2{
+             list-style-type: none
+         }
+         ul.lst-kix_iacmlzn96mu3-5{
+             list-style-type: none
+         }
+         ul.lst-kix_l4ajl08zmtd9-5{
+             list-style-type: none
+         }
+         ul.lst-kix_iacmlzn96mu3-6{
+             list-style-type: none
+         }
+         ul.lst-kix_l4ajl08zmtd9-4{
+             list-style-type: none
+         }
+         ul.lst-kix_iacmlzn96mu3-3{
+             list-style-type: none
+         }
+         ul.lst-kix_iacmlzn96mu3-4{
+             list-style-type: none
+         }
+         ul.lst-kix_iacmlzn96mu3-1{
+             list-style-type: none
+         }
+         ul.lst-kix_l4ajl08zmtd9-1{
+             list-style-type: none
+         }
+         ul.lst-kix_iacmlzn96mu3-2{
+             list-style-type: none
+         }
+         ul.lst-kix_l4ajl08zmtd9-0{
+             list-style-type: none
+         }
+         .lst-kix_l4ajl08zmtd9-2 > li:before{
+             content: "\0025a0  "
+         }
+         ol{
+             margin: 0;
+             padding: 0
+         }
+         .c19{
+             font-size: 11pt;
+             font-family: "Arial";
+             font-weight: normal
+         }
+         .c5{
+             color: #1155cc;
+             font-family: "Courier New";
+             text-decoration: underline
+         }
+         .c31{
+             color: #005a9c;
+             font-size: 13pt
+         }
+         .c0{
+             font-size: 10pt;
+             font-family: "Courier New"
+         }
+         .c22{
+             font-size: 11pt;
+             font-weight: normal
+         }
+         .c35{
+             color: #000000;
+             font-size: 11pt
+         }
+         .c7{
+             color: inherit;
+             text-decoration: inherit
+         }
+         .c29{
+             max-width: 468pt;
+             padding: 72pt 72pt 72pt 72pt
+         }
+         .c4{
+             margin: 0;
+             padding: 0
+         }
+         .c24{
+             widows: 2;
+             orphans: 2
+         }
+         .c9{
+             color: #1155cc;
+             text-decoration: underline
+         }
+         .c6{
+             padding-top: 0pt;
+             margin-left: 36pt
+         }
+         .c36{
+             color: #0000ff;
+             text-decoration: underline
+         }
+         .c10{
+             color: #ff4500;
+             font-family: "Courier New"
+         }
+         .c21{
+             padding-top: 0pt
+         }
+         .c14{
+             text-align: left
+         }
+         .c20{
+             font-family: "Courier New"
+         }
+         .c30{
+             font-size: 8pt
+         }
+         .c28{
+             color: #0b5394
+         }
+         .c16{
+             font-style: italic
+         }
+         .c3{
+             padding-bottom: 10pt
+         }
+         .c13{
+             padding-bottom: 20pt
+         }
+         .c33{
+             font-size: 14pt
+         }
+         .c17{
+             height: 11pt
+         }
+         .c32{
+             color: #005a9c
+         }
+         .c37{
+             color: #0000ff
+         }
+         .c12{
+             text-align: center
+         }
+         .c23{
+             margin-left: 18pt
+         }
+         .c11{
+             padding-left: 0pt
+         }
+         .c2{
+             padding-top: 10pt
+         }
+         .c27{
+             font-weight: bold
+         }
+         .c34{
+             color: #444444
+         }
+         .c18{
+             text-indent: 36pt
+         }
+         .c26{
+             padding-top: 30pt
+         }
+         .c15{
+             background-color: #ffffff
+         }
+         .c25{
+             padding-top: 20pt
+         }
+         .c1{
+             direction: ltr
+         }
+         .c8{
+             margin-left: 36pt
+         }
+         .title{
+             padding-top: 0pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #0b5394;
+             font-size: 18pt;
+             font-family: "Arial";
+             padding-bottom: 0pt
+         }
+         .subtitle{
+             padding-top: 0pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #000000;
+             font-size: 13pt;
+             font-family: "Trebuchet MS";
+             padding-bottom: 10pt
+         }
+         li{
+             color: #000000;
+             font-size: 11pt;
+             font-family: "Arial"
+         }
+         p{
+             color: #000000;
+             font-size: 11pt;
+             margin: 0;
+             font-family: "Arial"
+         }
+         h1{
+             padding-top: 10pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #005a9c;
+             font-size: 18pt;
+             font-family: "Arial";
+             padding-bottom: 0pt
+         }
+         h2{
+             padding-top: 10pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #005a9c;
+             font-size: 14pt;
+             font-family: "Arial";
+             padding-bottom: 0pt
+         }
+         h3{
+             padding-top: 8pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #666666;
+             font-size: 12pt;
+             font-family: "Trebuchet MS";
+             padding-bottom: 0pt
+         }
+         h4{
+             padding-top: 8pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #666666;
+             font-size: 11pt;
+             text-decoration: underline;
+             font-family: "Trebuchet MS";
+             padding-bottom: 0pt
+         }
+         h5{
+             padding-top: 8pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #666666;
+             font-size: 11pt;
+             font-family: "Trebuchet MS";
+             padding-bottom: 0pt
+         }
+         h6{
+             padding-top: 8pt;
+             line-height: 1.15;
+             text-align: left;
+             color: #666666;
+             font-style: italic;
+             font-size: 11pt;
+             font-family: "Trebuchet MS";
+             padding-bottom: 0pt
+         }</style>
+   </head>
+   <body class="c15 c29">
+      <p><a href="http://www.idpf.org"><img src="https://www.idpf.org/epub/images/idpflogo_web_125.jpg" alt="IDPF" class="logo"/></a></p>
+      <p class="c2 c1 title">
+         <a name="h.vf6iq9q4ax0d"></a>
+         <span>EPUB Region-Based Navigation Markup Guide</span>
+      </p>
+      <p class="c1 c13">
+         <span class="c27 c28">Informational Document 2 December 2014</span>
+      </p>
+      <p class="c24 c1 c25">
+         <span>Copyright &copy; 2014 International Digital Publishing Forum&trade; </span>
+      </p>
+      <p class="c24 c2 c1">
+         <span>All rights reserved. This work is protected under Title 17 of the United States Code. Reproduction and
+            dissemination of this work with changes is prohibited except with the written permission of the </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFmwkQcfXm0mYL9R_7T0FShJ3KlQA"
+               >International Digital Publishing Forum (IDPF)</a>
+         </span>
+         <span>.</span>
+      </p>
+      <p class="c2 c1 c24">
+         <span>EPUB is a registered trademark of the International Digital Publishing Forum.</span>
+      </p>
+      <p class="c2 c1">
+         <span class="c32 c33">Table of Contents</span>
+      </p>
+      <p class="c23 c1">
+         <span class="c9">
+            <a class="c7" href="#h.2ub4n3k2o66">1. Comics</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.mzhgrg5eu4uc">1.1 panel</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.413hopphin4j">1.2 panel-group</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.i4tmn6d2r9z3">1.3 balloon</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.5a9vnxvw9tty">1.4 text-area</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.r3fhhg59kv5">1.5 sound-area</a>
+         </span>
+      </p>
+      <p class="c1 c23">
+         <span class="c9">
+            <a class="c7" href="#h.uelinkz8lfw1">2. Magazines</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.plwdpjtny1p1">2.1 msv:article-region</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.ek8921hciamk">2.2 prism:title</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.37op1qo8yczz">2.3 prism:deck</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.mecetleizd66">2.4 prism:subtitle</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.ytczv7phbmxt">2.5 prism:byline</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.11zazua6wxvo">2.6 prism:contributors</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.pk76hvgyrpz">2.7 msv:media</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.c9qcp671wb5w">2.8 prism:caption</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.ct8kf8hiu0ep">2.9 prism:credit</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.2g1j8nffgcis">2.10 msv:article-text</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.bicbsonuqet1">2.11 prism:box</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.7iq3mrfv5xg3">2.12 prism:advertisement</a>
+         </span>
+      </p>
+      <p class="c1 c8">
+         <span class="c9">
+            <a class="c7" href="#h.aacoahot64vl">2.13 prism:pullQuote</a>
+         </span>
+      </p>
+      <p class="c23 c1">
+         <span class="c9">
+            <a class="c7" href="#h.2tmlawvxzdt8">Appendix A. Acknowledgements</a>
+         </span>
+      </p>
+      <p class="c23 c1">
+         <span class="c9">
+            <a class="c7" href="#h.ci9p9keakb5a">Appendix B. Contributors</a>
+         </span>
+      </p>
+      <p class="c1 c26">
+         <span>This document relies on the concept of a Region of Interest (ROI) as defined in </span>
+         <span class="c9">
+            <a class="c7"
+               href="https://www.google.com/url?q=https%3A%2F%2Fwww.idpf.org%2Fepub%2Frenditions%2Fregion-nav%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEl3dJOQnDVKRwofnY_UVh6AHd_OA"
+               >EPUB Region-Based Navigation</a>
+         </span>
+         <span>. ROIs are used </span>
+         <span>in guided navigation through the concept of navigation sequences. The latter are ordered sequences of Regions
+            of Interest that a Reading System will render in turn as the User navigates through the work. There can be one or
+            more of these sequences to a document (e.g., panels in a comic, articles in a magazine), and each sequence can
+            include nested subregions of interest, such as article components, to be navigated as part of the guided
+            flow.</span>
+      </p>
+      <p class="c17 c2 c1">
+         <span></span>
+      </p>
+      <p class="c21 c17 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.ajk95gsxljus"></a>
+      <h1 class="c1">
+         <a name="h.2ub4n3k2o66"></a>
+         <span>1. Comics</span>
+      </h1>
+      <p class="c3 c2 c1">
+         <span>The terms described in this section are defined in the </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFngnAZ94jppf6FI0uHkO7ZSifDWQ"
+               >EPUB 3 Structural Semantics Vocabulary</a>
+         </span>
+         <span>&nbsp;and can be use without a prefix in the </span>
+         <span class="c10">epub:type</span>
+         <span>&nbsp;attribute.</span>
+      </p>
+      <a href="#" name="id.bnv64zpesssv"></a>
+      <h2 class="c1">
+         <a name="h.mzhgrg5eu4uc"></a>
+         <span>1.1 panel</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23panel&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHAoqgIVeFtVNpC5uueUUBzJAJGdg"
+               >panel</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23panel&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHAoqgIVeFtVNpC5uueUUBzJAJGdg"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;</span>
+         <span>is used to identify a single frame or drawing. The following image shows a single panel highlighted in
+            green:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 249.00px; height: 343.00px;">
+            <img alt="" src="images/image10.jpg"
+               style="width: 249.00px; height: 343.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>By identifying each panel, a Reading System can provide </span>
+         <span>sequential navigation through the publication.</span>
+      </p>
+      <p class="c2 c1">
+         <span>For example the following example shows how an image can be broken down into a set of six individual
+            panels:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 266.00px; height: 203.00px;">
+            <img alt="" src="images/image09.jpg"
+               style="width: 266.00px; height: 203.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>These panels would be marked up as follows:</span>
+      </p>
+      <p class="c17 c1">
+         <span class="c20 c30"></span>
+      </p>
+      <p class="c1">
+         <span class="c0">&lt;ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;li
+            epub:type=&quot;panel&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;// roi1</span>
+      </p>
+      <p class="c18 c1">
+         <span class="c0">&lt;a href=&quot;page23.xhtml#xywh=percent:0,0,66,30&quot;&quot;/&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;/li&gt; </span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;li epub:type=&quot;panel&quot;&gt;&lt;a
+            href=&quot;page23.xhtml#&hellip;&quot;/&gt;&lt;/li&gt; // roi2</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;li epub:type=&quot;panel&quot;&gt;&lt;a
+            href=&quot;page23.xhtml#&hellip;&quot;/&gt;&lt;/li&gt; // roi3</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;li epub:type=&quot;panel&quot;&gt;&lt;a
+            href=&quot;page23.xhtml#&hellip;&quot;/&gt;&lt;/li&gt; // roi4</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;li epub:type=&quot;panel&quot;&gt;&lt;a
+            href=&quot;page23.xhtml#&hellip;&quot;/&gt;&lt;/li&gt; // roi5</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;li epub:type=&quot;panel&quot;&gt;&lt;a
+            href=&quot;page23.xhtml#&hellip;&quot;/&gt;&lt;/li&gt; // roi6</span>
+      </p>
+      <p class="c21 c1">
+         <span class="c0">&lt;/ol&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>A reading system that supports region-based navigation c</span>
+         <span>ould then provide a guided experience similar to the following on a phone-sized screen:</span>
+      </p>
+      <p class="c3 c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 200.00px; height: 377.00px;">
+            <img alt="" src="images/image25.jpg"
+               style="width: 200.00px; height: 377.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c3 c17 c2 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.kr70ehpf6eo9"></a>
+      <h2 class="c2 c1">
+         <a name="h.413hopphin4j"></a>
+         <span>1.2 panel-group</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23panel-group&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEiJXo2oDzDGrWy5uC-AbWRUfGWNQ"
+               >panel-group</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23panel-group&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEiJXo2oDzDGrWy5uC-AbWRUfGWNQ"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;i</span>
+         <span>dentifies a group of </span>
+         <span class="c9">
+            <a class="c7" href="#id.bnv64zpesssv">panels</a>
+         </span>
+         <span>&nbsp;(e.g., a strip), which allows the reading system to isolate those panels to focus the reader&rsquo;s
+            attention.</span>
+      </p>
+      <p class="c2 c1">
+         <span>For example, a page could consist of three panel groups, each consisting of three panels, as shown in the
+            following illustration:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 271.00px; height: 348.00px;">
+            <img alt="" src="images/image18.jpg"
+               style="width: 271.00px; height: 348.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>Each of these panel groups will define its child panels in nested ordered lists, as shown in the following
+            markup:</span>
+      </p>
+      <p class="c2 c1">
+         <span class="c0">&lt;ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;li epub:type=&quot;panel-group&quot;&gt;</span>
+      </p>
+      <p class="c18 c1">
+         <span class="c0">&lt;a href=&quot;page1.xhtml#xywh=percent:5,10,90,20&quot;&quot;/&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;panel&quot;&gt;&lt;a
+            href=&quot;page1.xhtml#xywh=percent:&hellip;&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;panel&quot;&gt;&lt;a
+            href=&quot;page1.xhtml#xywh=percent:&hellip;&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;panel&quot;&gt;&lt;a
+            href=&quot;page1.xhtml#xywh=percent:&hellip;&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;/li&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&hellip;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&lt;/ol&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>The reading system can then present the full panel group followed by each individual panel before moving on to
+            the next group, as shown in the following image:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 372.00px; height: 565.00px;">
+            <img alt="" src="images/image02.jpg"
+               style="width: 372.00px; height: 565.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c17 c2 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.k685mycliobc"></a>
+      <h2 class="c2 c1">
+         <a name="h.i4tmn6d2r9z3"></a>
+         <span>1.3 </span>
+         <span>balloon</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23balloon&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHm8Lm5B9vvzTMUN1RGPdv6CqRh8w"
+               >balloon</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23balloon&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHm8Lm5B9vvzTMUN1RGPdv6CqRh8w"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a region </span>
+         <span class="c15">that contains the words, spoken or thought, of a character.</span>
+      </p>
+      <p class="c2 c1">
+         <span class="c15">For example, a dialogue balloon is highlighted in green in the following image:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 494.00px; height: 356.00px;">
+            <img alt="" src="images/image05.jpg"
+               style="width: 494.00px; height: 356.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>The balloon would be identified as follows:</span>
+      </p>
+      <p class="c2 c1">
+         <span class="c0">&lt;ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;li
+            epub:type=&quot;panel&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;</span>
+      </p>
+      <p class="c18 c1">
+         <span class="c0">&lt;a href=&quot;page1.xhtml#xywh=percent:5,10,90,20&quot;&quot;/&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;balloon&quot;&gt;&lt;a
+            href=&quot;page1.xhtml#xywh=&hellip;&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;/li&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&hellip;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&lt;/ol&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>Identifying these regions</span>
+         <span>&nbsp;allows the reading system to traverse them with each panel. For example, if all the balloons were
+            identified as follows:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 303.00px; height: 230.00px;">
+            <img alt="" src="images/image08.jpg"
+               style="width: 303.00px; height: 230.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>the reading system could</span>
+         <span>&nbsp;zoom into the subregion identified by the balloon:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 311.00px; height: 519.00px;">
+            <img alt="" src="images/image00.jpg"
+               style="width: 311.00px; height: 519.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c17 c2 c1">
+         <span class="c20"></span>
+      </p>
+      <a href="#" name="id.n98bcwwsgrf9"></a>
+      <h2 class="c2 c1">
+         <a name="h.5a9vnxvw9tty"></a>
+         <span>1.4 text-area</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23text-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG-bPKtrb5eacUk1KJSsjUjPRtQjg"
+               >text-area</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23text-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG-bPKtrb5eacUk1KJSsjUjPRtQjg"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a</span>
+         <span>ny region with text regardless whether it is contained or associated with a </span>
+         <span class="c9">
+            <a class="c7" href="#id.k685mycliobc">balloon</a>
+         </span>
+         <span>.</span>
+      </p>
+      <p class="c2 c1">
+         <span>In the following example, the text area is defined on the cover:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 325.00px; height: 452.00px;">
+            <img alt="" src="images/image19.jpg"
+               style="width: 325.00px; height: 452.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>This text region would be identified as follows:</span>
+      </p>
+      <p class="c2 c1">
+         <span class="c0">&lt;ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;li
+            epub:type=&quot;panel&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;</span>
+      </p>
+      <p class="c18 c1">
+         <span class="c0">&lt;a href=&quot;page01.xhtml#xywh=percent:0,0,100,100&quot;&quot;/&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;text-area&quot;&gt;&lt;a
+            href=&quot;page1.xhtml#xywh=percent:30,3,40,20&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;/li&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&hellip;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&lt;/ol&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>Text areas can be used in navigation sequences in the same way as balloons. The reading system can zoom on the
+            subregions defined by text areas in the same way as it can zoom balloons.</span>
+      </p>
+      <p class="c2 c1">
+         <span>Alternatively, the text area inside a balloon could be identified using such a region</span>
+         <span>&nbsp;as in the example below. The green text area can be used to refine the location of the text inside the
+            (red) balloon.</span>
+      </p>
+      <p class="c14 c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 399.00px; height: 214.00px;">
+            <img alt="" src="images/image20.jpg"
+               style="width: 399.00px; height: 214.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c21 c14 c17 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.osdor5u1g1tr"></a>
+      <h2 class="c2 c1">
+         <a name="h.r3fhhg59kv5"></a>
+         <span>1.5 sound-area</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23sound-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHc77mcOZmjKFBQzoyVje0rGkbR6w"
+               >sound-area</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23sound-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHc77mcOZmjKFBQzoyVje0rGkbR6w"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies an</span>
+         <span>&nbsp;area on the page that represents a sound.</span>
+      </p>
+      <p class="c2 c1">
+         <span>For example, the sound of a door closing is highlighted in green in the following image:</span>
+      </p>
+      <p class="c21 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 604.00px; height: 274.00px;">
+            <img alt="" src="images/image07.jpg"
+               style="width: 604.00px; height: 274.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>This sound would be identified as follows:</span>
+      </p>
+      <p class="c2 c1">
+         <span class="c0">&lt;ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;li
+            epub:type=&quot;panel&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;</span>
+      </p>
+      <p class="c18 c1">
+         <span class="c0">&lt;a href=&quot;page01.xhtml#xywh=percent:55,0,45,50&quot;&quot;/&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;sound-area&quot;&gt;&lt;a
+            href=&quot;page1.xhtml#xywh=percent:83,30,10,5&quot;&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/ol&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&lt;/li&gt;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&nbsp; &nbsp;&hellip;</span>
+      </p>
+      <p class="c1">
+         <span class="c0">&lt;/ol&gt;</span>
+      </p>
+      <p class="c17 c2 c1">
+         <span></span>
+      </p>
+      <h1 class="c2 c1">
+         <a name="h.uelinkz8lfw1"></a>
+         <span>2</span>
+         <a href="#" name="id.o1ax6aoxsnqm"></a>
+         <span>. Magazines</span>
+      </h1>
+      <p class="c2 c1">
+         <span>The terms described in this section with a &quot;</span>
+         <span class="c10">prism:</span>
+         <span>&quot; prefix are defined in the </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHmCiCy5C4C5zg7J2IWzCQhnFUBKQ"
+               >PRISM Controlled Vocabularies specification</a>
+         </span>
+         <span>.</span>
+      </p>
+      <p class="c2 c1">
+         <span>The terms with an &quot;</span>
+         <span class="c10">msv:</span>
+         <span>&quot; prefix are defined in the </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHetdnUckkARYrqKh8ah3uqvvR27Q"
+               >EPUB Magazine Navigation Vocabulary</a>
+         </span>
+         <span>.</span>
+      </p>
+      <p class="c3 c2 c1">
+         <span>Both of these are </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fpfx%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG0zbMRlhDriViIIm44VBIdmqCPpw"
+               >reserved prefixes</a>
+         </span>
+         <span>&nbsp;and do not need to be declared for use in the </span>
+         <span class="c10">epub:type</span>
+         <span>&nbsp;attribute.</span>
+      </p>
+      <a href="#" name="id.n2o9feprq0bx"></a>
+      <h2 class="c1">
+         <a name="h.plwdpjtny1p1"></a>
+         <span>2.1 msv:article-region</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23article-region&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEj2mgCWAtAYU5RS3Uw_KWJnVZiRw"
+               >msv:article-region</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23article-region&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEj2mgCWAtAYU5RS3Uw_KWJnVZiRw"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies the boundaries of an article on a page.</span>
+      </p>
+      <p class="c2 c1">
+         <span>I</span>
+         <span>n the following image, the article spans two pages, which results in two such regions of interest (highlighted
+            in blue):</span>
+      </p>
+      <p class="c12 c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 688.00px; height: 387.00px;">
+            <img alt="" src="images/image24.jpg"
+               style="width: 688.00px; height: 387.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>The markup for these regions would be as follows:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page02.xhtml#</span>
+         <span class="c0 c15">xyn=percent:1,6,100,6,100,98,60,98,60,52,23,52,23,98,1,98</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;!-- sub-regions such as the article title, authors, etc. would be defined in a
+            ordered lists here --&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page03.xhtml#</span>
+         <span class="c0 c15">xyn=percent:0,6,66,6,66,10,62,10,62,75,0,75</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&hellip;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span class="c19">In the same way </span>
+         <span>that</span>
+         <span class="c19">&nbsp;a reading system </span>
+         <span>uses </span>
+         <span class="c19">the </span>
+         <span class="c19 c9">
+            <a class="c7" href="#id.kr70ehpf6eo9">&quot;</a>
+         </span>
+         <span class="c5 c22">
+            <a class="c7" href="#id.kr70ehpf6eo9">panel-</a>
+         </span>
+         <span class="c5">
+            <a class="c7" href="#id.kr70ehpf6eo9">group</a>
+         </span>
+         <span class="c9">
+            <a class="c7" href="#id.kr70ehpf6eo9">&quot;</a>
+         </span>
+         <span class="c9 c19">
+            <a class="c7" href="#id.kr70ehpf6eo9">&nbsp;</a>
+         </span>
+         <span class="c9">
+            <a class="c7" href="#id.kr70ehpf6eo9">term</a>
+         </span>
+         <span class="c19">&nbsp;in comics to isolate a strip/story on the page, the use of </span>
+         <span class="c22 c10">msv:article-region</span>
+         <span class="c19">&nbsp;in a guided reading context can be used to isolate the article from the rest of the
+            page.</span>
+         <span>&nbsp;The reading system could opt to blur, hide or mask the page content that is outside the article when
+            inside the navigation sequence.</span>
+      </p>
+      <p class="c17 c1 c21">
+         <span></span>
+      </p>
+      <a href="#" name="id.mg3vri39mgdm"></a>
+      <h2 class="c1">
+         <a name="h.ek8921hciamk"></a>
+         <span>2.2 prism:title</span>
+      </h2>
+      <p class="c3 c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >prism:title</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a region that contains the title of the article, as highlighted in the blue box in the
+            following image:</span>
+      </p>
+      <p class="c1 c3">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 488.00px; height: 594.33px;">
+            <img alt="" src="images/image26.jpg"
+               style="width: 488.00px; height: 594.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c14 c2 c1">
+         <span>The title can be identified as top-level region of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c14 c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c6 c14 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page06.xhtml#</span>
+         <span class="c0 c15">xyn=percent:&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c6 c14 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c6 c14 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:title&quot;&gt;</span>
+      </p>
+      <p class="c6 c14 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page06.xhtml#</span>
+         <span class="c0">xywh=percent:5,15,22,24</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c6 c14 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c6 c1 c14">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c6 c14 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c6 c14 c1">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c14 c2 c1">
+         <span>In the case of sequential navigation, the title is expected to be displayed in full on the device.</span>
+      </p>
+      <p class="c14 c2 c1">
+         <span>To improve the readability of the title, do not include related items like the </span>
+         <span class="c9">
+            <a class="c7" href="#id.w3zw0x37bgcu">deck</a>
+         </span>
+         <span>&nbsp;and </span>
+         <span class="c9">
+            <a class="c7" href="#id.m9sf5ylgsbzy">subtitle</a>
+         </span>
+         <span>&nbsp;in the region.</span>
+      </p>
+      <p class="c21 c14 c17 c1">
+         <span></span>
+      </p>
+      <h2 class="c1">
+         <a name="h.mecetleizd66"></a>
+         <span>2.3 prism:</span>
+         <span>subtitle</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >prism:subtitle</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a region that contains the subtitle. </span>
+         <span>The subtitle differs from a </span>
+         <span class="c9">
+            <a class="c7" href="#id.w3zw0x37bgcu">deck</a>
+         </span>
+         <span>&nbsp;in </span>
+         <span>that appears in close proximity to </span>
+         <span>the </span>
+         <span class="c9">
+            <a class="c7" href="#id.mg3vri39mgdm">title</a>
+         </span>
+         <span>&nbsp;and typically only one subtitle is present</span>
+         <span>, whereas the deck can be located anywhere and there could be multiple instances.</span>
+      </p>
+      <p class="c3 c2 c1">
+         <span>An article subtitle is highlighted in blue in the following image:</span>
+      </p>
+      <p class="c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 394.00px; height: 481.00px;">
+            <img alt="" src="images/image12.jpg"
+               style="width: 394.00px; height: 481.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c3 c2 c1">
+         <span>The subtitle can be identified as top-level region of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page06.xhtml#</span>
+         <span class="c0 c15">xyn=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:title&quot;&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page06.xhtml#xywh=&hellip;&quot;/&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:subtitle&quot;&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page06.xhtml#xywh=percent:3,50,94,5&quot;/&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>In the context of navigation, the subtitle will typically be treated similar to the </span>
+         <span class="c9">
+            <a class="c7" href="#id.mg3vri39mgdm">title</a>
+         </span>
+         <span>.</span>
+      </p>
+      <p class="c21 c17 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.w3zw0x37bgcu"></a>
+      <h2 class="c1">
+         <a name="h.37op1qo8yczz"></a>
+         <span>2.4 prism:deck</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >prism:deck</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a region that contains a </span>
+         <span>summary of the article</span>
+         <span>&nbsp;or a block of text that augments the title or provides a &quot;teaser&quot; to attract a reader. A deck
+            may span multiple lines, and an article may have multiple decks.</span>
+      </p>
+      <p class="c2 c1">
+         <span>An article deck is highlighted in blue in the following image:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 477.00px; height: 378.00px;">
+            <img alt="" src="images/image03.jpg"
+               style="width: 477.00px; height: 378.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>The deck can be identified as top-level region of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page15.xhtml#</span>
+         <span class="c0 c15">xyn=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:title&quot;&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page15.xhtml#xywh=&hellip;&quot;/&gt;</span>
+      </p>
+      <p class="c1 c6">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:deck&quot;&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page15.xhtml#xywh=percent:3,15,10,7&quot;/&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c6 c1">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>In the context of navigation, the deck will typically be treated similar to the </span>
+         <span class="c9">
+            <a class="c7" href="#id.mg3vri39mgdm">title</a>
+         </span>
+         <span>.</span>
+      </p>
+      <p class="c21 c17 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.7j92cxrrjo8m"></a>
+      <h2 class="c1">
+         <a name="h.ytczv7phbmxt"></a>
+         <span>2.5 prism:</span>
+         <span>byline</span>
+      </h2>
+      <p class="c2 c1">
+         <span class="c35">The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >prism:byline</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >&nbsp;term</a>
+         </span>
+         <span class="c35">&nbsp;identifies </span>
+         <span>a </span>
+         <span class="c35">region that contains information about the author(s). In many cases this region may simply contain
+            the author name, but in some situations it will also contain additional context, such as position, role or
+            context of the article.</span>
+      </p>
+      <p class="c17 c1">
+         <span></span>
+      </p>
+      <p class="c1">
+         <span>Bylines typically appear next to the </span>
+         <span class="c9">
+            <a class="c7" href="#id.mg3vri39mgdm">title</a>
+         </span>
+         <span>&nbsp;of the content.</span>
+         <span>&nbsp;The </span>
+         <span class="c10">prism:byline</span>
+         <span>&nbsp;term can also be used for the dateline.</span>
+      </p>
+      <p class="c2 c1">
+         <span>An article byline is highlighted in blue in the following image:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 268.00px; height: 529.00px;">
+            <img alt="" src="images/image15.jpg"
+               style="width: 268.00px; height: 529.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>The byline can be identified as top-level region of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page12.xhtml#</span>
+         <span class="c0 c15">xyn=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:title&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page12.xhtml#xywh=&hellip;&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:byline&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page12.xhtml#xywh=percent:0,3,20,5&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>In the context of navigation, the byline will typically be treated similar to the </span>
+         <span class="c9">
+            <a class="c7" href="#id.mg3vri39mgdm">title</a>
+         </span>
+         <span>.</span>
+      </p>
+      <p class="c21 c17 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.wzvqneafk8dz"></a>
+      <h2 class="c1">
+         <a name="h.11zazua6wxvo"></a>
+         <span>2.6 prism:contributor</span>
+         <span>s</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >prism:contributors</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >&nbsp;</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >term</a>
+         </span>
+         <span>&nbsp;identifies a region that contains information about the contributor(s). In many cases this region may
+            simply contain the contributor name, but in some situations it will also contain additional context, such as
+            position, role or context of the article.</span>
+      </p>
+      <p class="c2 c1">
+         <span>I</span>
+         <span>n the following image, the contributor is mentioned at the end of the article as being the one person who
+            conducted the interview (as opposed to the author who wrote the article):</span>
+      </p>
+      <p class="c14 c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 386.00px; height: 387.00px;">
+            <img alt="" src="images/image16.jpg"
+               style="width: 386.00px; height: 387.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>The contributors can be identified as top-level region of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-</a>
+         </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page24.xhtml#</span>
+         <span class="c0 c15">xywh=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:article-text&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page24.xhtml#xyn=&hellip;&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:contributors&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page24.xhtml#xywh=percent:18,95,5,3&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>In the context of navigation, contributors are typically treated similar to the </span>
+         <span class="c9">
+            <a class="c7" href="#id.5oxxg2i26zga">article text</a>
+         </span>
+         <span>.</span>
+      </p>
+      <p class="c21 c17 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.ut8gv6neye7u"></a>
+      <h2 class="c1">
+         <a name="h.pk76hvgyrpz"></a>
+         <span>2.7 msv:media </span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23media&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGoe1BzAdILsWbTZ4fKlhmCt_I2Lg"
+               >msv:media</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23media&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGoe1BzAdILsWbTZ4fKlhmCt_I2Lg"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a region that contains an image, illustration, video, slideshow, animation or other piece of
+            media allowed by the format.</span>
+      </p>
+      <p class="c2 c1">
+         <span>A picture is highlighted in blue in the following image:</span>
+      </p>
+      <p class="c2 c1 c12">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 527.50px; height: 500.45px;">
+            <img alt="" src="images/image14.png"
+               style="width: 527.50px; height: 500.45px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>Media items can be identified as top-level regions of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page23.xhtml#</span>
+         <span class="c0 c15">xywh=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:media&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page23.xhtml#xywh=percent:40,7,60,30&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>It is expected that reading systems will </span>
+         <span>display media regions in full, scaling to fit the available viewport.</span>
+      </p>
+      <p class="c2 c1">
+         <span>For an example of media that spans two pages, see </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Frenditions%2Fregion-nav%2F%23h.mxrr2wd5w2ju&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNH_4tJjwHAfFsBWzRm4cZPgASD92A"
+               >Synthetic Regions</a>
+         </span>
+         <span>&nbsp;in the EPUB Region-Based Navigation specification. An example is provided in </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Frenditions%2Fregion-nav%2F%23h.28p6lniocy2r&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGg30ud5UecgaBl5uCgJKhupQ-lcQ"
+               >Appendix A.2</a>
+         </span>
+         <span>&nbsp;of that specification</span>
+         <span>.</span>
+      </p>
+      <p class="c21 c17 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.cps7xlobw9os"></a>
+      <h2 class="c1">
+         <a name="h.c9qcp671wb5w"></a>
+         <span>2.8 prism:caption</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >prism:caption</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a region that contains text that identifies and explains an image or illustration or other
+            piece of </span>
+         <span class="c9">
+            <a class="c7" href="#id.ut8gv6neye7u">media</a>
+         </span>
+         <span>.</span>
+      </p>
+      <p class="c2 c1">
+         <span>The caption for the picture is highlighted in blue in the following image:</span>
+      </p>
+      <p class="c12 c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 522.50px; height: 351.68px;">
+            <img alt="" src="images/image06.png"
+               style="width: 522.50px; height: 351.68px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>Captions can be identified as top-level regions of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page23.xhtml#</span>
+         <span class="c0 c15">xywh=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:media&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page23.xhtml#xywh=&hellip;&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:caption&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page23.xhtml#xywh=percent:85,33,15,5&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>The caption typically follows its related </span>
+         <span class="c9">
+            <a class="c7" href="#id.ut8gv6neye7u">media</a>
+         </span>
+         <span>&nbsp;in the navigation sequence.</span>
+      </p>
+      <p class="c21 c17 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.a74rhibl6qhs"></a>
+      <h2 class="c1">
+         <a name="h.ct8kf8hiu0ep"></a>
+         <span>2.9 prism:credit</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >prism:credit</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a region that contains the credits for an image, &nbsp;illustration, or other piece of </span>
+         <span class="c9">
+            <a class="c7" href="#id.ut8gv6neye7u">media</a>
+         </span>
+         <span>.</span>
+      </p>
+      <p class="c2 c1">
+         <span>A picture credit is highlighted in blue in the following image:</span>
+      </p>
+      <p class="c17 c1">
+         <span></span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 461.00px; height: 682.00px;">
+            <img alt="" src="images/image27.jpg"
+               style="width: 461.00px; height: 682.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>Credits can be identified as top-level regions of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page23.xhtml#</span>
+         <span class="c0 c15">xywh=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:media&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page23.xhtml#xywh=&hellip;&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:credit&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page23.xhtml#xywh=percent:98,66,2,7&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c21 c17 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.5oxxg2i26zga"></a>
+      <h2 class="c1">
+         <a name="h.2g1j8nffgcis"></a>
+         <span>2.10 msv:article-text</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23article-text&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFQa-JFkBXOEmJzIddbdnDTiD36wQ"
+               >msv:article-text</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23article-text&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFQa-JFkBXOEmJzIddbdnDTiD36wQ"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a region of article text. An article may have more than one article text region (e.g., one
+            for each column).</span>
+      </p>
+      <p class="c2 c1">
+         <span>The following image shows five columns of article text highlighted in blue:</span>
+      </p>
+      <p class="c1 c17">
+         <span></span>
+      </p>
+      <p class="c14 c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 502.00px; height: 689.00px;">
+            <img alt="" src="images/image22.jpg"
+               style="width: 502.00px; height: 689.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>The article text can be identified as top-level regions of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page10.xhtml#</span>
+         <span class="c0 c15">xywh=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:article-text&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page10.xhtml#xywh=percent:5,15,18,45&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:article-text&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page10.xhtml#xywh=percent:23,60,18,15&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>The article text is the most important type of region for magazine navigation because it is the portion of the
+            document that contains the </span>
+         <span>narrative</span>
+         <span>&nbsp;content. The article text is often laid out in columns in magazines and newspaper to increase
+            readability, however, which can make it difficult to access on small screens.</span>
+      </p>
+      <p class="c2 c1">
+         <span>A reading system is expected to handle navigation &ldquo;along&rdquo; the box for these adjoining regions,
+            which is achieved by having the reading system break a box into smaller parts that have the aspect ratio of the
+            screen:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 246.00px; height: 418.00px;">
+            <img alt="" src="images/image21.jpg"
+               style="width: 246.00px; height: 418.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c1 c2">
+         <span>If the reading system simply moves from one region to the next, only ensuring its visibility on screen, it
+            will lead to a poor user experience:</span>
+      </p>
+      <ul class="c4 lst-kix_l4ajl08zmtd9-0 start">
+         <li class="c11 c2 c1 c8">
+            <span>the text will not always be readable</span>
+         </li>
+         <li class="c11 c2 c1 c8">
+            <span>the zoom factor on the page could change from one box to the next resulting in text that has a different
+               apparent size between regions</span>
+         </li>
+      </ul>
+      <p class="c2 c1">
+         <span>The following graphic highlights these problems:</span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 288.00px;">
+            <img alt="" src="images/image01.jpg"
+               style="width: 624.00px; height: 288.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>Reading systems are expected to adjust the zoom so that the article text box fits in </span>
+         <span>width (only for horizontal writing modes)</span>
+         <span>&nbsp;and then move along the box in order to see all text.</span>
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 400.00px;">
+            <img alt="" src="images/image04.jpg"
+               style="width: 624.00px; height: 400.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c21 c17 c1">
+         <span class="c27"></span>
+      </p>
+      <a href="#" name="id.9yny4wjyhbdr"></a>
+      <h2 class="c1">
+         <a name="h.bicbsonuqet1"></a>
+         <span>2.11 prism:box</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >prism:box</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a region that contains text that is outside the linear flow of the article </span>
+         <span>(but is still associated with the article, unlike an advertisement or a separate article)</span>
+         <span>, whether rendered in a box or another shape.</span>
+      </p>
+      <p class="c2 c1">
+         <span>The following images show examples of these kinds of asides:</span>
+      </p>
+      <p class="c14 c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 372.00px; height: 539.00px;">
+            <img alt="" src="images/image23.jpg"
+               style="width: 372.00px; height: 539.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 335.00px; height: 470.00px;">
+            <img alt="" src="images/image17.jpg"
+               style="width: 335.00px; height: 470.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>The box content can be identified as top-level regions of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page10.xhtml#</span>
+         <span class="c0 c15">xywh=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:article-text&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page10.xhtml#xywh=&hellip;&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:box&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page10.xhtml#xywh=percent:80,7,18,93&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>B</span>
+         <span>ox content is typically navigated to after the article text of the page.</span>
+      </p>
+      <a href="#" name="id.37s2unpnb6po"></a>
+      <h2 class="c1">
+         <a name="h.7iq3mrfv5xg3"></a>
+         <span>2.12 prism:advertisement</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >prism:advertisement</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >&nbsp;</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >term</a>
+         </span>
+         <span>&nbsp;identifies a region that contains a piece of material promoting a product, service, or event whose
+            presence is paid for.</span>
+      </p>
+      <p class="c2 c1">
+         <span>The following image shows an advertisement highlighted in red:</span>
+      </p>
+      <p class="c14 c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 417.00px; height: 579.00px;">
+            <img alt="" src="images/image13.jpg"
+               style="width: 417.00px; height: 579.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>An advertisement can be identified as a top-level region of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page09.xhtml#</span>
+         <span class="c0 c15">xywh=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:advertisement&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page09.xhtml#xywh=percent:46,60,52,38&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>Publishers will typically want to keep the advertisement as part of a reading sequence. In the case of an
+            article spanning several pages with some advertisements interspersed, the reading system should not</span>
+         <span>&nbsp;skip the ads during guided navigation, but could rearrange their position (e.g., after all article
+            text)</span>
+         <span>.</span>
+      </p>
+      <p class="c21 c17 c1">
+         <span></span>
+      </p>
+      <a href="#" name="id.c1auomk12tqm"></a>
+      <h2 class="c1">
+         <a name="h.aacoahot64vl"></a>
+         <span>2.13 prism:pullQuote</span>
+      </h2>
+      <p class="c2 c1">
+         <span>The </span>
+         <span class="c5">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >prism:pullQuote</a>
+         </span>
+         <span class="c9">
+            <a class="c7"
+               href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA"
+               >&nbsp;term</a>
+         </span>
+         <span>&nbsp;identifies a region that contains </span>
+         <span class="c15 c34">a snippet of the content that stands out from its surroundings to grab attention</span>
+      </p>
+      <p class="c2 c1">
+         <span>The following image shows a pull quote highlighted in blue:</span>
+      </p>
+      <p class="c14 c2 c1">
+         <span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 335.00px; height: 464.00px;">
+            <img alt="" src="images/image11.jpg"
+               style="width: 335.00px; height: 464.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+               title="" />
+         </span>
+      </p>
+      <p class="c2 c1">
+         <span>Pull quotes can be identified as top-level regions of interest, or can be nested inside of an </span>
+         <span class="c5">
+            <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a>
+         </span>
+         <span>. In both cases, the markup for the region is the same:</span>
+      </p>
+      <p class="c2 c1 c8">
+         <span class="c0">&lt;li epub:type=&quot;msv:article-region&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;a href=&quot;page02.xhtml#</span>
+         <span class="c0 c15">xywh=&hellip;</span>
+         <span class="c0">&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:pullQuote&quot;&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a
+            href=&quot;page02.xhtml#xywh=percent:3,69,18,20&quot;/&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &lt;/li&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp; &nbsp; &hellip;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&nbsp; &nbsp;&lt;/ol&gt;</span>
+      </p>
+      <p class="c1 c8">
+         <span class="c0">&lt;/li&gt;</span>
+      </p>
+      <p class="c2 c1">
+         <span>Pull quotes are useful to identify inside a navigation sequence as the reading system might choose to create a
+            specific effect or apply a specific logic in the fly-over sequence.</span>
+      </p>
+      <p class="c2 c1">
+         <span>By choosing to ignore the pull quote, there is no loss of material or loss of continuity. Since a pull quote
+            can be located in a portion of the page that is far away from the original position of the snippet, the reading
+            system can decide whether it is worthwhile to navigate to this region or not.</span>
+      </p>
+      <p class="c17 c2 c1">
+         <span></span>
+      </p>
+      <p class="c17 c2 c1">
+         <span></span>
+      </p>
+      <h1 class="c1">
+         <a name="h.2tmlawvxzdt8"></a>
+         <span>Appendix A. Acknowledgements</span>
+      </h1>
+      <p class="c1">
+         <span>All content used to illustrate comics comes from the following titles and has been used with authorization
+            from the publishers:</span>
+      </p>
+      <p class="c17 c1">
+         <span></span>
+      </p>
+      <p class="c1">
+         <span class="c16">Clues T1 - &nbsp;Sur les traces du pass&eacute;, by Mara - Copyright &copy; 2008 - Akileos</span>
+      </p>
+      <p class="c1">
+         <span class="c16">Author : Mara</span>
+      </p>
+      <p class="c1">
+         <span class="c16">Published : 06/2008</span>
+      </p>
+      <p class="c17 c1">
+         <span></span>
+      </p>
+      <p class="c1">
+         <span class="c16">Crusade T1 - Le spectre aux yeux d&#39;argent, by Zhang Xiayu, Izu and Nikolavitch - Copyright
+            &copy; 2010 - &nbsp;Humano&iuml;des Associ&eacute;s</span>
+      </p>
+      <p class="c1">
+         <span class="c16">Drawing: Zhang Xiayu</span>
+      </p>
+      <p class="c1">
+         <span class="c16">Story: Izu &amp; Nikolavitch </span>
+      </p>
+      <p class="c1">
+         <span class="c16">Published: 01/2010</span>
+      </p>
+      <p class="c2 c1">
+         <span>All content used to illustrate magazines comes from the following titles and has been used with authorization
+            from the publishers:</span>
+      </p>
+      <p class="c2 c1">
+         <span class="c16">Le Journal du Dimanche - Lagard&egrave;re Active</span>
+      </p>
+      <p class="c2 c1">
+         <span class="c16">Published : 2012</span>
+      </p>
+      <h1 class="c1">
+         <a name="h.ci9p9keakb5a"></a>
+         <span>Appendix B. Contributors</span>
+      </h1>
+      <p class="c2 c1">
+         <span class="c15">The following people contributed to this document</span>
+         <span class="c15">:</span>
+      </p>
+      <ul class="c4 lst-kix_blnu49e2d6w7-0 start">
+         <li class="c11 c2 c1 c8">
+            <span>Ichikawa, Dai (Invited Expert)</span>
+         </li>
+         <li class="c11 c2 c1 c8">
+            <span>Kasdorf, Bill (Apex Covantage)</span>
+         </li>
+         <li class="c11 c2 c1 c8">
+            <span>Kopp, Matthieu (Aquafadas)</span>
+         </li>
+         <li class="c2 c1 c8 c11">
+            <span>Kroupa, Brady (Barnes &amp; Noble)</span>
+         </li>
+      </ul>
+      <p class="c17 c2 c1">
+         <span></span>
+      </p>
+   </body>
+</html>
