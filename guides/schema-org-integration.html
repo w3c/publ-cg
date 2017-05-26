@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<meta charset="utf-8" />
+<title>Schema.org Metadata Integration Guide for EPUB 3</title>
+<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+<script src="../common/biblio.js" class="remove"></script>
+<script src="../common/dfn-crossref.js" class="remove"></script>
+<script src="../common/confreq-permalinks.js" class="remove"></script>
+<link href="../common/css/common.css" rel="stylesheet" type="text/css" />
+<script class="remove">
+          var respecConfig = {
+              wg: "EPUB 3 Community Group",
+              specStatus: "CG-DRAFT",
+              noRecTrack: true,
+              shortName: "epub-a11y-faq",
+              edDraftURI: "https://w3c.github.io/publ-cg/guides/epub-a11y-faq.html",
+              editors: [
+              
+                   {
+                      name: "Matt Garrish",
+                      company: "Invited Expert"
+                  }
+              ],
+              processVersion: 2017,
+              includePermalinks: true,
+              permalinkEdge:     true,
+              permalinkHide:     false,
+              diffTool:          "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+              localBiblio: biblio,
+              preProcess: [fixDefinitionCrossrefs, addConformanceLinks]
+          };</script></head>
+          <body>
+          <section id="abstract">
+<p>TK</p></section>
+<section id="sotd"></section>
+
+<section id="sec-overview">
+
+<h1>About this Guide</h1>
+<p>This guide handles only the special case of integrating schema.org metadata in the EPUB&reg; package document. There are no special requirements for the expression of schema.org metadata in RDFa or microdata attributes in XHTML Content Documents.</p>
+</section>
+
+
+<section id="expressing-metadata">
+
+<h1>Expressing Metadata</h1>
+<p>Although schema.org metadata is typically expressed using <a href="http://www.w3.org/TR/rdfa-syntax/">RDFa</a> or <a href="http://www.w3.org/TR/microdata/">microdata</a> attributes, neither of these technologies is available in the package document metadata. Instead, EPUB uses a minimal RDFa-like syntax, with some quirks. It is still possible to express all schema.org metadata, but the means of doing so requires some explanation. The following subsections walk through these details.</p>
+
+
+<section>
+
+
+<h2>Valid Properties</h2>
+<p>The first question most users have when they first look to express schema.org properties in EPUB is which are valid to use.</p>
+<p>As <a class="c11" href="https://schema.org/docs/full.html">schema.org types</a>&nbsp;each define their own mix of inherited and unique properties, it&#39;s not recommended to treat the vocabulary as a random grab bag of proprties from which you can pick whatever you want &#8210; at least if you want to extract a consisent set of properties later. And since an &quot;EPUB publication&quot; doesn&#39;t directly map to a specific type, a mapping has to be defined.</p>
+<p>The recommendation made here is that you treat the publication as an instance of <a class="c11" href="http://www.schema.org/CreativeWork">the CreativeWork type</a>, and only use properties defined for that type.</p>
+<p>You do not have to define an instance of this type, as you normally would in an HTML page, but can add any properties from the type directly to the package metadata.</p>
+<p>If you prefer to make the type explicit, however, or want to specify a different type for the publication (e.g., that it&#39;s a <a class="c11" href="http://schema.org/Book">Book</a>&nbsp;or <a class="c11" href="http://schema.org/Article">Article</a>), you should include an <code>rdf:type</code>&nbsp;property declaration in the metadata.</p>
+<p>For example, to indicate that a publication is an instance of the more specific Book type, you would include the following <code>meta</code>&nbsp;tag:</p>
+
+
+<pre class="example">
+&lt;meta property=&quot;rdf:type&quot;&gt;http://schema.org/Book&lt;/meta&gt;</pre>
+
+
+<p class="c2">Note that your choice of type has no effect on the processing of schema.org metadata within the context of EPUB (i.e., the properties always apply to the publication, regardless of what schema.org type you choose to call your publication).</p>
+<p>A final note for those interested in the technical details of RDFa and microdata, is that the package document <code>metadata</code>&nbsp;element defines the scope for all publication metadata, which is why you only have to concern yourself with the type.</p>
+</section>
+<section>
+<h2>Required Prefix</h2>
+<p>You do not have to know the technical details of EPUB&#39;s use of <a class="c11" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-prefix-attr">prefixes</a>&nbsp;for external vocabularies to use schema.org metadata in the package document.</p>
+<p>What you do need to be aware of is that ALL schema.org properties you use must have the prefix &quot;<code>schema:</code>&quot; preprended to them. For example, the <a class="c11" href="http://schema.org/typicalAgeRange">typicalAgeRange</a> property is expressed like this:</p>
+
+
+<pre class="example">&lt;meta property=&quot;schema:typicalAgeRange&quot;&gt;7-12&lt;/meta&gt;</pre>
+
+
+<p class="c2">For those who do know the prefixing mechanism in EPUB, the <code>schema:</code>&nbsp;prefix is <a class="c11" href="http://www.idpf.org/epub/vocab/package/pfx/">reserved</a>, which is why you do not need to do anything in order to use it.</p>
+
+</section>
+<section>
+<h2>Simple Values</h2>
+<p>Most schema.org properties take simple text strings as values, so are easily compatible with the EPUB <a class="c11" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-meta-elem">meta</a><a class="c11" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-meta-elem">&nbsp;element</a>.</p>
+<p>To express a property, you specify the schema.org property in the RDFa-like <a class="c11" href="http://www.idpf.org/epub/301/spec/epub-publications.html#attrdef-meta-property">property</a><a class="c11" href="http://www.idpf.org/epub/301/spec/epub-publications.html#attrdef-meta-property">&nbsp;attribute</a>, and the value goes between the opening and closing <span class="c46">meta</span>&nbsp;tags.</p>
+<p>For example, the following markup shows the value &quot;<code>alternativeText</code>&quot; expressed for the <code>accessibilityFeature</code>&nbsp;property:</p>
+
+
+<pre class="example">
+&lt;meta property=&quot;schema:accessibilityFeature&quot;&gt;alternativeText&lt;/meta&gt;</pre>
+
+
+<p>Some schema.org properties take URLs as their value, but there is no difference in how these are expressed in EPUB. If you need to express a URL, you also add it as a simple text string:</p>
+
+
+<pre class="example">
+&lt;meta property=&quot;schema:targetUrl&quot;&gt;
+http://www.nctm.org/standards/content.aspx?id=316
+&lt;/meta&gt;</pre>
+
+
+<p>Although URL properties are sometimes expressed in HTML using the <code>link</code> element, DO NOT use the similar EPUB package metadata <a class="c11" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-link-elem">link</a><a class="c11" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-link-elem">&nbsp;element</a>.</p>
+
+
+<p>The EPUB <code>link</code> element is only superficially similar to the HTML element (i.e., shares many of the same attributes); it has a more specific, and incompatible, use: to associate resources, like metadata records, with the publication.</p>
+
+</section>
+<section>
+
+<h2>Complex Types</h2>
+<p>Although most schema.org properties are easily expressed in EPUB using simple text values, some take a schema.org &quot;type&quot; as their value, which makes them containers of subproperties.</p>
+<p>The <a class="c11" href="http://schema.org/educationalAlignment">educationalAlignment</a>&nbsp;property is an example of such a property &#8210; its&nbsp;expected value is an instance of the schema.org <a class="c11" href="http://schema.org/AlignmentObject">AlignmentObject</a>&nbsp;type. To define this kind of value in HTML, you have to nest properties by nesting tags:</p>
+
+<pre class="example">
+&lt;div id=&quot;ea01&quot; typeof=&quot;CreativeWork&quot; vocab=&quot;http://schema.org&quot;&gt;
+&nbsp; &nbsp;&hellip;
+&nbsp; &nbsp;&lt;div property=&quot;educationalAlignment&quot; typeof=&quot;AlignmentObject&quot;&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;alignmentType&quot; content=&quot;teaches&quot;/&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;targetName&quot; content=&quot;Determine whether two events are mutually exclusive and whether two events are independent.&quot;/&gt;
+&nbsp; &nbsp; &nbsp; &lt;link property=&quot;targetUrl&quot; href=&quot;http://asn.jesandco.org/resources/S11435AF&quot;/&gt;
+&nbsp; &nbsp; &nbsp; &lt;/meta&gt;
+&nbsp; &nbsp;&lt;/div&gt;
+&nbsp; &nbsp;&hellip;
+&lt;/div&gt;</pre>
+
+<p>This hierarchy establishes that the properties inside the <code>educationalAlignment</code>&nbsp;<code>div</code>&nbsp;do not directly apply to the <code>CreativeWork</code>, but represent a collective that express an educational alignment. (Separation is expressed by the presence of the RDFa <code>typeof</code>&nbsp;attributes, not the elements alone. See the <a class="c11" href="http://www.w3.org/TR/xhtml-rdfa-primer/">RDFa primer</a>&nbsp;for more information if this use is unclear, as the details go beyond this guide.)</p>
+<p>The problem you encounter translating these compound properties to the package document is the lack of nesting of <code>meta</code>&nbsp;elements. Instead, you have to use the EPUB <a class="c11" href="http://www.idpf.org/epub/301/spec/epub-publications.html#attrdef-meta-refines">refines</a><a class="c11" href="http://www.idpf.org/epub/301/spec/epub-publications.html#attrdef-meta-refines">&nbsp;attribute</a>&nbsp;to link subproperties to a parent property.</p>
+<p>For example, to start translating the example above, we can define an instance of the <code>educationalAlignment</code>&nbsp;property as follows:</p>
+
+<pre class="example">
+&lt;meta id=&quot;ea01&quot; property=&quot;schema:educationalAlignment&quot;&gt;
+schema:educationalAlignment
+&lt;/meta&gt;
+</pre>
+
+<p class="c2">The value of this property bears some closer examination before moving on, however. EPUB <code>meta</code>&nbsp;elements must not be empty, but when defining a complex type there&#39;s typically no direct text value to input.</p>
+
+
+<p class="c2">The suggestion we make here is to use the property name as the the value in such cases, including the &quot;<code>schema:</code>&quot; prefix. Although a workaround, doing so will allow Reading Systems to compare the property name and value and potentially ignore the value when the two match, as it is highly improbable that a value will match its property name in any other situation.</p>
+<p>You also have to include an <code>id</code>&nbsp;attribute on the <code>meta</code>&nbsp;tag, as this is used to link the subproperties to it by adding a <code>refines</code>&nbsp;attribute to each. The value of this attribute is a reference to the ID of the parent property.</p>
+<p>The subproperties can now be linked as follows:</p>
+<pre class="example">
+
+&lt;meta id=&quot;ea01&quot;&nbsp;property=&quot;schema:educationalAlignment&quot;&gt;schema:educationalAlignment&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta&nbsp;refines=&quot;#ea01&quot;&nbsp;property=&quot;schema:alignmentType&quot;&gt;teaches&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta&nbsp;refines=&quot;#ea01&quot;&nbsp;property=&quot;schema:targetName&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp;Determine whether two events are mutually exclusive and whether 
+&nbsp; &nbsp; &nbsp; &nbsp;two events are independent.
+&nbsp; &nbsp;&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta&nbsp;refines=&quot;#ea01&quot;&nbsp;property=&quot;schema:targetUrl&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp;http://asn.jesandco.org/resources/S11435AF
+&nbsp; &nbsp;&lt;/meta&gt;
+</pre>
+
+<p>That&#39;s all there is to defining complex type values.</p>
+<p>It&#39;s also possible for a complex type to contain a property that is also a complex type. You only need to ensure that you chain the right properties to the right parent.</p>
+<p>You can also include multiple complex properties (even of the same type) in the package metadata provided each is uniquely identified and its subproperties reference it:</p>
+
+
+<pre class="example">
+
+&lt;meta id=&quot;ea01&quot;&nbsp;property=&quot;schema:educationalAlignment&quot;&gt;schema:educationalAlignment&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta refines=&quot;#ea01&quot;&nbsp;property=&quot;schema:alignmentType&quot;&gt;teaches&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta refines=&quot;#ea01&quot;&nbsp;property=&quot;schema:targetName&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp;Determine whether two events are mutually exclusive and whether 
+&nbsp; &nbsp; &nbsp; &nbsp;two events are independent.
+&nbsp; &nbsp;&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta refines=&quot;#ea01&quot;&nbsp;property=&quot;schema:targetUrl&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp;http://asn.jesandco.org/resources/S11435AF
+&nbsp; &nbsp;&lt;/meta&gt;
+
+&lt;meta id=&quot;ea02&quot; property=&quot;schema:educationalAlignment&quot;&gt;schema:educationalAlignment/meta&gt;
+&nbsp; &nbsp;&lt;meta refines=&quot;#ea02&quot; property=&quot;schema:alignmentType&quot;&gt;teaches&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta refines=&quot;#ea02&quot; property=&quot;schema:targetName&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp;Calculate probabilities using the Addition Rules and 
+&nbsp; &nbsp; &nbsp; &nbsp;Multiplication Rules.
+&nbsp; &nbsp;&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta refines=&quot;#ea02&quot; property=&quot;schema:targetUrl&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp;http://example.com/competency502041
+&nbsp; &nbsp;&lt;/meta&gt;</pre>
+
+<p class="c21 c2">You may have noticed that in the original HTML example, the <code>educationalAlignment</code>&nbsp;property identified that it expressed an instance of the <code>AlignmentObject</code>&nbsp;type:</p>
+
+
+<pre class="example">
+&lt;div property=&quot;educationalAlignment&quot; typeof=&quot;AlignmentObject&quot;&gt;</pre>
+
+
+<p class="c21 c2">Many complex properties only accept one schema.org type as their value, so you don&#39;t have to explicitly identify them when you translate to EPUB. If the property can take more than one type &#8210; or you want to ensure no future conflicts if a property changes &#8210; it is helpful, however, to be explicit about which you are using (e.g., an <a class="c11" href="http://schema.org/author">author</a>&nbsp;could be a <code>Person</code>&nbsp;or an <code>Organization</code>).</p>
+<p>To identify the type you&#39;re using, attach an <code>rdf:type</code>&nbsp;property. </p>
+<p>For example, the <code>audience</code>&nbsp;property typically takes an <code>Audience</code>&nbsp;type as its value, but when expressing educational metadata the value is normally the more specific <code>EducationalAudience</code>&nbsp;subtype. Here&#39;s how you could identify that you are using the latter:</p>
+
+
+<pre class="example">
+&lt;meta id=&quot;aud01&quot; property=&quot;schema:audience&quot;&gt;schema:audience&lt;/meta&gt;
+&nbsp; &nbsp;&lt;meta refines=&quot;#aud01&quot; property=&quot;rdf:type&quot;&gt;http://schema.org/EducationalAudience&lt;/meta&gt;</pre>
+
+
+</section>
+<section>
+<h2>Example</h2>
+<p>In this section we&#39;ll look at <a class="c11" href="http://lrmi.net/examples/Complex_Area_Problems.html">Complex Area Problems sample</a>, in particular how the educational metadata expressed on that page can be embedded in an EPUB 3 version of the publication. Also included is a set of accessibility metadata properties to augment the example.</p>
+<p>Please take some time to review <a class="c11" href="#kix.u1sxfik9eiaw">the example in section 2.3.1</a>&nbsp;before moving on to <a class="c11" href="#id.e1817hx34un7">the explanation in section 2.3.2</a>.</p>
+
+
+<section>
+<h3 class="c2">2.5.1 Package Document Sample</h3>
+
+<pre class="example">
+&lt;package xmlns=&quot;http://www.idpf.org/2007/opf&quot; unique-identifier=&quot;uid&quot; xml:lang=&quot;en&quot;&gt;
+&nbsp; &lt;metadata xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;
+&nbsp; &nbsp; &lt;dc:identifier id=&quot;uid&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; http://www.realworldmath.org/Real_World_Math/Complex_Area_Problems
+&nbsp; &nbsp; &lt;/dc:identifier&gt;
+&nbsp; &nbsp; &lt;dc:title&gt;Complex Area Problems&lt;/dc:title&gt;
+&nbsp; &nbsp; &lt;dc:creator&gt;Thomas J. Petra&lt;/dc:creator&gt;
+&nbsp; &nbsp; &lt;dc:language&gt;en&lt;/dc:language&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;dcterms:modified&quot;&gt;2014-01-01T00:00:01Z&lt;/meta&gt;
+&nbsp; &nbsp; 
+&nbsp; &nbsp; &lt;meta id=&quot;aud01&quot; property=&quot;schema:audience&quot;&gt;schema:audience&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta refines=&quot;#aud01&quot; property=&quot;schema:educationalRole&quot;&gt;teacher&lt;/meta&gt;
+&nbsp; &nbsp; 
+&nbsp; &nbsp; &lt;meta property=&quot;schema:typicalAgeRange&quot;&gt;11-14&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:educationalUse&quot;&gt;Computer assisted instruction&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:interactivityType&quot;&gt;active&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:timeRequired&quot;&gt;PT1H30M&lt;/meta&gt;
+&nbsp; &nbsp; 
+&nbsp; &nbsp; &lt;meta property=&quot;schema:educationalAlignment&quot; id=&quot;align01&quot;&gt;schema:educationalAlignment&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:alignmentType&quot; refines=&quot;#align01&quot;&gt;teaches&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:targetUrl&quot; refines=&quot;#align01&quot;&gt;http://www.nctm.org/standards/content.aspx?id=312&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:targetDescription&quot; refines=&quot;#align01&quot;&gt;Algebra&lt;/meta&gt;
+&nbsp; &nbsp; 
+&nbsp; &nbsp; &lt;meta property=&quot;schema:educationalAlignment&quot;id=&quot;align02&quot;&gt;schema:educationalAlignment&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:alignmentType&quot; refines=&quot;#align02&quot;&gt;teaches&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:targetUrl&quot; refines=&quot;#align02&quot;&gt;http://www.nctm.org/standards/content.aspx?id=314&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:targetDescription&quot; refines=&quot;#align02&quot;&gt;Geometry&lt;/meta&gt;
+&nbsp; &nbsp; 
+&nbsp; &nbsp; &lt;meta property=&quot;schema:educationalAlignment&quot;id=&quot;align03&quot;&gt;schema:educationalAlignment&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:alignmentType&quot; refines=&quot;#align03&quot;&gt;teaches&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:targetUrl&quot; refines=&quot;#align03&quot;&gt;http://www.nctm.org/standards/content.aspx?id=316&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:targetDescription&quot; refines=&quot;#align03&quot;&gt;Measurement&lt;/meta&gt;
+&nbsp; &nbsp; 
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityFeature&quot;&gt;alternativeText&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityFeature&quot;&gt;MathML&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityFeature&quot;&gt;structuralNavigation&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityFeature&quot;&gt;tableOfContents&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityHazard&quot;&gt;noFlashingHazard&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityHazard&quot;&gt;noMotionSimulationHazard&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityHazard&quot;&gt;noSoundHazard&lt;/meta&gt;
+&nbsp; &lt;/metadata&gt;
+&nbsp; &hellip;
+&lt;/package&gt;
+</pre>
+
+</section>
+<section>
+<h3>2.5.2 Explanation</h3>
+<p>For those new to EPUB 3, the example in the preceding section begins with a set of required metadata: the <code>dc:identifier</code>, <code>dc:title</code>&nbsp;and <code>dc:language</code>&nbsp;elements, and also the <code>dcterms:modified</code>&nbsp;property. An optional <code>dc:creator</code>&nbsp;element is also included.</p>
+
+
+<pre class="example">
+&nbsp; &nbsp; &lt;dc:identifier id=&quot;uid&quot;&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; http://www.realworldmath.org/Real_World_Math/Complex_Area_Problems
+&nbsp; &nbsp; &lt;/dc:identifier&gt;
+&nbsp; &nbsp; &lt;dc:title&gt;Complex Area Problems&lt;/dc:title&gt;
+&nbsp; &nbsp; &lt;dc:creator&gt;Thomas J. Petra&lt;/dc:creator&gt;
+&nbsp; &nbsp; &lt;dc:language&gt;en&lt;/dc:language&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;dcterms:modified&quot;&gt;2014-01-01T00:00:01Z&lt;/meta&gt;
+</pre>
+
+<p class="c2">If you are not familiar with EPUB 3 metadata, please refer to the <a class="c11" href="http://www.idpf.org/epub3/latest/publications">Publications 3.0.1 specification</a>&nbsp;for more information.</p>
+<p>The first educational property we&#39;ll look at is the intended audience:</p>
+
+<pre class="example">
+&nbsp; &nbsp; &lt;meta id=&quot;aud01&quot; property=&quot;schema:audience&quot;&gt;schema:audience&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta refines=&quot;#aud01&quot; property=&quot;schema:educationalRole&quot;&gt;teacher&lt;/meta&gt;
+</pre>
+
+
+<p class="c2">Here we&#39;re indicating that this publication is for teachers, not students. It&#39;s important to identify the role so that learners and educators don&#39;t end up with the wrong resource (e.g., the teacher&#39;s manual instead of the textbook itself).</p>
+<p>(If you&#39;re having trouble reading the audience tagging, refer back to the earlier <a class="c11" href="#id.64kdn2ofnruy">section on expressing complex types</a>&nbsp;for more information.)</p>
+<p>Next up is <code>typicalAgeRange</code>, which identifies the age level the content is most appropriate for. The property takes either a single age value or, as in this case, a range:</p>
+
+<pre class="example">
+&nbsp; &nbsp; &lt;meta property=&quot;schema:typicalAgeRange&quot;&gt;11-14&lt;/meta&gt;</pre>
+
+
+<p class="c2">The typical age range does not have to match the end user role, of course. In this case, the content is for 11-14 year olds, but the publication itself is still for adult instructors.</p>
+<p>Given the user role and who the resource is for, we still need to know the expected use:</p>
+
+<pre class="example">
+&nbsp; &nbsp; &lt;meta property=&quot;schema:educationalUse&quot;&gt;Computer assisted instruction&lt;/meta&gt;</pre>
+
+
+<p class="c2">This property identifies that the publication is designed to be used in an environment in which the students have access to computers. Again, this helps narrow down whether the publication will be useful or not given the capabilities of the environment in which it is to be employed.</p>
+<p>The next property is <code>interactivityType</code>, which identifies the predominant mode of learning:</p>
+
+<pre class="example">
+&nbsp; &nbsp; &lt;meta property=&quot;schema:interactivityType&quot;&gt;active&lt;/meta&gt;</pre>
+
+
+<p class="c2">Here we&#39;re indicating that the publication is designed to actively engage the student in the learning experience, which follows from it being a teaching aid for computer-driven learning. (The &quot;expositive value&quot; is used to indicate the student passively receives information; for example, through reading alone.)</p>
+<p>Another useful piece of information knowing that we&#39;re fostering an interactive experience is the time required to complete the exercises:</p>
+
+<pre class="example">
+&nbsp; &nbsp; &lt;meta property=&quot;schema:timeRequired&quot;&gt;PT1H30M&lt;/meta&gt;</pre>
+
+
+<p class="c2">This values indicates that it takes approximately one hour and 30 minutes to finish, giving the teacher the ability to judge whether it will fit within a single class or not. (The &quot;PT&quot; at the beginning is a required identifier that indicates the value is a period of time, but refer to ISO 8601 for more information if your duration extends into days or months as the &quot;P&quot; and &quot;T&quot; then separate the day/month/year duration from the time.)</p>
+<p>Finally, the last set of educational metadata properties express the nature of the content (<code>educationalAlignment</code>). Each of these three properties indicates one topic (<code>targetDescription</code>) that the resource teaches (<code>alignmentType</code>). The third property -- the <code>targetURL</code>&nbsp;--&nbsp;provides more information about the topic.</p>
+
+<pre class="example">
+&nbsp; &nbsp; &lt;meta property=&quot;schema:educationalAlignment&quot; id=&quot;align01&quot;&gt;schema:educationalAlignment&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:alignmentType&quot; refines=&quot;#align01&quot;&gt;teaches&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:targetUrl&quot; refines=&quot;#align01&quot;&gt;http://www.nctm.org/standards/content.aspx?id=312&lt;/meta&gt;
+&nbsp; &nbsp; &nbsp; &lt;meta property=&quot;schema:targetDescription&quot; refines=&quot;#align01&quot;&gt;Algebra&lt;/meta&gt;</pre>
+
+
+<p class="c2">The other two alignment types are like the above, only differing in indicating that the resource also teaches Geometry and Measurement, respectively.</p>
+<p>As you can see, it&#39;s possible to provide a very rich and detailed explanation of the educational use of the publication through only a small set of properties. With this information travelling natively as part of the publication metadata, it can be extracted for use to make the publication more visible on the web (as in the original source example) and also can be displayed by a reading system to the user if they load the book and want more information up front before reading.</p>
+<p>The accessibility properties we&#39;ll look at now provide similar capabilities, but with a focus on whether the resource itself will meet the needs and preferences of the person who is going to be reading/using it.</p>
+<p>The <code>accessibilityFeature</code>&nbsp;properties identify that math content in the publication is available in MathML format and that alternative text has been provided for all image content, as it&#39;s not only students who benefit from accessible materials:</p>
+
+<pre class="example">
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityFeature&quot;&gt;alternativeText&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityFeature&quot;&gt;MathML&lt;/meta&gt;</pre>
+
+
+<p class="c2">Note that this information is only a reflection of the publication. It does not mean any practices or exercises that the students may have to perform will be fully accessible, especially if those exercises require accessing external web sites and other digital (and non-digital) information.</p>
+<p>The <code>accessibilityFeature</code>&nbsp;properties also show that the document hierarchy for this EPUB is fully and accurately reflected in the use of headings in the markup, and that a complete table of contents is also included:</p>
+
+<pre class="example">
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityFeature&quot;&gt;structuralNavigation&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityFeature&quot;&gt;tableOfContents&lt;/meta&gt;</pre>
+
+
+<p class="c2">Next, the <code>accessibilityHazard</code>&nbsp;properties are set to indicate that the content does not contain any of the specified hazards:</p>
+
+<pre class="example">
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityHazard&quot;&gt;noFlashingHazard&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityHazard&quot;&gt;noMotionSimulationHazard&lt;/meta&gt;
+&nbsp; &nbsp; &lt;meta property=&quot;schema:accessibilityHazard&quot;&gt;noSoundHazard&lt;/meta&gt;</pre>
+
+
+<p class="c2">These three properties are set whether there is a hazard or not, as failing to specify them means that the content has not been checked or hazard presence is not known (i.e., user beware).</p>
+<p>The <code>accessibilityAPI</code>&nbsp;and <code>accessibilityControl</code>&nbsp;properties have not been set in this example, as the book does not include any content that would cause access problems.</p>
+<p>And that&#39;s a quick introduction to using schema.org properties in your EPUB metadata.</p>
+<p>For more information about the properties, please refer to the earlier sections of this guide where the <a class="c11" href="#id.9z6u235dklgx">educational properties</a>&nbsp;and <a class="c11" href="#id.kbd6dyynatse">accessibility properties</a>&nbsp;were detailed. You&#39;ll find additional general introductions and tutorials not specific to implementing the metadata in EPUB 3 in the additional resources subsections.</p>
+
+</section>
+</section>
+</section>
+
+<section>
+
+<h1>Common Metadata Sets</h1>
+
+<section>
+
+<h2 class="c2 c8">Educational Metadata</h2>
+
+
+<p class="c2">Schema.org currently has seven properties in the CreativeWork class for educational content:</p>
+
+
+
+
+<table>
+<tbody>
+
+<tr class="c17"><th>Property</th>
+<th>Expected Type</th>
+<th>Description</th>
+</tr>
+
+<tr class="c17"><td><a class="c11" href="http://schema.org/educationalAlignment">educationalAlignment</a></td>
+<td><a class="c11" href="http://schema.org/AlignmentObject">AlignmentObject</a></td>
+<td>An alignment to an established educational framework.</td>
+</tr>
+
+<tr class="c17"><td><a class="c11" href="http://schema.org/educationalUse">educationalUse</a></td>
+<td>Text</td>
+<td>The purpose of a work in the context of education; for example, &#39;assignment&#39;, &#39;group work&#39;.</td>
+</tr>
+
+<tr class="c17"><td><a class="c11" href="http://schema.org/interactivityType">interactivityType</a></td>
+<td>Text</td>
+<td>The predominant mode of learning supported by the learning resource. Acceptable values are &#39;active&#39;, &#39;expositive&#39;, or &#39;mixed&#39;.</td>
+</tr>
+
+<tr class="c17"><td><a class="c11" href="http://schema.org/isBasedOnUrl">isBasedOnUrl</a></td>
+<td>URL</td>
+<td>A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html</td>
+</tr>
+
+<tr class="c17"><td><a class="c11" href="http://schema.org/learningResourceType">learningResourceType</a></td>
+<td>Text</td>
+<td>The predominant type or kind characterizing the learning resource. For example, &#39;presentation&#39;, &#39;handout&#39;.</td>
+</tr>
+
+<tr class="c17"><td><a class="c11" href="http://schema.org/timeRequired">timeRequired</a></td>
+<td>Duration</td>
+<td>Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. &#39;P30M&#39;, &#39;P1H25M&#39;.</td>
+</tr>
+
+<tr class="c17"><td><a class="c11" href="http://schema.org/typicalAgeRange">typicalAgeRange</a></td>
+<td>Text</td>
+<td>The typical expected age range, e.g. &#39;7-9&#39;, &#39;11-&#39;.</td>
+</tr></tbody></table>
+
+
+<p>You can also use the <a class="c11" href="http://www.schema.org/EducationalAudience">EducationalAudience</a>&nbsp;subtype of <a class="c11" href="http://www.schema.org/Audience">Audience</a>&nbsp;with the <a class="c11" href="http://www.schema.org/audience">audience</a>&nbsp;property to define the expected audience of the work. The only difference between Audience and EducationalAudience is the addition of the <a class="c11" href="http://www.schema.org/educationalRole">educationalRole</a>&nbsp;property, which allows you to specify the educational role of the audience, such as &ldquo;student&rdquo; or &ldquo;teacher.&rdquo;</p>
+
+</section>
+<section>
+
+<h2 class="c2 c8">Accessibility Metadata</h2>
+
+
+<p class="c2">Schema.org currently has four properties in the CreativeWork class for expressing the accessible qualities of content:</p>
+
+
+
+<table>
+
+<tbody>
+
+<tr class="c23">
+<th>Property</th>
+<th>Expected Type</th>
+<th>Description</th>
+</tr>
+
+<tr class="c17">
+
+
+<td><a class="c11" href="http://schema.org/accessibilityAPI">accessibilityAPI</a></td>
+<td>Text</td>
+<td>Indicates that the resource is compatible with the referenced accessibility API. Values include:
+<ul><li class="c4 c2">AndroidAccessibility</li><li class="c4 c2">ARIA</li><li class="c4 c2">ATK</li><li class="c4 c2">AT-SPI</li><li class="c4 c2">BlackberryAccessibility</li><li class="c4 c2">iAccessible2</li><li class="c4 c2">iOSAccessibility</li><li class="c4 c2">JavaAccessibility</li><li class="c4 c2">MacOSXAccessibility</li><li class="c4 c2">MSAA</li><li class="c4 c2">UIAutomation</li></ul>
+<p class="c35 c24 c2">Note that &quot;ARIA&quot; is typically the only value used with ebooks, as it indicates that dynamic content conforms to ARIA guidelines.</p></td>
+</tr>
+
+<tr class="c17"><td><a class="c11" href="http://schema.org/accessibilityControl">accessibilityControl</a></td>
+<td>Text</td>
+<td>Identifies input methods that are sufficient to fully control the described resource.
+Values include:
+<ul><li class="c4 c2">fullKeyboardControl</li><li class="c4 c2">fullMouseControl</li><li class="c4 c2">fullSwitchControl</li><li class="c4 c2">fullTouchControl</li><li class="c4 c2">fullVoiceControl</li><li class="c4 c2">fullVideoControl</li></ul></td>
+</tr>
+
+<tr class="c17"><td><a class="c11" href="http://schema.org/accessibilityFeature">accessibilityFeature</a></td>
+<td>Text</td>
+<td>Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values include:<ul class="c27 lst-kix_q2dskt9wt5jc-0"><li class="c4 c2">alternativeText</li><li class="c4 c2">annotations</li><li class="c4 c2">audioDescription</li><li class="c4 c2">bookmarks</li><li class="c4 c2">braille</li><li class="c4 c2">captions</li><li class="c4 c2">ChemML</li><li class="c4 c2">displayTransformability</li><li class="c4 c2">highContrastAudio</li><li class="c4 c2">highContrastDisplay</li><li class="c4 c2">index</li><li class="c4 c2">largePrint</li><li class="c4 c2">latex</li><li class="c4 c2">longDescription</li><li class="c4 c2">MathML</li><li class="c4 c2">printPageNumbers</li><li class="c4 c2">readingOrder</li><li class="c4 c2">signLanguage</li><li class="c4 c2">structuralNavigation</li><li class="c4 c2">tableOfContents</li><li class="c4 c2">taggedPDF</li><li class="c4 c2">tactileGraphic</li><li class="c4 c2">tactileObject</li><li class="c4 c2">timingControl</li><li class="c4 c2">transcript</li><li class="c4 c2">ttsMarkup</li></ul></td>
+</tr>
+
+<tr class="c17"><td>
+<span class="c12 c30"><a class="c11" href="http://schema.org/accessibilityHazard">accessibilityHazard</a></span></td>
+<td>Text</td>
+<td>A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3.
+Values include:<ul><li class="c4 c2">flashing</li><li class="c4 c2">noFlashingHazard<br /></li><li class="c4 c2">motionSimulation</li><li class="c4 c2">noMotionSimulationHazard<br /></li><li class="c4 c2">sound</li><li class="c2 c4">noSoundHazard</li></ul>
+
+<p class="c24 c2 c35">Note that either the positive or negative value should always be set. Not setting a value indicates that the content has not been checked.</p></td>
+</tr></tbody></table>
+
+<section>
+<h3>Additional Information</h3>
+<p>Please consult the following resources for further explanation of the accessibility properties and values:</p>
+
+<ul class="c27 lst-kix_bf1gng81jw0k-0 start"><li class="c9 c2"><a class="c11" href="http://www.w3.org/wiki/WebSchemas/Accessibility">W3C WebSchemas wiki</a>&nbsp;&ndash; Current list of properties and values, including ongoing development</li><li class="c9 c2"><a class="c11" href="http://www.a11ymetadata.org">a11ymetadata.org</a>&nbsp;&ndash; News and updates about the project</li><li class="c9 c2"><a class="c11" href="https://groups.google.com/forum/#!forum/a11y-metadata-project">a11y-metadata-project</a>&nbsp;&ndash; Working group&#39;s mailing list</li><li class="c2 c9"><a class="c11" href="http://www.a11ymetadata.org/wp-content/uploads/2013/12/AccessibilityMetadataSemanticMarkupPrimer.docx">Best Practices Guide</a>&nbsp;&ndash; Introduction to the properties and values, including how and when to apply them</li></ul>
+</section>
+</section>
+</section>
+
+</body></html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+   <head>
+      <meta charset="utf-8" />
+      <title>IDPF Issue Reporting Guidelines</title>
+     <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+      <script src="../common/biblio.js" class="remove"></script>
+      <script src="../common/dfn-crossref.js" class="remove"></script>
+      <script src="../common/confreq-permalinks.js" class="remove"></script>
+      <link href="../common/css/common.css" rel="stylesheet" type="text/css" />
+      <script class="remove">
+          var respecConfig = {
+              wg: "EPUB 3 Community Group",
+              specStatus: "CG-DRAFT",
+              noRecTrack: true,
+              shortName: "epub-a11y-faq",
+              edDraftURI: "https://w3c.github.io/publ-cg/guides/epub-a11y-faq.html",
+              editors: [
+              
+                   {
+                      name: "Matt Garrish",
+                      company: "Invited Expert"
+                  }
+              ],
+              processVersion: 2017,
+              includePermalinks: true,
+              permalinkEdge:     true,
+              permalinkHide:     false,
+              diffTool:          "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+              localBiblio: biblio,
+              preProcess: [fixDefinitionCrossrefs, addConformanceLinks]
+          };
+      </script>
+   </head>
+   <body>
+      <section id="abstract">
+         <p>TK</p>
+      </section>
+      <section id="sotd"></section>
+      <section id="sec-overview">
+         <h1>Overview</h1>
+
+			<p>This document outlines the process for requesting and making changes to any of the <a
+					href="https://github.com/IDPF">IDPF's GitHub repositories</a>.</p>
+
+			<p>A free <a href="https://github.com/join">GitHub account</a> is required in order to perform the operations
+				described in this document.</p>
+
+			<p>This document is not a tutorial on how to use the git version control system. If you are unfamiliar with
+				forking/cloning repositories, committing changes, creating pull requests or performing other operations,
+				please first take the time to review the <a href="https://help.github.com/">GitHub documentation</a>.</p>
+		</section>
+		<section id="sec-reporting" class="chapter">
+			<h1 class="title">2. Reporting Issues</h1>
+
+			<p>The easiest way to request a change is to report an issue. Be sure to include as much information as possible
+				to assist in reviewing your request (e.g., affected document and section and rationale for the change).</p>
+
+			<p>If you are not familiar with opening GitHub issues, the following steps will guide you through the
+				process:</p>
+
+			<ul class="body">
+				<li><a href="https://github.com/IDPF/">Locate the IDPF repository</a> that contains the document you want
+					changed. If you are unsure which your issue applies to, use the <a
+						href="https://github.com/IDPF/epub-revision">EPUB revision repository</a>.</li>
+				<li>Click on the "Issues" tab.</li>
+				<li>Check the open issues and/or try some keyword searches to verify that the issue has not already been
+					reported.</li>
+				<li>Click on the "New issue" button.</li>
+				<li>Create a short title that meaningfully conveys the issue.</li>
+				<li>Write a detailed description of the issue, include a proposed resolution if you have one.</li>
+				<li>Click submit.</li>
+			</ul>
+
+			<p>Note that you may not receive feedback right away, but that does not mean the issue will not be, or is not
+				being, considered. See the <a href="#sec-evaluation">section on evaluation</a> below for more information on
+				why an issue can take a while to get addressed.</p>
+		</section>
+		<section id="sec-pull-requests" class="chapter">
+			<h1 class="title">3. Creating Pull Requests</h1>
+
+			<p>GitHub allows users to copy public repositories, make changes to the source markup and submit the changed
+				documents back for consideration. The process of submitting the changed document(s) back is called making a
+				pull request (i.e., asking the owner to pull the changes back in).</p>
+
+			<p>Although the EPUB Working Group will review all requests and make any necessary changes, users can submit pull
+				requests with their issues.</p>
+
+			<p>Pull requests are most helpful for new additions (e.g., to add a new item to a registry), especially when the
+				request is for a change that the Working Group might not be as familiar with. Creating a pull request does
+				not guarantee the request will be considered any faster, but will expedite the update process.</p>
+
+			<p>Pull requests are best done by advanced git users. The process involves forking the applicable IDPF
+				repository, downloading a local copy, updating the affected file(s), committing the changes back to your fork
+				and then creating a pull request in the EPUB repository.</p>
+
+			<p>For more detailed instructions about this process, please refer to the following GitHub documentation
+				pages:</p>
+
+			<ul class="body">
+				<li><a href="https://help.github.com/articles/working-with-forks/">Working with forks</a></li>
+				<li><a href="https://help.github.com/articles/creating-a-pull-request-from-a-fork/">Creating a pull request
+						from a fork</a></li>
+			</ul>
+		</section>
+		<section id="sec-evaluation" class="chapter">
+			<h1 class="title">4. Evaluation of Requests</h1>
+
+			<p>The EPUB working group is responsible for evaluating and approving request changes to the EPUB format. Other
+				working groups may be responsible for the various modular specifications that have been developed by the
+				IDPF.</p>
+
+			<p>Change requests are typically screened by the applicable working group Chairs prior to bringing to the full
+				working group for review and approval. Issues can be closed without broader review if they are determined to
+				be out of scope, inapplicable, infeasiable or otherwise unimplementable.</p>
+
+			<p>The IDPF cannot guarantee a timeline for review and approval of change requests. Some changes can only be made
+				during revisions to the EPUB specifications, regardless of their merit (the IDPF will issue errata between
+				revisions for serious technical issues). Others, such as additions to registries, may be implemented quickly
+				if a key need is recognized.</p>
+
+			<p>Depending on the nature of the change requested, approval of the IDPF Board and full membership may also be
+				necessary (e.g., for feature request changes to the EPUB format).</p>
+
+			<p>Note that the approval process described in this section does not apply to every repository that the IDPF
+				maintains. For example, some repositories are created for use by subgroups developing new specifications, and
+				those groups have discretion over how they address changes. Similarly, repositories that host guides, samples
+				and other informative documents do not necessarily require a full review of every change request. The IDPF
+				has sole discretion over how its repositories are run.</p>
+		</section>
+	</body>
+</html>
