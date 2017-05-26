@@ -53,10 +53,10 @@
 				to implement the requirements.</p>
 		</section>
 		<section id="sec-general" class="chapter">
-			<h1 class="title">2. General</h1>
+			<h1 class="title">General</h1>
 
 			<section id="sec-general-epub-version">
-				<h2 class="title">2.1 What version of EPUB does this specification apply to?</h2>
+				<h2 class="title">What version of EPUB does this specification apply to?</h2>
 
 				<p>Although the EPUB Accessibility specification was developed during the EPUB 3.1 revision, it is designed
 					to be applicable to earlier versions of the format. The requirements and techniques do not depend on EPUB
@@ -68,10 +68,10 @@
 			</section>
 		</section>
 		<section id="sec-disc" class="chapter">
-			<h1 class="title">3. Discovery Metadata</h1>
+			<h1 class="title">Discovery Metadata</h1>
 
 			<section id="sec-disc-schema" class="section">
-				<h2 class="title">3.1 Why was schema.org metadata chosen?</h2>
+				<h2 class="title">Why was schema.org metadata chosen?</h2>
 				<p>Schema.org metadata is required in the package document because it provides a comprehensive set of
 					descriptive metadata that fits the EPUB metadata model.</p>
 				<p>As EPUB continues to integrate with the Open Web Platform — where schema.org metadata is used by the major
@@ -80,7 +80,7 @@
 			</section>
 
 			<section id="sec-disc-onix" class="section">
-				<h2 class="title">3.2 Why is ONIX not required for discovery metadata?</h2>
+				<h2 class="title">Why is ONIX not required for discovery metadata?</h2>
 				<p>Although ONIX is critical metadata in ebook distribution channels, EPUB publications are not necessarily
 					books nor are they all distributed through the major ebook channels. Requiring all authors of EPUB
 					content to include an ONIX record would complicate production, potentially turning authors off from
@@ -97,7 +97,7 @@
 			</section>
 
 			<section id="sec-disc-publicize" class="section">
-				<h2 class="title">3.3 Can I call my discoverable publication accessible?</h2>
+				<h2 class="title">Can I call my discoverable publication accessible?</h2>
 				<p>If your publication only includes discoverability metadata (i.e., it does not meet the accessibility
 					requirements and is not an optimization), it must not be promoted as accessible per this
 					specification.</p>
@@ -106,10 +106,10 @@
 			</section>
 		</section>
 		<section id="sec-a11y" class="chapter">
-			<h1 class="title">4. Accessibility Conformance</h1>
+			<h1 class="title">Accessibility Conformance</h1>
 
 			<section id="sec-a11y-meeting" class="section">
-				<h2 class="title">4.1 What if I cannot meet all these requirements?</h2>
+				<h2 class="title">What if I cannot meet all these requirements?</h2>
 				<p>Changing production practices is never easy, but there also needs to be a clear benchmark to meet to begin
 					making progress. The EPUB working group understands that the ability to meet these requirements is going
 					to vary depending on the nature of the content produced and how it is produced.</p>
@@ -129,14 +129,14 @@
 			</section>
 
 			<section id="sec-a11y-wcag-ext" class="section">
-				<h2 class="title">4.2 Is this specification an extension of WCAG?</h2>
+				<h2 class="title">Is this specification an extension of WCAG?</h2>
 
 				<p>No, it leverages WCAG and includes additional requirements, but is not an official extension and should
 					not be referred to as one.</p>
 			</section>
 
 			<section id="sec-a11y-wcag-coop" class="section">
-				<h2 class="title">4.3 Why not include the EPUB requirements in WCAG?</h2>
+				<h2 class="title">Why not include the EPUB requirements in WCAG?</h2>
 
 				<p>The IDPF intends to work with the W3C and Web Accessibility Initiative in the future to harmonize
 					accessibility for digital publications.</p>
@@ -146,20 +146,20 @@
 			</section>
 
 			<section id="sec-a11y-partial" class="section">
-				<h2 class="title">4.4 Why are there guidelines for only some HTML elements in the techniques?</h2>
+				<h2 class="title">Why are there guidelines for only some HTML elements in the techniques?</h2>
 				<p>The techniques document does not duplicate the requirements of WCAG 2.0. It only addresses situations
 					where the guidance differs for publications, or where no guidance exists.</p>
 			</section>
 
 			<section id="sec-a11y-alternatives" class="section">
-				<h2 class="title">4.5 What if there is another way to make content accessible that is not listed?</h2>
+				<h2 class="title">What if there is another way to make content accessible that is not listed?</h2>
 				<p>The techniques documents for both the EPUB Accessibility specification and WCAG 2.0 are advisory in
 					nature. New techniques are always being developed to handle new situations. If a new technique provides
 					the same level of accessibility, it is acceptable to use it.</p>
 			</section>
 
 			<section id="sec-a11y-checklist" class="section">
-				<h2 class="title">4.6 Is there a checklist of requirements?</h2>
+				<h2 class="title">Is there a checklist of requirements?</h2>
 				<p>The techniques do not include a checklist, as the requirement for conformance will vary from publication
 					to publication (e.g., depending on the type of content included).</p>
 				<p>A validation process document is currently under development that will guide in checking the requirements
@@ -169,7 +169,7 @@
 			</section>
 
 			<section id="sec-a11y-url" class="section">
-				<h2 class="title">4.7 Why is the conformance metadata a URL?</h2>
+				<h2 class="title">Why is the conformance metadata a URL?</h2>
 				<p>The <a href="http://www.idpf.org/epub/a11y/#sec-conf-reporting">a11y:conformsTo property</a> takes a URL
 					so that the conformance statement is always the same and can be easily checked by machine (e.g., for
 					validation, ingestion into a distribution system, etc.).</p>
@@ -179,10 +179,10 @@
 			</section>
 		</section>
 		<section id="sec-opt" class="chapter">
-			<h1 class="title">5. Optimized Publications</h1>
+			<h1 class="title">Optimized Publications</h1>
 
 			<section id="sec-opt-identify-why" class="section">
-				<h2 class="title">5.1 Why identify optimizations?</h2>
+				<h2 class="title">Why identify optimizations?</h2>
 				<p>The identification of optimizations ties into the importance of discovery metadata. Content that meets
 					accessibility requirements for specific user groups needs to be discoverable by those groups, even if the
 					content is not considered broadly accessible (e.g., braille- and audio-optimized publications).</p>
@@ -190,7 +190,7 @@
 			</section>
 
 			<section id="sec-opt-identify-how" class="section">
-				<h2 class="title">5.2 How do I identify an optimization standard?</h2>
+				<h2 class="title">How do I identify an optimization standard?</h2>
 				<p>Conformance to a third-party standard is indicated by including a link tag in the metadata with a URL that
 					points to where the standard is defined.</p>
 				<pre>&lt;link
@@ -204,7 +204,7 @@
 			</section>
 
 			<section id="sec-opt-publicize" class="section">
-				<h2 class="title">5.3 Can I call my optimized publication accessible?</h2>
+				<h2 class="title">Can I call my optimized publication accessible?</h2>
 				<p>The EPUB Accessibility specification does not endorse optimizations; it only address how to identify them
 					in the metadata.</p>
 				<p>Any claims about the accessibility of an optimization must not make reference to the EPUB Accessibility
@@ -213,7 +213,7 @@
 			</section>
 
 			<section id="sec-opt-registry" class="section">
-				<h2 class="title">5.4 What is the optimized standards registry?</h2>
+				<h2 class="title">What is the optimized standards registry?</h2>
 				<p>The IDPF maintains a <a href="http://idpf.github.io/epub-registries/optimizations/">registry of known
 						optimization standards</a> to help facilitate lookup of their identifiers.</p>
 				<p>This list is provided solely for informational purposes. The IDPF does not develop optimization standards
@@ -221,13 +221,13 @@
 			</section>
 
 			<section id="sec-opt-register-req" class="section">
-				<h2 class="title">5.5 Do I have to register my standard?</h2>
+				<h2 class="title">Do I have to register my standard?</h2>
 				<p>No, the registry is informative. The only requirement is that the standard the content conforms to be
 					identified.</p>
 			</section>
 
 			<section id="sec-opt-register-how" class="section">
-				<h2 class="title">5.6 How do I register my standard?</h2>
+				<h2 class="title">How do I register my standard?</h2>
 				<p>Inclusion of new standards can be requested by opening an issue in the <a
 						href="https://github.com/IDPF/epub-registries">GitHub repository</a> (requires a GitHub account).
 					Advanced GitHub users can also update the <a
