@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>EPUB Specifications and Projects</title>
+        <link rel="stylesheet" href="epub-dir.css" type="text/css" />
+    </head>
+    <body>
+        <header>
+            <p class="logo"><a href="/"><img src="http://idpf.org/sites/default/files/header-logo.gif" alt="International Digital Publishing Forum: The Trade and Standards Organization for the Digital Publishing Industry"/></a></p>
+            
+            <nav id="toc" class="toc">
+                <ol class="toc">
+                    <li><a href="#activity">Current Activity</a></li>
+                    <li><a href="#specs">All Specifications</a></li>
+                    <li><a href="#guides">Guides</a></li>
+                </ol>
+                <br/>
+            </nav>
+            
+            <h1 class="title">EPUB Specifications and Projects</h1>
+            <p class="status">26 May 2017</p>
+        </header>
+        
+        <div class="content">
+            <p>EPUB&#174; is the distribution and interchange format standard for digital publications and documents 
+                based on Web Standards. EPUB defines a means of representing, packaging and encoding structured 
+                and semantically enhanced Web content &#8211; including XHTML, CSS, SVG, images, and other resources
+                &#8211; for distribution in a single-file format.</p>
+            
+            <p>The <strong>current version</strong> of EPUB is <em><a href="http://www.idpf.org/epub/31/spec/epub-spec.html">EPUB 
+                3.1</a></em></p>
+            
+            <p>For more information about this version, <a href="#epub31">see the description below</a>.</p>
+            
+            <section id="activity" class="chapter">
+                <h2 class="title">Current Activity</h2>
+                
+                <section id="inprogress" class="section">
+                    <h3>Under Development</h3>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Next Milestone</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#edupub">EPUB for Education</a></td>
+                                <td><a href="http://www.idpf.org/epub/profiles/edu/spec/">Draft Specification</a></td>
+                                <td>TBD</td>
+                                <td><a href="mailto:epub-working-group@googlegroups.com">EPUB Working Group</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#do">Distributable Objects</a></td>
+                                <td><a href="http://www.idpf.org/epub/do/">Draft Specification</a></td>
+                                <td>TBD</td>
+                                <td><a href="mailto:epub-working-group@googlegroups.com">EPUB Working Group</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#esc">Scriptable Components</a></td>
+                                <td><a href="http://www.idpf.org/epub/sc/api/">Draft Specification</a></td>
+                                <td>TBD</td>
+                                <td><a href="mailto:epub-working-group@googlegroups.com">EPUB Working Group</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#oa">Open Annotation in EPUB</a></td>
+                                <td><a href="http://www.idpf.org/epub/oa/">Draft Specification</a></td>
+                                <td>TBD</td>
+                                <td><a href="mailto:epub-working-group@googlegroups.com">EPUB Working Group</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                
+                <section id="upcoming" class="section">
+                    <h3>Upcoming</h3>
+                    
+                    <p>No announcements at this time.</p>
+                </section>
+            </section>
+            
+            <section id="specs" class="chapter">
+                <h2 class="title">All Specifications</h2>
+                
+                <nav class="spec-toc">
+                    <ol class="toc">
+                        <li><a href="#epub31">EPUB 3.1</a></li>
+                        <li><a href="#epub301">EPUB 3.0.1</a></li>
+                        <li><a href="#epub30">EPUB 3.0</a></li>
+                        <li><a href="#epub201">EPUB 2.0.1</a></li>
+                        <li><a href="#a11y">EPUB Accessibility</a></li>
+                        <li><a href="#adaptive">EPUB Adaptive Layout</a></li>
+                        <li><a href="#dict">EPUB Dictionaries and Glossaries 1.0</a></li>
+                        <li><a href="#do">EPUB Distributable Objects 1.0</a></li>
+                        <li><a href="#fxl">EPUB 3 Fixed-Layout Documents</a></li>
+                        <li><a href="#edupub">EPUB for Education</a></li>
+                        <li><a href="#idx">EPUB Indexes 1.0</a></li>
+                        <li><a href="#multiple-renditions">EPUB Multiple Renditions 1.0</a></li>
+                        <li><a href="#previews">EPUB Previews 1.0</a></li>
+                        <li><a href="#region-nav">EPUB Region-Based Navigation 1.0</a></li>
+                        <li><a href="#esc">EPUB Scriptable Components 1.0</a></li>
+                        <li><a href="#esc">EPUB Scriptable Components Packaging and Integration 1.0</a></li>
+                        <li><a href="#oa">Open Annotation in EPUB 1.0</a></li>
+                    </ol>
+                </nav>
+                
+                <section id="epub31" class="spec-group">
+                    <h3 class="title">EPUB 3.1</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="#epub31-core">See below</a></li>
+                        <li><strong>Status</strong>:<br/>Recommended Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2017-01-05</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://idpf.org/charter/2015/epub">EPUB 3 Charter (2015)</a></li>
+                        <li><strong>Project Home</strong>:<br/><a href="https://github.com/IDPF/epub-revision/wiki/EPUB-3.1">EPUB 3.1</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>EPUB 3.1 is the first major revision of EPUB 3. The key areas of focus for this revision
+                        were: simplification of the specifications (both structure and features),
+                        alignment with the Open Web Platform, and clarification of scripting contexts.</p>
+                    
+                    <section id="epub31-core-spec">
+                        <h4>Core Specifications</h4>
+                        
+                        <ul>
+                            <li>
+                                <a href="http://www.idpf.org/epub/31/spec/epub-spec.html">EPUB 3.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/31/spec/epub-publications.html">EPUB Packages 3.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/31/spec/epub-contentdocs.html">EPUB Content Documents 3.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/31/spec/epub-mediaoverlays.html">EPUB Media Overlays 3.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/31/spec/epub-ocf.html">EPUB Open Container Format (OCF) 3.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/31/spec/epub-overview.html">EPUB 3 Overview</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/31/spec/epub-changes.html">EPUB 3.1 Changes from EPUB 3.0.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/31/schema/">EPUB 3.1 Schemas</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/cmt/v3/">EPUB 3 Core Media Types</a>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <section id="epub31-core-modules">
+                        <h4>Core Modules</h4>
+                        <ul>
+                            <li><a href="http://www.idpf.org/epub/altss-tags/">Alternate Style Tags</a></li>
+                            <li><a href="http://www.idpf.org/epub/a11y/">EPUB Accessibility</a></li>
+                        </ul>
+                    </section>
+                    
+                    <section id="epub31-vocabs">
+                        <h4>Vocabularies</h4>
+                        
+                        <ul>
+                            <li><a href="http://www.idpf.org/epub/vocab/package/a11y/">EPUB Accessibility Vocabulary</a></li>
+                            <li><a href="http://www.idpf.org/epub/vocab/package/item/">EPUB Manifest Properties Vocabulary</a></li>
+                            <li><a href="http://www.idpf.org/epub/vocab/package/meta/">EPUB Meta Properties Vocabulary</a></li>
+                            <li><a href="http://www.idpf.org/epub/vocab/package/link/">EPUB Metadata Link Vocabulary</a></li>
+                            <li><a href="http://www.idpf.org/epub/vocab/rendition/">EPUB Package Rendering Vocabulary</a></li>
+                            <li><a href="http://www.idpf.org/epub/vocab/package/itemref/">EPUB Spine Properties Vocabulary</a></li>
+                            <li><a href="http://www.idpf.org/epub/vocab/structure/">EPUB Structural Semantics Vocabulary</a></li>
+                            <li><a href="http://www.idpf.org/epub/vocab/structure/magazine/">EPUB 3 Magazine Navigation Vocabulary</a></li>
+                            <li><a href="http://www.idpf.org/epub/vocab/overlays/">Media Overlays Vocabulary</a></li>
+                        </ul>
+                    </section>
+                    
+                    <section id="epub31-prefixes">
+                        <h4>Prefixes</h4>
+                        
+                        <ul>
+                            <li>
+                                <a href="http://www.idpf.org/epub/vocab/structure/pfx/">EPUB Content Documents Reserved Prefixes</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/vocab/package/pfx/">EPUB Publications Reserved Prefixes</a>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <section id="epub31-registries">
+                        <h4>Registries</h4>
+                        
+                        <ul>
+                            <li><a href="http://www.idpf.org/epub/registries/roles/">EPUB Collection Roles Registry</a></li>
+                            <li><a href="http://www.idpf.org/epub/registries/identifiers/">EPUB Identifier Schemes Registry</a></li>
+                            <li><a href="http://www.idpf.org/epub/registries/optimizations/">EPUB Optimized Publication Standards Registry</a></li>
+                            <li><a href="http://www.idpf.org/epub/registries/types/">EPUB Publication Types Registry</a></li>
+                            <li><a href="http://www.idpf.org/epub/registries/authorities/">EPUB Subject Authorities Registry</a></li>
+                        </ul>
+                    </section>
+                    
+                    <section id="epub31-projects">
+                        <h4>Projects</h4>
+                        
+                        <ul>
+                            <li><a href="https://github.com/IDPF/epub3-samples">EPUB 3 Samples</a></li>
+                            <li><a href="https://github.com/IDPF/epubcheck/">Epubcheck</a></li>
+                            <li><a href="https://github.com/IDPF/epub-testsuite">EPUB Test Suite</a></li>
+                            <li><a href="http://www.epubtest.org">EPUB 3 Support Grid</a></li>
+                            <li><a href="http://www.readium.org">Readium</a></li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <section id="epub301" class="spec-group">
+                    <h3 class="title">EPUB 3.0.1</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="#epub301-core-spec">See below</a></li>
+                        <li><strong>Status</strong>:<br/>Recommended Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2014-06-24</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://idpf.org/epub/30/wg-charter">EPUB 3 Charter (2010)</a></li>
+                        <li><strong class="superseded">Superseded by</strong>:<br/><a href="#epub301">EPUB 3.1</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>EPUB 3.0.1 is a minor maintenance update to EPUB 3.0. On June 26, 2014 the IDPF announced that the 
+                        IDPF membership had overwhelmingly approved elevation of EPUB 3.0.1 to final Recommended Specification
+                        status.</p>
+                    
+                    <p>As of as of January, 2017, EPUB 3.0.1 has been superseded by <a href="#epub31">EPUB 3.1</a>, which is now
+                        the current version of the EPUB standard.</p> 
+                    
+                    <section id="epub301-core-spec">
+                        <h4>Core Specifications</h4>
+                        <ul>
+                            <li>
+                                <a href="http://www.idpf.org/epub/301/spec/epub-publications.html">EPUB Publications 3.0.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html">EPUB Content Documents
+                                    3.0.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/301/spec/epub-mediaoverlays.html">EPUB Media Overlays
+                                    3.0.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/301/spec/epub-ocf.html">EPUB Open Container Format (OCF)
+                                    3.0.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/301/spec/epub-overview.html">EPUB 3 Overview</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/301/spec/epub-changes.html">EPUB 3.0.1 Changes from EPUB 3.0</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/301/schema/">EPUB 3.0.1 Schemas</a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <section id="epub30" class="spec-group">
+                    <h3 class="title">EPUB 3.0</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="#epub30-core">See below</a></li>
+                        <li><strong>Status</strong>:<br/>Recommended Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2011-10-11</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://idpf.org/epub/30/wg-charter">EPUB 3 Charter (2010)</a></li>
+                        <li><strong class="superseded">Superseded by</strong>:<br/><a href="#epub301">EPUB 3.0.1</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>EPUB 3 was developed pursuant to a charter approved by the IDPF Membership in May, 2010. EPUB 3.0 was
+                        approved by the IDPF membership as a final Recommended Specification effective October 11, 2011, and
+                        superseded the previous release, <a href="#epub201">EPUB 2.0.1</a>.</p> 
+                    
+                    <p>As of as of June, 2014, EPUB 3.0 has been superseded by <a href="#epub301">EPUB 3.0.1</a>, which is now
+                        the current version of the EPUB standard.</p> 
+                    
+                    <section id="epub30-core">
+                        <h4>Core Specifications</h4>
+                        
+                        <ul>
+                            <li>
+                                <a href="http://www.idpf.org/epub/30/spec/epub30-publications.html">EPUB Publications 3.0</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/30/spec/epub30-contentdocs.html">EPUB Content Documents
+                                    3.0</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html">EPUB Media Overlays
+                                    3.0</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/30/spec/epub30-ocf.html">EPUB Open Container Format (OCF)
+                                    3.0</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/30/spec/epub30-overview.html">EPUB 3 Overview</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/30/spec/epub30-changes.html">EPUB 3 Changes from EPUB 2.0.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/30/schema/">EPUB 3.0 Schemas</a>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <section id="epub30-core-modules">
+                        <h4>Core Modules</h4>
+                        <ul>
+                            <li><a href="http://www.idpf.org/epub/altss-tags/altss-tags-20111011.html">Alternate Style Tags</a></li>
+                            <li><a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20111011.html">EPUB Canonical Fragment Identifiers</a></li>
+                        </ul>
+                    </section>
+                    
+                    <section id="epub30-books">
+                        <h4>Books</h4>
+                        
+                        <p>In collaboration with O'Reilly, guides to best practices for creating EPUB content.</p>
+                        <ul>
+                            <li><a href="http://shop.oreilly.com/product/0636920022442.do">What is EPUB 3?</a> &#8211;
+                                An Introduction to the EPUB Specification for Multimedia Publishing.</li>
+                            <li><a href="http://shop.oreilly.com/product/0636920025283.do">Accessible EPUB 3</a> &#8211;
+                                Best Practices for Creating Universally Usable Content</li>
+                            <li><a href="http://shop.oreilly.com/product/0636920024897.do">EPUB 3 Best Practices</a> &#8211;
+                                Optimize Your Digital Books.</li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <section id="epub201" class="spec-group">
+                    <h3 class="title">EPUB 2.0.1</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="#epub20-core">See below</a></li>
+                        <li><strong>Status</strong>:<br/>Recommended Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2010-09-04</li>
+                        <li><strong>Charter</strong>:<br/>-</li>
+                        <li><strong class="superseded">Superseded by</strong>:<br/><a href="#epub30">EPUB 3.0</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>EPUB 2.0.1 is a maintenance release of EPUB 2. Its development was chartered in 2009, and the final 
+                        standard was approved by the IDPF Membership as a Recommended Specification in May, 2010.</p>
+                    
+                    <p>EPUB 2.0.1 was superseded by <a href="epub30">EPUB 3.0</a> in October, 2011. As of June 2014, the 
+                        latest released version of EPUB is <a href="#epub301">EPUB 3.0.1</a>. EPUB 2.x is now considered 
+                        obsolete and is no longer under active maintenance.</p>
+                    
+                    <section id="epub20-core">
+                        <h4>Core Specifications</h4>
+                        
+                        <ul>
+                            <li>
+                                <a href="http://www.idpf.org/epub/20/spec/OPS_2.0.1_draft.htm">Open Publication Structure (OPS) 2.0.1
+                                    v1.0.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm">Open Packaging Format (OPF) 2.0.1
+                                    v1.0.1</a>
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/doc_library/epub/OCF_2.0.1_draft.doc">Open Container Format (OCF) 2.0.1
+                                    v1.0.1</a> (Word doc)
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <section id="a11y" class="spec-group">
+                    <h3 class="title">EPUB Accessibility</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="#a11y-specs">See below</a></li>
+                        <li><strong>Status</strong>:<br/>Draft Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2016-11-30</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://idpf.org/charter/2015/epub">EPUB 3 Charter (2015)</a></li>
+                        <li><strong>Project Home</strong>:<br/><a href="https://github.com/IDPF/epub-revision/wiki/EPUB-3.1">EPUB 3.1</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Addresses discovery and production requirements for accessible EPUB Publications.</p>
+                    
+                    <ul id="a11y-specs">
+                        <li>
+                            <a href="http://www.idpf.org/epub/a11y">EPUB Accessibility 1.0</a>
+                        </li>
+                        <li>
+                            <a href="http://www.idpf.org/epub/a11y/techniques">EPUB Accessibility 1.0 Techniques</a>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section id="adaptive" class="spec-group">
+                    <h3 class="title">Adaptive Layout</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="http://www.idpf.org/epub/pgt/">EPUB Adaptive Layout</a></li>
+                        <li><strong>Status</strong>:<br/>Information Document</li>
+                        <li><strong>Date Published</strong>:<br/>2012-08-08</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://idpf.org/epub/30/wg-charter">EPUB 3 Charter (2010)</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>CSS Page Templates - allowing content to be formatted into a sequence of richly-designed reflowable pages.</p>
+                </section>
+                
+                <section id="dict" class="spec-group">
+                    <h3 class="title">Dictionaries and Glossaries</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="http://www.idpf.org/epub/dict/">EPUB Dictionaries and Glossaries 1.0</a></li>
+                        <li><strong>Status</strong>:<br/>Recommended Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2015-08-26</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://www.idpf.org/charters/2012/dictionaries/">Dictionaries Charter</a></li>
+                        <li><strong>Project Home</strong>:<br/><a href="https://github.com/IDPF/epub-revision/wiki/Dictionaries-and-Glossaries-Working-Group">Dictionaries</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Defines a content model for the representation of dictionaries and glossaries in EPUB documents.</p>
+                </section>
+                
+                <section id="do" class="spec-group">
+                    <h3 class="title">Distributable Objects</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="http://www.idpf.org/epub/do/">EPUB Distributable Objects 1.0</a></li>
+                        <li><strong>Status</strong>:<br/>Draft Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2015-07-23</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://idpf.org/epub/30/wg-charter">EPUB 3 Charter (2010)</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Defines a method for the encapsulation, transportation, and integration of Distributable Objects in EPUB Publications.</p>
+                </section>
+                
+                <section id="fxl" class="spec-group">
+                    <h3 class="tite">Fixed Layouts</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="http://www.idpf.org/epub/fxl/">EPUB 3 Fixed-Layout Documents</a></li>
+                        <li><strong>Status</strong>:<br/>Information Document</li>
+                        <li><strong>Date Published</strong>:<br/>2012-03-13</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://idpf.org/epub/30/wg-charter">EPUB 3 Charter (2010)</a></li>
+                        <li><strong class="superseded">Superseded by</strong>:<br/><a href="#epub301">EPUB 3.0.1</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Interoperable metadata expressions for fixed-layout EPUB documents.</p>
+                </section>
+                
+                <section id="edupub" class="spec-group">
+                    <h3 class="title">EPUB for Education</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="#edupub-specs">See below</a></li>
+                        <li><strong>Status</strong>:<br/>Draft Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2016-02-22</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://idpf.org/epub/30/wg-charter">EPUB 3 Charter (2010)</a></li>
+                        <li><strong>Project Home</strong>:<br/><a href="https://github.com/IDPF/epub-revision/wiki/EDUPUB-Profile">EPUB for Education</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Profile of EPUB 3 to standardize educational publishing.</p>
+                    <ul id="edupub-specs">
+                        <li>
+                            <a href="http://www.idpf.org/epub/profiles/edu/spec/">EPUB for Education Profile</a>
+                        </li>
+                        <li>
+                            <a href="http://www.idpf.org/epub/profiles/edu/structure/">Education Structural Semantics Vocabulary</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/IDPF/education">EPUB for Education Samples</a>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section id="idx" class="spec-group">
+                    <h3 class="title">Indexes</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="http://www.idpf.org/epub/idx/">EPUB Indexes 1.0</a></li>
+                        <li><strong>Status</strong>:<br/>Recommended Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2015-08-26</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://www.idpf.org/epub/idx/">Indexes Charter</a></li>
+                        <li><strong>Project Home</strong>:<br/><a href="https://github.com/IDPF/epub-revision/wiki/Indexes-Working-Group">Indexes</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Defines a content model for the representation of indexes in EPUB documents.</p>
+                </section>
+                
+                <section id="multiple-renditions" class="spec-group">
+                    <h3 class="title">Multiple Renditions</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="http://www.idpf.org/epub/renditions/multiple/">EPUB Multiple-Rendition Publications 1.0</a></li>
+                        <li><strong>Status</strong>:<br/>Recommended Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2015-08-26</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://www.idpf.org/charters/2012/layout/">AHL Charter</a></li>
+                        <li><strong>Project Home</strong>:<br/><a href="https://github.com/IDPF/epub-revision/wiki/Advanced-Hybrid-Layouts-Working-Group">AHL</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Defines attributes and metadata for the inclusion of more than one Rendition of an EPUB Publication in
+                        the ZIP container, as well as a mechanism for mapping locations between Renditions.</p>
+                </section>
+                
+                <section id="oa" class="spec-group">
+                    <h3 class="title">Open Annotation</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="http://www.idpf.org/epub/oa/">Open Annotation in EPUB</a></li>
+                        <li><strong>Status</strong>:<br/>Draft Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2015-07-23</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://idpf.org/epub/30/wg-charter">EPUB 3 Charter (2010)</a></li>
+                        <li><strong>Project Home</strong>:<br/><a href="https://github.com/IDPF/epub-revision/wiki/Open-Annotation-in-EPUB">Open Annotation</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Defines how to apply <a href="https://www.w3.org/community/openannotation/">Open Annotations</a> in the context of EPUB, thereby 
+                        enabling users and service providers to utilize a non-proprietary representation of annotation data.</p>
+                </section>
+                
+                <section id="previews" class="spec-group">
+                    <h3 class="title">Previews</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="http://www.idpf.org/epub/previews/">EPUB Previews 1.0</a></li>
+                        <li><strong>Status</strong>:<br/>Recommended Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2015-08-26</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://www.idpf.org/charters/2012/layout/">AHL Charter</a></li>
+                        <li><strong>Project Home</strong>:<br/><a href="https://github.com/IDPF/epub-revision/wiki/Advanced-Hybrid-Layouts-Working-Group">AHL</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Defines two models for preview content: as a standalone preview EPUB Publication and as a collection embedded
+                        within the parent EPUB Publication.</p>
+                </section>
+                
+                <section id="region-nav" class="spec-group">
+                    <h3 class="title">Region-Based Navigation</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="http://www.idpf.org/epub/renditions/region-nav/">EPUB Region-Based Navigation 1.0</a></li>
+                        <li><strong>Status</strong>:<br/>Recommended Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2015-08-26</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://www.idpf.org/charters/2012/layout/">AHL Charter</a></li>
+                        <li><strong>Project Home</strong>:<br/><a href="https://github.com/IDPF/epub-revision/wiki/Advanced-Hybrid-Layouts-Working-Group">AHL</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Defines a method for defining visual regions of interest on fixed-layout pages and a new default navigation model
+                        for Reading Systems to navigate between them.</p>
+                    
+                    <section id="nav-vocabs">
+                        <h4>Vocabularies</h4>
+                        <ul>
+                            <li>
+                                <a href="http://www.idpf.org/epub/vocab/structure/#h_comics">EPUB Comics Vocabulary</a> (integrated into the EPUB Structural Semantics Vocabulary)
+                            </li>
+                            <li>
+                                <a href="http://www.idpf.org/epub/vocab/structure/magazine/">EPUB 3 Magazine Navigation Vocabulary</a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <section id="esc" class="spec-group">
+                    <h3 class="title">Scriptable Components</h3>
+                    
+                    <ul class="info">
+                        <li><strong>Specification</strong>:<br/><a href="#esc-specs">See below</a></li>
+                        <li><strong>Status</strong>:<br/>Draft Specification</li>
+                        <li><strong>Date Published</strong>:<br/>2015-07-23</li>
+                        <li><strong>Charter</strong>:<br/><a href="http://idpf.org/epub/30/wg-charter">EPUB 3 Charter (2010)</a></li>
+                        <li><strong>Project Home</strong>:<br/><a href="https://github.com/IDPF/scriptable-components/wiki">Scriptable Components</a></li>
+                    </ul>
+                    <br/>
+                    
+                    <p>Packaging and integration of widgets in EPUB, and an API for communication between dynamic scripted components.</p>
+                    
+                    <ul id="esc-specs">
+                        <li><a href="http://www.idpf.org/epub/sc/api/">EPUB Scriptable Components 1.0</a></li>
+                        <li><a href="http://www.idpf.org/epub/sc/pkg/">EPUB Scriptable Components Packaging and Integration 1.0</a></li>
+                    </ul>
+                </section>
+            </section>
+            
+            <section id="guides" class="chapter">
+                <h2 class="title">Guides</h2>
+                
+                <ul>
+                    <li><a href="a11y-faq/">EPUB Accessibility FAQ</a></li>
+                    <li><a href="linked-records/">EPUB Linked Metadata Guide</a></li>
+                    <li><a href="package-metadata/">EPUB Package Metadata Guide</a></li>
+                    <li><a href="region-nav-markup/">EPUB Region-Based Navigation Markup Guide</a></li>
+                    <li><a href="aria-mapping/">EPUB Structural Semantics to ARIA Roles Mapping Guide</a></li>
+                    <li><a href="epub-aria-authoring/">EPUB Type to ARIA Role Authoring Guide</a></li>
+                    <li><a href="reporting-issues/">IDPF Issue Reporting Guidelines</a></li>
+                    <li><a href="schema-org-integration/">Schema.org Metadata Integration Guide for EPUB 3</a></li>
+                    <li><a href="collection-as-package/">Using collection Elements as Embedded Package Documents</a></li>
+                </ul>
+            </section>
+        </div>
+    </body>
+</html>
