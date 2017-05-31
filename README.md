@@ -11,7 +11,7 @@ Please see our [wiki](https://github.com/w3c/pub-cg/wiki) for information on par
 
 ## Documents in this repository (more to come)
 
- - [Publishing @ W3C Overview, with links to all specs](https://w3c.github.io/publ-cg/)
+ - [EPUB @ W3C Overview, with links to all specs](https://w3c.github.io/publ-cg/)
 
  - [EPUB for Education Draft](https://w3c.github.io/publ-cg/education/epub-education.html)
  - [EPUB Accessibility Frequently Asked Questions](https://w3c.github.io/publ-cg/guides/epub-a11y-faq.html)
