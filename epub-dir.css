@@ -1,0 +1,274 @@
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(Raleway-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-size: 62.5%
+}
+
+body { 
+    font-family: 'Open Sans', sans-serif;
+    font-size: 140%;
+    background-color: #fefefe;
+    margin: 0;
+    padding-bottom: 4rem;
+}
+
+
+
+/****************************************************************/
+/*     HEADINGS                                                 */
+/****************************************************************/
+
+h1, h2, h3 {
+    font-family: 'Raleway','Open Sans',sans-serif;
+    color: #004080;
+}
+
+h1 {
+    font-size: 200%;
+    font-weight: normal;
+    margin: 1rem 2rem 0 1rem;
+    padding: 0.7rem;
+}
+
+p.status {
+    font-family: 'Raleway','Open Sans',sans-serif;
+    color: #004080;
+    margin: 0rem 0rem 0 2rem;
+}
+
+h2 {
+    font-size: 140%;
+    margin-top: 5rem;
+    padding: 0.3rem;
+    text-shadow: 1px 1px 0 #fff;
+    border-left: 0.5rem solid blue;
+}
+
+div.content > section.chapter:first-child > h2 {
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 120%;
+    margin-top: 3rem;
+    padding: 0.5rem;
+    text-shadow: 1px 1px 0 #fff;
+    border-left: 0.3rem solid green;
+}
+
+h2>section>h3 {
+    margin-top: 0rem;
+}
+
+h2+section>h3 {
+    margin-top: 0rem;
+}
+
+
+/****************************************************************/
+/*     LINKS                                                    */
+/****************************************************************/
+
+a {
+    color: #004080;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #900000;
+    text-decoration: underline;
+}
+
+
+
+/****************************************************************/
+/*     NAVIGATION                                               */
+/****************************************************************/
+
+nav#toc {
+    border-bottom: 1px solid #3369a4;
+    margin: 0 2rem;
+}
+
+nav.toc ol {
+    list-style-type: none;
+    margin: 0 0 0 2rem;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+nav.toc > ol > li {
+    float: left;
+    margin-right: 2rem;
+}
+
+
+nav.toc a {
+    font-weight: bold;
+}
+
+nav.toc a:hover {
+    color: #900000;
+    font-weight: bold;
+}
+
+br {
+    clear: both;
+}
+
+/* SPEC NAV */
+
+nav.spec-toc {
+    -webkit-column-count: 3;
+    -moz-column-count: 3; 
+    column-count: 3;
+    -webkit-column-width: 25rem;
+    -moz-column-width: 25rem; 
+    column-width: 25rem;
+    margin-bottom: 2rem;
+}
+
+nav.spec-toc ol {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav.spec-toc ol li {
+    margin-bottom: 0.4rem;
+}
+
+
+
+/****************************************************************/
+/*     SECTIONING                                               */
+/****************************************************************/
+
+.content {
+    margin: 0 2rem;
+    max-width: 100rem;
+}
+
+section {
+    margin-left: 3rem;
+}
+
+section.chapter {
+    margin-left: 0rem;
+}
+
+.chapter > .section {
+    margin-top: 5rem;
+}
+
+.chapter h2+.section {
+    margin-top: 0;
+}
+
+.spec-group {
+    padding: 0rem 1rem 2rem 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.spec-group section {
+    margin-left: 0;
+}
+
+.section h3+.spec-group h4 {
+    margin-top: 0;
+}
+
+
+#specs > section:nth-child(odd) {
+    background-color: rgba(239,245,251,0.5);
+}
+#specs > section:nth-child(even) {
+    background-color: rgba(239,251,245,0.5);
+}
+
+section#about {
+    background-color: #fff !important;
+}
+
+/****************************************************************/
+/*     LISTS                                                    */
+/****************************************************************/
+
+ul li {
+    padding-bottom: 0.5rem;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section#guides ul {
+    list-style-type: disc;
+    padding: 2rem;
+}
+
+/****************************************************************/
+/*     INFO LISTS                                               */
+/****************************************************************/
+
+ul.info li {
+    float: left;
+    width: 15rem;
+    margin-right: 4rem;
+    margin-top: 1rem;
+}
+
+.superseded {
+    color: #a00000;
+}
+
+/****************************************************************/
+/*     TABLES                                                   */
+/****************************************************************/
+
+table {
+    padding: 1rem;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 0.4rem;
+}
+
+th {
+    text-align: left;
+    background-color: rgba(235,240,255,0.8);
+}
+
+tr:nth-child(even)>td {
+    background-color: rgba(235,245,255,0.5);
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+/****************************************************************/
+/*     MISC                                                     */
+/****************************************************************/
+
+p.logo {
+    padding: 0.3rem 0.3rem 0.3rem 2rem;
+}
+
+p.logo img {
+    width: 50rem;
+    height: 5rem;
+}
+
+p {
+    max-width: 90rem;
+}
+
