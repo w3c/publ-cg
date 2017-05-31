@@ -1,78 +1,45 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<title>EPUB Linked Metadata Guide</title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="https://www.idpf.org/epub/css/epub-spec-2016.css" />
-		<style type="text/css">
-			body{
-			    max-width: 100%;
-			}
-			pre{
-			    border: none;
-			    background-color: inherit;
-			    margin: 0;
-			    padding: 0;
-			}
-			section.section{
-			    margin-top: 3em;
-			}
-			th{
-			    width: 10%
-			}
-			th.ex{
-			    width: 20%
-			}
-			th.desc{
-			    width: 25%
-			}
-			th.link{
-			    width: 35%
-			}
-			td {
-				vertical-align: top;
-			}
-			td.center{
-			    text-align: center;
-			}
-			.hide{
-			    position: absolute;
-			    clip: rect(1px, 1px, 1px, 1px);
-			}
-			.small{
-			    font-size: 90%;
-			}
-			ul {
-				padding-left: 1em;
-			}
-			dl#roles dt,
-			dl#types dt {
-			    margin-bottom: 1em;
-			    font-weight: bold;
-			}
-			div.history {
-			    margin-top: 2em;
-			    margin-bottom: 2em
-			}
-		</style>
-	</head>
-	<body>
-		<header>
-			<p><a href="http://www.idpf.org"><img src="https://www.idpf.org/epub/images/idpflogo_web_125.jpg" alt="IDPF" class="logo"/></a></p>
-			<h1 class="title">EPUB Linked Metadata Guide</h1>
-			<p class="identity">
-				<span class="pubdate">30 January 2016</span>
-			</p>
-			<div class="history">
-				<span class="history-title">Document history</span>
-				<ul>
-					<li><a href="https://github.com/IDPF/epub-guides/commits/master/guides/linked-records/index.html">Changes to
-							this document</a></li>
-				</ul>
-			</div>
-		</header>
-		<section class="section">
-			<h2 class="title">Overview</h2>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+   <head>
+      <meta charset="utf-8" />
+      <title>EPUB Linked Metadata Guide</title>
+     <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+      <script src="../common/biblio.js" class="remove"></script>
+      <script src="../common/dfn-crossref.js" class="remove"></script>
+      <script src="../common/confreq-permalinks.js" class="remove"></script>
+      <link href="../common/css/common.css" rel="stylesheet" type="text/css" />
+      <script class="remove">
+          var respecConfig = {
+              wg: "EPUB 3 Community Group",
+              specStatus: "CG-DRAFT",
+              noRecTrack: true,
+              shortName: "epub-a11y-faq",
+              edDraftURI: "https://w3c.github.io/publ-cg/guides/linked-records.html",
+              editors: [
+              
+                   {
+                      name: "Matt Garrish",
+                      company: "Invited Expert"
+                  }
+              ],
+              processVersion: 2017,
+              includePermalinks: true,
+              permalinkEdge:     true,
+              permalinkHide:     false,
+              diffTool:          "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+              localBiblio: biblio,
+              preProcess: [fixDefinitionCrossrefs, addConformanceLinks]
+          };
+      </script>
+   </head>
+   <body>
+      <section id="abstract">
+         <p>TK</p>
+      </section>
+      <section id="sotd"></section>
+      <section id="sec-overview">
+         <h1>Overview</h1>
+         
 			<p>Although <a href="http://www.idpf.org/epub3/latest">EPUB 3</a> defines only a small set of core bibliographic
 				metadata in the <a class="glossterm" href="http://www.idpf.org/epub3/latest/#gloss-package-document">Package
 					Document</a> to assist <a class="glossterm" href="http://www.idpf.org/epub3/latest/#gloss-epub-reading-system"
@@ -136,7 +103,7 @@
       media-type="application/xml"
       properties="onix"/></pre>
 						</td>
-						<td><a href="http://www.idpf.org/epub/metadata/onix.xml">View ONIX record</a></td>
+						<td><a href="https://w3c.github.io/publ-cg/guides/onix.xml">View ONIX record</a></td>
 					</tr>
 					<!--
 					<tr>

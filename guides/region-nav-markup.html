@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>EPUB Region-Based Navigation Markup Guide</title>
+	<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove">
+	</script>
+	<script src="../common/biblio.js" class="remove">
+	</script>
+	<script src="../common/dfn-crossref.js" class="remove">
+	</script>
+	<script src="../common/confreq-permalinks.js" class="remove">
+	</script>
+	<link href="../common/css/common.css" rel="stylesheet" type="text/css" />
+	<script class="remove">
+		var respecConfig = {
+		    wg: "EPUB 3 Community Group",
+		    specStatus: "CG-DRAFT",
+		    noRecTrack: true,
+		    shortName: "region-nav-markup",
+		    edDraftURI: "https://w3c.github.io/publ-cg/guides/region-nav-markup.html",
+		    editors: [
+
+{ 
+  name: "Ichikawa, Dai",
+  company: "Invited Expert"
+},
+
+{ 
+  name: "Kasdorf, Bill",
+  company: "Apex Covantage"
+},
+
+{ 
+  name: "Kopp, Matthieu",
+  company: "Aquafadas"
+},
+
+
+{ 
+  name: "Kroupa, Brady",
+  company: "Barnes & Noble"
+}
+
+
+		    ],
+		    processVersion: 2017,
+		    includePermalinks: true,
+		    permalinkEdge:     true,
+		    permalinkHide:     false,
+		    diffTool:          "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+		    localBiblio: biblio,
+		    preProcess: [fixDefinitionCrossrefs, addConformanceLinks]
+		};
+	</script>
+</head>
+<body>
+<section id="abstract">
+	<p>
+		TK</p>
+
+</section>
+<section id="sotd">
+</section>
+<section id="sec-overview">
+	<h1>Overview</h1>
+	<p class="c1 c26">
+		This document relies on the concept of a Region of Interest (ROI) as defined in   <a class="c7" href="https://www.google.com/url?q=https%3A%2F%2Fwww.idpf.org%2Fepub%2Frenditions%2Fregion-nav%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEl3dJOQnDVKRwofnY_UVh6AHd_OA">EPUB Region-Based Navigation</a>. ROIs are used  in guided navigation through the concept of navigation sequences. The latter are ordered sequences of Regions of Interest that a Reading System will render in turn as the User navigates through the work. There can be one or more of these sequences to a document (e.g., panels in a comic, articles in a magazine), and each sequence can include nested subregions of interest, such as article components, to be navigated as part of the guided flow. </p>
+
+</section>
+
+<section>
+	<h1>Comics 
+	</h1>
+<p>The terms described in this section are defined in the   <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFngnAZ94jppf6FI0uHkO7ZSifDWQ">EPUB 3 Structural Semantics Vocabulary</a>  &nbsp;and can be use without a prefix in the  <code>epub:type</code> &nbsp;attribute. </p>
+
+	
+	<section>
+<h2>panel</h2>
+	<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23panel&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHAoqgIVeFtVNpC5uueUUBzJAJGdg">panel</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23panel&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHAoqgIVeFtVNpC5uueUUBzJAJGdg">&nbsp;term</a>  &nbsp; is used to identify a single frame or drawing. The following image shows a single panel highlighted in green: </p>
+
+	<figure>
+		<img alt="" src="region-nav-images/image10.jpg" /> 
+	</figure>
+
+	<p>By identifying each panel, a Reading System can provide  sequential navigation through the publication. </p>
+
+	<p>For example the following example shows how an image can be broken down into a set of six individual panels: </p>
+
+	<figure>
+		<img alt="" src="region-nav-images/image09.jpg" /> 
+	</figure>
+	<p>
+		These panels would be marked up as follows:</p>
+
+	<pre class="example">
+     &lt;ol>
+       &lt;li epub:type="panel">                               // roi1
+         &lt;a href="page23.xhtml#xywh=percent:0,0,66,30""/>
+      &lt;/li>
+      &lt;li epub:type="panel">&lt;a href="page23.xhtml#…"/>&lt;/li> // roi2
+      &lt;li epub:type="panel">&lt;a href="page23.xhtml#…"/>&lt;/li> // roi3
+      &lt;li epub:type="panel">&lt;a href="page23.xhtml#…"/>&lt;/li> // roi4
+      &lt;li epub:type="panel">&lt;a href="page23.xhtml#…"/>&lt;/li> // roi5
+      &lt;li epub:type="panel">&lt;a href="page23.xhtml#…"/>&lt;/li> // roi6
+    &lt;/ol>
+	</pre>
+<p>A reading system that supports region-based navigation could then provide a guided experience similar to the following on a phone-sized screen: </p>
+
+	<figure>
+<img alt="" src="region-nav-images/image25.jpg"  />
+	</figure>
+	</section>
+	
+	
+	<section>
+		<h2>panel-group 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23panel-group&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEiJXo2oDzDGrWy5uC-AbWRUfGWNQ">panel-group</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23panel-group&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEiJXo2oDzDGrWy5uC-AbWRUfGWNQ">&nbsp;term</a>  &nbsp;i dentifies a group of   <a class="c7" href="#id.bnv64zpesssv">panels</a>  &nbsp;(e.g., a strip), which allows the reading system to isolate those panels to focus the reader&rsquo;s attention. </p>
+
+<p>For example, a page could consist of three panel groups, each consisting of three panels, as shown in the following illustration: </p>
+
+	<figure>
+	
+	<img alt="" src="region-nav-images/image18.jpg" />
+	
+	</figure>
+<p>Each of these panel groups will define its child panels in nested ordered lists, as shown in the following markup:</p>
+
+<pre class="example">
+&lt;ol&gt;
+&nbsp; &nbsp;&lt;li epub:type=&quot;panel-group&quot;&gt; 
+&lt;a href=&quot;page1.xhtml#xywh=percent:5,10,90,20&quot;&quot;/&gt;
+&nbsp; &nbsp; &nbsp; &lt;ol&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;panel&quot;&gt;&lt;a href=&quot;page1.xhtml#xywh=percent:&hellip;&quot;&gt;&lt;/a&gt;&lt;/li&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;panel&quot;&gt;&lt;a href=&quot;page1.xhtml#xywh=percent:&hellip;&quot;&gt;&lt;/a&gt;&lt;/li&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;panel&quot;&gt;&lt;a href=&quot;page1.xhtml#xywh=percent:&hellip;&quot;&gt;&lt;/a&gt;&lt;/li&gt; 
+&nbsp; &nbsp; &nbsp; &lt;/ol&gt; 
+&nbsp; &nbsp;&lt;/li&gt; 
+&nbsp; &nbsp;&hellip; 
+&lt;/ol&gt; 	
+</pre>
+
+<p>The reading system can then present the full panel group followed by each individual panel before moving on to the next group, as shown in the following image: </p>
+
+<figure> <img alt="" src="region-nav-images/image02.jpg" /> </figure>
+
+</section>
+
+<section>
+	<h2 class="c2 c1">balloon 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23balloon&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHm8Lm5B9vvzTMUN1RGPdv6CqRh8w">balloon</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23balloon&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHm8Lm5B9vvzTMUN1RGPdv6CqRh8w">&nbsp;term</a>  &nbsp;identifies a region  <span class="c15">that contains the words, spoken or thought, of a character.</span> </p>
+
+<p><span class="c15">For example, a dialogue balloon is highlighted in green in the following image:</span> </p>
+
+<figure> <img alt="" src="region-nav-images/image05.jpg" />  </figure>
+
+<p>The balloon would be identified as follows: </p>
+<pre class="example">
+&lt;ol&gt;
+&nbsp; &nbsp;&lt;li epub:type=&quot;panel&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; 
+&lt;a href=&quot;page1.xhtml#xywh=percent:5,10,90,20&quot;&quot;/&gt;
+&nbsp; &nbsp; &nbsp; &lt;ol&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;balloon&quot;&gt;&lt;a href=&quot;page1.xhtml#xywh=&hellip;&quot;&gt;&lt;/a&gt;&lt;/li&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &hellip; 
+&nbsp; &nbsp; &nbsp; &lt;/ol&gt; 
+&nbsp; &nbsp;&lt;/li&gt; 
+&nbsp; &nbsp;&hellip; 
+&lt;/ol&gt; 
+</pre>
+<p>Identifying these regions &nbsp;allows the reading system to traverse them with each panel. For example, if all the balloons were identified as follows: </p>
+
+<figure> <img alt="" src="region-nav-images/image08.jpg" /> </figure>
+
+<p>the reading system could &nbsp;zoom into the subregion identified by the balloon: </p>
+
+<figure> <img alt="" src="region-nav-images/image00.jpg" /> </figure>
+
+</section>
+<section>
+	<h2 class="c2 c1">text-area 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23text-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG-bPKtrb5eacUk1KJSsjUjPRtQjg">text-area</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23text-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG-bPKtrb5eacUk1KJSsjUjPRtQjg">&nbsp;term</a>  &nbsp;identifies a ny region with text regardless whether it is contained or associated with a   <a class="c7" href="#id.k685mycliobc">balloon</a>  . </p>
+
+<p>In the following example, the text area is defined on the cover: </p>
+
+<figure> <img alt="" src="region-nav-images/image19.jpg" /> </figure>
+
+<p>This text region would be identified as follows: </p>
+<pre class="example">
+&lt;ol&gt;
+&nbsp; &nbsp;&lt;li epub:type=&quot;panel&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; 
+&lt;a href=&quot;page01.xhtml#xywh=percent:0,0,100,100&quot;&quot;/&gt;
+&nbsp; &nbsp; &nbsp; &lt;ol&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;text-area&quot;&gt;&lt;a href=&quot;page1.xhtml#xywh=percent:30,3,40,20&quot;&gt;&lt;/a&gt;&lt;/li&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &hellip; 
+&nbsp; &nbsp; &nbsp; &lt;/ol&gt; 
+&nbsp; &nbsp;&lt;/li&gt; 
+&nbsp; &nbsp;&hellip; 
+&lt;/ol&gt; 
+</pre>
+<p>Text areas can be used in navigation sequences in the same way as balloons. The reading system can zoom on the subregions defined by text areas in the same way as it can zoom balloons. </p>
+
+<p>Alternatively, the text area inside a balloon could be identified using such a region as in the example below. The green text area can be used to refine the location of the text inside the (red) balloon. </p>
+
+	<figure>
+		 <img alt="" src="region-nav-images/image20.jpg" /> </figure>
+</section>
+<section>
+
+	<h2 class="c2 c1">sound-area 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23sound-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHc77mcOZmjKFBQzoyVje0rGkbR6w">sound-area</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2F%23sound-area&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHc77mcOZmjKFBQzoyVje0rGkbR6w">&nbsp;term</a>  &nbsp;identifies an &nbsp;area on the page that represents a sound. </p>
+
+<p>For example, the sound of a door closing is highlighted in green in the following image: </p>
+
+	<figure>
+		 <img alt="" src="region-nav-images/image07.jpg" /> </figure>
+
+<p>This sound would be identified as follows: </p>
+
+
+<pre class="example">
+&lt;ol&gt;
+&nbsp; &nbsp;&lt;li epub:type=&quot;panel&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; 
+&lt;a href=&quot;page01.xhtml#xywh=percent:55,0,45,50&quot;&quot;/&gt;
+&nbsp; &nbsp; &nbsp; &lt;ol&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;sound-area&quot;&gt;&lt;a href=&quot;page1.xhtml#xywh=percent:83,30,10,5&quot;&gt;&lt;/a&gt;&lt;/li&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &hellip; 
+&nbsp; &nbsp; &nbsp; &lt;/ol&gt; 
+&nbsp; &nbsp;&lt;/li&gt; 
+&nbsp; &nbsp;&hellip; 
+&lt;/ol&gt; 
+</pre>
+</section>
+
+</section>
+<section>
+	<h1 class="c2 c1">Magazines 
+	</h1>
+<p>The terms described in this section with a &quot; <code>prism:</code> &quot; prefix are defined in the   <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHmCiCy5C4C5zg7J2IWzCQhnFUBKQ">PRISM Controlled Vocabularies specification</a>  . </p>
+
+<p>The terms with an &quot; <code>msv:</code> &quot; prefix are defined in the   <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHetdnUckkARYrqKh8ah3uqvvR27Q">EPUB Magazine Navigation Vocabulary</a>  . </p>
+
+<p>Both of these are   <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fpfx%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG0zbMRlhDriViIIm44VBIdmqCPpw">reserved prefixes</a>  &nbsp;and do not need to be declared for use in the  <code>epub:type</code> &nbsp;attribute. </p>
+
+<section>
+<h2>msv:article-region 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23article-region&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEj2mgCWAtAYU5RS3Uw_KWJnVZiRw">msv:article-region</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23article-region&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEj2mgCWAtAYU5RS3Uw_KWJnVZiRw">&nbsp;term</a>  &nbsp;identifies the boundaries of an article on a page. </p>
+
+<p>I n the following image, the article spans two pages, which results in two such regions of interest (highlighted in blue): </p>
+
+	<figure>
+		 <img alt="" src="region-nav-images/image24.jpg" /> </figure>
+
+<p>The markup for these regions would be as follows: </p>
+
+
+<pre class="example">
+
+&lt;li epub:type=&quot;msv:article-region&quot;&gt;
+&nbsp; &nbsp;&lt;a href=&quot;page02.xhtml# xyn=percent:1,6,100,6,100,98,60,98,60,52,23,52,23,98,1,98 &quot;/&gt; 
+&nbsp; &nbsp;&lt;!-- sub-regions such as the article title, authors, etc. would be defined in a ordered lists here --&gt; 
+&lt;/li&gt; 
+&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+&nbsp; &nbsp;&lt;a href=&quot;page03.xhtml# xyn=percent:0,6,66,6,66,10,62,10,62,75,0,75 &quot;/&gt;
+&nbsp; &nbsp;&hellip;
+&lt;/li&gt;
+</pre>
+
+
+<p>In the same way  that &nbsp;a reading system  uses  the  <span class="c19 c9"> <a class="c7" href="#id.kr70ehpf6eo9">&quot;</a> </span> <span class="c5 c22"> <a class="c7" href="#id.kr70ehpf6eo9">panel-</a> </span> <span class="c5"> <a class="c7" href="#id.kr70ehpf6eo9">group</a> </span>  <a class="c7" href="#id.kr70ehpf6eo9">&quot;</a>  <span class="c9 c19"> <a class="c7" href="#id.kr70ehpf6eo9">&nbsp;</a> </span>  <a class="c7" href="#id.kr70ehpf6eo9">term</a>  &nbsp;in comics to isolate a strip/story on the page, the use of  <span class="c22 c10">msv:article-region</span> &nbsp;in a guided reading context can be used to isolate the article from the rest of the page. &nbsp;The reading system could opt to blur, hide or mask the page content that is outside the article when inside the navigation sequence. </p>
+
+</section>
+<section>
+
+<h2>prism:title 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">prism:title</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">&nbsp;term</a>  &nbsp;identifies a region that contains the title of the article, as highlighted in the blue box in the following image: </p>
+
+	<figure>
+		 <img alt="" src="region-nav-images/image26.jpg" /> </figure>
+
+	<p class="c14 c2 c1">
+		The title can be identified as top-level region of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+		
+		
+<pre class="example">
+	&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+	&nbsp; &nbsp;&lt;a href=&quot;page06.xhtml# xyn=percent:&hellip; &quot;/&gt; 
+	&nbsp; &nbsp;&lt;ol&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:title&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page06.xhtml# xywh=percent:5,15,22,24 &quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp;&lt;/ol&gt; 
+	&lt;/li&gt; 
+</pre>
+
+	<p class="c14 c2 c1">
+		In the case of sequential navigation, the title is expected to be displayed in full on the device. </p>
+
+	<p class="c14 c2 c1">
+		To improve the readability of the title, do not include related items like the   <a class="c7" href="#id.w3zw0x37bgcu">deck</a>  &nbsp;and   <a class="c7" href="#id.m9sf5ylgsbzy">subtitle</a>  &nbsp;in the region. </p>
+
+</section>
+<section>
+<h2>prism: subtitle 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">prism:subtitle</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">&nbsp;term</a>  &nbsp;identifies a region that contains the subtitle.  The subtitle differs from a   <a class="c7" href="#id.w3zw0x37bgcu">deck</a>  &nbsp;in  that appears in close proximity to  the   <a class="c7" href="#id.mg3vri39mgdm">title</a>  &nbsp;and typically only one subtitle is present , whereas the deck can be located anywhere and there could be multiple instances. </p>
+
+<p>An article subtitle is highlighted in blue in the following image: </p>
+
+	<figure> <img alt="" src="region-nav-images/image12.jpg" />  </figure>
+
+<p>The subtitle can be identified as top-level region of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+
+<pre class="example">
+&lt;li epub:type=&quot;msv:article-region&quot;&gt;
+&nbsp; &nbsp;&lt;a href=&quot;page06.xhtml# xyn=&hellip; &quot;/&gt; 
+&nbsp; &nbsp;&lt;ol&gt; 
+&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:title&quot;&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page06.xhtml#xywh=&hellip;&quot;/&gt; 
+&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:subtitle&quot;&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page06.xhtml#xywh=percent:3,50,94,5&quot;/&gt; 
+&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+&nbsp; &nbsp; &nbsp; &hellip; 
+&nbsp; &nbsp;&lt;/ol&gt; 
+&lt;/li&gt; 
+</pre>
+
+
+<p>In the context of navigation, the subtitle will typically be treated similar to the <a class="c7" href="#id.mg3vri39mgdm">title</a>.</p>
+</section>
+<section>
+
+<h2>prism:deck 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">prism:deck</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">&nbsp;term</a>  &nbsp;identifies a region that contains a  summary of the article &nbsp;or a block of text that augments the title or provides a &quot;teaser&quot; to attract a reader. A deck may span multiple lines, and an article may have multiple decks. </p>
+
+<p>An article deck is highlighted in blue in the following image: </p>
+
+<figure> <img alt="" src="region-nav-images/image03.jpg" />  </figure>
+
+<p>The deck can be identified as top-level region of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+
+<pre class="example">
+&lt;li epub:type=&quot;msv:article-region&quot;&gt;
+&nbsp; &nbsp;&lt;a href=&quot;page15.xhtml# xyn=&hellip; &quot;/&gt; 
+&nbsp; &nbsp;&lt;ol&gt; 
+&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:title&quot;&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page15.xhtml#xywh=&hellip;&quot;/&gt; 
+&nbsp; &nbsp; &nbsp; &lt;/li&gt;
+&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:deck&quot;&gt; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page15.xhtml#xywh=percent:3,15,10,7&quot;/&gt; 
+&nbsp; &nbsp; &nbsp; &lt;/li&gt;
+&nbsp; &nbsp; &nbsp; &hellip;
+&nbsp; &nbsp;&lt;/ol&gt;
+&lt;/li&gt; 
+</pre>
+
+<p>In the context of navigation, the deck will typically be treated similar to the   <a class="c7" href="#id.mg3vri39mgdm">title</a>. </p>
+
+</section>
+<section>
+<h2>prism: byline 
+	</h2>
+<p><span class="c35">The </span> <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">prism:byline</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">&nbsp;term</a>  <span class="c35">&nbsp;identifies </span> a  <span class="c35">region that contains information about the author(s). In many cases this region may simply contain the author name, but in some situations it will also contain additional context, such as position, role or context of the article.</span> </p>
+
+
+
+
+	<p>Bylines typically appear next to the   <a class="c7" href="#id.mg3vri39mgdm">title</a>  &nbsp;of the content. &nbsp;The  <code>prism:byline</code> &nbsp;term can also be used for the dateline. </p>
+
+<p>An article byline is highlighted in blue in the following image: </p>
+
+<figure> <img alt="" src="region-nav-images/image15.jpg" /> </figure>
+
+<p>The byline can be identified as top-level region of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+<pre class="example">
+	&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+	&nbsp; &nbsp;&lt;a href=&quot;page12.xhtml# xyn=&hellip; &quot;/&gt; 
+	&nbsp; &nbsp;&lt;ol&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:title&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page12.xhtml#xywh=&hellip;&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:byline&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page12.xhtml#xywh=percent:0,3,20,5&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp;&lt;/ol&gt; 
+	&lt;/li&gt; 
+	</pre>
+<p>In the context of navigation, the byline will typically be treated similar to the   <a class="c7" href="#id.mg3vri39mgdm">title</a>  . </p>
+
+</section>
+<section>
+<h2>prism:contributors 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">prism:contributors</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">&nbsp;</a>   <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">term</a>  &nbsp;identifies a region that contains information about the contributor(s). In many cases this region may simply contain the contributor name, but in some situations it will also contain additional context, such as position, role or context of the article. </p>
+
+<p>I n the following image, the contributor is mentioned at the end of the article as being the one person who conducted the interview (as opposed to the author who wrote the article): </p>
+
+	<figure>
+		 <img alt="" src="region-nav-images/image16.jpg" /> </figure>
+
+<p>The contributors can be identified as top-level region of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-</a> </span> <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">region</a> </span> . In both cases, the markup for the region is the same: </p>
+<pre class="example">
+	&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+	&nbsp; &nbsp;&lt;a href=&quot;page24.xhtml# xywh=&hellip; &quot;/&gt; 
+	&nbsp; &nbsp;&lt;ol&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:article-text&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page24.xhtml#xyn=&hellip;&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:contributors&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page24.xhtml#xywh=percent:18,95,5,3&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp;&lt;/ol&gt; 
+	&lt;/li&gt; 
+	</pre>
+<p>In the context of navigation, contributors are typically treated similar to the   <a class="c7" href="#id.5oxxg2i26zga">article text</a>  . </p>
+
+</section>
+<section>
+<h2>msv:media  
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23media&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGoe1BzAdILsWbTZ4fKlhmCt_I2Lg">msv:media</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23media&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGoe1BzAdILsWbTZ4fKlhmCt_I2Lg">&nbsp;term</a>  &nbsp;identifies a region that contains an image, illustration, video, slideshow, animation or other piece of media allowed by the format. </p>
+
+<p>A picture is highlighted in blue in the following image: </p>
+
+	<figure>
+		 <img alt="" src="region-nav-images/image14.png" /> </figure>
+
+<p>Media items can be identified as top-level regions of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+
+<pre class="example">
+	&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+	&nbsp; &nbsp;&lt;a href=&quot;page23.xhtml# xywh=&hellip; &quot;/&gt; 
+	&nbsp; &nbsp;&lt;ol&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:media&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page23.xhtml#xywh=percent:40,7,60,30&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp;&lt;/ol&gt; 
+	&lt;/li&gt; 
+	</pre>
+<p>It is expected that reading systems will  display media regions in full, scaling to fit the available viewport. </p>
+
+<p>For an example of media that spans two pages, see   <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Frenditions%2Fregion-nav%2F%23h.mxrr2wd5w2ju&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNH_4tJjwHAfFsBWzRm4cZPgASD92A">Synthetic Regions</a>  &nbsp;in the EPUB Region-Based Navigation specification. An example is provided in   <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Frenditions%2Fregion-nav%2F%23h.28p6lniocy2r&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGg30ud5UecgaBl5uCgJKhupQ-lcQ">Appendix A.2</a>  &nbsp;of that specification . </p>
+
+</section>
+<section>
+<h2>prism:caption 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">prism:caption</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">&nbsp;term</a>  &nbsp;identifies a region that contains text that identifies and explains an image or illustration or other piece of   <a class="c7" href="#id.ut8gv6neye7u">media</a>  . </p>
+
+<p>The caption for the picture is highlighted in blue in the following image: </p>
+
+	<figure>
+		 <img alt="" src="region-nav-images/image06.png" /> </figure>
+
+<p>Captions can be identified as top-level regions of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+
+<pre class="example">
+
+	&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+	&nbsp; &nbsp;&lt;a href=&quot;page23.xhtml# xywh=&hellip; &quot;/&gt; 
+	&nbsp; &nbsp;&lt;ol&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:media&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page23.xhtml#xywh=&hellip;&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:caption&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page23.xhtml#xywh=percent:85,33,15,5&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp;&lt;/ol&gt; 
+	&lt;/li&gt; 
+	</pre>
+<p>The caption typically follows its related   <a class="c7" href="#id.ut8gv6neye7u">media</a>  &nbsp;in the navigation sequence. </p>
+</section>
+<section>
+
+<h2>prism:credit 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">prism:credit</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">&nbsp;term</a>  &nbsp;identifies a region that contains the credits for an image, &nbsp;illustration, or other piece of   <a class="c7" href="#id.ut8gv6neye7u">media</a>  . </p>
+
+<p>A picture credit is highlighted in blue in the following image: </p>
+
+
+
+<figure> <img alt="" src="region-nav-images/image27.jpg" />  </figure>
+
+<p>Credits can be identified as top-level regions of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+
+<pre class="example">
+
+	&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+	&nbsp; &nbsp;&lt;a href=&quot;page23.xhtml# xywh=&hellip; &quot;/&gt; 
+	&nbsp; &nbsp;&lt;ol&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:media&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page23.xhtml#xywh=&hellip;&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:credit&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page23.xhtml#xywh=percent:98,66,2,7&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp;&lt;/ol&gt; 
+	&lt;/li&gt; 
+	</pre>
+</section>
+<section>
+<h2>msv:article-text 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23article-text&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFQa-JFkBXOEmJzIddbdnDTiD36wQ">msv:article-text</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fstructure%2Fmagazine%2F%23article-text&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFQa-JFkBXOEmJzIddbdnDTiD36wQ">&nbsp;term</a>  &nbsp;identifies a region of article text. An article may have more than one article text region (e.g., one for each column). </p>
+
+<p>The following image shows five columns of article text highlighted in blue: </p>
+
+
+
+	<figure>
+		 <img alt="" src="region-nav-images/image22.jpg" /> </figure> 
+
+<p>The article text can be identified as top-level regions of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+
+<pre class="example">
+
+	&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+	&nbsp; &nbsp;&lt;a href=&quot;page10.xhtml# xywh=&hellip; &quot;/&gt; 
+	&nbsp; &nbsp;&lt;ol&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:article-text&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page10.xhtml#xywh=percent:5,15,18,45&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:article-text&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page10.xhtml#xywh=percent:23,60,18,15&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp;&lt;/ol&gt; 
+	&lt;/li&gt; 
+	</pre>
+<p>The article text is the most important type of region for magazine navigation because it is the portion of the document that contains the  narrative &nbsp;content. The article text is often laid out in columns in magazines and newspaper to increase readability, however, which can make it difficult to access on small screens. </p>
+
+<p>A reading system is expected to handle navigation &ldquo;along&rdquo; the box for these adjoining regions, which is achieved by having the reading system break a box into smaller parts that have the aspect ratio of the screen: </p>
+
+<figure> <img alt="" src="region-nav-images/image21.jpg" /></figure>
+
+	<p class="c1 c2">
+		If the reading system simply moves from one region to the next, only ensuring its visibility on screen, it will lead to a poor user experience: </p>
+
+	<ul>
+		<li class="c11 c2 c1 c8"> the text will not always be readable </li>
+		<li class="c11 c2 c1 c8"> the zoom factor on the page could change from one box to the next resulting in text that has a different apparent size between regions </li>
+	</ul>
+<p>The following graphic highlights these problems: </p>
+
+<figure> <img alt="" src="region-nav-images/image01.jpg" /> </figure>
+
+<p>Reading systems are expected to adjust the zoom so that the article text box fits in  width (only for horizontal writing modes) &nbsp;and then move along the box in order to see all text. </p>
+
+<figure> <img alt="" src="region-nav-images/image04.jpg" />  </figure>
+
+</section>
+<section>
+<h2>prism:box 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">prism:box</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">&nbsp;term</a>  &nbsp;identifies a region that contains text that is outside the linear flow of the article  (but is still associated with the article, unlike an advertisement or a separate article) , whether rendered in a box or another shape. </p>
+
+<p>The following images show examples of these kinds of asides: </p>
+
+	<figure>
+		 <img alt="" src="region-nav-images/image23.jpg" /> </figure>
+
+<figure> <img alt="" src="region-nav-images/image17.jpg" />  </figure>
+
+<p>The box content can be identified as top-level regions of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+
+<pre class="example">
+
+	&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+	&nbsp; &nbsp;&lt;a href=&quot;page10.xhtml# xywh=&hellip; &quot;/&gt; 
+	&nbsp; &nbsp;&lt;ol&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;msv:article-text&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page10.xhtml#xywh=&hellip;&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:box&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page10.xhtml#xywh=percent:80,7,18,93&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp;&lt;/ol&gt; 
+	&lt;/li&gt; 
+	</pre>
+<p>Box content is typically navigated to after the article text of the page. </p>
+</section>
+<section>
+<h2>prism:advertisement 
+	</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">prism:advertisement</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">&nbsp;</a>   <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">term</a>  &nbsp;identifies a region that contains a piece of material promoting a product, service, or event whose presence is paid for. </p>
+
+<p>The following image shows an advertisement highlighted in red: </p>
+
+	<figure>
+		 <img alt="" src="region-nav-images/image13.jpg" />  </figure>
+
+<p>An advertisement can be identified as a top-level region of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+
+<pre class="example">
+
+	&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+	&nbsp; &nbsp;&lt;a href=&quot;page09.xhtml# xywh=&hellip; &quot;/&gt; 
+	&nbsp; &nbsp;&lt;ol&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:advertisement&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page09.xhtml#xywh=percent:46,60,52,38&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp;&lt;/ol&gt; 
+	&lt;/li&gt; 
+	</pre>
+	
+<p>Publishers will typically want to keep the advertisement as part of a reading sequence. In the case of an article spanning several pages with some advertisements interspersed, the reading system should not &nbsp;skip the ads during guided navigation, but could rearrange their position (e.g., after all article text) . </p>
+</section>
+<section>
+
+<h2>prism:pullQuote</h2>
+<p>The  <span class="c5"> <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">prism:pullQuote</a> </span>  <a class="c7" href="http://www.google.com/url?q=http%3A%2F%2Fwww.prismstandard.org%2Fspecifications%2F3.0%2FPRISM_CV_Spec_3.0.htm%23_Toc337191590&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNETzRZsxCiUoQyTi0nuRtGYdxTRpA">&nbsp;term</a>  &nbsp;identifies a region that contains  <span class="c15 c34">a snippet of the content that stands out from its surroundings to grab attention</span> </p>
+
+<p>The following image shows a pull quote highlighted in blue: </p>
+
+	<figure>
+		 <img alt="" src="region-nav-images/image11.jpg" /> </figure>
+
+<p>Pull quotes can be identified as top-level regions of interest, or can be nested inside of an  <span class="c5"> <a class="c7" href="#id.n2o9feprq0bx">msv:article-region</a> </span> . In both cases, the markup for the region is the same: </p>
+
+<pre class="example">
+
+	&lt;li epub:type=&quot;msv:article-region&quot;&gt; 
+	&nbsp; &nbsp;&lt;a href=&quot;page02.xhtml# xywh=&hellip; &quot;/&gt; 
+	&nbsp; &nbsp;&lt;ol&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp; &nbsp; &lt;li epub:type=&quot;prism:pullQuote&quot;&gt; 
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;page02.xhtml#xywh=percent:3,69,18,20&quot;/&gt; 
+	&nbsp; &nbsp; &nbsp; &lt;/li&gt; 
+	&nbsp; &nbsp; &nbsp; &hellip; 
+	&nbsp; &nbsp;&lt;/ol&gt; 
+	&lt;/li&gt; 
+	</pre>
+<p>Pull quotes are useful to identify inside a navigation sequence as the reading system might choose to create a specific effect or apply a specific logic in the fly-over sequence. </p>
+
+<p>By choosing to ignore the pull quote, there is no loss of material or loss of continuity. Since a pull quote can be located in a portion of the page that is far away from the original position of the snippet, the reading system can decide whether it is worthwhile to navigate to this region or not. </p>
+</section>
+</section>
+<section>
+
+	<h1>
+Appendix A. Acknowledgements 
+	</h1>
+	<p>All content used to illustrate comics comes from the following titles and has been used with authorization from the publishers: </p>
+
+
+	<p><span class="c16">Clues T1 - &nbsp;Sur les traces du pass&eacute;, by Mara - Copyright &copy; 2008 - Akileos</span> </p>
+
+	<p><span class="c16">Author : Mara</span> </p>
+
+	<p><span class="c16">Published : 06/2008</span> </p>
+
+
+
+	<p><span class="c16">Crusade T1 - Le spectre aux yeux d&#39;argent, by Zhang Xiayu, Izu and Nikolavitch - Copyright &copy; 2010 - &nbsp;Humano&iuml;des Associ&eacute;s</span> </p>
+
+	<p>Drawing: Zhang Xiayu </p>
+
+	<p>Story: Izu &amp; Nikolavitch  </p>
+
+	<p>Published: 01/2010 </p>
+
+<p>All content used to illustrate magazines comes from the following titles and has been used with authorization from the publishers: </p>
+
+<p>Le Journal du Dimanche - Lagard&egrave;re Active </p>
+
+<p>Published : 2012 </p>
+
+</section>
+<section>
+
+	<h1>Appendix B. Contributors</h1>
+<p>The following people contributed to this document:</p>
+
+	<ul>
+		<li class="c11 c2 c1 c8"> Ichikawa, Dai (Invited Expert) </li>
+		<li class="c11 c2 c1 c8"> Kasdorf, Bill (Apex Covantage) </li>
+		<li class="c11 c2 c1 c8"> Kopp, Matthieu (Aquafadas) </li>
+		<li class="c2 c1 c8 c11"> Kroupa, Brady (Barnes &amp; Noble) </li>
+	</ul>
+</section>
+</body>
+</html>
