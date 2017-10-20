@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+   <head>
+      <meta charset="utf-8" />
+      <title>Best Practices</title>
+
+<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+      <script src="../common/biblio.js" class="remove"></script>
+      <script src="../common/dfn-crossref.js" class="remove"></script>
+      <script src="../common/confreq-permalinks.js" class="remove"></script>
+      <link href="../common/css/common.css" rel="stylesheet" type="text/css" />
+      <script class="remove">
+          var respecConfig = {
+              wg: "EPUB 3 Community Group",
+              specStatus: "CG-DRAFT",
+              noRecTrack: true,
+              shortName: "epub-bestpractices",
+              contributors: [
+              {
+                      name: "Rachel Comerford",
+                      company: "Macmillan Learning"
+                  },
+                  {
+                      name: "Laura Brady",
+                      company: "Brady Type"
+                  },
+                  {
+                      name: "Tzviya Siegman",
+                      company: "Wiley"
+                      
+                  }
+                   {
+                      name: "Bill Kasdorf",
+                      company: ""
+                      
+                  }                
+                   {
+                      name: "Liisa McCloy-Kelley",
+                      company: "Penguin Random House"
+                      
+                  }
+                    {
+                      name: "Mike Baker",
+                      company: "Houghton Mifflin Harcourt"
+                      
+                  }
+              ],
+              processVersion: 2017,
+              includePermalinks: true,
+              permalinkEdge:     true,
+              permalinkHide:     false,
+              diffTool:          "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+              localBiblio: biblio,
+              preProcess: [fixDefinitionCrossrefs, addConformanceLinks]
+          };
+      </script>
+   </head>
+
+<body>
+      <section id="abstract">
+         <p>This will be the temporary home to Best Practices documentation until a location and method for hosting and updating this materials is decided on.
+</p>
+      </section>
+      <section id="sec-resources">
+        <h1>Current Resources</h1>
+                 <section id="sec-overview-purpose-and-scope" class="informative">
+            <p>There are a number of best practices documents and resources available for epub3.</p>
+            <p>The goal of this space is to pull together a list of these locations and documents in order to create a single universal resource for users.</p>
+            <p>Please add existing resources to pull from here:</p>
+            <ul>
+            <li>DAISY: http://kb.daisy.org/publishing/docs/html/tables.html</li>
+            <li>ePUB for education: https://w3c.github.io/publ-cg/education/epub-education.html#sec-overview</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            </ul>
+           
+            
+         </section>
+
+</body>
