@@ -4,19 +4,19 @@
       <meta charset="utf-8" />
       <title>Best Practices</title>
 
-<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
       <script src="../common/biblio.js" class="remove"></script>
       <script src="../common/dfn-crossref.js" class="remove"></script>
       <script src="../common/confreq-permalinks.js" class="remove"></script>
       <link href="../common/css/common.css" rel="stylesheet" type="text/css" />
-      <script class="remove">
+       <script class="remove">
           var respecConfig = {
               wg: "EPUB 3 Community Group",
               specStatus: "CG-DRAFT",
               noRecTrack: true,
               shortName: "epub-bestpractices",
               contributors: [
-              {
+                  {
                       name: "Rachel Comerford",
                       company: "Macmillan Learning"
                   },
@@ -28,49 +28,49 @@
                       name: "Tzviya Siegman",
                       company: "Wiley"
                       
-                  }
-                   {
+                  },
+                  {
                       name: "Bill Kasdorf",
                       company: ""
                       
-                  }                
-                   {
+                  },               
+                  {
                       name: "Liisa McCloy-Kelley",
                       company: "Penguin Random House"
                       
-                  }
-                    {
+                  },
+                  {
                       name: "Mike Baker",
                       company: "Houghton Mifflin Harcourt"
                       
-                  	}
+                  },
                   {
                       name: "George Kerscher",
                       company: "DAISY, Benetech"
                       
-                  	}
-                 {
+                  },
+                  {
                       name: "Kevin Callahan",
                       company: "BNGO Books"
                       
                   }
-              ],
-              processVersion: 2017,
+                            ],
+              processVersion:    2017,
               includePermalinks: true,
               permalinkEdge:     true,
               permalinkHide:     false,
               diffTool:          "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
-              localBiblio: biblio,
-              preProcess: [fixDefinitionCrossrefs, addConformanceLinks]
-          };
-      </script>
+              localBiblio:       biblio,
+              preProcess:        [fixDefinitionCrossrefs, addConformanceLinks]
+                             };
+       </script>
    </head>
 
-<body>
+ <body>
       <section id="abstract">
-         <p>This will be the temporary home to Best Practices documentation until a location and method for hosting and updating this material is agreed on.
-</p>
+         <p>This will be the temporary home to Best Practices documentation until a location and method for hosting and updating this material is agreed on.</p>
       </section>
+
       <section id="sec-resources">
         <h1>Current Resources</h1>
                  <section id="sec-overview-purpose-and-scope" class="informative">
@@ -82,92 +82,92 @@
             <li>DAISY: http://www.daisy.org/z3986-structure-guidelines</li>
             <li>ePUB for education: https://w3c.github.io/publ-cg/education/epub-education.html#sec-overview</li>
             <li>IEEE:  http://ieee-adb.org</li>
-            <li>IDPF: https://idpf.github.io/epub-guides/package-metadata/</li>
+            <li>IDPF:  https://idpf.github.io/epub-guides/package-metadata/</li>
             <li>epub for education structural semantics: http://www.idpf.org/epub/profiles/edu/structure/</li>
             <li></li>
             <li></li>
             </ul>
            
-            </section>
-         </section>
+                 </section>
+      </section>
          
-          <section id="sec-roles">
-          <section id="sec-overview-roles" class="informative">
+      <section id="sec-roles">
+                 <section id="sec-overview-roles" class="informative">
         <h1>Roles</h1>
         
         <h2>BISG</h2>
-        <ul>
-        <li>Help identify variations in market needs (higher ed versus trade, etc)</li>
-        <li>Gather existing best practices documentation</li>
-        <li>Identify pain points in implementation</li>
-        <li>Socialize best practices documentation as it is finalized to members</li>
-        </ul>
+           <ul>
+            <li>Help identify variations in market needs (higher ed versus trade, etc)</li>
+            <li>Gather existing best practices documentation</li>
+            <li>Identify pain points in implementation</li>
+            <li>Socialize best practices documentation as it is finalized to members</li>
+           </ul>
         
         <h2>W3C Community Group</h2>
-        <ul>
-        <li>Cull recommendations from existing documentation</li>
-        <li>Test recommendations were necessary</li>
-        <li>Document results</li>
-        <li>Create, host, and manage final Best Practices artifact (location and style tbd)</li>
-        </ul>
+           <ul>
+            <li>Cull recommendations from existing documentation</li>
+            <li>Test recommendations were necessary</li>
+            <li>Document results</li>
+            <li>Create, host, and manage final Best Practices artifact (location and style tbd)</li>
+           </ul>
         
-        </section>
-        </section>
-        
- 
-	<section id="sec-Requests">
+                 </section>
+      </section>
+
+      <section id="sec-Requests">
         <h1>Requests for Best Practices</h1>
                  <section id="sec-requests-BISG-members" class="informative"> 
-                 <p>Best practices requests have been made by the publishing community in the following fields:</p>
-                 <ul>
-                 <li> CSS </li>
-                 	<ul>
-                 	<li>css3 layout</li>
-                 	<li>column implementation</li>
-                 	<li>Fallbacks for some of the newer epub3 toolset (columns, flexbox)</li>
-                 	<li>a quality community developed "CSS reset" that guaranteed sufficient margins, good font size, etc. would be helpful</li>
-                 	</ul>
-                 <li>Accessibility</li>
-                 	<ul>
-                 	<li>easy ways to implement accessibility</li>
-                 	<li>nuances of accessibility</li>
-                 	<li>how best to include the correct metadata pertaining to accessibility</li>
-                 	<li>trade publication accessibility</li>
-                 	<li>alt text best practices</li>
-                 	<li>video captions</li>
-                 	<li>proper heading structure</li>
-                 	<li>"practical" a11y</li>
-                 	</ul>
-                 <li>Cross-platform compatibility/interoperability of available ePub3 functionality: what works for iOS does not always work for Kindle.</li>
-                 <li>Math display</li>
-                 <li> Images </li>
-                 	<ul>
-                 	<li>image sizing</li>
-                 	<li>complex image handling</li>
-                 	<li>resolution, size, file types</li>
-                 	</ul>
-                 <li>navigation</li>
-                 <li>embedding fonts</li>
-                 <li>characters/encoding</li>
-                 <li>page numbering/pagelist</li>
-                 <li>audio/video display</li>
-                 <li>tables</li>
-                 <li>margin notes/flowing in marginal elements</li>
-                 <li>markup of non-structural headings (e.g. over blockquotes and lists)</li>
-                 <li>use of aria-vs-epubtype attributes</li>
-                 <li>proper use of @class, @role, and @data</li> 
-                 <li>proper use of rel</li>
-                 <li>relationship of EPUB and schema.org</li>
-                 <li>footnotes, endnotes, and marginal notes (up to all 3 in one document)</li>
-                 <li>linking to ranges (sometimes extensive)</li>
-                 <li>reference citations</li>
-                 <li>inclusion of DOI for the EPUB</li>
-                 <li>reader specific elements</li>
-                 <li>language variety</li>
-                 <li>advanced html5</li>
-                 </ul>
-                </section>
-            </section>
+         <p>Best practices requests have been made by the publishing community in the following fields:</p>
+           <ul>
+            <li> CSS </li>
+               <ul>
+              	<li>css3 layout</li>
+              	<li>column implementation</li>
+              	<li>Fallbacks for some of the newer epub3 toolset (columns, flexbox)</li>
+              	<li>a quality community developed "CSS reset" that guaranteed sufficient margins, good font size, etc. would be helpful</li>
+               </ul>
+            <li>Accessibility</li>
+               <ul>
+              	<li>easy ways to implement accessibility</li>
+               	<li>nuances of accessibility</li>
+              	<li>how best to include the correct metadata pertaining to accessibility</li>
+               	<li>trade publication accessibility</li>
+               	<li>alt text best practices</li>
+               	<li>video captions</li>
+               	<li>proper heading structure</li>
+               	<li>"practical" a11y</li>
+               </ul>
+            <li>Cross-platform compatibility/interoperability of available ePub3 functionality: what works for iOS does not always work for Kindle.</li>
+            <li>Math display</li>
+            <li> Images </li>
+               <ul>
+               	<li>image sizing</li>
+               	<li>complex image handling</li>
+               	<li>resolution, size, file types</li>
+               </ul>
+            <li>navigation</li>
+            <li>embedding fonts</li>
+            <li>characters/encoding</li>
+            <li>page numbering/pagelist</li>
+            <li>audio/video display</li>
+            <li>tables</li>
+            <li>margin notes/flowing in marginal elements</li>
+            <li>markup of non-structural headings (e.g. over blockquotes and lists)</li>
+            <li>use of aria-vs-epubtype attributes</li>
+            <li>proper use of @class, @role, and @data</li> 
+            <li>proper use of rel</li>
+            <li>relationship of EPUB and schema.org</li>
+            <li>footnotes, endnotes, and marginal notes (up to all 3 in one document)</li>
+            <li>linking to ranges (sometimes extensive)</li>
+            <li>reference citations</li>
+            <li>inclusion of DOI for the EPUB</li>
+            <li>reader specific elements</li>
+            <li>language variety</li>
+            <li>advanced html5</li>
+           </ul>
+			 
+                 </section>
+      </section>
                  
-</body>
+ </body>
 </html>
