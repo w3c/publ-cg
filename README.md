@@ -35,5 +35,5 @@ HTML documents on this repository’s master branch can also be displayed in a b
 
 ---
 
-For any further help, contact [Bill McCoy](mailto:bmccoy@w3.org), [Ivan Herman](mailto:ivan@w3.org), or [Dave Cramer](mailto:dauwhe@gmail.com).
+For any further help, contact [Ivan Herman](mailto:ivan@w3.org), or [Dave Cramer](mailto:dauwhe@gmail.com).
 
