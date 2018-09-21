@@ -747,11 +747,14 @@
 &lt;/div&gt;
 </pre>
 
-<p>Each assessment marked up in this fashion will be able to report scores using the JavaScript APIs documented in <a class="c2" href="#h.dxf1o3gw16x0">section 6.3.3</a>. When adding outcome support to an assessment, there are no additional JavaScript files that must be included in the EPUB Publication.</p>
+<p>Each assessment marked up in this fashion will be able to report scores using the JavaScript APIs documented in <a href="#javascript-apis">section 6.3.3</a>. When adding outcome support to an assessment, there are no additional JavaScript files that must be included in the EPUB Publication.</p>
 <p>For outcomes to function and be identified inside of the Reading System and Tool Provider, an [[HTML5]]<span class="c8">&nbsp;</span><code>nav</code> element with with the <code>epub:type</code> attribute value &quot;<code>assessment</code><code>s</code>&quot; MUST be included in the EPUB Navigation Document.</p>
 <p>The link nodes within the assessment list MUST contain the following information:</p>
 <ul><li><code>href:</code> a deep link to an assessment within the EPUB Publication. The link MUST point directly to an element that carries an <code>epub:type</code> attribute with the value &quot;<code>assessment</code>&quot; by using the value of its unique <code>id</code>. </li></ul>
-<ul class="c34 lst-kix_s2puvsrh29n7-0"><li><code>data-maxscore</code>: Max possible score for the activity.</li>
+<ul>
+
+
+<li><dfn id="dfn-data-maxscore">data-maxscore</dfn>: Max possible score for the activity.</li>
 
 <li><code>data-graded</code>: &quot;<code>1</code>&quot; if graded. &quot;<code>0</code>&quot; if not graded.</li>
 <li>Each activity MUST have its own list item in the <code>nav</code> element:</li></ul>
@@ -804,7 +807,7 @@
 <section id="lti-report-scores">
 
 
-<h4><code>EPUB.Education.reportScores([scores], callback);</code></h4>
+<h4><dfn id="def-reportscores">EPUB.Education.reportScores([scores], callback);</dfn></h4>
 
 
 <ul><li>Description:<span class="c8">&nbsp;Report outcomes to the Reading System for transfer to Reading </span><span class="c8">Eco-system</span><span class="c8">, or directly to the originating Tool Consumer.</span></li>
@@ -824,7 +827,7 @@ metadata: {…}
 
 <dl>
 <dt><dfn>score</dfn></dt>
-<dd>is a value between 0 and <a class="c2" href="#kix.i7m349vnq1pn">data-maxscore</a> representing the User&rsquo;s score for the activity.</dd>
+<dd>is a value between 0 and <a href="#dfn-data-maxscore">data-maxscore</a> representing the User&rsquo;s score for the activity.</dd>
 
 <dt><code>location</code></dt>
 <dd>is the unique identifier for the assessment. This MUST be equal to the value of the containing <code>epub:type=&quot;assessment&quot;</code> element&rsquo;s <code>id</code> attribute.</dd>
@@ -1067,7 +1070,7 @@ returns: result_id
 
 <h4>Steps</h4>
 <ol>
-<li>[EPUB 3] Document activity link signals a result is available. A JavaScript <span class="c6 c4"><a class="c2" href="#h.nomfym85mx4l">reportScores</a></span> sends the result to the Reading System.</li>
+<li>[EPUB 3] Document activity link signals a result is available. A JavaScript <code><a href="#def-reportscores">reportScores</a></code> sends the result to the Reading System.</li>
 <li>[Reading System] Reading System composes a POST with the access code provided to the reader on launch plus <code>activity_id</code>, <code>result value</code>, <code>maxscore</code>, and an arbitrary JSON-encoded data structure with whatever contents is desired.</li>
 <li>[TP] Looks up the Lineitem, matched by <code>activity_id</code>.</li>
 <li>[TP] PUTS a new result object to the result container for the specific lineitem.</li>
