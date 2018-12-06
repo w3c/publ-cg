@@ -1,0 +1,38 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content=""></meta>
+    <title>
+      CSS Text Test: text-align-last - right(one line inside block element)
+    </title>
+    <link rel="author" title="Intel" href="http://www.intel.com"></link>
+    <link rel="author" title="Shiyou Tan" href="mailto:shiyoux.tan@intel.com"></link>
+    <link rel="help" title="7.2. Last Line Alignment: the 'text-align-last' property" href="http://www.w3.org/TR/css-text-3/#text-align-last"></link>
+    <link rel="match" href="text-align-last-010-ref.html"></link>
+    <meta name="flags" content=""></meta>
+    <meta name="assert" content="The 'text-align-last' property set to 'right' on a block element aligns the only one line text to the right."></meta>
+    <style type="text/css" xml:space="preserve">
+  div {
+    border: 1px solid blue;
+    text-align-last: right;
+  }
+</style>
+  <style type='text/css'>
+@font-face { 
+  font-family: Ahem; 
+  font-weight: 400; 
+  font-style: normal; 
+  font-stretch: normal; 
+  font-variant: normal; 
+  src: url('Ahem.otf'); }
+</style><meta http-equiv="default-style" content="text/html; charset=utf-8"/></head>
+  <body>
+    <p>
+      Test passes if the line of "FillerText" below is aligned to the right,
+      inside the blue box.
+    </p>
+    <div>
+      FillerText FillerText FillerText FillerText FillerText
+    </div>
+  </body>
+</html>
