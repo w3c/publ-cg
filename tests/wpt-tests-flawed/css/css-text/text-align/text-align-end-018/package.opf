@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" unique-identifier="pub-id">
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:title id="title">
+      text-align: end, textarea, dir=rtl inherited
+    </dc:title>
+    <dc:language>en</dc:language>
+    <dc:identifier id="pub-id">d91c99d4-11f4-4867-984d-da4b0857e3f5</dc:identifier>
+    <meta property="dcterms:modified">2018-11-30T15:03:55Z</meta>
+</metadata>
+<manifest>
+<item id="toc" properties="nav" href="toc.html" media-type="application/xhtml+xml" />
+
+<item id="font.ahem" href="Ahem.otf" media-type="application/vnd.ms-opentype"/>
+<item id='a1' href='text-align-end-018.html.xhtml' media-type='application/xhtml+xml'/>
+</manifest>
+<spine>
+<itemref idref='a1'/>
+</spine>
+</package>

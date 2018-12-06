@@ -1,0 +1,38 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content=""></meta>
+    <title>
+      CSS Text Test: text-align - start (basic)
+    </title>
+    <link rel="author" title="Intel" href="http://www.intel.com"></link>
+    <link rel="author" title="Shiyou Tan" href="mailto:shiyoux.tan@intel.com"></link>
+    <link rel="help" title="7.1. Text Alignment: the 'text-align' property" href="http://www.w3.org/TR/css-text-3/#text-align"></link>
+    <link rel="match" href="text-align-006-ref.html"></link>
+    <meta name="flags" content=""></meta>
+    <meta name="assert" content="The 'text-align' property set to 'start' on a block element aligns the text to the start edge."></meta>
+    <style type="text/css" xml:space="preserve">
+  div {
+    border: 1px solid blue;
+    text-align: start;
+  }
+</style>
+  <style type='text/css'>
+@font-face { 
+  font-family: Ahem; 
+  font-weight: 400; 
+  font-style: normal; 
+  font-stretch: normal; 
+  font-variant: normal; 
+  src: url('Ahem.otf'); }
+</style><meta http-equiv="default-style" content="text/html; charset=utf-8"/></head>
+  <body>
+    <p>
+      Test passes if the words "Filler Text" below are aligned to the left,
+      inside the blue box.
+    </p>
+    <div>
+      Filler Text
+    </div>
+  </body>
+</html>
