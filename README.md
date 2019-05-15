@@ -3,7 +3,7 @@
 
 # EPUB 3 Community Group General Repository
 
-This repository is for general documents and resource related to the [EPUB 3 Community Group](https://www.w3.org/community/epub3/). The EPUB 3.1 specification is in a [separate repository](https://github.com/w3c/publ-epub-revision). Please file issues on the spec [here](https://github.com/w3c/publ-epub-revision/issues).
+This repository is for general documents and resource related to the [EPUB 3 Community Group](https://www.w3.org/community/epub3/). The EPUB 3.X specification is in a [separate repository](https://github.com/w3c/publ-epub-revision). Please file issues on the spec [here](https://github.com/w3c/publ-epub-revision/issues).
 
 ## General Information
 
